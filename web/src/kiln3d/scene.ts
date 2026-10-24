@@ -417,14 +417,14 @@ export function createKilnScene(container: HTMLElement, opts: KilnSceneOptions):
 
   // cameras
   const persp = new THREE.PerspectiveCamera(38, 1, 1, 2000);
-  persp.position.set(-8, 82, 150);
+  persp.position.set(-6, 92, 172);
   const ortho = new THREE.OrthographicCamera(-VIEW_W / 2, VIEW_W / 2, 80, -80, 1, 1000);
   ortho.position.set(0, 500, 0);
   ortho.up.set(0, 0, -1);
   ortho.lookAt(0, 0, 0);
 
   const controls = new OrbitControls(persp, renderer.domElement);
-  controls.target.set(0, 6, 0);
+  controls.target.set(0, 10, 0);
   controls.enableDamping = !opts.reducedMotion;
   controls.dampingFactor = 0.08;
   controls.minDistance = 70;
@@ -456,6 +456,19 @@ export function createKilnScene(container: HTMLElement, opts: KilnSceneOptions):
   let elapsed = 0;
   const tmp = new THREE.Vector3();
 
+  let userMoved = false;
+  /** Pull the orbit camera back until both kilns (about 210 m across) fit the canvas width. */
+  function fitOrbit() {
+    if (userMoved || t > 0) return;
+    const half = 118;
+    const tanH = Math.tan(THREE.MathUtils.degToRad(persp.fov / 2)) * persp.aspect;
+    const need = half / tanH + 25;
+    const dir = persp.position.clone().sub(controls.target).normalize();
+    const dist = Math.max(need, 150);
+    persp.position.copy(controls.target).add(dir.multiplyScalar(Math.min(dist, controls.maxDistance)));
+    controls.update();
+  }
+
   function resize() {
     const r = container.getBoundingClientRect();
     width = Math.max(1, Math.round(r.width));
@@ -472,6 +485,7 @@ export function createKilnScene(container: HTMLElement, opts: KilnSceneOptions):
     ortho.top = vh / 2;
     ortho.bottom = -vh / 2;
     ortho.updateProjectionMatrix();
+    fitOrbit();
     dirty = true;
   }
 
@@ -515,7 +529,7 @@ export function createKilnScene(container: HTMLElement, opts: KilnSceneOptions):
         }
         const s = smokeSeed[i]!;
         const life = (((s.t0 + elapsed / 7) % 1) + 1) % 1;
-        pos.setXYZ(i, top.x + life * 26 * s.dx + Math.sin(elapsed + i) * life * 2, top.y + life * 34, top.z + life * 9 * s.dz);
+        pos.setXYZ(i, top.x + life * 14 * s.dx + Math.sin(elapsed + i) * life * 2, top.y + life * 24, top.z + life * 8 * s.dz);
         al.setX(i, (1 - life) * 0.55);
         sz.setX(i, 3 + life * 9);
       }
@@ -608,6 +622,7 @@ export function createKilnScene(container: HTMLElement, opts: KilnSceneOptions):
     kick();
   });
   controls.addEventListener("start", () => {
+    userMoved = true;
     lastChange = performance.now();
     kick();
   });
@@ -647,6 +662,7 @@ export function createKilnScene(container: HTMLElement, opts: KilnSceneOptions):
     },
     rotateBy(rad) {
       if (t > 0) return;
+      userMoved = true;
       const off = persp.position.clone().sub(controls.target);
       off.applyAxisAngle(new THREE.Vector3(0, 1, 0), rad);
       persp.position.copy(controls.target).add(off);
@@ -655,6 +671,7 @@ export function createKilnScene(container: HTMLElement, opts: KilnSceneOptions):
     },
     zoomBy(f) {
       if (t > 0) return;
+      userMoved = true;
       const off = persp.position.clone().sub(controls.target).multiplyScalar(f);
       const d = THREE.MathUtils.clamp(off.length(), controls.minDistance, controls.maxDistance);
       persp.position.copy(controls.target).add(off.setLength(d));

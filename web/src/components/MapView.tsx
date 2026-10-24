@@ -103,7 +103,7 @@ function toGeoJSON(kilns: KilnListItem[]): GeoJSON.FeatureCollection {
 
 /** Small square footprints around each kiln for the 3D columns. Height tracks p(FCBK) where known. */
 function toColumns(kilns: KilnListItem[], pFcbk?: Map<string, number>): GeoJSON.FeatureCollection {
-  const half = 160; // metres
+  const half = 260; // metres: wide enough to read at district zoom
   return {
     type: "FeatureCollection",
     features: kilns.map((k) => {
@@ -348,9 +348,11 @@ export function MapView({ kilns, selectedId, onSelect, bbox, satellite = false, 
   }, [kilns, bbox, compact, focus, pFcbk]);
 
   // 3D: pitch the camera and swap the icons for extruded columns.
+  const prev3D = useRef(threeD);
   useEffect(() => {
     const map = mapRef.current;
-    if (!map) return;
+    if (!map || prev3D.current === threeD) return;
+    prev3D.current = threeD;
     const apply = () => {
       if (!map.getLayer("kiln-cols")) return;
       map.setLayoutProperty("kiln-cols", "visibility", threeD ? "visible" : "none");
@@ -359,7 +361,7 @@ export function MapView({ kilns, selectedId, onSelect, bbox, satellite = false, 
       if (threeD) map.dragRotate.enable();
       else map.dragRotate.disable();
       const reduced = prefersReducedMotion();
-      map.easeTo({ pitch: threeD ? 55 : 0, bearing: threeD ? -18 : 0, duration: reduced ? 0 : 900 });
+      map.easeTo({ pitch: threeD ? 55 : 0, bearing: threeD ? -18 : 0, zoom: map.getZoom() + (threeD ? 0.5 : -0.5), duration: reduced ? 0 : 900 });
     };
     if (map.isStyleLoaded() && map.getLayer("kiln-cols")) apply();
     else map.once("idle", apply);
