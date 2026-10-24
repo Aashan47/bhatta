@@ -83,6 +83,7 @@ def test_kiln_detail_and_404(client):
 def test_queue_puts_contradicted_claims_first(client):
     q = client.get("/api/inspect/queue").json()
     assert [r["status"] for r in q] == ["FCBK", "FCBK", "UNDETERMINED", "NOT_DETECTED", "ZIGZAG"]
+    assert [r["reason_code"] for r in q] == ["SAT_FCBK", "SAT_FCBK", "UNDETERMINED", "NOT_SEEN", "SAT_ZIGZAG"]
     assert q[0]["id"] == "PK-test0003"  # the more confident FCBK first
     assert [r["priority"] for r in q] == [1, 2, 3, 4, 5]
 
@@ -96,6 +97,7 @@ def test_chip_names_cannot_escape(client):
 def test_results_table(client):
     r = client.get("/api/results").json()["targets"]
     assert [(x["id"], x["hit"]) for x in r] == [("T1", True), ("T6", False)]
+    assert r[0]["value"] == "0.84" and r[0]["target"] == "0.80"
 
 
 def test_relay_is_rate_limited(client):

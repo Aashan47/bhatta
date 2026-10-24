@@ -16,8 +16,10 @@ STATUS_CODES = {"NOT_DETECTED": 0, "FCBK": 1, "ZIGZAG": 2, "UNDETERMINED": 3}
 
 # Order an inspector should visit in: a contradicted claim first, then the kilns the image could not
 # decide, then the ones not seen at all. Converted kilns come last.
-QUEUE_RANK = {"FCBK": 0, "UNDETERMINED": 1, "NOT_DETECTED": 2, "ZIGZAG": 3}
+QUEUE_RANK = {"CONFLICT": -1, "FCBK": 0, "UNDETERMINED": 1, "NOT_DETECTED": 2, "ZIGZAG": 3}
+REASON_CODE = {"FCBK": "SAT_FCBK", "UNDETERMINED": "UNDETERMINED", "NOT_DETECTED": "NOT_SEEN", "ZIGZAG": "SAT_ZIGZAG"}
 QUEUE_REASON = {
+    "CONFLICT": "The satellite and a signed inspector finding disagree on the public record.",
     "FCBK": "Satellite shows the old oval FCBK shape at 90% confidence.",
     "UNDETERMINED": "The 10 m image cannot separate Zigzag from FCBK here.",
     "NOT_DETECTED": "Kiln mapped in 2023-24 but not seen this season.",
@@ -152,19 +154,22 @@ class Store:
             out = [k for k in out if (k.get("district") or "").lower() == district.lower()]
         return out
 
-    def queue(self, district: str | None) -> list[dict]:
+    def queue(self, district: str | None, conflicts: set[str] | None = None) -> list[dict]:
+        conflicts = conflicts or set()
         rows = []
         for k in self.filtered(None, district):
             st = k.get("status", "UNDETERMINED")
-            p = ((k.get("observation") or {}).get("probs") or {}).get("FCBK", 0.0)
-            claimed = (k.get("baseline") or {}).get("class")
+            probs = (k.get("observation") or {}).get("probs") or {}
+            key = "CONFLICT" if k["id"] in conflicts else st
+            p_fcbk = probs.get("FCBK")
             rows.append(
                 {
                     **self.light(k),
-                    "reason": QUEUE_REASON.get(st, ""),
-                    "p_fcbk": p,
-                    "_rank": (QUEUE_RANK.get(st, 9), -p, k["id"]),
-                    "baseline_class": claimed,
+                    "reason_code": "CONFLICT" if key == "CONFLICT" else REASON_CODE.get(st, "UNDETERMINED"),
+                    "reason": QUEUE_REASON.get(key, ""),
+                    "p_fcbk": p_fcbk,
+                    "p_zigzag": probs.get("Zigzag"),
+                    "_rank": (QUEUE_RANK.get(key, 9), -(p_fcbk or 0.0), k["id"]),
                 }
             )
         rows.sort(key=lambda r: r["_rank"])
@@ -198,8 +203,33 @@ def parse_results(path: Path) -> list[dict]:
                 row["cells"] = cells[1:]
             verdict = " ".join(cells).upper()
             row["hit"] = True if "HIT" in verdict else False if "MISS" in verdict else None
-            rows.append(row)
+            rows.append(_normalise_result(row))
     return rows
+
+
+_RESULT_KEYS = {
+    "metric": ("metric", "metric, on test blocks only", "what", "measure"),
+    "target": ("target",),
+    "value": ("result", "value", "test result", "measured"),
+    "n": ("n", "count", "sample"),
+}
+
+
+def _normalise_result(row: dict) -> dict:
+    out = {"id": row["id"], "hit": row.get("hit")}
+    for key, names in _RESULT_KEYS.items():
+        out[key] = next((row[n] for n in names if n in row), None)
+    out["raw"] = {k: v for k, v in row.items() if k not in ("id", "hit")}
+    return out
+
+
+def kiln_id_from_bytes32(v) -> str | None:
+    if not isinstance(v, str) or not v.startswith("0x"):
+        return None
+    try:
+        return bytes.fromhex(v[2:]).rstrip(b"\0").decode("utf-8")
+    except (ValueError, UnicodeDecodeError):
+        return None
 
 
 def default_dirs() -> tuple[Path, Path]:

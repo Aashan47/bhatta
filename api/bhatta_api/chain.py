@@ -87,9 +87,35 @@ class Chain:
                             "detail": {k: _plain(v) for k, v in dict(lg["args"]).items()},
                         }
                     )
+            self._add_times(out)
             out.sort(key=lambda e: e.get("block", 0), reverse=True)
             self._events_cache = (time.time(), out)
             return out
+
+    def _add_times(self, events: list[dict]) -> None:
+        from datetime import datetime, timezone
+
+        from .store import kiln_id_from_bytes32
+
+        cache = getattr(self, "_block_times", {})
+        for e in events:
+            b = e.get("block")
+            if b is None:
+                continue
+            if b not in cache:
+                try:
+                    cache[b] = int(self._w3.eth.get_block(b)["timestamp"])
+                except Exception:
+                    cache[b] = None
+            ts = cache[b]
+            e["time"] = datetime.fromtimestamp(ts, timezone.utc).isoformat() if ts else None
+            kid = kiln_id_from_bytes32(e.get("detail", {}).get("kilnId"))
+            if kid:
+                e["kiln_id"] = kid
+        self._block_times = cache
+
+    def conflict_kilns(self) -> set[str]:
+        return {e["kiln_id"] for e in self.events() if e.get("type") == "Conflict" and e.get("kiln_id")}
 
     def events_for(self, kiln_id_bytes32: str | None) -> list[dict]:
         if not kiln_id_bytes32:

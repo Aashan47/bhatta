@@ -84,7 +84,7 @@ def chip(name: str):
 
 @app.get("/api/inspect/queue")
 def inspect_queue(district: str | None = None):
-    return store.queue(district)
+    return store.queue(district, chain.conflict_kilns())
 
 
 @app.get("/api/ledger")
@@ -107,6 +107,7 @@ def ledger():
         "explorer": c.get("explorer_base"),
         "deploy_tx": c.get("deploy_tx"),
         "rpc": chain.rpc,
+        "eip712": c.get("eip712"),
         "seasons": seasons,
         "events": chain.events()[:200],
         "fixture": FIXTURE,
@@ -142,9 +143,12 @@ def audit():
 
     rows = json.loads(p.read_text(encoding="utf-8"))
     tally = {"agree": 0, "disagree": 0, "unsure": 0}
+    out = []
     for r in rows:
-        tally[r.get("verdict", "unsure")] = tally.get(r.get("verdict", "unsure"), 0) + 1
-    return {"n": len(rows), "agreed": tally["agree"], "disagreed": tally["disagree"], "unsure": tally["unsure"], "rows": rows, "status": "Done"}
+        v = r.get("verdict", "unsure")
+        tally[v] = tally.get(v, 0) + 1
+        out.append({"id": r["id"], "model": r.get("model"), "human": r.get("human"), "agree": v == "agree" if v != "unsure" else None, "note": r.get("note")})
+    return {"n": len(out), "agreed": tally["agree"], "disagreed": tally["disagree"], "unsure": tally["unsure"], "rows": out, "status": "Done"}
 
 
 @app.post("/api/relay/attest")
