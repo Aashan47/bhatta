@@ -1,0 +1,262 @@
+{
+  "description": "Bhatta cross-language vectors. A conforming implementation reproduces evidence_canonical, evidence_hash, leaf, the root of a StandardMerkleTree over exactly these three leaves, and every quantise4 row.",
+  "source": "contracts/test/fixtures/kilns.sample.json",
+  "fixture": true,
+  "encoding": {
+    "leaf_types": [
+      "bytes32",
+      "uint32",
+      "uint8",
+      "uint16",
+      "bytes32"
+    ],
+    "leaf": "keccak256(bytes.concat(keccak256(abi.encode(kilnId, season, status, pZigzagBp, evidenceHash)))) (OpenZeppelin StandardMerkleTree, sorted leaves, commutative pair hash)",
+    "kiln_id": "ethers encodeBytes32String(id): UTF-8 bytes, right-padded with zeros to 32, max 31 bytes",
+    "evidence_hash": "0x + sha256(utf8(canonical JSON of {scene_id, date, probs, set, chip_sha256, model_sha256})); keys sorted at every depth; separators ',' and ':' with no whitespace; strings as JSON with non-ASCII left unescaped",
+    "probs": "each probability = round(p, 4) with round-half-even on the exact double (Python round(float(p), 4)); written as the shortest round-trip number; integral values have no decimal point (1, 0); null when the kiln has no probabilities",
+    "set": "array of class names sorted ascending",
+    "chip_sha256": "lowercase hex sha256 of the chip PNG bytes, or the string 'none' if the file is missing",
+    "model_sha256": "lowercase hex from summary.json model_sha256, or 'none'",
+    "p_zigzag_bp": "the quantised zigzag probability times 10000 (an exact integer), 0 when probs is null",
+    "status": {
+      "NOT_DETECTED": 0,
+      "FCBK": 1,
+      "ZIGZAG": 2,
+      "UNDETERMINED": 3
+    }
+  },
+  "quantise4": [
+    {
+      "input": 0.03125,
+      "output": 0.0312,
+      "units_1e4": 312
+    },
+    {
+      "input": 0.96875,
+      "output": 0.9688,
+      "units_1e4": 9688
+    },
+    {
+      "input": 1,
+      "output": 1,
+      "units_1e4": 10000
+    },
+    {
+      "input": 0,
+      "output": 0,
+      "units_1e4": 0
+    },
+    {
+      "input": 0.08123456,
+      "output": 0.0812,
+      "units_1e4": 812
+    },
+    {
+      "input": 0.87005,
+      "output": 0.87,
+      "units_1e4": 8700
+    },
+    {
+      "input": 0.12995,
+      "output": 0.13,
+      "units_1e4": 1300
+    },
+    {
+      "input": 0.0001,
+      "output": 0.0001,
+      "units_1e4": 1
+    },
+    {
+      "input": 0.00005,
+      "output": 0.0001,
+      "units_1e4": 1
+    },
+    {
+      "input": 0.00015,
+      "output": 0.0001,
+      "units_1e4": 1
+    },
+    {
+      "input": 0.5179,
+      "output": 0.5179,
+      "units_1e4": 5179
+    },
+    {
+      "input": 0.33333333,
+      "output": 0.3333,
+      "units_1e4": 3333
+    }
+  ],
+  "kilns": [
+    {
+      "input": {
+        "id": "PK-fx000001",
+        "lat": 31.1021,
+        "lon": 74.4512,
+        "district": "Kasur",
+        "baseline": {
+          "source": "SYNTHETIC fixture",
+          "period": "2023-09/2024-02",
+          "class": "FCBK"
+        },
+        "observation": {
+          "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
+          "date": "2026-10-12",
+          "detected": true,
+          "det_conf": 0.9,
+          "probs": {
+            "FCBK": 0.03125,
+            "Zigzag": 0.96875
+          },
+          "set": [
+            "Zigzag"
+          ],
+          "chip": "chips/PK-fx000001_202610.png",
+          "baseline_chip": null
+        },
+        "status": "ZIGZAG"
+      },
+      "season": 202610,
+      "evidence": {
+        "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
+        "date": "2026-10-12",
+        "probs": {
+          "FCBK": 0.0312,
+          "Zigzag": 0.9688
+        },
+        "set": [
+          "Zigzag"
+        ],
+        "chip_sha256": "19aa34bfb80734a0863a3f517002e61ed5cd42132bbe30a209f44b9d3047fe77",
+        "model_sha256": "none"
+      },
+      "evidence_canonical": "{\"chip_sha256\":\"19aa34bfb80734a0863a3f517002e61ed5cd42132bbe30a209f44b9d3047fe77\",\"date\":\"2026-10-12\",\"model_sha256\":\"none\",\"probs\":{\"FCBK\":0.0312,\"Zigzag\":0.9688},\"scene_id\":\"FIXTURE-S2-L2A-20261012-T43RDQ\",\"set\":[\"Zigzag\"]}",
+      "evidence_hash": "0x4b48f8098179da7ccbe8648b7aeb4130b0c1ea32f2af3a765607595ebd3f760f",
+      "kiln_id_bytes32": "0x504b2d6678303030303031000000000000000000000000000000000000000000",
+      "status_code": 2,
+      "p_zigzag_bp": 9688,
+      "leaf_values": [
+        "0x504b2d6678303030303031000000000000000000000000000000000000000000",
+        202610,
+        2,
+        9688,
+        "0x4b48f8098179da7ccbe8648b7aeb4130b0c1ea32f2af3a765607595ebd3f760f"
+      ],
+      "leaf": "0xc08587da80beaab769967f88d3a0d7c84d9640cfe5aee059c09c3c073bbec17d",
+      "proof": [
+        "0x9ea1c7c2de0fb56f97b00d5bc96200d8ef16dde48c2533ce1e2140be5ac5c920",
+        "0xed4950d6858837e963a19009972a43d62f46bc985581a099e28f2520549ec7cf"
+      ]
+    },
+    {
+      "input": {
+        "id": "PK-fx000002",
+        "lat": 31.1188,
+        "lon": 74.473,
+        "district": "Kasur",
+        "baseline": {
+          "source": "SYNTHETIC fixture",
+          "period": "2023-09/2024-02",
+          "class": "FCBK"
+        },
+        "observation": {
+          "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
+          "date": "2026-10-12",
+          "detected": true,
+          "det_conf": 0.9,
+          "probs": {
+            "FCBK": 1,
+            "Zigzag": 0
+          },
+          "set": [
+            "FCBK"
+          ],
+          "chip": "chips/PK-fx000002_202610.png",
+          "baseline_chip": null
+        },
+        "status": "FCBK"
+      },
+      "season": 202610,
+      "evidence": {
+        "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
+        "date": "2026-10-12",
+        "probs": {
+          "FCBK": 1,
+          "Zigzag": 0
+        },
+        "set": [
+          "FCBK"
+        ],
+        "chip_sha256": "none",
+        "model_sha256": "none"
+      },
+      "evidence_canonical": "{\"chip_sha256\":\"none\",\"date\":\"2026-10-12\",\"model_sha256\":\"none\",\"probs\":{\"FCBK\":1,\"Zigzag\":0},\"scene_id\":\"FIXTURE-S2-L2A-20261012-T43RDQ\",\"set\":[\"FCBK\"]}",
+      "evidence_hash": "0x3d993c5be73a5aaa6cf92c0ff968f81bb3efa3798202d337d540a91e7de7c28d",
+      "kiln_id_bytes32": "0x504b2d6678303030303032000000000000000000000000000000000000000000",
+      "status_code": 1,
+      "p_zigzag_bp": 0,
+      "leaf_values": [
+        "0x504b2d6678303030303032000000000000000000000000000000000000000000",
+        202610,
+        1,
+        0,
+        "0x3d993c5be73a5aaa6cf92c0ff968f81bb3efa3798202d337d540a91e7de7c28d"
+      ],
+      "leaf": "0xed4950d6858837e963a19009972a43d62f46bc985581a099e28f2520549ec7cf",
+      "proof": [
+        "0x11689c4f866d575ab832e43291b499ec1165547cc9c5d4b708bf3a769f6f7ee4"
+      ]
+    },
+    {
+      "input": {
+        "id": "PK-fx000006",
+        "lat": 31.4033,
+        "lon": 74.2588,
+        "district": "Lahore",
+        "baseline": {
+          "source": "SYNTHETIC fixture",
+          "period": "2023-09/2024-02",
+          "class": "FCBK"
+        },
+        "observation": {
+          "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
+          "date": "2026-10-12",
+          "detected": false,
+          "det_conf": null,
+          "probs": null,
+          "set": null,
+          "chip": null,
+          "baseline_chip": null
+        },
+        "status": "NOT_DETECTED"
+      },
+      "season": 202610,
+      "evidence": {
+        "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
+        "date": "2026-10-12",
+        "probs": null,
+        "set": [],
+        "chip_sha256": "none",
+        "model_sha256": "none"
+      },
+      "evidence_canonical": "{\"chip_sha256\":\"none\",\"date\":\"2026-10-12\",\"model_sha256\":\"none\",\"probs\":null,\"scene_id\":\"FIXTURE-S2-L2A-20261012-T43RDQ\",\"set\":[]}",
+      "evidence_hash": "0x30f14e8a41ff06439d419ec755bdd1749e0f701e7a69173428a95d6527cd4036",
+      "kiln_id_bytes32": "0x504b2d6678303030303036000000000000000000000000000000000000000000",
+      "status_code": 0,
+      "p_zigzag_bp": 0,
+      "leaf_values": [
+        "0x504b2d6678303030303036000000000000000000000000000000000000000000",
+        202610,
+        0,
+        0,
+        "0x30f14e8a41ff06439d419ec755bdd1749e0f701e7a69173428a95d6527cd4036"
+      ],
+      "leaf": "0x9ea1c7c2de0fb56f97b00d5bc96200d8ef16dde48c2533ce1e2140be5ac5c920",
+      "proof": [
+        "0xc08587da80beaab769967f88d3a0d7c84d9640cfe5aee059c09c3c073bbec17d",
+        "0xed4950d6858837e963a19009972a43d62f46bc985581a099e28f2520549ec7cf"
+      ]
+    }
+  ],
+  "root": "0xeada380a498ac1141455e23923849298a32f63ff08b1b4c68627143e48cc73bb"
+}
