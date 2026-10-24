@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Link, useNavigate } from "react-router";
-import { getKilns, getSummary } from "../api";
+import { getKilns, getLedger, getSummary } from "../api";
 import { BrickWall } from "../components/BrickWall";
 import { ImpactPanel } from "../components/Impact";
 import { MapView } from "../components/MapView";
@@ -14,6 +14,7 @@ export function Overview() {
   const nav = useNavigate();
   const summary = useAsync(getSummary, []);
   const kilns = useAsync(() => getKilns(), []);
+  const ledger = useAsync(getLedger, []);
   const s = summary.data;
 
   const shares = useMemo(() => {
@@ -26,7 +27,9 @@ export function Overview() {
   if (summary.error) return <ErrorBox error={summary.error} onRetry={summary.reload} />;
   if (!s) return <Loading />;
 
-  const season = s.season ? seasonLabel(s.season, lang) : "";
+  const seasonNum = s.season ?? ledger.data?.seasons[0]?.season ?? null;
+  const season = seasonNum ? seasonLabel(seasonNum, lang) : "";
+  const areaName = s.aoi.name || [...new Set((kilns.data ?? []).map((k) => k.district).filter(Boolean))].sort().join(", ");
   const toVisit = s.counts.FCBK + s.counts.UNDETERMINED + s.counts.NOT_DETECTED;
   const sceneDates = [...new Set(s.scenes.map((x) => dateLabel(x.date, lang)))].join(", ");
 
@@ -51,9 +54,9 @@ export function Overview() {
 
         <div className="hero-seen">
           <h2 className="seen-title">
-            {t.overview.seenTitle(season)} <SampleTag />
+            {season ? t.overview.seenTitle(season) : t.overview.seenTitleNoSeason} <SampleTag />
           </h2>
-          <p className="seen-lead">{t.overview.seenLead(s.total, "\u2068" + s.aoi.name + "\u2069")}</p>
+          <p className="seen-lead">{t.overview.seenLead(s.total, "\u2068" + areaName + "\u2069")}</p>
           <figure className="wall-fig">
             <BrickWall counts={s.counts} cols={s.total > 400 ? 40 : 18} />
             <figcaption className="fine">{t.overview.wallCaption}</figcaption>
@@ -163,9 +166,11 @@ export function Overview() {
       </div>
 
       <section className="provenance" aria-label={t.overview.modelsLine}>
-        <p>
-          {t.overview.sceneLine(s.scenes.length, sceneDates)} <SampleTag />
-        </p>
+        {s.scenes.length > 0 && (
+          <p>
+            {t.overview.sceneLine(s.scenes.length, sceneDates)} <SampleTag />
+          </p>
+        )}
         {s.models.classifier_sha256 && (
           <p>
             {t.overview.modelsLine}: <Hash value={s.models.classifier_sha256} />

@@ -127,7 +127,7 @@ function Chips({ rec }: { rec: KilnRecord }) {
         <ChipFigure
           src={o.baseline_chip}
           alt={t.kiln.chipAltBase(rec.id, cls) + sampleAlt}
-          empty={t.kiln.noBaselineChip}
+          empty={rec.baseline ? t.kiln.noBaselineImage : t.kiln.noBaselineChip}
           caption={rec.baseline ? t.kiln.baselineChip(rec.baseline.period, cls) : t.kiln.newDetection}
         />
         <ChipFigure

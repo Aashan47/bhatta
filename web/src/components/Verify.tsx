@@ -151,7 +151,10 @@ export function VerifyPanel({ rec, modelSha }: { rec: KilnRecord; modelSha?: str
       } else {
         const rpc = lg.rpc ?? DEFAULT_RPC;
         root = await readCurrentRoot({ contract: lg.contract, season: chain.season, rpc, abi: lg.abi as Abi | undefined });
-        set(
+        if (/^0x0+$/.test(root)) {
+          fail("root", t.verify.rootZero);
+          root = null;
+        } else set(
           "root",
           "pass",
           <>
