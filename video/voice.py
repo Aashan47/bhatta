@@ -1,38 +1,34 @@
-"""The house narrator (Hackathons/DEMO-RECORDING/voice/VOICE.md): Breeze TTS 2
-on this Mac with MLX, cloned from one reference clip on every line so the
-speaker never changes, and a Whisper read-back gate that regenerates any line
-whose words drift from the script. Clips are cached by a hash of everything
-that shapes them, so a copy change re-synthesises only that line.
+"""The narrator is Aashan's own cloned voice (from 24 Oct 2026; Breeze TTS is no
+longer used). clone_synth.py reads each line with his Voice Clone tool
+(Qwen3-TTS, local) at speed 0.92; this file runs the Whisper read-back gate on
+every take (word error at most 0.12, the product name's spellings allowed),
+tries the next seed when a take fails (seeds 1 to 3), and keeps the first take
+that passes, levelled to -16 LUFS, as audio/<beat>.wav.
 
-Copied from synth_breeze() in amd-developer-act-iii/build/turno/video/narrate.py.
-
-    python voice.py          # synthesise every missing line, print durations
+    python voice.py          # synthesise and gate every missing line, print durations
 """
 
 from __future__ import annotations
 
 import difflib
 import hashlib
+import json
 import re
 import subprocess
 import sys
-import wave
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from cues import CUES  # noqa: E402
 
-CLIPS = HERE / "voice"
+CLIPS = HERE / "audio"
+TAKES = CLIPS / "takes"
+VC = Path("/Users/aashanjaved/Desktop/Drive -D - Aashan/Voice Clone")
+SEEDS = (1, 2, 3)
 HACK = next(d for d in HERE.parents if d.name == "Hackathons")
-BREEZE_REF = HACK / "DEMO-RECORDING" / "voice" / "breeze-ref.wav"
-MODEL = "mlx-community/Breeze-TTS-2-mlx"
 WHISPER = "mlx-community/whisper-large-v3-turbo"
-BREEZE_REF_TEXT = ("Every summer, Italian regions ban outdoor work from half past twelve to four, on days the heat is "
-                   "rated high. A site supervisor still has to decide the rest of the day.")
-BREEZE_INSTRUCT = ("A professional male narrator for a product demonstration. Clear, precise and focused. Measured, "
-                   "even pace, neutral and confident tone, every word articulated, no slang, no hesitation.")
-BREEZE_CFG, BREEZE_TRIES, MAX_WER = 4.0, 6, 0.12
+MAX_WER = 0.12
 VOICE_LUFS = -16.0
 PAUSE_KEEP = 0.9
 FFMPEG = "ffmpeg"
@@ -56,16 +52,35 @@ def duration(path: Path) -> float:
 
 
 def clip_path(text: str) -> Path:
-    ref = hashlib.sha256(BREEZE_REF.read_bytes()).hexdigest()[:8]
-    key = hashlib.sha256(f"breeze|{MODEL}|{ref}|{BREEZE_INSTRUCT}|{BREEZE_CFG}|{PAUSE_KEEP}|{VOICE_LUFS}|{text}".encode()).hexdigest()[:16]
+    """The gated, levelled clip for a line, keyed by the line's text so a copy change re-voices only that line."""
+    key = hashlib.sha256(f"clone|qwen3-tts|0.92|{VOICE_LUFS}|{text}".encode()).hexdigest()[:12]
     return CLIPS / f"{key}.wav"
 
 
+def loudness(path: Path) -> float:
+    r = subprocess.run([FFMPEG, "-hide_banner", "-nostats", "-i", str(path), "-af", "ebur128=framelog=quiet", "-f", "null", "-"],
+                       capture_output=True, text=True)
+    m = re.findall(r"I:\s*(-?\d+\.\d+) LUFS", r.stderr)
+    if not m:
+        raise SystemExit(f"could not measure {path}:\n{r.stderr[-600:]}")
+    return float(m[-1])
+
+
 def normalise(src: Path, dest: Path) -> None:
+    """Leading silence removed, internal pauses kept up to PAUSE_KEEP, then a measured linear gain
+    to VOICE_LUFS with a peak limiter. (Single-pass loudnorm left these short clips 1 to 4 dB low.)"""
+    trimmed = dest.with_suffix(".trim.wav")
     ff(["-i", str(src), "-af",
         "silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0.08"
-        f":stop_periods=-1:stop_threshold=-50dB:stop_silence={PAUSE_KEEP},"
-        f"loudnorm=I={VOICE_LUFS}:TP=-1.5:LRA=7", "-ar", "24000", "-ac", "1", str(dest)])
+        f":stop_periods=-1:stop_threshold=-50dB:stop_silence={PAUSE_KEEP}", "-ar", "24000", "-ac", "1", str(trimmed)])
+    gain = 0.0
+    for _ in range(3):  # the limiter takes back part of the gain on peaky lines, so measure and correct again
+        ff(["-i", str(trimmed), "-af", f"volume={gain:.2f}dB,alimiter=limit=0.89:level=false", "-ar", "24000", "-ac", "1", str(dest)])
+        miss = VOICE_LUFS - loudness(dest)
+        if abs(miss) < 0.2:
+            break
+        gain += miss
+    trimmed.unlink()
 
 
 _ONES = "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split()
@@ -113,60 +128,45 @@ def wer(said: str, wanted: str) -> float:
     return best
 
 
-_breeze = None
-
-
-def synth_breeze(text: str, dest: Path) -> tuple[float, str]:
-    global _breeze
-    import numpy as np
+def transcribe(paths: list[Path]) -> dict[Path, str]:
     import mlx_whisper
-    if _breeze is None:
-        from mlx_audio.tts import load
-        _breeze = load(MODEL)
-    raw = dest.with_suffix(".raw.wav")
-    best: tuple[float, Path | None, str] = (9.9, None, "")
-    for seed in range(BREEZE_TRIES):
-        chunks = list(_breeze.generate(text=text, instruct=BREEZE_INSTRUCT, ref_audio=str(BREEZE_REF), ref_text=BREEZE_REF_TEXT,
-                                       cfg_scale=BREEZE_CFG, voice="S0", seed=seed))
-        audio = np.concatenate([np.array(c.audio, dtype=np.float32).reshape(-1) for c in chunks])
-        rate = chunks[0].sample_rate
-        cand = dest.with_name(f"{dest.stem}.try{seed}.wav")
-        with wave.open(str(cand), "wb") as w:
-            w.setnchannels(1); w.setsampwidth(2); w.setframerate(rate)
-            w.writeframes((np.clip(audio, -1, 1) * 32767).astype(np.int16).tobytes())
-        heard = mlx_whisper.transcribe(str(cand), path_or_hf_repo=WHISPER)["text"].strip()
-        e = wer(heard, text)
-        print(f"      try {seed}: {len(audio) / rate:.1f}s, word error {e:.2f}  heard: {heard}", flush=True)
-        if e < best[0]:
-            if best[1] is not None:
-                best[1].unlink()
-            best = (e, cand, heard)
-        else:
-            cand.unlink()
-        if e <= MAX_WER:
-            break
-    if best[0] > MAX_WER:
-        raise SystemExit(f"the voice would not read this line faithfully after {BREEZE_TRIES} tries: {text}")
-    best[1].rename(raw)
-    normalise(raw, dest)
-    raw.unlink()
-    dest.with_suffix(".heard.txt").write_text(f"{best[0]:.3f}\n{best[2]}\n", encoding="utf-8")
-    return best[0], best[2]
+    return {p: mlx_whisper.transcribe(str(p), path_or_hf_repo=WHISPER)["text"].strip() for p in paths}
 
 
 def main() -> None:
     CLIPS.mkdir(exist_ok=True)
+    todo = {beat: text for beat, text in CUES if not clip_path(text).exists()}
+    log: dict[str, list] = {}
+    for seed in SEEDS:
+        if not todo:
+            break
+        jobs = [{"text": t, "seed": seed, "out": str(TAKES / f"{b}_s{seed}.wav")} for b, t in todo.items()]
+        jf = TAKES / f"jobs_s{seed}.json"
+        TAKES.mkdir(parents=True, exist_ok=True)
+        jf.write_text(json.dumps(jobs, indent=1))
+        print(f"seed {seed}: {len(jobs)} lines", flush=True)
+        r = subprocess.run([str(VC / ".venv" / "bin" / "python"), str(HERE / "clone_synth.py"), str(jf)])
+        if r.returncode:
+            raise SystemExit("clone_synth.py failed")
+        heard = transcribe([Path(j["out"]) for j in jobs])
+        for b in list(todo):
+            take = TAKES / f"{b}_s{seed}.wav"
+            e = wer(heard[take], todo[b])
+            log.setdefault(b, []).append((seed, round(e, 3), heard[take]))
+            print(f"  {b} seed {seed}: {duration(take):.2f}s word error {e:.2f}  heard: {heard[take]}", flush=True)
+            if e <= MAX_WER:
+                normalise(take, clip_path(todo[b]))
+                clip_path(todo[b]).with_suffix(".heard.txt").write_text(f"seed {seed}\n{e:.3f}\n{heard[take]}\n", encoding="utf-8")
+                del todo[b]
+    if todo:
+        raise SystemExit(f"no seed in {SEEDS} passed the read-back gate for: {', '.join(todo)}")
     total = 0.0
     for beat, text in CUES:
         d = clip_path(text)
-        if not d.exists():
-            print(f"   synth {beat}: {text[:70]}", flush=True)
-            synth_breeze(text, d)
         secs = duration(d)
         total += secs
-        heard = d.with_suffix(".heard.txt")
-        e = heard.read_text().split("\n")[0] if heard.exists() else "?"
-        print(f"{beat}  {secs:5.2f}s  {len(text.split()) / secs * 60:4.0f} wpm  wer {e}", flush=True)
+        meta = d.with_suffix(".heard.txt").read_text().split("\n")
+        print(f"{beat}  {secs:5.2f}s  {len(text.split()) / secs * 60:4.0f} wpm  {meta[0]}  wer {meta[1]}", flush=True)
     print(f"ALL LINES DONE, speech {total:.1f}s")
 
 

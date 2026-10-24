@@ -31,3 +31,5 @@ video/*.m4a
 video/*.mp3
 video/*.wav
 video/*.log
+video/audio/
+video/audio-test/

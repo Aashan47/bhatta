@@ -1,159 +1,159 @@
 1
-00:00:00,700 --> 00:00:09,820
+00:00:00,700 --> 00:00:07,327
 On the tenth of October, Punjab's government said around eight thousand brick kilns had been converted to zigzag technology.
 
 2
-00:00:13,249 --> 00:00:16,399
+00:00:13,249 --> 00:00:15,912
 The province counts about ten thousand kilns.
 
 3
-00:00:16,399 --> 00:00:20,529
+00:00:15,912 --> 00:00:19,403
 Nobody outside the government can check which ones changed.
 
 4
-00:00:23,184 --> 00:00:24,340
+00:00:23,184 --> 00:00:24,158
 This is Bhatta.
 
 5
-00:00:24,340 --> 00:00:31,504
+00:00:24,158 --> 00:00:30,198
 It checks that claim from space, one kiln at a time, and keeps the answer on a public ledger.
 
 6
-00:00:33,213 --> 00:00:37,488
+00:00:33,213 --> 00:00:37,372
 An old kiln is an oval trench with a chimney in the middle.
 
 7
-00:00:37,488 --> 00:00:43,286
+00:00:37,372 --> 00:00:43,013
 A zigzag kiln is a rectangle that forces the air through the bricks in a zigzag.
 
 8
-00:00:47,110 --> 00:00:54,390
+00:00:47,110 --> 00:00:53,279
 Field measurements in Pakistan found the zigzag design cuts black carbon by about sixty percent.
 
 9
-00:00:57,154 --> 00:01:00,738
+00:00:57,154 --> 00:01:00,309
 But this is what a satellite sees at ten metres.
 
 10
-00:01:00,738 --> 00:01:04,994
+00:01:00,309 --> 00:01:04,057
 The oval and the rectangle blur into the same few pixels.
 
 11
-00:01:05,909 --> 00:01:09,945
+00:01:05,909 --> 00:01:09,263
 So Bhatta never certifies a conversion from space.
 
 12
-00:01:09,945 --> 00:01:13,255
+00:01:09,263 --> 00:01:12,013
 When the image cannot decide, it says so.
 
 13
-00:01:17,015 --> 00:01:22,306
+00:01:17,015 --> 00:01:21,557
 We scanned twenty two districts of Punjab with October's Sentinel 2 images.
 
 14
-00:01:22,306 --> 00:01:25,975
+00:01:21,557 --> 00:01:24,705
 Eight thousand eight hundred and seventy nine kilns.
 
 15
-00:01:26,961 --> 00:01:31,584
+00:01:26,961 --> 00:01:30,987
 One thousand three hundred and sixteen still show the old oval shape.
 
 16
-00:01:31,584 --> 00:01:36,609
+00:01:30,987 --> 00:01:35,364
 Five thousand two hundred and fifty five cannot be decided from ten metres.
 
 17
-00:01:41,441 --> 00:01:47,441
+00:01:41,441 --> 00:01:46,485
 Each column is a kiln. Red means the image still shows the old technology.
 
 18
-00:01:49,424 --> 00:01:55,504
+00:01:49,424 --> 00:01:54,716
 Open one. At ninety percent confidence, this image supports only one answer:
 
 19
-00:01:55,504 --> 00:01:56,544
+00:01:54,716 --> 00:01:55,621
 the old kiln.
 
 20
-00:01:57,448 --> 00:02:03,899
+00:01:57,448 --> 00:02:03,247
 On kilns the model never saw, about one call in twenty seven like this one was wrong.
 
 21
-00:02:03,899 --> 00:02:05,190
+00:02:03,247 --> 00:02:04,407
 The page says so.
 
 22
-00:02:07,501 --> 00:02:12,934
+00:02:07,501 --> 00:02:12,920
 Here the image cannot separate the two designs. Bhatta does not guess.
 
 23
-00:02:12,934 --> 00:02:14,641
+00:02:12,920 --> 00:02:14,623
 It sends an inspector.
 
 24
-00:02:18,524 --> 00:02:24,485
+00:02:18,524 --> 00:02:23,679
 Every result for the season is committed to Ethereum Sepolia as one Merkle root.
 
 25
-00:02:24,485 --> 00:02:30,148
+00:02:23,679 --> 00:02:28,576
 Your browser rebuilds this kiln's record and checks it against the contract.
 
 26
-00:02:30,148 --> 00:02:32,831
+00:02:28,576 --> 00:02:30,896
 You do not have to trust our server.
 
 27
-00:02:36,745 --> 00:02:40,081
+00:02:36,745 --> 00:02:40,190
 Inspectors sign their findings with their own keys.
 
 28
-00:02:40,081 --> 00:02:46,425
+00:02:40,190 --> 00:02:46,741
 In this demonstration, a test inspector signs zigzag confirmed on a kiln the satellite calls old.
 
 29
-00:02:47,329 --> 00:02:52,689
+00:02:47,329 --> 00:02:51,241
 The contract records the conflict in public, and nobody can delete it.
 
 30
-00:02:56,565 --> 00:03:02,537
+00:02:56,565 --> 00:03:01,127
 A certificate needs an inspector's signature and no satellite contradiction.
 
 31
-00:03:02,537 --> 00:03:09,373
+00:03:01,127 --> 00:03:06,349
 When the satellite record contradicts it, the certificate is withdrawn, also in public.
 
 32
-00:03:11,679 --> 00:03:15,884
+00:03:11,679 --> 00:03:15,130
 For a district office, Bhatta ranks where to go first:
 
 33
-00:03:15,884 --> 00:03:22,113
+00:03:15,130 --> 00:03:20,242
 conflicts, then kilns the satellite contradicts, then the ones it cannot decide.
 
 34
-00:03:26,011 --> 00:03:31,114
+00:03:26,011 --> 00:03:30,022
 The tests were written before the data. Finding kilns passed.
 
 35
-00:03:31,114 --> 00:03:35,380
+00:03:30,022 --> 00:03:33,376
 Telling the two designs apart at ten metres missed.
 
 36
-00:03:35,380 --> 00:03:40,482
+00:03:33,376 --> 00:03:37,386
 We show the misses, because they are why the product refuses.
 
 37
-00:03:42,789 --> 00:03:49,453
+00:03:42,789 --> 00:03:47,267
 Anyone can rebuild the season's root from the published data and compare it with the chain.
 
 38
-00:03:53,610 --> 00:03:56,993
+00:03:53,610 --> 00:03:56,166
 It works in English and Urdu, on a phone.
 
 39
-00:04:00,598 --> 00:04:01,094
+00:04:00,598 --> 00:04:01,080
 Bhatta.
 
 40
-00:04:01,094 --> 00:04:08,245
+00:04:01,080 --> 00:04:08,028
 Public satellite data, a public ledger, and an honest answer for Punjab's inspectors and kiln owners.
