@@ -35,6 +35,32 @@ CLAIM = {
 }
 
 
+# What converting one FCBK kiln to Zigzag changes, as measured in Pakistan and reported by ICIMOD. Only
+# percentages: we found no verified per-kiln coal tonnage, so the app never multiplies these into tonnes.
+_ICIMOD_PK = {
+    "title": "Towards cleaner brick production in Pakistan (ICIMOD)",
+    "url": "https://www.icimod.org/?p=33152",
+    "quote": "Emission measurement studies show that there has been a 15% reduction in CO2, 40% reduction in "
+    "particulate matter, and 60% reduction in black carbon as a result of the switch",
+}
+_ICIMOD_SS = {
+    "title": "South-South business partnerships towards energy-efficient and low-emission brick production "
+    "in Pakistan (ICIMOD)",
+    "url": "https://www.icimod.org/south-south-business-partnerships-towards-energy-efficient-and-low-emission-brick-production-in-pakistan",
+    "quote": "The zig-zag technology reduces emissions by 50% and coal consumption by 20%",
+}
+IMPACT = {
+    "per_conversion": [
+        {"key": "coal", "reduction_pct": 20, "source": _ICIMOD_SS},
+        {"key": "co2", "reduction_pct": 15, "source": _ICIMOD_PK},
+        {"key": "pm", "reduction_pct": 40, "source": _ICIMOD_PK},
+        {"key": "black_carbon", "reduction_pct": 60, "source": _ICIMOD_PK},
+    ],
+    "note": "Reductions for one kiln switching from FCBK to Zigzag, from emission measurements in Pakistan. "
+    "Not multiplied into tonnes: no verified per-kiln coal figure was found.",
+}
+
+
 def _read_json(path: Path):
     with path.open(encoding="utf-8") as f:
         return json.load(f)

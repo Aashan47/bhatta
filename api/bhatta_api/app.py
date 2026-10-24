@@ -13,7 +13,7 @@ from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from .chain import Chain, Relay, RelayRejected
-from .store import CLAIM, Store, default_dirs
+from .store import CLAIM, IMPACT, Store, default_dirs
 
 FIXTURE = os.environ.get("BHATTA_FIXTURE", "0") == "1"
 DATA_DIR, DOCS_DIR = default_dirs()
@@ -54,7 +54,7 @@ def health():
 @app.get("/api/summary")
 def summary():
     s = dict(store.summary)
-    s.update({"counts": store.counts(), "total": len(store.kilns), "claim": CLAIM, "fixture": FIXTURE})
+    s.update({"counts": store.counts(), "total": len(store.kilns), "claim": CLAIM, "impact": IMPACT, "fixture": FIXTURE})
     return s
 
 
@@ -130,6 +130,21 @@ def _relay(request_body: dict, action) -> dict:
         raise HTTPException(400, f"The contract rejected this: {exc}")
     except (KeyError, ValueError, TypeError) as exc:
         raise HTTPException(422, f"Malformed request: {exc}")
+
+
+@app.get("/api/audit")
+def audit():
+    """The human visual audit of a stratified sample, once Aashan has labelled it."""
+    p = DATA_DIR / "audit" / "labels.json"
+    if not p.exists():
+        return {"n": 0, "agreed": 0, "disagreed": 0, "unsure": 0, "rows": [], "status": "Not yet run"}
+    import json
+
+    rows = json.loads(p.read_text(encoding="utf-8"))
+    tally = {"agree": 0, "disagree": 0, "unsure": 0}
+    for r in rows:
+        tally[r.get("verdict", "unsure")] = tally.get(r.get("verdict", "unsure"), 0) + 1
+    return {"n": len(rows), "agreed": tally["agree"], "disagreed": tally["disagree"], "unsure": tally["unsure"], "rows": rows, "status": "Done"}
 
 
 @app.post("/api/relay/attest")
