@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { getKilns, getLedger, getSummary } from "../api";
 import { BrickWall, brickScale } from "../components/BrickWall";
@@ -8,6 +8,7 @@ import { MapView } from "../components/MapView";
 import { ArrowGlyph, ErrorBox, ExternalGlyph, Hash, Loading, SampleTag, StatusIcon, ZigzagRule, statusClass } from "../components/ui";
 import { usePrefs } from "../i18n";
 import { dateLabel, seasonLabel, useAsync } from "../lib/util";
+import { usePFcbk } from "../lib/heights";
 import { STATUS_ORDER } from "../types";
 
 const pctOf = (x: number) => `\u2066${Math.round(x * 100)}%\u2069`;
@@ -18,6 +19,8 @@ export function Overview() {
   const summary = useAsync(getSummary, []);
   const kilns = useAsync(() => getKilns(), []);
   const ledger = useAsync(getLedger, []);
+  const [threeD, setThreeD] = useState(false);
+  const pFcbk = usePFcbk(threeD);
   const s = summary.data;
 
   const shares = useMemo(() => {
@@ -170,10 +173,16 @@ export function Overview() {
         <section aria-labelledby="map-h" className="overview-map">
           <div className="section-head">
             <h2 id="map-h">{t.overview.mapTitle}</h2>
-            <Link to="/map" className="link-arrow">
-              {t.overview.openMap}
-              <ArrowGlyph />
-            </Link>
+            <span className="section-tools">
+              <button type="button" className={`toggle toggle-s ${threeD ? "is-on" : ""}`} aria-pressed={threeD} onClick={() => setThreeD((v) => !v)}>
+                <span className="toggle-dot" aria-hidden="true" />
+                {t.map.threeD}
+              </button>
+              <Link to="/map" className="link-arrow">
+                {t.overview.openMap}
+                <ArrowGlyph />
+              </Link>
+            </span>
           </div>
           <MapView
             kilns={kilns.data ?? []}
@@ -182,6 +191,8 @@ export function Overview() {
             compact
             className="map-compact"
             onSelect={(id) => nav(`/kiln/${id}`)}
+            threeD={threeD}
+            pFcbk={pFcbk}
           />
         </section>
 

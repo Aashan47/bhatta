@@ -101,6 +101,65 @@ function toGeoJSON(kilns: KilnListItem[]): GeoJSON.FeatureCollection {
   };
 }
 
+/** Small square footprints around each kiln for the 3D columns. Height tracks p(FCBK) where known. */
+function toColumns(kilns: KilnListItem[], pFcbk?: Map<string, number>): GeoJSON.FeatureCollection {
+  const half = 160; // metres
+  return {
+    type: "FeatureCollection",
+    features: kilns.map((k) => {
+      const dLat = half / 111320;
+      const dLon = half / (111320 * Math.cos((k.lat * Math.PI) / 180));
+      const p = pFcbk?.get(k.id);
+      const h = k.status === "NOT_DETECTED" ? 500 : p == null ? 900 : 400 + p * 3200;
+      return {
+        type: "Feature",
+        properties: { id: k.id, status: k.status, h },
+        geometry: {
+          type: "Polygon",
+          coordinates: [
+            [
+              [k.lon - dLon, k.lat - dLat],
+              [k.lon + dLon, k.lat - dLat],
+              [k.lon + dLon, k.lat + dLat],
+              [k.lon - dLon, k.lat + dLat],
+              [k.lon - dLon, k.lat - dLat],
+            ],
+          ],
+        },
+      };
+    }),
+  };
+}
+
+/** Tour stops: each district's centre, then the densest 0.1 degree cell of FCBK kilns. */
+function tourStops(kilns: KilnListItem[]) {
+  const by = new Map<string, { lat: number; lon: number; n: number }>();
+  for (const k of kilns) {
+    const d = by.get(k.district) ?? { lat: 0, lon: 0, n: 0 };
+    d.lat += k.lat;
+    d.lon += k.lon;
+    d.n += 1;
+    by.set(k.district, d);
+  }
+  const stops = [...by.entries()]
+    .sort((a, b) => b[1].n - a[1].n)
+    .slice(0, 6)
+    .map(([name, d]) => ({ name, center: [d.lon / d.n, d.lat / d.n] as [number, number], zoom: 10 }));
+  const cells = new Map<string, { lat: number; lon: number; n: number }>();
+  for (const k of kilns) {
+    if (k.status !== "FCBK") continue;
+    const key = `${Math.floor(k.lat * 10)}:${Math.floor(k.lon * 10)}`;
+    const c = cells.get(key) ?? { lat: 0, lon: 0, n: 0 };
+    c.lat += k.lat;
+    c.lon += k.lon;
+    c.n += 1;
+    cells.set(key, c);
+  }
+  const best = [...cells.values()].sort((a, b) => b.n - a.n)[0];
+  if (best) stops.push({ name: "FCBK", center: [best.lon / best.n, best.lat / best.n], zoom: 11.6 });
+  return stops;
+}
+
 function extent(kilns: KilnListItem[]): [number, number, number, number] | null {
   if (!kilns.length) return null;
   let w = 180, s = 90, e = -180, n = -90;
@@ -123,14 +182,19 @@ export interface MapViewProps {
   label: string;
   compact?: boolean;
   focus?: { lon: number; lat: number; zoom?: number };
+  threeD?: boolean;
+  /** p(FCBK) per kiln id, for column heights in 3D. */
+  pFcbk?: Map<string, number>;
+  tour?: boolean;
+  onTourStop?: (name: string | null) => void;
 }
 
-export function MapView({ kilns, selectedId, onSelect, bbox, satellite = false, className = "", label, compact = false, focus }: MapViewProps) {
+export function MapView({ kilns, selectedId, onSelect, bbox, satellite = false, className = "", label, compact = false, focus, threeD = false, pFcbk, tour = false, onTourStop }: MapViewProps) {
   const { resolvedTheme, t } = usePrefs();
   const el = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MLMap | null>(null);
-  const latest = useRef({ kilns, selectedId, satellite, onSelect });
-  latest.current = { kilns, selectedId, satellite, onSelect };
+  const latest = useRef({ kilns, selectedId, satellite, onSelect, threeD, pFcbk, onTourStop });
+  latest.current = { kilns, selectedId, satellite, onSelect, threeD, pFcbk, onTourStop };
   const [failed, setFailed] = useState(false);
   const fitted = useRef(false);
 
@@ -189,6 +253,29 @@ export function MapView({ kilns, selectedId, onSelect, bbox, satellite = false, 
             "circle-stroke-color": root.getPropertyValue("--text").trim(),
           },
         });
+        map.addSource("kiln-cols", { type: "geojson", data: toColumns(latest.current.kilns, latest.current.pFcbk) });
+        map.addLayer({
+          id: "kiln-cols",
+          type: "fill-extrusion",
+          source: "kiln-cols",
+          layout: { visibility: latest.current.threeD ? "visible" : "none" },
+          paint: {
+            "fill-extrusion-color": [
+              "match",
+              ["get", "status"],
+              "ZIGZAG",
+              root.getPropertyValue("--zigzag").trim(),
+              "FCBK",
+              root.getPropertyValue("--fcbk").trim(),
+              "UNDETERMINED",
+              root.getPropertyValue("--undetermined").trim(),
+              root.getPropertyValue("--notseen").trim(),
+            ],
+            "fill-extrusion-height": ["get", "h"],
+            "fill-extrusion-base": 0,
+            "fill-extrusion-opacity": 0.9,
+          },
+        });
         map.addLayer({
           id: "kilns",
           type: "symbol",
@@ -199,6 +286,7 @@ export function MapView({ kilns, selectedId, onSelect, bbox, satellite = false, 
             "icon-allow-overlap": true,
             "icon-ignore-placement": true,
             "symbol-sort-key": ["get", "sort"],
+            visibility: latest.current.threeD ? "none" : "visible",
           },
         });
       }
@@ -208,6 +296,12 @@ export function MapView({ kilns, selectedId, onSelect, bbox, satellite = false, 
       const id = e.features?.[0]?.properties?.id as string | undefined;
       if (id) latest.current.onSelect?.(id);
     });
+    map.on("click", "kiln-cols", (e) => {
+      const id = e.features?.[0]?.properties?.id as string | undefined;
+      if (id) latest.current.onSelect?.(id);
+    });
+    map.on("mouseenter", "kiln-cols", () => (map.getCanvas().style.cursor = "pointer"));
+    map.on("mouseleave", "kiln-cols", () => (map.getCanvas().style.cursor = ""));
     map.on("mouseenter", "kilns", () => (map.getCanvas().style.cursor = "pointer"));
     map.on("mouseleave", "kilns", () => (map.getCanvas().style.cursor = ""));
     map.on("error", () => undefined);
@@ -240,6 +334,7 @@ export function MapView({ kilns, selectedId, onSelect, bbox, satellite = false, 
     const apply = () => {
       const src = map.getSource("kilns") as GeoJSONSource | undefined;
       src?.setData(toGeoJSON(kilns));
+      (map.getSource("kiln-cols") as GeoJSONSource | undefined)?.setData(toColumns(kilns, pFcbk));
       if (!fitted.current && !focus) {
         const b = bbox ?? extent(kilns);
         if (b) {
@@ -250,7 +345,68 @@ export function MapView({ kilns, selectedId, onSelect, bbox, satellite = false, 
     };
     if (map.isStyleLoaded() && map.getSource("kilns")) apply();
     else map.once("idle", apply);
-  }, [kilns, bbox, compact, focus]);
+  }, [kilns, bbox, compact, focus, pFcbk]);
+
+  // 3D: pitch the camera and swap the icons for extruded columns.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    const apply = () => {
+      if (!map.getLayer("kiln-cols")) return;
+      map.setLayoutProperty("kiln-cols", "visibility", threeD ? "visible" : "none");
+      map.setLayoutProperty("kilns", "visibility", threeD ? "none" : "visible");
+      map.setLayoutProperty("kiln-halo", "visibility", threeD ? "none" : "visible");
+      if (threeD) map.dragRotate.enable();
+      else map.dragRotate.disable();
+      const reduced = prefersReducedMotion();
+      map.easeTo({ pitch: threeD ? 55 : 0, bearing: threeD ? -18 : 0, duration: reduced ? 0 : 900 });
+    };
+    if (map.isStyleLoaded() && map.getLayer("kiln-cols")) apply();
+    else map.once("idle", apply);
+  }, [threeD]);
+
+  // Tour: fly through the scanned districts, ending on the densest FCBK cluster. Any interaction stops it.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !tour || prefersReducedMotion()) return;
+    const stops = tourStops(latest.current.kilns);
+    let i = 0;
+    let stopped = false;
+    let timer = 0;
+    const stop = () => {
+      if (stopped) return;
+      stopped = true;
+      clearTimeout(timer);
+      map.stop();
+      latest.current.onTourStop?.(null);
+    };
+    const next = () => {
+      if (stopped) return;
+      const s = stops[i++];
+      if (!s) {
+        stop();
+        return;
+      }
+      latest.current.onTourStop?.(s.name);
+      map.flyTo({ center: s.center, zoom: s.zoom, pitch: 55, bearing: -18 + i * 24, speed: 0.7, curve: 1.5, essential: false, easing: (x) => 1 - Math.pow(1 - x, 3) });
+      map.once("moveend", () => {
+        if (!stopped) timer = window.setTimeout(next, s.name === "FCBK" ? 4000 : 1800);
+      });
+    };
+    const container = map.getContainer();
+    const userStop = () => stop();
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && stop();
+    for (const ev of ["mousedown", "touchstart", "wheel", "keydown"]) container.addEventListener(ev, userStop, { passive: true });
+    window.addEventListener("keydown", onKey);
+    next();
+    return () => {
+      for (const ev of ["mousedown", "touchstart", "wheel", "keydown"]) container.removeEventListener(ev, userStop);
+      window.removeEventListener("keydown", onKey);
+      if (!stopped) map.stop();
+      stopped = true;
+      clearTimeout(timer);
+    };
+  }, [tour]);
 
   useEffect(() => {
     const map = mapRef.current;

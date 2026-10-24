@@ -4,7 +4,8 @@ import { getKiln, getKilns, getSummary } from "../api";
 import { MapView } from "../components/MapView";
 import { ArrowGlyph, CrossGlyph, ErrorBox, Loading, Mono, StatusBadge, StatusIcon } from "../components/ui";
 import { usePrefs } from "../i18n";
-import { setInWords, useAsync } from "../lib/util";
+import { prefersReducedMotion, setInWords, useAsync } from "../lib/util";
+import { usePFcbk } from "../lib/heights";
 import { STATUS_ORDER, type Status } from "../types";
 
 export function MapPage() {
@@ -15,6 +16,11 @@ export function MapPage() {
   const selected = params.get("kiln");
   const [satellite, setSatellite] = useState(false);
   const [listLimit, setListLimit] = useState(200);
+  const [threeD, setThreeD] = useState(false);
+  const [touring, setTouring] = useState(false);
+  const [tourAt, setTourAt] = useState<string | null>(null);
+  const pFcbk = usePFcbk(threeD);
+  const reduced = prefersReducedMotion();
 
   const all = useAsync(() => getKilns(), []);
   const summary = useAsync(getSummary, []);
@@ -68,9 +74,28 @@ export function MapPage() {
               {t.map.satellite}
             </button>
           </div>
+          <button type="button" className={`toggle toggle-s ${threeD ? "is-on" : ""}`} aria-pressed={threeD} onClick={() => setThreeD((v) => !v)}>
+            <span className="toggle-dot" aria-hidden="true" />
+            {t.map.threeD}
+          </button>
+          <button
+            type="button"
+            className="btn btn-secondary btn-s"
+            disabled={reduced}
+            title={reduced ? t.map.tourReduced : undefined}
+            onClick={() => {
+              if (touring) setTouring(false);
+              else {
+                setThreeD(true);
+                setTouring(true);
+              }
+            }}
+          >
+            {touring ? t.map.tourStop : t.map.tour}
+          </button>
         </div>
         <p className="map-count" aria-live="polite">
-          {all.data ? t.map.showing(shown.length, all.data.length) : t.common.loading}
+          {touring && tourAt ? t.map.touring(tourAt === "FCBK" ? t.map.tourFcbk : tourAt) : all.data ? t.map.showing(shown.length, all.data.length) : t.common.loading}
         </p>
       </div>
 
@@ -84,6 +109,13 @@ export function MapPage() {
             satellite={satellite}
             label={t.map.mapLabel}
             className="map-full"
+            threeD={threeD}
+            pFcbk={pFcbk}
+            tour={touring}
+            onTourStop={(name) => {
+              setTourAt(name);
+              if (name === null) setTouring(false);
+            }}
           />
           <ul className="legend" aria-label={t.map.legend}>
             {STATUS_ORDER.map((s) => (
@@ -92,6 +124,7 @@ export function MapPage() {
                 <span>{t.status[s]}</span>
               </li>
             ))}
+            {threeD && <li className="legend-note">{t.map.heightNote}</li>}
           </ul>
           {selected && <Drawer id={selected} alpha={summary.data?.alpha ?? 0.1} onClose={() => setParam("kiln", null)} />}
         </div>
