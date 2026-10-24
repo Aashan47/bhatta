@@ -34,7 +34,7 @@ function downloadCsv(items: QueueItem[], district: string) {
     `${window.location.origin}/kiln/${q.id}`,
   ]);
   const lines = [head, ...rows].map((r) => r.map(csvCell).join(","));
-  if (FIXTURE) lines.unshift("# SAMPLE DATA: generated fixtures, not measurements");
+  if (FIXTURE) lines.unshift("# SAMPLE DATA: generated fixtures. They are not measurements.");
   const blob = new Blob(["﻿" + lines.join("\r\n") + "\r\n"], { type: "text/csv;charset=utf-8" });
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
