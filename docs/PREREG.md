@@ -51,3 +51,25 @@ passes on calibration data, and say so.
 - T1 or T2 miss: the live map says "kilns we found", never "all kilns", and the miss is shown.
 - T3 or T5 miss: more kilns go to "cannot be determined from 10 m imagery; needs an inspector".
 - T4 miss: the calibration is wrong and the sets are not trusted until fixed. Reported as a miss.
+
+## Addendum A, written Sat 24 Oct 2026 about 17:30 PKT, before experiment E2 is run
+
+The pre-registered classifier missed T3 and T6 (`docs/RESULTS.md`). One further arm is tried, and its
+targets are fixed here, before any of its data is fetched.
+
+**E2: multispectral, multi-date classifier.** Same kilns, same spatial blocks and same split as above.
+Input: Sentinel-2 L2A chips around each labelled kiln from Earth Search, all 10 m and 20 m bands
+(B2, B3, B4, B8, B5, B6, B7, B8A, B11, B12, resampled to 10 m), from up to four cloud-free dates in
+the dataset's own window (Nov 2023 to Feb 2024), stacked. Model chosen on the train-block "val"
+hold-out only. Conformal rule identical to the product rule (Mondrian sets plus the Learn-then-Test
+Zigzag floor, delta 0.10, false-certificate rate at most 0.05).
+
+| ID | Metric, test blocks | Target |
+|---|---|---|
+| E2a | AUC of p(Zigzag), FCBK vs Zigzag | **at least 0.85** (pk arm: 0.759) |
+| E2b | A valid Learn-then-Test Zigzag floor exists on calibration | **yes** |
+| E2c | At that floor, share of true Zigzag test kilns certified | **at least 0.15** |
+| E2d | At that floor, share of {Zigzag} test sets that are truly FCBK | **at most 0.05** |
+
+The product switches to E2 only if E2a to E2d all hold. Otherwise the product rule stays as it is,
+and E2 is reported as a miss next to everything else.
