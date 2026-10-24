@@ -31,9 +31,13 @@ E2-D3. **Dates per kiln and the local cloud test.** Per tile, scenes are tried i
 (best scene of each month first, ranked by full coverage then cloud cover; then the second best of
 each month; ...). A date is kept for a kiln if the SCL pixels under its chip contain no nodata (0),
 saturated (1), cloud shadow (3), cloud medium or high (8, 9) or cirrus (10), and all 10 bands are
-non-zero in the chip. Dates were fetched in rounds (first one date for every kiln, then more), so
-the number of dates per kiln depends on how many rounds finished in the time box; the counts are
-reported below.
+non-zero in the chip. Dates were fetched in rounds (first one date for every kiln, then a second).
+A round took 55 to 65 minutes at the 4 to 6 MB/s this link sustained, so **the run stops at two
+dates per kiln** (decided at 18:25 PKT, before any E2 model was trained on two-date data and before
+any test number): rounds 3 and 4 would not have left time to train, calibrate and evaluate inside
+the time box. Addendum A says "up to four" dates; E2 therefore tests two dates, which is a weaker
+version of the multi-date idea than pre-registered. A preliminary run on the one-date snapshot
+(val only) is reported under "Arms on val".
 
 E2-D4. **Kilns with no usable date** cannot be scored by E2. They are left out of training and of
 calibration. On test, the product rule refuses them (set {FCBK, Zigzag}); E2a is computed on test

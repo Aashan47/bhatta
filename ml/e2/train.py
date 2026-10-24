@@ -37,9 +37,9 @@ SEED = 20261024
 CROP = 20
 
 
-def load():
-    meta = pd.read_csv(E2 / "chips_meta.csv")
-    X = np.load(E2 / "raw" / "X.npy", mmap_mode="r")
+def load(tag=""):
+    meta = pd.read_csv(E2 / f"chips_meta{tag}.csv")
+    X = np.load(E2 / "raw" / f"X{tag}.npy", mmap_mode="r")
     keep = meta.ndates.values > 0
     meta = meta[keep].reset_index(drop=True)
     X = np.asarray(X[keep], dtype=np.float32)
@@ -202,17 +202,19 @@ def main():
     ap.add_argument("--seeds", type=int, default=3)
     ap.add_argument("--threads", type=int, default=6)
     ap.add_argument("--arms", nargs="*", default=["early", "shared", "hgb"])
+    ap.add_argument("--tag", default="", help="data snapshot suffix, e.g. _2d: reads X_2d.npy / chips_meta_2d.csv, writes *_2d outputs")
     args = ap.parse_args()
     torch.set_num_threads(args.threads)
     dev = torch.device(args.device)
     W.mkdir(exist_ok=True)
-    meta, Xr, M, y = load()
+    meta, Xr, M, y = load(args.tag)
+    T = args.tag
     sub = meta.subsplit.values
     fit, val = np.where(sub == "fit")[0], np.where(sub == "val")[0]
     print(f"kilns with >= 1 date: {len(meta)}; fit {len(fit)} (Zigzag {y[fit].sum()}), val {len(val)} (Zigzag {y[val].sum()})", flush=True)
     res = {}
-    if (E2 / "val_arms.json").exists():
-        res = json.load(open(E2 / "val_arms.json"))
+    if (E2 / f"val_arms{T}.json").exists():
+        res = json.load(open(E2 / f"val_arms{T}.json"))
     if "hgb" in args.arms:
         from sklearn.ensemble import HistGradientBoostingClassifier
         F, names = features(Xr, M)
@@ -222,9 +224,9 @@ def main():
         p = clf.predict_proba(F)[:, 1]
         auc = roc_auc_score(y[val], p[val])
         print(f"hgb val AUC {auc:.4f}", flush=True)
-        np.savez(E2 / "probs_hgb.npz", kid=meta.kid.values, p=p)
+        np.savez(E2 / f"probs{T}_hgb.npz", kid=meta.kid.values, p=p)
         import pickle
-        pickle.dump(clf, open(W / "e2_hgb.pkl", "wb"))
+        pickle.dump(clf, open(W / f"e2{T}_hgb.pkl", "wb"))
         res["hgb"] = dict(val_auc=float(auc), n_features=int(F.shape[1]))
     Xs, mu, sd = standardise(Xr, fit)
     del Xr
@@ -232,25 +234,25 @@ def main():
         ps, bests = [], []
         for s in range(args.seeds):
             model, best, ep = train_cnn(kind, Xs, M, y, fit, val, dev, args.epochs, SEED + s)
-            torch.save(model.state_dict(), W / f"e2_{kind}_s{s}.pt")
+            torch.save(model.state_dict(), W / f"e2{T}_{kind}_s{s}.pt")
             ps.append(predict(model, Xs, M, dev, tta=True)); bests.append((float(best), int(ep)))
         p = np.mean(ps, 0)
         auc = roc_auc_score(y[val], p[val])
         print(f"{kind}: val AUC with TTA, {args.seeds}-seed mean prob {auc:.4f}; per-seed best no-TTA {bests}", flush=True)
-        np.savez(E2 / f"probs_{kind}.npz", kid=meta.kid.values, p=p)
+        np.savez(E2 / f"probs{T}_{kind}.npz", kid=meta.kid.values, p=p)
         res[kind] = dict(val_auc=float(auc), seeds=args.seeds, per_seed_best_noTTA=bests, epochs=args.epochs)
-    json.dump(dict(norm_mean=mu, norm_std=sd), open(W / "e2_norm.json", "w"))
+    json.dump(dict(norm_mean=mu, norm_std=sd), open(W / f"e2{T}_norm.json", "w"))
     cnn = [a for a in ("early", "shared") if a in res]
     if cnn and "hgb" in res:
         best_cnn = max(cnn, key=lambda a: res[a]["val_auc"])
-        pc = np.load(E2 / f"probs_{best_cnn}.npz")["p"]; ph = np.load(E2 / "probs_hgb.npz")["p"]
+        pc = np.load(E2 / f"probs{T}_{best_cnn}.npz")["p"]; ph = np.load(E2 / f"probs{T}_hgb.npz")["p"]
         p = (pc + ph) / 2
         auc = roc_auc_score(y[val], p[val])
-        np.savez(E2 / "probs_ens.npz", kid=meta.kid.values, p=p)
+        np.savez(E2 / f"probs{T}_ens.npz", kid=meta.kid.values, p=p)
         res["ens"] = dict(val_auc=float(auc), members=[best_cnn, "hgb"])
         print(f"ens ({best_cnn}+hgb) val AUC {auc:.4f}", flush=True)
     res["_val_n"] = dict(n=int(len(val)), zigzag=int(y[val].sum()), fcbk=int((y[val] == 0).sum()))
-    json.dump(res, open(E2 / "val_arms.json", "w"), indent=1)
+    json.dump(res, open(E2 / f"val_arms{T}.json", "w"), indent=1)
 
 
 if __name__ == "__main__":

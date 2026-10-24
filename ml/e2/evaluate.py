@@ -32,13 +32,17 @@ ZIG = CLS2.index("Zigzag")
 
 
 def main():
-    val = json.load(open(E2 / "val_arms.json"))
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--tag", default="", help="data snapshot chosen on val (e.g. _2d)")
+    T = ap.parse_args().tag
+    val = json.load(open(E2 / f"val_arms{T}.json"))
     arms = {k: v for k, v in val.items() if not k.startswith("_")}
     arm = max(arms, key=lambda a: arms[a]["val_auc"])
-    z = np.load(E2 / f"probs_{arm}.npz")
+    z = np.load(E2 / f"probs{T}_{arm}.npz")
     pz = pd.Series(z["p"], index=z["kid"])
     crops = pd.read_csv(ROOT / "ml" / "work" / "crops.csv")
-    meta = pd.read_csv(E2 / "chips_meta.csv").set_index("kid")
+    meta = pd.read_csv(E2 / f"chips_meta{T}.csv").set_index("kid")
 
     def split(name):
         r = crops[crops.subsplit == name].sort_values("kid")
@@ -100,14 +104,14 @@ def main():
                  n=n_cert, n_false=m_all["n_set_zigzag_true_fcbk"],
                  verdict=hit(t_ltt is not None and n_cert > 0 and e2d is not None and e2d <= 0.05)),
     )
-    out = dict(arm=arm, val_arms=val, alpha=ALPHA, mondrian_qhat=qm, ltt_zig_min=t_ltt, ltt_trace=trace,
+    out = dict(data_tag=T, arm=arm, val_arms=val, alpha=ALPHA, mondrian_qhat=qm, ltt_zig_min=t_ltt, ltt_trace=trace,
                n_cal_with_chip=int(hc.sum()), n_cal=int(len(rc)), cal_by_class={CLS2[c]: int((yc[hc] == c).sum()) for c in range(2)},
                cal_metrics_product=cal_m, n_test=int(len(rt)), n_test_with_chip=int(ht.sum()),
                test_auc=auc, table=table, product_test_all=m_all, product_test_with_chip=m_chip,
                coverage_by_class_product=cov_by_class, mondrian_no_floor_test_with_chip=pmondrian_nofloor,
                reference_pk_arm=ref, switch=all(v["verdict"] == "HIT" for v in table.values()))
     w = HERE / "weights"
-    out["weights_sha256"] = {p.name: sha256(p) for p in sorted(w.glob("e2_*")) if p.is_file()}
+    out["weights_sha256"] = {p.name: sha256(p) for p in sorted(w.glob(f"e2{T}_*")) if p.is_file()}
     json.dump(out, open(E2 / "e2_results.json", "w"), indent=1)
     print(json.dumps({k: out[k] for k in ("arm", "ltt_zig_min", "test_auc", "table", "product_test_all",
                                           "coverage_by_class_product", "reference_pk_arm", "switch")}, indent=1))
