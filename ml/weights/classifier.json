@@ -1,0 +1,1 @@
+{"arch":"resnet18","input":96,"crop":32,"external":false,"balanced":false,"epochs":30,"lr":0.0003}
