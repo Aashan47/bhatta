@@ -86,6 +86,15 @@ export function Timeline({ events, explorer, sample }: { events: ChainEvent[]; e
       {ev.map((e, i) => {
         const sum = eventSummary(e, t);
         const who = (e.detail.inspector ?? e.detail.by) as string | undefined;
+        const demoText = e.demo
+          ? e.type === "Disputed"
+            ? t.demo.dispute
+            : e.type === "Certified" || e.type === "CertificateWithdrawn"
+              ? t.cert.demoLine
+              : e.inspector_label
+                ? t.demo.explain(e.inspector_label)
+                : t.demo.generic
+          : null;
         return (
           <li key={i} className={`tl-item ${EV_CLASS[e.type]}`}>
             <span className="tl-dot" aria-hidden="true">
@@ -95,7 +104,9 @@ export function Timeline({ events, explorer, sample }: { events: ChainEvent[]; e
               <p className="tl-title">
                 {t.events[e.type]}
                 {sum && <span className="tl-sum">{sum}</span>}
+                {e.demo && <span className="demo-tag">{t.demo.tag}</span>}
               </p>
+              {demoText && <p className="demo-line">{demoText}</p>}
               {typeof e.detail.note === "string" && e.detail.note && (
                 <p className="tl-note">
                   <span className="muted">{t.events.noteLabel}: </span>
@@ -107,7 +118,7 @@ export function Timeline({ events, explorer, sample }: { events: ChainEvent[]; e
                 {e.block > 0 && <span dir="ltr">{t.events.block(e.block)}</span>}
                 {who && (
                   <span>
-                    {t.events.by("")}
+                    {t.events.by(e.inspector_label ? `${e.inspector_label} ` : "")}
                     <Hash value={who} copy={false} />
                   </span>
                 )}
@@ -148,9 +159,17 @@ export function CertIcon({ state, size = 28 }: { state: CertState; size?: number
 export function useCertText(rec: KilnRecord) {
   const { t } = usePrefs();
   const c = useMemo(() => certificateFor(rec), [rec]);
-  const word = c.state === "certified" ? t.cert.certified : c.state === "contradicted" ? t.cert.contradicted : t.cert.pending;
+  // latest Zigzag-confirmed finding per inspector: are they all demonstration keys?
+  const confirms = useMemo(() => {
+    const latest = new Map<string, ChainEvent>();
+    for (const e of sortEvents(rec.events)) if (e.type === "Finding" || e.type === "FindingRevised") latest.set(String(e.detail.inspector ?? "?").toLowerCase(), e);
+    return [...latest.values()].filter((e) => Number(e.detail.finding) === 1);
+  }, [rec]);
+  const allDemo = confirms.length > 0 && confirms.every((e) => e.demo);
+  const anyDemo = rec.events.some((e) => e.demo);
+  const word = c.state === "certified" ? (allDemo ? t.cert.demoCertified : t.cert.certified) : c.state === "contradicted" ? t.cert.contradicted : t.cert.pending;
   const line = c.state === "certified" ? t.cert.certifiedLine : c.state === "contradicted" ? t.cert.contradictedLine : t.cert.pendingLine;
-  return { c, word, line };
+  return { c, word, line, allDemo, anyDemo, confirms };
 }
 
 /** Reads certified() and certificateHash() from the contract when one is deployed. */
@@ -181,12 +200,12 @@ export function useOnchainCertificate(rec: KilnRecord): { ledger?: Ledger; cert?
 
 export function CertificatePanel({ rec, printedHash }: { rec: KilnRecord; printedHash?: string | null }) {
   const { t } = usePrefs();
-  const { c, line } = useCertText(rec);
+  const { c, line, allDemo, anyDemo } = useCertText(rec);
   const onchain = useOnchainCertificate(rec);
   // The product rule decides the state. The contract's own flag is shown beside it, with a note when
   // the deployed contract is stricter (it also wants a satellite Zigzag record, which never exists).
   const state: CertState = c.state;
-  const words: Record<CertState, string> = { certified: t.cert.certified, pending: t.cert.pending, contradicted: t.cert.contradicted };
+  const words: Record<CertState, string> = { certified: allDemo ? t.cert.demoCertified : t.cert.certified, pending: t.cert.pending, contradicted: t.cert.contradicted };
   const shownLine = line;
   return (
     <section className={`panel cert-panel cert-${state}`} aria-labelledby="cert-h">
@@ -198,6 +217,16 @@ export function CertificatePanel({ rec, printedHash }: { rec: KilnRecord; printe
         <span>{words[state]}</span>
       </p>
       <p>{shownLine}</p>
+      {state === "certified" && allDemo && (
+        <p className="demo-line">
+          <span className="demo-tag">{t.demo.tag}</span> {t.cert.demoLine}
+        </p>
+      )}
+      {state !== "certified" && anyDemo && (
+        <p className="demo-line">
+          <span className="demo-tag">{t.demo.tag}</span> {t.demo.generic}
+        </p>
+      )}
       <div aria-live="polite">
         {onchain.loading && onchain.ledger?.contract && !FIXTURE && <p className="fine">{t.cert.onchainChecking}</p>}
         {onchain.cert && <p className="fine">{onchain.cert.certified ? t.cert.onchainYes : t.cert.onchainNo}</p>}

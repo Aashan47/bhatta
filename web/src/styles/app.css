@@ -3021,3 +3021,51 @@ html[lang="ur"] .tenm-caption {
 .path-ok .mk-edge line:not(.mk-path) {
   stroke: var(--border);
 }
+
+/* ---------- demonstration markers ---------- */
+.demo-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.5;
+  padding: 0 7px;
+  border-radius: 3px;
+  background: #3b2f6b;
+  color: #fff;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+:root[data-theme="dark"] .demo-tag {
+  background: #b9a8ff;
+  color: #14110f;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .demo-tag {
+    background: #b9a8ff;
+    color: #14110f;
+  }
+}
+html[lang="ur"] .demo-tag {
+  font-family: var(--font-urdu);
+  line-height: 1.9;
+}
+.demo-line {
+  font-size: var(--step--1);
+  margin: var(--space-1) 0 0;
+  padding: var(--space-1) var(--space-2);
+  border-inline-start: 3px solid #3b2f6b;
+  background: color-mix(in srgb, #3b2f6b 7%, transparent);
+  max-inline-size: 64ch;
+}
+
+.sheet-demo {
+  margin: var(--space-3) 0 0;
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid #3b2f6b;
+  color: #2a2150;
+  background: #f1eeff;
+  font-weight: 700;
+  font-size: 0.82rem;
+}

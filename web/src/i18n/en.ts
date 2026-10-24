@@ -147,6 +147,17 @@ const en = {
     altTenm: "The same two kilns at Sentinel-2's 10 m pixels: two small brownish blobs that look almost the same.",
     fallbackNote: "Your browser cannot show the 3D model, so these are still frames rendered from it.",
   },
+  demo: {
+    tag: "Demo",
+    explain: (label: string) =>
+      /unregistered/i.test(label)
+        ? `${label}: this key has no inspector role on the contract, so its findings do not count.`
+        : `${label}: a test key held by the Bhatta team on a testnet, not an inspection by EPA Punjab.`,
+    generic: "Demonstration: signed by a test key held by the Bhatta team on a testnet, not an inspection by EPA Punjab.",
+    dispute: "Demonstration dispute filed by the Bhatta team on a testnet.",
+    conflict: "The inspector finding behind this conflict is a demonstration by a test key, not an inspection by EPA Punjab.",
+    ledgerNote: "Inspector findings, conflicts, certificates and disputes on this testnet ledger are demonstrations signed by test keys held by the Bhatta team. They are about real kilns but are not inspections by EPA Punjab.",
+  },
   impact: {
     title: "What conversion would save",
     perKilnTitle: "If this kiln converted",
@@ -233,7 +244,7 @@ const en = {
     FindingRevised: "Inspector finding revised",
     Conflict: "Conflict: satellite and inspector disagree",
     Disputed: "Dispute filed",
-    Certified: "Certificate issued: both sources agree",
+    Certified: "Certificate issued: inspector confirmed, satellite does not contradict",
     CertificateWithdrawn: "Certificate withdrawn",
     RpcError: "Could not read these events from the RPC",
     finding: {
@@ -348,6 +359,8 @@ const en = {
 
   cert: {
     title: "Certificate",
+    demoCertified: "Demonstration certificate",
+    demoLine: "Every confirmation behind this certificate comes from a demonstration key held by the Bhatta team on a testnet. It is not a certificate from EPA Punjab.",
     certified: "Certified Zigzag",
     pending: "Not certified yet",
     contradicted: "Contradicted",

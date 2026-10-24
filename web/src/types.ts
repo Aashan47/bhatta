@@ -107,6 +107,10 @@ export interface ChainEvent {
   kiln_id?: string | null;
   season?: number;
   detail: Record<string, unknown>;
+  /** e.g. "Demo inspector A", "Unregistered key" */
+  inspector_label?: string;
+  /** true when the finding was signed by a demonstration key, not by EPA Punjab */
+  demo?: boolean;
 }
 
 export interface KilnRecord {
@@ -178,6 +182,8 @@ export interface Ledger {
   eip712?: { name: string; version: string };
   seasons: SeasonRoot[];
   events: ChainEvent[];
+  inspectors?: unknown;
+  inspector_note?: string;
 }
 
 export interface ProductMetrics {

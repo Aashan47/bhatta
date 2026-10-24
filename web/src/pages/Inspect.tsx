@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Link, useSearchParams } from "react-router";
-import { FIXTURE, getKilns, getQueue } from "../api";
+import { FIXTURE, getKilns, getLedger, getQueue } from "../api";
 import { ErrorBox, Loading, Mono, PageHeader, SampleTag, StatusBadge } from "../components/ui";
 import { usePrefs } from "../i18n";
 import { useAsync } from "../lib/util";
@@ -52,6 +52,13 @@ export function Inspect() {
   const page = Math.max(1, Number(params.get("page") ?? "1") || 1);
   const queue = useAsync(() => getQueue(district || undefined), [district]);
   const kilns = useAsync(() => getKilns(), []);
+  const ledger = useAsync(getLedger, []);
+  // kilns whose conflict rests on a demonstration finding
+  const demoConflicts = useMemo(() => {
+    const ev = ledger.data?.events ?? [];
+    const demoInspect = new Set(ev.filter((e) => e.demo && e.kiln_id).map((e) => e.kiln_id as string));
+    return new Set(ev.filter((e) => e.type === "Conflict" && e.kiln_id && (e.demo || demoInspect.has(e.kiln_id))).map((e) => e.kiln_id as string));
+  }, [ledger.data]);
   const districts = useMemo(() => [...new Set((kilns.data ?? []).map((k) => k.district))].sort(), [kilns.data]);
 
   const total = queue.data?.length ?? 0;
@@ -152,6 +159,11 @@ export function Inspect() {
                           <StatusBadge status={q.status} size="s" />
                         </div>
                         <p className="q-reason">{t.inspect.reasons[reasonCode(q)](p)}</p>
+                        {reasonCode(q) === "CONFLICT" && demoConflicts.has(q.id) && (
+                          <p className="demo-line">
+                            <span className="demo-tag">{t.demo.tag}</span> {t.demo.conflict}
+                          </p>
+                        )}
                       </div>
                     </li>
                   );

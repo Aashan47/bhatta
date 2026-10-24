@@ -88,6 +88,7 @@ export function Ledger() {
             <h2 id="events-h">
               {t.ledger.events} <SampleTag />
             </h2>
+            {l.events.some((e) => e.demo) && <p className="demo-line ledger-demo">{l.inspector_note ?? t.demo.ledgerNote}</p>}
             {l.events.length === 0 ? (
               <p className="muted">{t.ledger.noEvents}</p>
             ) : (
@@ -100,7 +101,17 @@ export function Ledger() {
                         <span className="ev-swatch" aria-hidden="true" />
                         {t.events[e.type]}
                       </span>
-                      {sum && <span className="ev-sum">{sum}</span>}
+                      {(sum || e.demo) && (
+                        <span className="ev-sum">
+                          {sum}
+                          {e.demo && (
+                            <>
+                              {" "}
+                              <span className="demo-tag">{t.demo.tag}</span> {e.inspector_label && <span>{e.inspector_label}</span>}
+                            </>
+                          )}
+                        </span>
+                      )}
                       {e.kiln_id ? (
                         <Link to={`/kiln/${e.kiln_id}`} className="ev-kiln">
                           <Mono>{e.kiln_id}</Mono>

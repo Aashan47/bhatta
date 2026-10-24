@@ -19,7 +19,9 @@ export function Certificate() {
 
 function CertificateSheet({ rec, ledger }: { rec: KilnRecord; ledger?: Ledger }) {
   const { t, lang } = usePrefs();
-  const { c, word, line } = useCertText(rec);
+  const { c, word, line, allDemo, anyDemo, confirms } = useCertText(rec);
+  const demoCert = c.state === "certified" && allDemo;
+  const labelFor = (addr: string | null) => confirms.find((e) => String(e.detail.inspector ?? "").toLowerCase() === (addr ?? "").toLowerCase())?.inspector_label;
   const onchain = useOnchainCertificate(rec);
   const certHash = onchain.cert && onchain.cert.hash !== ZERO_HASH ? onchain.cert.hash : null;
   // A certified kiln's QR carries the certificate hash; the kiln page re-reads it from the contract
@@ -54,10 +56,12 @@ function CertificateSheet({ rec, ledger }: { rec: KilnRecord; ledger?: Ledger })
             <p className="sheet-brand">
               Bhatta <span lang="ur">بھٹہ</span>
             </p>
-            <h1 id="sheet-h">{t.cert.pageTitle}</h1>
+            <h1 id="sheet-h">{demoCert ? t.cert.demoCertified : t.cert.pageTitle}</h1>
           </div>
         </header>
         {FIXTURE && <p className="sheet-sample">{t.sample.banner}</p>}
+        {demoCert && <p className="sheet-demo">{t.cert.demoLine}</p>}
+        {!demoCert && anyDemo && <p className="sheet-demo">{t.demo.generic}</p>}
 
         <div className="sheet-state">
           <CertIcon state={c.state} size={44} />
@@ -96,7 +100,9 @@ function CertificateSheet({ rec, ledger }: { rec: KilnRecord; ledger?: Ledger })
                 {c.inspector && (
                   <>
                     {" "}
+                    {labelFor(c.inspector) && <>{labelFor(c.inspector)} </>}
                     <Hash value={c.inspector} copy={false} />
+                    {confirms.some((e) => e.demo) && <> <span className="demo-tag">{t.demo.tag}</span></>}
                   </>
                 )}
               </dd>

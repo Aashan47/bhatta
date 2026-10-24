@@ -185,10 +185,21 @@ function normEvent(e: Raw): ChainEvent | null {
     kiln_id: e.kiln_id ?? (typeof d.kilnId === "string" ? bytes32ToId(d.kilnId) : null),
     season: e.season ?? (d.season !== undefined ? Number(d.season) : undefined),
     detail: d,
+    inspector_label: typeof e.inspector_label === "string" ? e.inspector_label : undefined,
+    demo: e.demo === true || (typeof e.inspector_label === "string" && /demo|unregistered/i.test(e.inspector_label)) || (typeof d.note === "string" && /^DEMO\b/.test(d.note)),
   };
 }
 
-const normEvents = (list: Raw): ChainEvent[] => (Array.isArray(list) ? list.map(normEvent).filter((x): x is ChainEvent => !!x) : []);
+/** Certificates, withdrawals and conflicts that rest on demonstration findings are demonstrations too. */
+function markDerivedDemo(events: ChainEvent[]): ChainEvent[] {
+  const demoKilns = new Set(events.filter((e) => e.demo && (e.type === "Finding" || e.type === "FindingRevised")).map((e) => e.kiln_id ?? ""));
+  return events.map((e) =>
+    !e.demo && (e.type === "Certified" || e.type === "CertificateWithdrawn" || e.type === "Conflict") && demoKilns.has(e.kiln_id ?? "") ? { ...e, demo: true } : e,
+  );
+}
+
+const normEvents = (list: Raw): ChainEvent[] =>
+  markDerivedDemo(Array.isArray(list) ? list.map(normEvent).filter((x): x is ChainEvent => !!x) : []);
 
 function normRecord(r: Raw): KilnRecord {
   const o = r.observation ?? {};
@@ -268,6 +279,8 @@ function normLedger(raw: Raw): Ledger {
     rpc: raw.rpc ?? DEFAULT_RPC,
     abi: raw.abi,
     eip712: raw.eip712 ? { name: raw.eip712.name, version: raw.eip712.version } : undefined,
+    inspectors: raw.inspectors,
+    inspector_note: typeof raw.inspector_note === "string" ? raw.inspector_note : undefined,
     seasons: (raw.seasons ?? []).map((s: Raw) => ({
       season: Number(s.season),
       root: s.root,
