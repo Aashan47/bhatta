@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Bhatta</title>
+    <meta name="description" content="Checks Punjab brick kiln conversion claims with free Sentinel-2 imagery and calibrated AI that refuses when unsure, and keeps every finding on a public ledger." />
+    <meta name="theme-color" content="#A8432A" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14110F" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/icon-180.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Nastaliq+Urdu:wght@400;600;700&family=Public+Sans:wght@400;500;600;700;800&display=swap"
+    />
+    <script>
+      try {
+        var th = localStorage.getItem("bhatta.theme");
+        if (th === "light" || th === "dark") document.documentElement.setAttribute("data-theme", th);
+        var lg = localStorage.getItem("bhatta.lang");
+        if (lg === "ur") { document.documentElement.lang = "ur"; document.documentElement.dir = "rtl"; }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Bhatta needs JavaScript to show the kiln map and verify records.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
