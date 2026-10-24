@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { Link, useNavigate } from "react-router";
 import { getKilns, getLedger, getSummary } from "../api";
-import { BrickWall } from "../components/BrickWall";
+import { BrickWall, brickScale } from "../components/BrickWall";
 import { ImpactPanel } from "../components/Impact";
 import { MapView } from "../components/MapView";
 import { ArrowGlyph, ErrorBox, ExternalGlyph, Hash, Loading, SampleTag, StatusIcon, ZigzagRule, statusClass } from "../components/ui";
@@ -32,8 +32,12 @@ export function Overview() {
   const seasonNum = s.season ?? ledger.data?.seasons[0]?.season ?? null;
   const season = seasonNum ? seasonLabel(seasonNum, lang) : "";
   const areaName = s.aoi.name || [...new Set((kilns.data ?? []).map((k) => k.district).filter(Boolean))].sort().join(", ");
-  const toVisit = s.counts.FCBK + s.counts.UNDETERMINED + s.counts.NOT_DETECTED;
-  const sceneDates = [...new Set(s.scenes.map((x) => dateLabel(x.date, lang)))].join(", ");
+  const scale = brickScale(s.counts);
+  const isoDates = [...new Set(s.scenes.map((x) => x.date).filter(Boolean))].sort();
+  const sceneDates =
+    isoDates.length > 3
+      ? t.overview.dateRange(dateLabel(isoDates[0]!, lang), dateLabel(isoDates[isoDates.length - 1]!, lang))
+      : isoDates.map((d) => dateLabel(d, lang)).join(", ");
 
   return (
     <div className="overview">
@@ -60,8 +64,8 @@ export function Overview() {
           </h2>
           <p className="seen-lead">{t.overview.seenLead(s.total, "\u2068" + areaName + "\u2069")}</p>
           <figure className="wall-fig">
-            <BrickWall counts={s.counts} cols={s.total > 400 ? 40 : 18} />
-            <figcaption className="fine">{t.overview.wallCaption}</figcaption>
+            <BrickWall counts={s.counts} scale={scale} cols={20} />
+            <figcaption className="fine">{t.overview.wallCaption(scale)}</figcaption>
           </figure>
           <ul className="tally" aria-label={t.common.status}>
             {STATUS_ORDER.map((st) => (
@@ -146,7 +150,10 @@ export function Overview() {
 
       <section className="queue-cta" aria-labelledby="q-h">
         <div>
-          <h2 id="q-h">{t.overview.queueLead(toVisit)}</h2>
+          <h2 id="q-h">
+            {s.counts.FCBK > 0 ? t.overview.queueContradict(s.counts.FCBK) : t.overview.queueNoContradict}
+            {s.counts.UNDETERMINED > 0 && <span className="q-more">{t.overview.queueUndecided(s.counts.UNDETERMINED)}</span>}
+          </h2>
         </div>
         <Link to="/inspect" className="btn btn-primary">
           {t.overview.queueCta}

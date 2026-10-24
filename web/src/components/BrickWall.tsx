@@ -1,14 +1,23 @@
 import { useMemo } from "react";
 import { STATUS_ORDER, type Status } from "../types";
 
-/** One brick per kiln, laid in running bond, grouped by status. The overview's signature element.
- *  Decorative for assistive tech: the counts beside it carry the same information as text. */
-export function BrickWall({ counts, cols = 18 }: { counts: Record<Status, number>; cols?: number }) {
+const STEPS = [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000, 2000, 5000, 10000];
+
+/** Kilns per brick: the smallest round number that keeps the wall at about 300 bricks or fewer. */
+export function brickScale(counts: Record<Status, number>, maxBricks = 300): number {
+  const bricksAt = (n: number) => STATUS_ORDER.reduce((a, s) => a + Math.ceil((counts[s] ?? 0) / n), 0);
+  return STEPS.find((n) => bricksAt(n) <= maxBricks) ?? STEPS[STEPS.length - 1]!;
+}
+
+/** One brick per N kilns, laid in running bond, grouped by status. Counts round up so a status with
+ *  any kilns shows at least one brick. Decorative for assistive tech: the tally beside it has the
+ *  exact numbers. */
+export function BrickWall({ counts, scale, cols = 18 }: { counts: Record<Status, number>; scale: number; cols?: number }) {
   const bricks = useMemo(() => {
     const out: Status[] = [];
-    for (const s of STATUS_ORDER) for (let i = 0; i < (counts[s] ?? 0); i++) out.push(s);
+    for (const s of STATUS_ORDER) for (let i = 0; i < Math.ceil((counts[s] ?? 0) / scale); i++) out.push(s);
     return out;
-  }, [counts]);
+  }, [counts, scale]);
   const n = bricks.length;
   const c = Math.max(6, Math.min(cols, n));
   const rows = Math.ceil(n / c);
@@ -36,7 +45,7 @@ export function BrickWall({ counts, cols = 18 }: { counts: Record<Status, number
             width={bw}
             height={bh}
             rx={1.4}
-            style={{ animationDelay: `${Math.min(i * 6, 900)}ms` }}
+            style={{ animationDelay: `${Math.min(i * 4, 900)}ms` }}
           />
         );
       })}

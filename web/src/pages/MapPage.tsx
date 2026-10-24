@@ -14,6 +14,7 @@ export function MapPage() {
   const district = params.get("district") ?? "";
   const selected = params.get("kiln");
   const [satellite, setSatellite] = useState(false);
+  const [listLimit, setListLimit] = useState(200);
 
   const all = useAsync(() => getKilns(), []);
   const summary = useAsync(getSummary, []);
@@ -110,7 +111,10 @@ export function MapPage() {
             </div>
           ) : (
             <ul className="kl-items">
-              {shown.map((k) => (
+              {(selected && !shown.slice(0, listLimit).some((k) => k.id === selected)
+                ? [...shown.filter((k) => k.id === selected), ...shown.slice(0, listLimit)]
+                : shown.slice(0, listLimit)
+              ).map((k) => (
                 <li key={k.id}>
                   <button
                     type="button"
@@ -125,6 +129,11 @@ export function MapPage() {
                 </li>
               ))}
             </ul>
+          )}
+          {shown.length > listLimit && (
+            <button type="button" className="btn btn-secondary btn-block more-btn" onClick={() => setListLimit((n) => n + 200)}>
+              {t.map.showMore(Math.min(200, shown.length - listLimit))}
+            </button>
           )}
         </section>
       </div>

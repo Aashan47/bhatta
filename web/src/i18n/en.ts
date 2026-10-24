@@ -89,7 +89,10 @@ const en = {
     seenTitle: (season: string) => `What the satellite supports, ${season}`,
     seenTitleNoSeason: "What the satellite supports this season",
     seenLead: (n: number, area: string) => `${n.toLocaleString("en")} kilns found in the scanned area: ${area}.`,
-    wallCaption: "Each brick is one kiln we found, coloured by what the October image supports.",
+    wallCaption: (n: number) =>
+      n === 1
+        ? "Each brick is one kiln we found, coloured by what the October image supports."
+        : `Each brick is ${n.toLocaleString("en")} kilns, coloured by what the October image supports. Counts are rounded up, so any status with at least one kiln shows a brick.`,
     compareTitle: "The claim against the image",
     cmpClaim: "Claimed converted",
     cmpClaimVal: (p: string) => `${p} of the province`,
@@ -105,8 +108,11 @@ const en = {
     mapTitle: "Where they are",
     openMap: "Open the full map",
     queueCta: "Open the inspection queue",
-    queueLead: (n: number) => `${n.toLocaleString("en")} kilns need a visit first: the image contradicts the claim or cannot decide.`,
+    queueContradict: (n: number) => `${n.toLocaleString("en")} ${n === 1 ? "kiln contradicts" : "kilns contradict"} the claim: visit these first.`,
+    queueNoContradict: "No kiln in this scan contradicts the claim.",
+    queueUndecided: (n: number) => `${n.toLocaleString("en")} more cannot be decided from 10 m.`,
     sceneLine: (n: number, dates: string) => `${n} Sentinel-2 ${n === 1 ? "scene" : "scenes"}, ${dates}`,
+    dateRange: (a: string, b: string) => `${a} to ${b}`,
     modelsLine: "Models",
   },
 
@@ -142,6 +148,7 @@ const en = {
     clear: "Clear filters",
     mapLabel: "Map of kilns. Use the list below the map to reach every kiln by keyboard.",
     listTitle: "Kilns in view",
+    showMore: (n: number) => `Show ${n.toLocaleString("en")} more`,
     webglMissing: "This browser could not start the map (WebGL is off). The list below has every kiln.",
   },
 
@@ -319,6 +326,11 @@ const en = {
     export: "Download CSV",
     exportNote: "For the district office: one row per kiln, in visit order.",
     count: (n: number) => `${n.toLocaleString("en")} kilns to visit`,
+    pageOf: (a: number, b: number, total: number) => `Showing ${a.toLocaleString("en")}–${b.toLocaleString("en")} of ${total.toLocaleString("en")}`,
+    prev: "Previous 100",
+    next: "Next 100",
+    pages: "Queue pages",
+    csvAll: "The CSV contains every kiln in the queue, not only this page.",
     rank: "Visit order",
     reason: "Why",
     pZigzag: "P(Zigzag)",

@@ -49,19 +49,38 @@ export function Inspect() {
   const { t } = usePrefs();
   const [params, setParams] = useSearchParams();
   const district = params.get("district") ?? "";
+  const page = Math.max(1, Number(params.get("page") ?? "1") || 1);
   const queue = useAsync(() => getQueue(district || undefined), [district]);
   const kilns = useAsync(() => getKilns(), []);
   const districts = useMemo(() => [...new Set((kilns.data ?? []).map((k) => k.district))].sort(), [kilns.data]);
 
+  const total = queue.data?.length ?? 0;
+  const pages = Math.max(1, Math.ceil(total / PAGE));
+  const current = Math.min(page, pages);
+  const pageItems = useMemo(() => (queue.data ?? []).slice((current - 1) * PAGE, current * PAGE), [queue.data, current]);
+  const goto = (p: number) => {
+    const next = new URLSearchParams(params);
+    if (p > 1) next.set("page", String(p));
+    else next.delete("page");
+    setParams(next);
+    document.getElementById("queue-top")?.scrollIntoView({ block: "start" });
+  };
+
+  const groupTotals = useMemo(() => {
+    const m = new Map<ReasonCode, number>();
+    for (const q of queue.data ?? []) m.set(reasonCode(q), (m.get(reasonCode(q)) ?? 0) + 1);
+    return m;
+  }, [queue.data]);
+
   const groups = useMemo(() => {
     const order: ReasonCode[] = ["CONFLICT", "SAT_FCBK", "UNDETERMINED", "NOT_SEEN", "SAT_ZIGZAG"];
     const by = new Map<ReasonCode, QueueItem[]>();
-    for (const q of queue.data ?? []) {
+    for (const q of pageItems) {
       const c = reasonCode(q);
       by.set(c, [...(by.get(c) ?? []), q]);
     }
     return order.filter((c) => by.has(c)).map((c) => ({ code: c, items: by.get(c)! }));
-  }, [queue.data]);
+  }, [pageItems]);
 
   return (
     <div className="inspect">
@@ -75,6 +94,7 @@ export function Inspect() {
               const p = new URLSearchParams(params);
               if (e.target.value) p.set("district", e.target.value);
               else p.delete("district");
+              p.delete("page");
               setParams(p, { replace: true });
             }}
           >
@@ -94,6 +114,7 @@ export function Inspect() {
             {t.inspect.export}
           </button>
           <p className="fine">{t.inspect.exportNote}</p>
+          {pages > 1 && <p className="fine">{t.inspect.csvAll}</p>}
         </div>
       </div>
 
@@ -105,13 +126,14 @@ export function Inspect() {
         <p className="empty">{t.inspect.empty}</p>
       ) : (
         <>
-          <p className="count-line" aria-live="polite">
+          <p className="count-line" id="queue-top" aria-live="polite">
             {t.inspect.count(queue.data.length)} <SampleTag />
           </p>
+          {pages > 1 && <Pager current={current} pages={pages} total={total} goto={goto} />}
           {groups.map((g) => (
             <section key={g.code} className={`q-group q-${g.code}`} aria-labelledby={`g-${g.code}`}>
               <h2 id={`g-${g.code}`} className="q-group-title">
-                {t.inspect.groups[g.code]} <span className="q-group-n">{g.items.length}</span>
+                {t.inspect.groups[g.code]} <span className="q-group-n">{(groupTotals.get(g.code) ?? g.items.length).toLocaleString("en")}</span>
               </h2>
               <ol className="q-list">
                 {g.items.map((q) => {
@@ -137,8 +159,30 @@ export function Inspect() {
               </ol>
             </section>
           ))}
+          {pages > 1 && <Pager current={current} pages={pages} total={total} goto={goto} />}
         </>
       )}
     </div>
+  );
+}
+
+const PAGE = 100;
+
+function Pager({ current, pages, total, goto }: { current: number; pages: number; total: number; goto: (p: number) => void }) {
+  const { t } = usePrefs();
+  const a = (current - 1) * PAGE + 1;
+  const b = Math.min(total, current * PAGE);
+  return (
+    <nav className="pager" aria-label={t.inspect.pages}>
+      <button type="button" className="btn btn-secondary" disabled={current <= 1} onClick={() => goto(current - 1)}>
+        {t.inspect.prev}
+      </button>
+      <span className="pager-info" aria-live="polite">
+        {t.inspect.pageOf(a, b, total)}
+      </span>
+      <button type="button" className="btn btn-secondary" disabled={current >= pages} onClick={() => goto(current + 1)}>
+        {t.inspect.next}
+      </button>
+    </nav>
   );
 }
