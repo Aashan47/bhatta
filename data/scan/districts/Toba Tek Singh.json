@@ -1,0 +1,7656 @@
+{
+ "stats": {
+  "district": "Toba Tek Singh",
+  "mode": "known",
+  "patches_planned": 231,
+  "patches_skipped_invalid": 0,
+  "chunks": 34,
+  "detections_raw": 273,
+  "detections_merged": 229,
+  "known_kilns": 283,
+  "known_kilns_aligned": 241,
+  "known_kilns_shifted": 53,
+  "scene_shift_px": {
+   "S2B_43RBP_20261021_0_L2A": [
+    -7,
+    -10
+   ]
+  },
+  "known_kilns_moved_for_matching": 59,
+  "shift_px_counts": {
+   "0,0": 188,
+   "-7,-10": 34,
+   "-7,-9": 8,
+   "0,-1": 8,
+   "-7,-11": 2,
+   "1,-1": 1
+  },
+  "status": {
+   "NOT_DETECTED": 70,
+   "UNDETERMINED": 186,
+   "FCBK": 33
+  },
+  "unmatched_dropped_near_known_or_low_conf": 12,
+  "new_detections": 6,
+  "seconds": 11.0
+ },
+ "scenes": [
+  "S2B_42RYU_20261021_0_L2A",
+  "S2B_43RBP_20261021_0_L2A",
+  "S2A_42RYV_20261008_0_L2A",
+  "S2A_43RBP_20261008_0_L2A",
+  "S2B_43RBP_20261001_0_L2A",
+  "S2A_42RYU_20261008_0_L2A",
+  "S2B_43RBQ_20261001_0_L2A",
+  "S2A_43RBQ_20261008_0_L2A",
+  "S2B_42RYV_20261001_0_L2A",
+  "S2B_42RYU_20261001_0_L2A",
+  "S2B_42RYV_20261021_0_L2A",
+  "S2B_43RBQ_20261021_0_L2A"
+ ],
+ "records": [
+  {
+   "id": "PK-tt7q5e09",
+   "lat": 30.60268,
+   "lon": 72.224829,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_42RYU_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7q5e09_2026.png",
+    "baseline_chip": "chips/PK-tt7q5e09_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7q5e0n",
+   "lat": 30.603605,
+   "lon": 72.224136,
+   "district": "Toba Tek Singh",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_42RYU_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.679,
+    "probs": {
+     "FCBK": 0.4313,
+     "Zigzag": 0.5687
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7q5e0n_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qd419",
+   "lat": 30.684989,
+   "lon": 72.160478,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_42RYU_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7qd419_2026.png",
+    "baseline_chip": "chips/PK-tt7qd419_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7qjveb",
+   "lat": 30.616188,
+   "lon": 72.328358,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.523,
+    "probs": {
+     "FCBK": 0.7588,
+     "Zigzag": 0.2412
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7qjveb_2026.png",
+    "baseline_chip": "chips/PK-tt7qjveb_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qjvsj",
+   "lat": 30.617139,
+   "lon": 72.328573,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.717,
+    "probs": {
+     "FCBK": 0.835,
+     "Zigzag": 0.165
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7qjvsj_2026.png",
+    "baseline_chip": "chips/PK-tt7qjvsj_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qjwzp",
+   "lat": 30.62429,
+   "lon": 72.321838,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.781,
+    "probs": {
+     "FCBK": 0.5367,
+     "Zigzag": 0.4633
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7qjwzp_2026.png",
+    "baseline_chip": "chips/PK-tt7qjwzp_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qm00r",
+   "lat": 30.631247,
+   "lon": 72.29051,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.409,
+    "probs": {
+     "FCBK": 0.6654,
+     "Zigzag": 0.3346
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7qm00r_2026.png",
+    "baseline_chip": "chips/PK-tt7qm00r_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qm8ug",
+   "lat": 30.634524,
+   "lon": 72.318812,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.489,
+    "probs": {
+     "FCBK": 0.7855,
+     "Zigzag": 0.2145
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7qm8ug_2026.png",
+    "baseline_chip": "chips/PK-tt7qm8ug_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qmngd",
+   "lat": 30.667473,
+   "lon": 72.294995,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.749,
+    "probs": {
+     "FCBK": 0.6329,
+     "Zigzag": 0.3671
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7qmngd_2026.png",
+    "baseline_chip": "chips/PK-tt7qmngd_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qq22p",
+   "lat": 30.632493,
+   "lon": 72.345238,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.496,
+    "probs": {
+     "FCBK": 0.9955,
+     "Zigzag": 0.0045
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7qq22p_2026.png",
+    "baseline_chip": "chips/PK-tt7qq22p_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7qqdt9",
+   "lat": 30.643788,
+   "lon": 72.363623,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.745,
+    "probs": {
+     "FCBK": 0.5971,
+     "Zigzag": 0.4029
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7qqdt9_2026.png",
+    "baseline_chip": "chips/PK-tt7qqdt9_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qqv26",
+   "lat": 30.659215,
+   "lon": 72.367378,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.725,
+    "probs": {
+     "FCBK": 0.8245,
+     "Zigzag": 0.1755
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7qqv26_2026.png",
+    "baseline_chip": "chips/PK-tt7qqv26_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qqy72",
+   "lat": 30.664216,
+   "lon": 72.371518,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.352,
+    "probs": {
+     "FCBK": 0.9413,
+     "Zigzag": 0.0587
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7qqy72_2026.png",
+    "baseline_chip": "chips/PK-tt7qqy72_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qr2r5",
+   "lat": 30.631801,
+   "lon": 72.398651,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.735,
+    "probs": {
+     "FCBK": 0.8272,
+     "Zigzag": 0.1728
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7qr2r5_2026.png",
+    "baseline_chip": "chips/PK-tt7qr2r5_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qss72",
+   "lat": 30.697229,
+   "lon": 72.272602,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.742,
+    "probs": {
+     "FCBK": 0.9424,
+     "Zigzag": 0.0576
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7qss72_2026.png",
+    "baseline_chip": "chips/PK-tt7qss72_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qtjkg",
+   "lat": 30.703297,
+   "lon": 72.296883,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7qtjkg_2026.png",
+    "baseline_chip": "chips/PK-tt7qtjkg_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7qtqgs",
+   "lat": 30.711595,
+   "lon": 72.305973,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.734,
+    "probs": {
+     "FCBK": 0.824,
+     "Zigzag": 0.176
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7qtqgs_2026.png",
+    "baseline_chip": "chips/PK-tt7qtqgs_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qv2cc",
+   "lat": 30.722187,
+   "lon": 72.30372,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.727,
+    "probs": {
+     "FCBK": 0.9976,
+     "Zigzag": 0.0024
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7qv2cc_2026.png",
+    "baseline_chip": "chips/PK-tt7qv2cc_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7qv370",
+   "lat": 30.724788,
+   "lon": 72.305222,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.702,
+    "probs": {
+     "FCBK": 0.9566,
+     "Zigzag": 0.0434
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7qv370_2026.png",
+    "baseline_chip": "chips/PK-tt7qv370_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qx01g",
+   "lat": 30.674501,
+   "lon": 72.380398,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.479,
+    "probs": {
+     "FCBK": 0.269,
+     "Zigzag": 0.731
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7qx01g_2026.png",
+    "baseline_chip": "chips/PK-tt7qx01g_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qx085",
+   "lat": 30.677233,
+   "lon": 72.37819,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.357,
+    "probs": {
+     "FCBK": 0.5455,
+     "Zigzag": 0.4545
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7qx085_2026.png",
+    "baseline_chip": "chips/PK-tt7qx085_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qxm48",
+   "lat": 30.701325,
+   "lon": 72.392645,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7qxm48_2026.png",
+    "baseline_chip": "chips/PK-tt7qxm48_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qxm5h",
+   "lat": 30.702033,
+   "lon": 72.393053,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7qxm5h_2026.png",
+    "baseline_chip": "chips/PK-tt7qxm5h_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7qxs3w",
+   "lat": 30.698352,
+   "lon": 72.401993,
+   "district": "Toba Tek Singh",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.631,
+    "probs": {
+     "FCBK": 0.2149,
+     "Zigzag": 0.7851
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7qxs3w_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qy8yk",
+   "lat": 30.722602,
+   "lon": 72.364803,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.76,
+    "probs": {
+     "FCBK": 0.9842,
+     "Zigzag": 0.0158
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7qy8yk_2026.png",
+    "baseline_chip": "chips/PK-tt7qy8yk_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qz2xn",
+   "lat": 30.721606,
+   "lon": 72.398694,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.744,
+    "probs": {
+     "FCBK": 0.346,
+     "Zigzag": 0.654
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7qz2xn_2026.png",
+    "baseline_chip": "chips/PK-tt7qz2xn_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7qzu4m",
+   "lat": 30.74069,
+   "lon": 72.414231,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": null,
+    "date": null,
+    "detected": true,
+    "det_conf": 0.664,
+    "probs": {
+     "FCBK": 0.9968,
+     "Zigzag": 0.0032
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7qzu4m_2026.png",
+    "baseline_chip": "chips/PK-tt7qzu4m_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7r668e",
+   "lat": 30.819949,
+   "lon": 72.170054,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2A_42RYV_20261008_0_L2A",
+    "date": "2026-10-08",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7r668e_2026.png",
+    "baseline_chip": "chips/PK-tt7r668e_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7r66vz",
+   "lat": 30.821984,
+   "lon": 72.177411,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2A_42RYV_20261008_0_L2A",
+    "date": "2026-10-08",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7r66vz_2026.png",
+    "baseline_chip": "chips/PK-tt7r66vz_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7re6gq",
+   "lat": 30.86588,
+   "lon": 72.217622,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2A_42RYV_20261008_0_L2A",
+    "date": "2026-10-08",
+    "detected": true,
+    "det_conf": 0.553,
+    "probs": {
+     "FCBK": 0.9663,
+     "Zigzag": 0.0337
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7re6gq_2026.png",
+    "baseline_chip": "chips/PK-tt7re6gq_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7resje",
+   "lat": 30.872137,
+   "lon": 72.231842,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2A_42RYV_20261008_0_L2A",
+    "date": "2026-10-08",
+    "detected": true,
+    "det_conf": 0.677,
+    "probs": {
+     "FCBK": 0.9786,
+     "Zigzag": 0.0214
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7resje_2026.png",
+    "baseline_chip": "chips/PK-tt7resje_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7retfz",
+   "lat": 30.882401,
+   "lon": 72.22794,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2A_42RYV_20261008_0_L2A",
+    "date": "2026-10-08",
+    "detected": true,
+    "det_conf": 0.655,
+    "probs": {
+     "FCBK": 0.7436,
+     "Zigzag": 0.2564
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7retfz_2026.png",
+    "baseline_chip": "chips/PK-tt7retfz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rhspq",
+   "lat": 30.784723,
+   "lon": 72.278179,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.447,
+    "probs": {
+     "FCBK": 0.9958,
+     "Zigzag": 0.0042
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7rhspq_2026.png",
+    "baseline_chip": "chips/PK-tt7rhspq_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7rhzzq",
+   "lat": 30.80538,
+   "lon": 72.28931,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.59,
+    "probs": {
+     "FCBK": 0.8363,
+     "Zigzag": 0.1637
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rhzzq_2026.png",
+    "baseline_chip": "chips/PK-tt7rhzzq_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rjrex",
+   "lat": 30.804265,
+   "lon": 72.306102,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.662,
+    "probs": {
+     "FCBK": 0.9917,
+     "Zigzag": 0.0083
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7rjrex_2026.png",
+    "baseline_chip": "chips/PK-tt7rjrex_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7rjry6",
+   "lat": 30.80467,
+   "lon": 72.309831,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.589,
+    "probs": {
+     "FCBK": 0.9677,
+     "Zigzag": 0.0323
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rjry6_2026.png",
+    "baseline_chip": "chips/PK-tt7rjry6_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rk9m8",
+   "lat": 30.812637,
+   "lon": 72.275733,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.74,
+    "probs": {
+     "FCBK": 0.9762,
+     "Zigzag": 0.0238
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rk9m8_2026.png",
+    "baseline_chip": "chips/PK-tt7rk9m8_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rkfm7",
+   "lat": 30.81868,
+   "lon": 72.286416,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.686,
+    "probs": {
+     "FCBK": 0.713,
+     "Zigzag": 0.287
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rkfm7_2026.png",
+    "baseline_chip": "chips/PK-tt7rkfm7_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rm0p0",
+   "lat": 30.805804,
+   "lon": 72.299734,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.706,
+    "probs": {
+     "FCBK": 0.941,
+     "Zigzag": 0.059
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rm0p0_2026.png",
+    "baseline_chip": "chips/PK-tt7rm0p0_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rm5gc",
+   "lat": 30.826554,
+   "lon": 72.295381,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.625,
+    "probs": {
+     "FCBK": 0.7025,
+     "Zigzag": 0.2975
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rm5gc_2026.png",
+    "baseline_chip": "chips/PK-tt7rm5gc_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rnpgc",
+   "lat": 30.804495,
+   "lon": 72.339403,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7rnpgc_2026.png",
+    "baseline_chip": "chips/PK-tt7rnpgc_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7rpvuh",
+   "lat": 30.794065,
+   "lon": 72.416506,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.73,
+    "probs": {
+     "FCBK": 0.9996,
+     "Zigzag": 0.0004
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7rpvuh_2026.png",
+    "baseline_chip": "chips/PK-tt7rpvuh_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7rq0wb",
+   "lat": 30.80855,
+   "lon": 72.343478,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.692,
+    "probs": {
+     "FCBK": 0.972,
+     "Zigzag": 0.028
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rq0wb_2026.png",
+    "baseline_chip": "chips/PK-tt7rq0wb_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rrcgg",
+   "lat": 30.815833,
+   "lon": 72.416313,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.544,
+    "probs": {
+     "FCBK": 0.6997,
+     "Zigzag": 0.3003
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rrcgg_2026.png",
+    "baseline_chip": "chips/PK-tt7rrcgg_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rrcvh",
+   "lat": 30.81598,
+   "lon": 72.418008,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.636,
+    "probs": {
+     "FCBK": 0.5675,
+     "Zigzag": 0.4325
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rrcvh_2026.png",
+    "baseline_chip": "chips/PK-tt7rrcvh_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rreqd",
+   "lat": 30.823965,
+   "lon": 72.409047,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7rreqd_2026.png",
+    "baseline_chip": "chips/PK-tt7rreqd_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7rreqp",
+   "lat": 30.824789,
+   "lon": 72.40817,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7rreqp_2026.png",
+    "baseline_chip": "chips/PK-tt7rreqp_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7rret0",
+   "lat": 30.825052,
+   "lon": 72.407099,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.588,
+    "probs": {
+     "FCBK": 0.5711,
+     "Zigzag": 0.4289
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rret0_2026.png",
+    "baseline_chip": "chips/PK-tt7rret0_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rreuw",
+   "lat": 30.827355,
+   "lon": 72.406262,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.705,
+    "probs": {
+     "FCBK": 0.5421,
+     "Zigzag": 0.4579
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rreuw_2026.png",
+    "baseline_chip": "chips/PK-tt7rreuw_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rrf85",
+   "lat": 30.820014,
+   "lon": 72.411021,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.805,
+    "probs": {
+     "FCBK": 0.8088,
+     "Zigzag": 0.1912
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rrf85_2026.png",
+    "baseline_chip": "chips/PK-tt7rrf85_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rrfbk",
+   "lat": 30.821534,
+   "lon": 72.411236,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.699,
+    "probs": {
+     "FCBK": 0.6088,
+     "Zigzag": 0.3912
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rrfbk_2026.png",
+    "baseline_chip": "chips/PK-tt7rrfbk_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rrs4z",
+   "lat": 30.828846,
+   "lon": 72.403773,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.742,
+    "probs": {
+     "FCBK": 0.7036,
+     "Zigzag": 0.2964
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rrs4z_2026.png",
+    "baseline_chip": "chips/PK-tt7rrs4z_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rs088",
+   "lat": 30.852371,
+   "lon": 72.24703,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7rs088_2026.png",
+    "baseline_chip": "chips/PK-tt7rs088_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7rs0y6",
+   "lat": 30.854093,
+   "lon": 72.254874,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7rs0y6_2026.png",
+    "baseline_chip": "chips/PK-tt7rs0y6_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7rs2vh",
+   "lat": 30.854553,
+   "lon": 72.263978,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.377,
+    "probs": {
+     "FCBK": 0.9749,
+     "Zigzag": 0.0251
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rs2vh_2026.png",
+    "baseline_chip": "chips/PK-tt7rs2vh_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rs3uw",
+   "lat": 30.860358,
+   "lon": 72.263484,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7rs3uw_2026.png",
+    "baseline_chip": "chips/PK-tt7rs3uw_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7rsft1",
+   "lat": 30.863642,
+   "lon": 72.286008,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7rsft1_2026.png",
+    "baseline_chip": "chips/PK-tt7rsft1_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7rsshg",
+   "lat": 30.87211,
+   "lon": 72.274639,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7rsshg_2026.png",
+    "baseline_chip": "chips/PK-tt7rsshg_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7ru5su",
+   "lat": 30.91348,
+   "lon": 72.252728,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.666,
+    "probs": {
+     "FCBK": 0.9153,
+     "Zigzag": 0.0847
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7ru5su_2026.png",
+    "baseline_chip": "chips/PK-tt7ru5su_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rws93",
+   "lat": 30.874532,
+   "lon": 72.35801,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.623,
+    "probs": {
+     "FCBK": 0.8864,
+     "Zigzag": 0.1136
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rws93_2026.png",
+    "baseline_chip": "chips/PK-tt7rws93_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rx2rm",
+   "lat": 30.85188,
+   "lon": 72.399123,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.649,
+    "probs": {
+     "FCBK": 0.9959,
+     "Zigzag": 0.0041
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7rx2rm_2026.png",
+    "baseline_chip": "chips/PK-tt7rx2rm_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7rxvzw",
+   "lat": 30.882236,
+   "lon": 72.421525,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.775,
+    "probs": {
+     "FCBK": 0.2628,
+     "Zigzag": 0.7372
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rxvzw_2026.png",
+    "baseline_chip": "chips/PK-tt7rxvzw_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rz37r",
+   "lat": 30.901705,
+   "lon": 72.393653,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7rz37r_2026.png",
+    "baseline_chip": "chips/PK-tt7rz37r_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7rz3zz",
+   "lat": 30.904488,
+   "lon": 72.399658,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.422,
+    "probs": {
+     "FCBK": 0.7532,
+     "Zigzag": 0.2468
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rz3zz_2026.png",
+    "baseline_chip": "chips/PK-tt7rz3zz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7rzdv6",
+   "lat": 30.909036,
+   "lon": 72.407292,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.654,
+    "probs": {
+     "FCBK": 0.9759,
+     "Zigzag": 0.0241
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7rzdv6_2026.png",
+    "baseline_chip": "chips/PK-tt7rzdv6_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7w0yey",
+   "lat": 30.62272,
+   "lon": 72.460187,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.661,
+    "probs": {
+     "FCBK": 0.9249,
+     "Zigzag": 0.0751
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7w0yey_2026.png",
+    "baseline_chip": "chips/PK-tt7w0yey_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7w25bh",
+   "lat": 30.651257,
+   "lon": 72.421997,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.335,
+    "probs": {
+     "FCBK": 0.7724,
+     "Zigzag": 0.2276
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7w25bh_2026.png",
+    "baseline_chip": "chips/PK-tt7w25bh_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7w2ms9",
+   "lat": 30.660306,
+   "lon": 72.439092,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.693,
+    "probs": {
+     "FCBK": 0.9108,
+     "Zigzag": 0.0892
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7w2ms9_2026.png",
+    "baseline_chip": "chips/PK-tt7w2ms9_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7w3xt0",
+   "lat": 30.671179,
+   "lon": 72.494762,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.696,
+    "probs": {
+     "FCBK": 0.9819,
+     "Zigzag": 0.0181
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7w3xt0_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7w3y22",
+   "lat": 30.664287,
+   "lon": 72.49916,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7w3y22_2026.png",
+    "baseline_chip": null
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7w4rcb",
+   "lat": 30.628636,
+   "lon": 72.523375,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.615,
+    "probs": {
+     "FCBK": 0.9943,
+     "Zigzag": 0.0057
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7w4rcb_2026.png",
+    "baseline_chip": "chips/PK-tt7w4rcb_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7w4rpj",
+   "lat": 30.62537,
+   "lon": 72.530583,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.394,
+    "probs": {
+     "FCBK": 0.9856,
+     "Zigzag": 0.0144
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7w4rpj_2026.png",
+    "baseline_chip": "chips/PK-tt7w4rpj_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7w61xn",
+   "lat": 30.639244,
+   "lon": 72.51967,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.427,
+    "probs": {
+     "FCBK": 0.9973,
+     "Zigzag": 0.0027
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7w61xn_2026.png",
+    "baseline_chip": "chips/PK-tt7w61xn_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7w93w8",
+   "lat": 30.682221,
+   "lon": 72.486007,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.306,
+    "probs": {
+     "FCBK": 0.9981,
+     "Zigzag": 0.0019
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7w93w8_2026.png",
+    "baseline_chip": "chips/PK-tt7w93w8_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7w96e5",
+   "lat": 30.688153,
+   "lon": 72.481031,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7w96e5_2026.png",
+    "baseline_chip": "chips/PK-tt7w96e5_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7w9nu6",
+   "lat": 30.711299,
+   "lon": 72.471936,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.539,
+    "probs": {
+     "FCBK": 0.9901,
+     "Zigzag": 0.0099
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7w9nu6_2026.png",
+    "baseline_chip": "chips/PK-tt7w9nu6_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7wb8xp",
+   "lat": 30.721782,
+   "lon": 72.453628,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.591,
+    "probs": {
+     "FCBK": 0.7593,
+     "Zigzag": 0.2407
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wb8xp_2026.png",
+    "baseline_chip": "chips/PK-tt7wb8xp_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wbb4c",
+   "lat": 30.717967,
+   "lon": 72.458707,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.756,
+    "probs": {
+     "FCBK": 0.7779,
+     "Zigzag": 0.2221
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wbb4c_2026.png",
+    "baseline_chip": "chips/PK-tt7wbb4c_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wbhww",
+   "lat": 30.743658,
+   "lon": 72.430963,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.671,
+    "probs": {
+     "FCBK": 0.4387,
+     "Zigzag": 0.5613
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wbhww_2026.png",
+    "baseline_chip": "chips/PK-tt7wbhww_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wbmch",
+   "lat": 30.750059,
+   "lon": 72.434532,
+   "district": "Toba Tek Singh",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.665,
+    "probs": {
+     "FCBK": 0.915,
+     "Zigzag": 0.085
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wbmch_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wd5vj",
+   "lat": 30.695291,
+   "lon": 72.516748,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7wd5vj_2026.png",
+    "baseline_chip": "chips/PK-tt7wd5vj_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7wdkuv",
+   "lat": 30.7008,
+   "lon": 72.527387,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7wdkuv_2026.png",
+    "baseline_chip": "chips/PK-tt7wdkuv_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7wdmxc",
+   "lat": 30.704314,
+   "lon": 72.531615,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.536,
+    "probs": {
+     "FCBK": 0.8225,
+     "Zigzag": 0.1775
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wdmxc_2026.png",
+    "baseline_chip": "chips/PK-tt7wdmxc_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wejdp",
+   "lat": 30.705311,
+   "lon": 72.556536,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7wejdp_2026.png",
+    "baseline_chip": "chips/PK-tt7wejdp_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7wejm7",
+   "lat": 30.703351,
+   "lon": 72.561005,
+   "district": "Toba Tek Singh",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.749,
+    "probs": {
+     "FCBK": 0.9995,
+     "Zigzag": 0.0005
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7wejm7_2026.png",
+    "baseline_chip": null
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7wes96",
+   "lat": 30.698992,
+   "lon": 72.577738,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.645,
+    "probs": {
+     "FCBK": 0.532,
+     "Zigzag": 0.468
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wes96_2026.png",
+    "baseline_chip": "chips/PK-tt7wes96_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wetzz",
+   "lat": 30.706722,
+   "lon": 72.58636,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.697,
+    "probs": {
+     "FCBK": 0.9828,
+     "Zigzag": 0.0172
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wetzz_2026.png",
+    "baseline_chip": "chips/PK-tt7wetzz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wey1x",
+   "lat": 30.708149,
+   "lon": 72.588741,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.718,
+    "probs": {
+     "FCBK": 0.7914,
+     "Zigzag": 0.2086
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wey1x_2026.png",
+    "baseline_chip": "chips/PK-tt7wey1x_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wgmu4",
+   "lat": 30.749745,
+   "lon": 72.570274,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7wgmu4_2026.png",
+    "baseline_chip": "chips/PK-tt7wgmu4_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7wgqr5",
+   "lat": 30.752656,
+   "lon": 72.574626,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.721,
+    "probs": {
+     "FCBK": 0.3466,
+     "Zigzag": 0.6534
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wgqr5_2026.png",
+    "baseline_chip": "chips/PK-tt7wgqr5_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wgt4p",
+   "lat": 30.746508,
+   "lon": 72.578746,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.645,
+    "probs": {
+     "FCBK": 0.8848,
+     "Zigzag": 0.1152
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wgt4p_2026.png",
+    "baseline_chip": "chips/PK-tt7wgt4p_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wgw3r",
+   "lat": 30.753448,
+   "lon": 72.577523,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.793,
+    "probs": {
+     "FCBK": 0.405,
+     "Zigzag": 0.595
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wgw3r_2026.png",
+    "baseline_chip": "chips/PK-tt7wgw3r_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wkej0",
+   "lat": 30.646438,
+   "lon": 72.626496,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.692,
+    "probs": {
+     "FCBK": 0.5684,
+     "Zigzag": 0.4316
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wkej0_2026.png",
+    "baseline_chip": "chips/PK-tt7wkej0_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wkfzk",
+   "lat": 30.645792,
+   "lon": 72.640587,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.72,
+    "probs": {
+     "FCBK": 0.9971,
+     "Zigzag": 0.0029
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7wkfzk_2026.png",
+    "baseline_chip": "chips/PK-tt7wkfzk_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7wkg0x",
+   "lat": 30.647582,
+   "lon": 72.631452,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.751,
+    "probs": {
+     "FCBK": 0.8612,
+     "Zigzag": 0.1388
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wkg0x_2026.png",
+    "baseline_chip": "chips/PK-tt7wkg0x_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wkujc",
+   "lat": 30.652166,
+   "lon": 72.638701,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.686,
+    "probs": {
+     "FCBK": 0.9107,
+     "Zigzag": 0.0893
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wkujc_2026.png",
+    "baseline_chip": "chips/PK-tt7wkujc_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wm158",
+   "lat": 30.635429,
+   "lon": 72.646488,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.733,
+    "probs": {
+     "FCBK": 0.8393,
+     "Zigzag": 0.1607
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wm158_2026.png",
+    "baseline_chip": "chips/PK-tt7wm158_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wm1em",
+   "lat": 30.639073,
+   "lon": 72.646273,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.739,
+    "probs": {
+     "FCBK": 0.7618,
+     "Zigzag": 0.2382
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wm1em_2026.png",
+    "baseline_chip": "chips/PK-tt7wm1em_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wm52r",
+   "lat": 30.649058,
+   "lon": 72.642236,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.697,
+    "probs": {
+     "FCBK": 0.9994,
+     "Zigzag": 0.0006
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7wm52r_2026.png",
+    "baseline_chip": "chips/PK-tt7wm52r_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7wm5c3",
+   "lat": 30.650749,
+   "lon": 72.643656,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.742,
+    "probs": {
+     "FCBK": 0.9881,
+     "Zigzag": 0.0119
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7wm5c3_2026.png",
+    "baseline_chip": "chips/PK-tt7wm5c3_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7wm9k9",
+   "lat": 30.637026,
+   "lon": 72.670048,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.712,
+    "probs": {
+     "FCBK": 0.7252,
+     "Zigzag": 0.2748
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wm9k9_2026.png",
+    "baseline_chip": "chips/PK-tt7wm9k9_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wmhhe",
+   "lat": 30.652535,
+   "lon": 72.648031,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.7,
+    "probs": {
+     "FCBK": 0.9984,
+     "Zigzag": 0.0016
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7wmhhe_2026.png",
+    "baseline_chip": "chips/PK-tt7wmhhe_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7wspdp",
+   "lat": 30.716362,
+   "lon": 72.60073,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.693,
+    "probs": {
+     "FCBK": 0.88,
+     "Zigzag": 0.12
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wspdp_2026.png",
+    "baseline_chip": "chips/PK-tt7wspdp_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wsz7r",
+   "lat": 30.714923,
+   "lon": 72.635183,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.639,
+    "probs": {
+     "FCBK": 0.9995,
+     "Zigzag": 0.0005
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7wsz7r_2026.png",
+    "baseline_chip": "chips/PK-tt7wsz7r_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7wszqh",
+   "lat": 30.714415,
+   "lon": 72.639108,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7wszqh_2026.png",
+    "baseline_chip": "chips/PK-tt7wszqh_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7wt16h",
+   "lat": 30.6814,
+   "lon": 72.644428,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.386,
+    "probs": {
+     "FCBK": 0.8461,
+     "Zigzag": 0.1539
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wt16h_2026.png",
+    "baseline_chip": "chips/PK-tt7wt16h_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wt5tr",
+   "lat": 30.694406,
+   "lon": 72.648868,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.549,
+    "probs": {
+     "FCBK": 0.7819,
+     "Zigzag": 0.2181
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wt5tr_2026.png",
+    "baseline_chip": "chips/PK-tt7wt5tr_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wt8t8",
+   "lat": 30.676688,
+   "lon": 72.671248,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.783,
+    "probs": {
+     "FCBK": 0.9388,
+     "Zigzag": 0.0612
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wt8t8_2026.png",
+    "baseline_chip": "chips/PK-tt7wt8t8_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wtk11",
+   "lat": 30.69614,
+   "lon": 72.654162,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.668,
+    "probs": {
+     "FCBK": 0.7042,
+     "Zigzag": 0.2958
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wtk11_2026.png",
+    "baseline_chip": "chips/PK-tt7wtk11_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wtk6k",
+   "lat": 30.697884,
+   "lon": 72.655835,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.662,
+    "probs": {
+     "FCBK": 0.9679,
+     "Zigzag": 0.0321
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wtk6k_2026.png",
+    "baseline_chip": "chips/PK-tt7wtk6k_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wtrm5",
+   "lat": 30.714204,
+   "lon": 72.659564,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.754,
+    "probs": {
+     "FCBK": 0.8884,
+     "Zigzag": 0.1116
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wtrm5_2026.png",
+    "baseline_chip": "chips/PK-tt7wtrm5_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wtz7z",
+   "lat": 30.714895,
+   "lon": 72.679849,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7wtz7z_2026.png",
+    "baseline_chip": "chips/PK-tt7wtz7z_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7wtze9",
+   "lat": 30.715283,
+   "lon": 72.679443,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7wtze9_2026.png",
+    "baseline_chip": "chips/PK-tt7wtze9_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7wtznf",
+   "lat": 30.712674,
+   "lon": 72.68386,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.766,
+    "probs": {
+     "FCBK": 0.9003,
+     "Zigzag": 0.0997
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wtznf_2026.png",
+    "baseline_chip": "chips/PK-tt7wtznf_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wu52r",
+   "lat": 30.736894,
+   "lon": 72.59803,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.77,
+    "probs": {
+     "FCBK": 0.503,
+     "Zigzag": 0.497
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wu52r_2026.png",
+    "baseline_chip": "chips/PK-tt7wu52r_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wueft",
+   "lat": 30.739371,
+   "lon": 72.623085,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.447,
+    "probs": {
+     "FCBK": 0.9832,
+     "Zigzag": 0.0168
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wueft_2026.png",
+    "baseline_chip": "chips/PK-tt7wueft_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wugue",
+   "lat": 30.738994,
+   "lon": 72.636964,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.78,
+    "probs": {
+     "FCBK": 0.8766,
+     "Zigzag": 0.1234
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wugue_2026.png",
+    "baseline_chip": "chips/PK-tt7wugue_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wukrf",
+   "lat": 30.741621,
+   "lon": 72.61944,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7wukrf_2026.png",
+    "baseline_chip": "chips/PK-tt7wukrf_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7wutnq",
+   "lat": 30.746286,
+   "lon": 72.628492,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.502,
+    "probs": {
+     "FCBK": 0.9508,
+     "Zigzag": 0.0492
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wutnq_2026.png",
+    "baseline_chip": "chips/PK-tt7wutnq_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wuv9w",
+   "lat": 30.749164,
+   "lon": 72.633016,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7wuv9w_2026.png",
+    "baseline_chip": "chips/PK-tt7wuv9w_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7wve7q",
+   "lat": 30.736659,
+   "lon": 72.668228,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7wve7q_2026.png",
+    "baseline_chip": "chips/PK-tt7wve7q_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7wved5",
+   "lat": 30.737547,
+   "lon": 72.666336,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.616,
+    "probs": {
+     "FCBK": 0.9902,
+     "Zigzag": 0.0098
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7wved5_2026.png",
+    "baseline_chip": "chips/PK-tt7wved5_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7wvn55",
+   "lat": 30.751395,
+   "lon": 72.645866,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.558,
+    "probs": {
+     "FCBK": 0.9467,
+     "Zigzag": 0.0533
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wvn55_2026.png",
+    "baseline_chip": "chips/PK-tt7wvn55_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7wvv1h",
+   "lat": 30.74601,
+   "lon": 72.675967,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.759,
+    "probs": {
+     "FCBK": 0.9983,
+     "Zigzag": 0.0017
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7wvv1h_2026.png",
+    "baseline_chip": "chips/PK-tt7wvv1h_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7wvynd",
+   "lat": 30.75123,
+   "lon": 72.683753,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.659,
+    "probs": {
+     "FCBK": 0.9995,
+     "Zigzag": 0.0005
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7wvynd_2026.png",
+    "baseline_chip": "chips/PK-tt7wvynd_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7wvypk",
+   "lat": 30.751543,
+   "lon": 72.684697,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7wvypk_2026.png",
+    "baseline_chip": "chips/PK-tt7wvypk_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7wwe91",
+   "lat": 30.693253,
+   "lon": 72.708988,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBP_20261021_0_L2A",
+    "date": "2026-10-21",
+    "detected": true,
+    "det_conf": 0.706,
+    "probs": {
+     "FCBK": 0.9988,
+     "Zigzag": 0.0012
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7wwe91_2026.png",
+    "baseline_chip": "chips/PK-tt7wwe91_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7wyd7e",
+   "lat": 30.730798,
+   "lon": 72.712434,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.776,
+    "probs": {
+     "FCBK": 0.4382,
+     "Zigzag": 0.5618
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7wyd7e_2026.png",
+    "baseline_chip": "chips/PK-tt7wyd7e_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7x0bpw",
+   "lat": 30.762876,
+   "lon": 72.465221,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7x0bpw_2026.png",
+    "baseline_chip": "chips/PK-tt7x0bpw_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7x113s",
+   "lat": 30.769272,
+   "lon": 72.468011,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7x113s_2026.png",
+    "baseline_chip": "chips/PK-tt7x113s_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7x11e8",
+   "lat": 30.769962,
+   "lon": 72.470736,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.377,
+    "probs": {
+     "FCBK": 0.4953,
+     "Zigzag": 0.5047
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7x11e8_2026.png",
+    "baseline_chip": "chips/PK-tt7x11e8_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7x16kn",
+   "lat": 30.775269,
+   "lon": 72.482381,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.598,
+    "probs": {
+     "FCBK": 0.906,
+     "Zigzag": 0.094
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7x16kn_2026.png",
+    "baseline_chip": "chips/PK-tt7x16kn_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7x3equ",
+   "lat": 30.824361,
+   "lon": 72.497226,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.754,
+    "probs": {
+     "FCBK": 0.9579,
+     "Zigzag": 0.0421
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7x3equ_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7x3jy7",
+   "lat": 30.837898,
+   "lon": 72.474638,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7x3jy7_2026.png",
+    "baseline_chip": "chips/PK-tt7x3jy7_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7x3szh",
+   "lat": 30.832603,
+   "lon": 72.49746,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.74,
+    "probs": {
+     "FCBK": 0.9998,
+     "Zigzag": 0.0002
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7x3szh_2026.png",
+    "baseline_chip": null
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7x3t1v",
+   "lat": 30.834151,
+   "lon": 72.490361,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.565,
+    "probs": {
+     "FCBK": 0.9996,
+     "Zigzag": 0.0004
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7x3t1v_2026.png",
+    "baseline_chip": "chips/PK-tt7x3t1v_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7x4bwx",
+   "lat": 30.765769,
+   "lon": 72.551984,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.782,
+    "probs": {
+     "FCBK": 0.4351,
+     "Zigzag": 0.5649
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7x4bwx_2026.png",
+    "baseline_chip": "chips/PK-tt7x4bwx_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7x5y2z",
+   "lat": 30.797254,
+   "lon": 72.587927,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.658,
+    "probs": {
+     "FCBK": 0.813,
+     "Zigzag": 0.187
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7x5y2z_2026.png",
+    "baseline_chip": "chips/PK-tt7x5y2z_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7x7pup",
+   "lat": 30.849559,
+   "lon": 72.559425,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.787,
+    "probs": {
+     "FCBK": 0.9246,
+     "Zigzag": 0.0754
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7x7pup_2026.png",
+    "baseline_chip": "chips/PK-tt7x7pup_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7x8gp4",
+   "lat": 30.866479,
+   "lon": 72.464535,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7x8gp4_2026.png",
+    "baseline_chip": "chips/PK-tt7x8gp4_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7x8pjx",
+   "lat": 30.889414,
+   "lon": 72.42972,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.591,
+    "probs": {
+     "FCBK": 0.9793,
+     "Zigzag": 0.0207
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7x8pjx_2026.png",
+    "baseline_chip": "chips/PK-tt7x8pjx_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7x9528",
+   "lat": 30.867532,
+   "lon": 72.466622,
+   "district": "Toba Tek Singh",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.727,
+    "probs": {
+     "FCBK": 0.9112,
+     "Zigzag": 0.0888
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7x9528_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7xb3y8",
+   "lat": 30.903285,
+   "lon": 72.441942,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7xb3y8_2026.png",
+    "baseline_chip": "chips/PK-tt7xb3y8_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7xb3z5",
+   "lat": 30.903749,
+   "lon": 72.442564,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.438,
+    "probs": {
+     "FCBK": 0.9655,
+     "Zigzag": 0.0345
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7xb3z5_2026.png",
+    "baseline_chip": "chips/PK-tt7xb3z5_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7xbj2f",
+   "lat": 30.922764,
+   "lon": 72.423175,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.748,
+    "probs": {
+     "FCBK": 0.4742,
+     "Zigzag": 0.5258
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7xbj2f_2026.png",
+    "baseline_chip": "chips/PK-tt7xbj2f_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7xcfu6",
+   "lat": 30.909098,
+   "lon": 72.50462,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7xcfu6_2026.png",
+    "baseline_chip": null
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7xcgq7",
+   "lat": 30.912074,
+   "lon": 72.507451,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.664,
+    "probs": {
+     "FCBK": 0.792,
+     "Zigzag": 0.208
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7xcgq7_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7xddxd",
+   "lat": 30.863845,
+   "lon": 72.542358,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7xddxd_2026.png",
+    "baseline_chip": "chips/PK-tt7xddxd_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7xdsj9",
+   "lat": 30.871852,
+   "lon": 72.539313,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.428,
+    "probs": {
+     "FCBK": 0.6914,
+     "Zigzag": 0.3086
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7xdsj9_2026.png",
+    "baseline_chip": "chips/PK-tt7xdsj9_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7xdt33",
+   "lat": 30.878757,
+   "lon": 72.533693,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7xdt33_2026.png",
+    "baseline_chip": "chips/PK-tt7xdt33_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7xdt9u",
+   "lat": 30.880642,
+   "lon": 72.534315,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.324,
+    "probs": {
+     "FCBK": 0.9801,
+     "Zigzag": 0.0199
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7xdt9u_2026.png",
+    "baseline_chip": "chips/PK-tt7xdt9u_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7xe3rf",
+   "lat": 30.856957,
+   "lon": 72.575592,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.693,
+    "probs": {
+     "FCBK": 0.8983,
+     "Zigzag": 0.1017
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7xe3rf_2026.png",
+    "baseline_chip": "chips/PK-tt7xe3rf_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7xe4mq",
+   "lat": 30.863007,
+   "lon": 72.561013,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tt7xe4mq_2026.png",
+    "baseline_chip": "chips/PK-tt7xe4mq_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tt7xe5rs",
+   "lat": 30.868275,
+   "lon": 72.564159,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.549,
+    "probs": {
+     "FCBK": 0.9694,
+     "Zigzag": 0.0306
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7xe5rs_2026.png",
+    "baseline_chip": "chips/PK-tt7xe5rs_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7xe6c8",
+   "lat": 30.864821,
+   "lon": 72.566905,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.714,
+    "probs": {
+     "FCBK": 0.7356,
+     "Zigzag": 0.2644
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7xe6c8_2026.png",
+    "baseline_chip": "chips/PK-tt7xe6c8_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7xe6ep",
+   "lat": 30.864591,
+   "lon": 72.568987,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.773,
+    "probs": {
+     "FCBK": 0.4595,
+     "Zigzag": 0.5405
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7xe6ep_2026.png",
+    "baseline_chip": "chips/PK-tt7xe6ep_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7xe7t5",
+   "lat": 30.869352,
+   "lon": 72.571841,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.761,
+    "probs": {
+     "FCBK": 0.5208,
+     "Zigzag": 0.4792
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7xe7t5_2026.png",
+    "baseline_chip": "chips/PK-tt7xe7t5_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7xf59x",
+   "lat": 30.914072,
+   "lon": 72.512043,
+   "district": "Toba Tek Singh",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.725,
+    "probs": {
+     "FCBK": 0.6031,
+     "Zigzag": 0.3969
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7xf59x_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7xg7es",
+   "lat": 30.91359,
+   "lon": 72.569523,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.713,
+    "probs": {
+     "FCBK": 0.9962,
+     "Zigzag": 0.0038
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tt7xg7es_2026.png",
+    "baseline_chip": "chips/PK-tt7xg7es_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tt7xu3ue",
+   "lat": 30.903687,
+   "lon": 72.61502,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.766,
+    "probs": {
+     "FCBK": 0.7432,
+     "Zigzag": 0.2568
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7xu3ue_2026.png",
+    "baseline_chip": "chips/PK-tt7xu3ue_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7xu3xt",
+   "lat": 30.902702,
+   "lon": 72.619119,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.706,
+    "probs": {
+     "FCBK": 0.8493,
+     "Zigzag": 0.1507
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7xu3xt_2026.png",
+    "baseline_chip": "chips/PK-tt7xu3xt_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7xu7x8",
+   "lat": 30.912891,
+   "lon": 72.618947,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.765,
+    "probs": {
+     "FCBK": 0.8633,
+     "Zigzag": 0.1367
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7xu7x8_2026.png",
+    "baseline_chip": "chips/PK-tt7xu7x8_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7xud77",
+   "lat": 30.906587,
+   "lon": 72.624287,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.798,
+    "probs": {
+     "FCBK": 0.7248,
+     "Zigzag": 0.2752
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7xud77_2026.png",
+    "baseline_chip": "chips/PK-tt7xud77_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7xum17",
+   "lat": 30.921689,
+   "lon": 72.610437,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.724,
+    "probs": {
+     "FCBK": 0.3864,
+     "Zigzag": 0.6136
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7xum17_2026.png",
+    "baseline_chip": "chips/PK-tt7xum17_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tt7xv40q",
+   "lat": 30.905666,
+   "lon": 72.642175,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.769,
+    "probs": {
+     "FCBK": 0.734,
+     "Zigzag": 0.266
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tt7xv40q_2026.png",
+    "baseline_chip": "chips/PK-tt7xv40q_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte2jhu9",
+   "lat": 30.963918,
+   "lon": 72.296324,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.713,
+    "probs": {
+     "FCBK": 0.8697,
+     "Zigzag": 0.1303
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte2jhu9_2026.png",
+    "baseline_chip": "chips/PK-tte2jhu9_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte2jhy5",
+   "lat": 30.964203,
+   "lon": 72.298493,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.733,
+    "probs": {
+     "FCBK": 0.9514,
+     "Zigzag": 0.0486
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte2jhy5_2026.png",
+    "baseline_chip": "chips/PK-tte2jhy5_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte2jkxe",
+   "lat": 30.962804,
+   "lon": 72.311376,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte2jkxe_2026.png",
+    "baseline_chip": "chips/PK-tte2jkxe_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte2jm16",
+   "lat": 30.965445,
+   "lon": 72.302964,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.409,
+    "probs": {
+     "FCBK": 0.9915,
+     "Zigzag": 0.0085
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tte2jm16_2026.png",
+    "baseline_chip": "chips/PK-tte2jm16_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tte2js8x",
+   "lat": 30.963522,
+   "lon": 72.312783,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.696,
+    "probs": {
+     "FCBK": 0.3876,
+     "Zigzag": 0.6124
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte2js8x_2026.png",
+    "baseline_chip": "chips/PK-tte2js8x_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte2nj16",
+   "lat": 30.965358,
+   "lon": 72.335943,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte2nj16_2026.png",
+    "baseline_chip": "chips/PK-tte2nj16_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte2nj1n",
+   "lat": 30.966125,
+   "lon": 72.335435,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte2nj1n_2026.png",
+    "baseline_chip": "chips/PK-tte2nj1n_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte2pkgv",
+   "lat": 30.964506,
+   "lon": 72.394233,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.693,
+    "probs": {
+     "FCBK": 0.9989,
+     "Zigzag": 0.0011
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tte2pkgv_2026.png",
+    "baseline_chip": "chips/PK-tte2pkgv_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tte2pkvm",
+   "lat": 30.964525,
+   "lon": 72.396293,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte2pkvm_2026.png",
+    "baseline_chip": "chips/PK-tte2pkvm_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte2pv07",
+   "lat": 30.965574,
+   "lon": 72.411257,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.773,
+    "probs": {
+     "FCBK": 0.6709,
+     "Zigzag": 0.3291
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte2pv07_2026.png",
+    "baseline_chip": "chips/PK-tte2pv07_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte2wfr3",
+   "lat": 31.037967,
+   "lon": 72.377027,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte2wfr3_2026.png",
+    "baseline_chip": "chips/PK-tte2wfr3_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte2wft5",
+   "lat": 31.03973,
+   "lon": 72.373941,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.745,
+    "probs": {
+     "FCBK": 0.9703,
+     "Zigzag": 0.0297
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte2wft5_2026.png",
+    "baseline_chip": "chips/PK-tte2wft5_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte2x1yc",
+   "lat": 31.03533,
+   "lon": 72.38722,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.668,
+    "probs": {
+     "FCBK": 0.5918,
+     "Zigzag": 0.4082
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte2x1yc_2026.png",
+    "baseline_chip": "chips/PK-tte2x1yc_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte2x6h2",
+   "lat": 31.036424,
+   "lon": 72.394898,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte2x6h2_2026.png",
+    "baseline_chip": "chips/PK-tte2x6h2_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte2zgsx",
+   "lat": 31.089935,
+   "lon": 72.417385,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.555,
+    "probs": {
+     "FCBK": 0.884,
+     "Zigzag": 0.116
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte2zgsx_2026.png",
+    "baseline_chip": "chips/PK-tte2zgsx_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte3p3q9",
+   "lat": 31.12041,
+   "lon": 72.397943,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.566,
+    "probs": {
+     "FCBK": 0.9049,
+     "Zigzag": 0.0951
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte3p3q9_2026.png",
+    "baseline_chip": "chips/PK-tte3p3q9_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte3p6s9",
+   "lat": 31.127218,
+   "lon": 72.395156,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.628,
+    "probs": {
+     "FCBK": 0.5669,
+     "Zigzag": 0.4331
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte3p6s9_2026.png",
+    "baseline_chip": "chips/PK-tte3p6s9_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte803jr",
+   "lat": 30.944264,
+   "lon": 72.4401,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.56,
+    "probs": {
+     "FCBK": 0.9909,
+     "Zigzag": 0.0091
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tte803jr_2026.png",
+    "baseline_chip": "chips/PK-tte803jr_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tte809eq",
+   "lat": 30.946785,
+   "lon": 72.448358,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.476,
+    "probs": {
+     "FCBK": 0.9484,
+     "Zigzag": 0.0516
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte809eq_2026.png",
+    "baseline_chip": "chips/PK-tte809eq_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte80nnh",
+   "lat": 30.971303,
+   "lon": 72.43034,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.513,
+    "probs": {
+     "FCBK": 0.9878,
+     "Zigzag": 0.0122
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tte80nnh_2026.png",
+    "baseline_chip": "chips/PK-tte80nnh_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tte80ug5",
+   "lat": 30.964276,
+   "lon": 72.459093,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.465,
+    "probs": {
+     "FCBK": 0.8952,
+     "Zigzag": 0.1048
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte80ug5_2026.png",
+    "baseline_chip": "chips/PK-tte80ug5_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte80v13",
+   "lat": 30.965233,
+   "lon": 72.456804,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.612,
+    "probs": {
+     "FCBK": 0.8523,
+     "Zigzag": 0.1477
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte80v13_2026.png",
+    "baseline_chip": "chips/PK-tte80v13_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte80v4w",
+   "lat": 30.965997,
+   "lon": 72.458599,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte80v4w_2026.png",
+    "baseline_chip": "chips/PK-tte80v4w_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte80yr4",
+   "lat": 30.972193,
+   "lon": 72.464771,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte80yr4_2026.png",
+    "baseline_chip": "chips/PK-tte80yr4_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte80yrw",
+   "lat": 30.972902,
+   "lon": 72.465415,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.611,
+    "probs": {
+     "FCBK": 0.9175,
+     "Zigzag": 0.0825
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte80yrw_2026.png",
+    "baseline_chip": "chips/PK-tte80yrw_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte81eyx",
+   "lat": 30.959471,
+   "lon": 72.496754,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte81eyx_2026.png",
+    "baseline_chip": null
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte81gdc",
+   "lat": 30.957042,
+   "lon": 72.502601,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.56,
+    "probs": {
+     "FCBK": 0.9946,
+     "Zigzag": 0.0054
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tte81gdc_2026.png",
+    "baseline_chip": null
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tte81gt9",
+   "lat": 30.957042,
+   "lon": 72.506507,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.665,
+    "probs": {
+     "FCBK": 0.9605,
+     "Zigzag": 0.0395
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte81gt9_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte81gww",
+   "lat": 30.957769,
+   "lon": 72.508018,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.738,
+    "probs": {
+     "FCBK": 0.6468,
+     "Zigzag": 0.3532
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte81gww_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte81uxd",
+   "lat": 30.962705,
+   "lon": 72.509289,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.578,
+    "probs": {
+     "FCBK": 0.9503,
+     "Zigzag": 0.0497
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte81uxd_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte827v5",
+   "lat": 31.002629,
+   "lon": 72.4398,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.672,
+    "probs": {
+     "FCBK": 0.9799,
+     "Zigzag": 0.0201
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte827v5_2026.png",
+    "baseline_chip": "chips/PK-tte827v5_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte82den",
+   "lat": 30.996212,
+   "lon": 72.448079,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte82den_2026.png",
+    "baseline_chip": "chips/PK-tte82den_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte82k24",
+   "lat": 31.005305,
+   "lon": 72.432914,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.576,
+    "probs": {
+     "FCBK": 0.9749,
+     "Zigzag": 0.0251
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte82k24_2026.png",
+    "baseline_chip": "chips/PK-tte82k24_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8336k",
+   "lat": 30.98905,
+   "lon": 72.480021,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.536,
+    "probs": {
+     "FCBK": 0.9637,
+     "Zigzag": 0.0363
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8336k_2026.png",
+    "baseline_chip": "chips/PK-tte8336k_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte833dz",
+   "lat": 30.990914,
+   "lon": 72.480771,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte833dz_2026.png",
+    "baseline_chip": "chips/PK-tte833dz_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte833uu",
+   "lat": 30.991817,
+   "lon": 72.483672,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte833uu_2026.png",
+    "baseline_chip": "chips/PK-tte833uu_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte8383w",
+   "lat": 30.983955,
+   "lon": 72.489996,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte8383w_2026.png",
+    "baseline_chip": "chips/PK-tte8383w_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte838qj",
+   "lat": 30.983725,
+   "lon": 72.496174,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.787,
+    "probs": {
+     "FCBK": 0.9863,
+     "Zigzag": 0.0137
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte838qj_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte83d8b",
+   "lat": 30.995274,
+   "lon": 72.488902,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.794,
+    "probs": {
+     "FCBK": 0.961,
+     "Zigzag": 0.039
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte83d8b_2026.png",
+    "baseline_chip": "chips/PK-tte83d8b_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte83rw7",
+   "lat": 31.023317,
+   "lon": 72.485556,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.719,
+    "probs": {
+     "FCBK": 0.7126,
+     "Zigzag": 0.2874
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte83rw7_2026.png",
+    "baseline_chip": "chips/PK-tte83rw7_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte83rxr",
+   "lat": 31.02386,
+   "lon": 72.487101,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte83rxr_2026.png",
+    "baseline_chip": "chips/PK-tte83rxr_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte83s75",
+   "lat": 31.005314,
+   "lon": 72.492076,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.708,
+    "probs": {
+     "FCBK": 0.9964,
+     "Zigzag": 0.0036
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tte83s75_2026.png",
+    "baseline_chip": null
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tte83tku",
+   "lat": 31.01102,
+   "lon": 72.494586,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.763,
+    "probs": {
+     "FCBK": 0.985,
+     "Zigzag": 0.015
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte83tku_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte83tu0",
+   "lat": 31.01317,
+   "lon": 72.493321,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.631,
+    "probs": {
+     "FCBK": 0.9904,
+     "Zigzag": 0.0096
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tte83tu0_2026.png",
+    "baseline_chip": null
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tte84cxm",
+   "lat": 30.946758,
+   "lon": 72.552821,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.61,
+    "probs": {
+     "FCBK": 0.9785,
+     "Zigzag": 0.0215
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte84cxm_2026.png",
+    "baseline_chip": "chips/PK-tte84cxm_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte84pbv",
+   "lat": 30.981094,
+   "lon": 72.511092,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte84pbv_2026.png",
+    "baseline_chip": null
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte84w9m",
+   "lat": 30.974162,
+   "lon": 72.533628,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.771,
+    "probs": {
+     "FCBK": 0.8216,
+     "Zigzag": 0.1784
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte84w9m_2026.png",
+    "baseline_chip": "chips/PK-tte84w9m_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte85pjq",
+   "lat": 30.977014,
+   "lon": 72.561228,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.744,
+    "probs": {
+     "FCBK": 0.8374,
+     "Zigzag": 0.1626
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte85pjq_2026.png",
+    "baseline_chip": "chips/PK-tte85pjq_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte867xf",
+   "lat": 31.00116,
+   "lon": 72.531654,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.601,
+    "probs": {
+     "FCBK": 0.9811,
+     "Zigzag": 0.0189
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte867xf_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte86hxf",
+   "lat": 31.006574,
+   "lon": 72.520718,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.75,
+    "probs": {
+     "FCBK": 0.9957,
+     "Zigzag": 0.0043
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tte86hxf_2026.png",
+    "baseline_chip": null
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tte86x51",
+   "lat": 31.020221,
+   "lon": 72.535946,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.708,
+    "probs": {
+     "FCBK": 0.9351,
+     "Zigzag": 0.0649
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte86x51_2026.png",
+    "baseline_chip": "chips/PK-tte86x51_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte86z75",
+   "lat": 31.02181,
+   "lon": 72.547036,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.769,
+    "probs": {
+     "FCBK": 0.4714,
+     "Zigzag": 0.5286
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte86z75_2026.png",
+    "baseline_chip": "chips/PK-tte86z75_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte88q4m",
+   "lat": 31.059278,
+   "lon": 72.435961,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.745,
+    "probs": {
+     "FCBK": 0.9079,
+     "Zigzag": 0.0921
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte88q4m_2026.png",
+    "baseline_chip": "chips/PK-tte88q4m_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte89mze",
+   "lat": 31.057523,
+   "lon": 72.487187,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.674,
+    "probs": {
+     "FCBK": 0.7797,
+     "Zigzag": 0.2203
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte89mze_2026.png",
+    "baseline_chip": "chips/PK-tte89mze_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8e08x",
+   "lat": 31.029419,
+   "lon": 72.554627,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte8e08x_2026.png",
+    "baseline_chip": "chips/PK-tte8e08x_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte8ekvc",
+   "lat": 31.051808,
+   "lon": 72.572847,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.405,
+    "probs": {
+     "FCBK": 0.9007,
+     "Zigzag": 0.0993
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8ekvc_2026.png",
+    "baseline_chip": "chips/PK-tte8ekvc_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8epsn",
+   "lat": 31.067663,
+   "lon": 72.559318,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.68,
+    "probs": {
+     "FCBK": 0.7556,
+     "Zigzag": 0.2444
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8epsn_2026.png",
+    "baseline_chip": "chips/PK-tte8epsn_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8es22",
+   "lat": 31.04883,
+   "lon": 72.576215,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": null,
+    "date": null,
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte8es22_2026.png",
+    "baseline_chip": "chips/PK-tte8es22_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8eyrh",
+   "lat": 31.060488,
+   "lon": 72.596528,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.774,
+    "probs": {
+     "FCBK": 0.2859,
+     "Zigzag": 0.7141
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8eyrh_2026.png",
+    "baseline_chip": "chips/PK-tte8eyrh_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8f43g",
+   "lat": 31.082349,
+   "lon": 72.512349,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.694,
+    "probs": {
+     "FCBK": 0.9645,
+     "Zigzag": 0.0355
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8f43g_2026.png",
+    "baseline_chip": "chips/PK-tte8f43g_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8gqfb",
+   "lat": 31.106447,
+   "lon": 72.568665,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.569,
+    "probs": {
+     "FCBK": 0.7135,
+     "Zigzag": 0.2865
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8gqfb_2026.png",
+    "baseline_chip": "chips/PK-tte8gqfb_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8hy9b",
+   "lat": 30.973215,
+   "lon": 72.633145,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.51,
+    "probs": {
+     "FCBK": 0.93,
+     "Zigzag": 0.07
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8hy9b_2026.png",
+    "baseline_chip": "chips/PK-tte8hy9b_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8j9qt",
+   "lat": 30.945303,
+   "lon": 72.672834,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.793,
+    "probs": {
+     "FCBK": 0.446,
+     "Zigzag": 0.554
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8j9qt_2026.png",
+    "baseline_chip": "chips/PK-tte8j9qt_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8jgvf",
+   "lat": 30.958588,
+   "lon": 72.68268,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": null,
+    "date": null,
+    "detected": true,
+    "det_conf": 0.701,
+    "probs": {
+     "FCBK": 0.911,
+     "Zigzag": 0.089
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8jgvf_2026.png",
+    "baseline_chip": "chips/PK-tte8jgvf_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8jr48",
+   "lat": 30.976094,
+   "lon": 72.656243,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.632,
+    "probs": {
+     "FCBK": 0.8026,
+     "Zigzag": 0.1974
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8jr48_2026.png",
+    "baseline_chip": "chips/PK-tte8jr48_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8jr4j",
+   "lat": 30.97694,
+   "lon": 72.655385,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.74,
+    "probs": {
+     "FCBK": 0.8911,
+     "Zigzag": 0.1089
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8jr4j_2026.png",
+    "baseline_chip": "chips/PK-tte8jr4j_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8m780",
+   "lat": 31.00071,
+   "lon": 72.652746,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte8m780_2026.png",
+    "baseline_chip": null
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte8nnd5",
+   "lat": 30.973822,
+   "lon": 72.688302,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.755,
+    "probs": {
+     "FCBK": 0.6952,
+     "Zigzag": 0.3048
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8nnd5_2026.png",
+    "baseline_chip": "chips/PK-tte8nnd5_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8q1dp",
+   "lat": 30.990923,
+   "lon": 72.688345,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.726,
+    "probs": {
+     "FCBK": 0.8706,
+     "Zigzag": 0.1294
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8q1dp_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8q62p",
+   "lat": 30.995154,
+   "lon": 72.69671,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.453,
+    "probs": {
+     "FCBK": 0.5066,
+     "Zigzag": 0.4934
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8q62p_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8qrpy",
+   "lat": 31.020992,
+   "lon": 72.707255,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.708,
+    "probs": {
+     "FCBK": 0.4749,
+     "Zigzag": 0.5251
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8qrpy_2026.png",
+    "baseline_chip": "chips/PK-tte8qrpy_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8sndw",
+   "lat": 31.062252,
+   "lon": 72.601195,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.719,
+    "probs": {
+     "FCBK": 0.5737,
+     "Zigzag": 0.4263
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8sndw_2026.png",
+    "baseline_chip": "chips/PK-tte8sndw_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8u29b",
+   "lat": 31.072208,
+   "lon": 72.611295,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.628,
+    "probs": {
+     "FCBK": 0.8098,
+     "Zigzag": 0.1902
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8u29b_2026.png",
+    "baseline_chip": "chips/PK-tte8u29b_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8udkp",
+   "lat": 31.082974,
+   "lon": 72.625188,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.572,
+    "probs": {
+     "FCBK": 0.6766,
+     "Zigzag": 0.3234
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8udkp_2026.png",
+    "baseline_chip": "chips/PK-tte8udkp_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8w32x",
+   "lat": 31.033583,
+   "lon": 72.697332,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.733,
+    "probs": {
+     "FCBK": 0.7565,
+     "Zigzag": 0.2435
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte8w32x_2026.png",
+    "baseline_chip": "chips/PK-tte8w32x_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte8w4q6",
+   "lat": 31.03826,
+   "lon": 72.694264,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte8w4q6_2026.png",
+    "baseline_chip": "chips/PK-tte8w4q6_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte91c99",
+   "lat": 31.121781,
+   "lon": 72.501099,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.629,
+    "probs": {
+     "FCBK": 0.9061,
+     "Zigzag": 0.0939
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte91c99_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte97beq",
+   "lat": 31.161082,
+   "lon": 72.591395,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte97beq_2026.png",
+    "baseline_chip": "chips/PK-tte97beq_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte97cyj",
+   "lat": 31.167734,
+   "lon": 72.595176,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.66,
+    "probs": {
+     "FCBK": 0.9623,
+     "Zigzag": 0.0377
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte97cyj_2026.png",
+    "baseline_chip": "chips/PK-tte97cyj_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte97gvb",
+   "lat": 31.177856,
+   "lon": 72.594596,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.37,
+    "probs": {
+     "FCBK": 0.9913,
+     "Zigzag": 0.0087
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tte97gvb_2026.png",
+    "baseline_chip": "chips/PK-tte97gvb_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tte97jgs",
+   "lat": 31.189505,
+   "lon": 72.558631,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte97jgs_2026.png",
+    "baseline_chip": "chips/PK-tte97jgs_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte97mjc",
+   "lat": 31.184947,
+   "lon": 72.572803,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.68,
+    "probs": {
+     "FCBK": 0.9287,
+     "Zigzag": 0.0713
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte97mjc_2026.png",
+    "baseline_chip": "chips/PK-tte97mjc_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte97n4e",
+   "lat": 31.19082,
+   "lon": 72.557354,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.393,
+    "probs": {
+     "FCBK": 0.9195,
+     "Zigzag": 0.0805
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte97n4e_2026.png",
+    "baseline_chip": "chips/PK-tte97n4e_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte97u1d",
+   "lat": 31.179616,
+   "lon": 72.588848,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.578,
+    "probs": {
+     "FCBK": 0.9663,
+     "Zigzag": 0.0337
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte97u1d_2026.png",
+    "baseline_chip": "chips/PK-tte97u1d_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9h17u",
+   "lat": 31.120841,
+   "lon": 72.602896,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.592,
+    "probs": {
+     "FCBK": 0.8388,
+     "Zigzag": 0.1612
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9h17u_2026.png",
+    "baseline_chip": "chips/PK-tte9h17u_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9j7zx",
+   "lat": 31.135103,
+   "lon": 72.662967,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.719,
+    "probs": {
+     "FCBK": 0.7559,
+     "Zigzag": 0.2441
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9j7zx_2026.png",
+    "baseline_chip": "chips/PK-tte9j7zx_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9j9dp",
+   "lat": 31.12277,
+   "lon": 72.666439,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.609,
+    "probs": {
+     "FCBK": 0.5858,
+     "Zigzag": 0.4142
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9j9dp_2026.png",
+    "baseline_chip": "chips/PK-tte9j9dp_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9jq72",
+   "lat": 31.147698,
+   "lon": 72.657278,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte9jq72_2026.png",
+    "baseline_chip": "chips/PK-tte9jq72_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte9k5yg",
+   "lat": 31.17837,
+   "lon": 72.607225,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.671,
+    "probs": {
+     "FCBK": 0.8418,
+     "Zigzag": 0.1582
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9k5yg_2026.png",
+    "baseline_chip": "chips/PK-tte9k5yg_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9k70e",
+   "lat": 31.174345,
+   "lon": 72.609668,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte9k70e_2026.png",
+    "baseline_chip": "chips/PK-tte9k70e_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte9m9rx",
+   "lat": 31.165319,
+   "lon": 72.674079,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.619,
+    "probs": {
+     "FCBK": 0.8191,
+     "Zigzag": 0.1809
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9m9rx_2026.png",
+    "baseline_chip": "chips/PK-tte9m9rx_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9mr85",
+   "lat": 31.198986,
+   "lon": 72.652848,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.665,
+    "probs": {
+     "FCBK": 0.7959,
+     "Zigzag": 0.2041
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9mr85_2026.png",
+    "baseline_chip": "chips/PK-tte9mr85_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9mx7m",
+   "lat": 31.198041,
+   "lon": 72.668375,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.499,
+    "probs": {
+     "FCBK": 0.9721,
+     "Zigzag": 0.0279
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9mx7m_2026.png",
+    "baseline_chip": "chips/PK-tte9mx7m_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9n3uc",
+   "lat": 31.123131,
+   "lon": 72.703358,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.702,
+    "probs": {
+     "FCBK": 0.9735,
+     "Zigzag": 0.0265
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9n3uc_2026.png",
+    "baseline_chip": "chips/PK-tte9n3uc_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9n5rw",
+   "lat": 31.132275,
+   "lon": 72.695937,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte9n5rw_2026.png",
+    "baseline_chip": "chips/PK-tte9n5rw_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte9n6hz",
+   "lat": 31.125583,
+   "lon": 72.703101,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte9n6hz_2026.png",
+    "baseline_chip": "chips/PK-tte9n6hz_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte9n72y",
+   "lat": 31.132191,
+   "lon": 72.697781,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte9n72y_2026.png",
+    "baseline_chip": "chips/PK-tte9n72y_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte9n777",
+   "lat": 31.131806,
+   "lon": 72.70127,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.572,
+    "probs": {
+     "FCBK": 0.9054,
+     "Zigzag": 0.0946
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9n777_2026.png",
+    "baseline_chip": "chips/PK-tte9n777_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9ne8g",
+   "lat": 31.133065,
+   "lon": 72.708881,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.637,
+    "probs": {
+     "FCBK": 0.7452,
+     "Zigzag": 0.2548
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9ne8g_2026.png",
+    "baseline_chip": "chips/PK-tte9ne8g_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9nec7",
+   "lat": 31.134525,
+   "lon": 72.709374,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.663,
+    "probs": {
+     "FCBK": 0.7853,
+     "Zigzag": 0.2147
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9nec7_2026.png",
+    "baseline_chip": "chips/PK-tte9nec7_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9nmw7",
+   "lat": 31.144118,
+   "lon": 72.705225,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte9nmw7_2026.png",
+    "baseline_chip": "chips/PK-tte9nmw7_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte9nu2t",
+   "lat": 31.137627,
+   "lon": 72.719258,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.695,
+    "probs": {
+     "FCBK": 0.9636,
+     "Zigzag": 0.0364
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9nu2t_2026.png",
+    "baseline_chip": "chips/PK-tte9nu2t_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9q1ux",
+   "lat": 31.168119,
+   "lon": 72.691903,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte9q1ux_2026.png",
+    "baseline_chip": "chips/PK-tte9q1ux_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte9q64d",
+   "lat": 31.168624,
+   "lon": 72.700053,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.699,
+    "probs": {
+     "FCBK": 0.7318,
+     "Zigzag": 0.2682
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9q64d_2026.png",
+    "baseline_chip": "chips/PK-tte9q64d_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9qk5n",
+   "lat": 31.180368,
+   "lon": 72.700967,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.687,
+    "probs": {
+     "FCBK": 0.3824,
+     "Zigzag": 0.6176
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9qk5n_2026.png",
+    "baseline_chip": "chips/PK-tte9qk5n_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9qk6c",
+   "lat": 31.180863,
+   "lon": 72.700526,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte9qk6c_2026.png",
+    "baseline_chip": "chips/PK-tte9qk6c_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte9qt8x",
+   "lat": 31.188663,
+   "lon": 72.708516,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte9qt8x_2026.png",
+    "baseline_chip": "chips/PK-tte9qt8x_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte9qw10",
+   "lat": 31.190267,
+   "lon": 72.709095,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.767,
+    "probs": {
+     "FCBK": 0.4136,
+     "Zigzag": 0.5864
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9qw10_2026.png",
+    "baseline_chip": "chips/PK-tte9qw10_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9qwk7",
+   "lat": 31.192148,
+   "lon": 72.713442,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.733,
+    "probs": {
+     "FCBK": 0.469,
+     "Zigzag": 0.531
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9qwk7_2026.png",
+    "baseline_chip": "chips/PK-tte9qwk7_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9sgjq",
+   "lat": 31.218789,
+   "lon": 72.638037,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.702,
+    "probs": {
+     "FCBK": 0.5639,
+     "Zigzag": 0.4361
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9sgjq_2026.png",
+    "baseline_chip": "chips/PK-tte9sgjq_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9t0ud",
+   "lat": 31.205734,
+   "lon": 72.648075,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.696,
+    "probs": {
+     "FCBK": 0.598,
+     "Zigzag": 0.402
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9t0ud_2026.png",
+    "baseline_chip": "chips/PK-tte9t0ud_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9t17t",
+   "lat": 31.208913,
+   "lon": 72.646724,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.61,
+    "probs": {
+     "FCBK": 0.5802,
+     "Zigzag": 0.4198
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9t17t_2026.png",
+    "baseline_chip": "chips/PK-tte9t17t_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9t4v2",
+   "lat": 31.21644,
+   "lon": 72.648975,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.695,
+    "probs": {
+     "FCBK": 0.9757,
+     "Zigzag": 0.0243
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9t4v2_2026.png",
+    "baseline_chip": "chips/PK-tte9t4v2_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9t4yy",
+   "lat": 31.217477,
+   "lon": 72.6509,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte9t4yy_2026.png",
+    "baseline_chip": "chips/PK-tte9t4yy_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte9t8hg",
+   "lat": 31.201758,
+   "lon": 72.670199,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.637,
+    "probs": {
+     "FCBK": 0.9857,
+     "Zigzag": 0.0143
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9t8hg_2026.png",
+    "baseline_chip": "chips/PK-tte9t8hg_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9wc4k",
+   "lat": 31.207435,
+   "lon": 72.721916,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.572,
+    "probs": {
+     "FCBK": 0.7707,
+     "Zigzag": 0.2293
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9wc4k_2026.png",
+    "baseline_chip": "chips/PK-tte9wc4k_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9wcmn",
+   "lat": 31.209188,
+   "lon": 72.72552,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte9wcmn_2026.png",
+    "baseline_chip": "chips/PK-tte9wcmn_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte9z7mb",
+   "lat": 31.263049,
+   "lon": 72.748642,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.811,
+    "probs": {
+     "FCBK": 0.5066,
+     "Zigzag": 0.4934
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9z7mb_2026.png",
+    "baseline_chip": "chips/PK-tte9z7mb_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9zbu7",
+   "lat": 31.249923,
+   "lon": 72.768295,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.709,
+    "probs": {
+     "FCBK": 0.9828,
+     "Zigzag": 0.0172
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9zbu7_2026.png",
+    "baseline_chip": "chips/PK-tte9zbu7_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9zbuu",
+   "lat": 31.250024,
+   "lon": 72.769239,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tte9zbuu_2026.png",
+    "baseline_chip": "chips/PK-tte9zbuu_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tte9zte2",
+   "lat": 31.275334,
+   "lon": 72.756165,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.822,
+    "probs": {
+     "FCBK": 0.8787,
+     "Zigzag": 0.1213
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9zte2_2026.png",
+    "baseline_chip": "chips/PK-tte9zte2_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9zuuu",
+   "lat": 31.272051,
+   "lon": 72.769282,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.74,
+    "probs": {
+     "FCBK": 0.9326,
+     "Zigzag": 0.0674
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9zuuu_2026.png",
+    "baseline_chip": "chips/PK-tte9zuuu_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tte9zzkg",
+   "lat": 31.285554,
+   "lon": 72.769261,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.841,
+    "probs": {
+     "FCBK": 0.9775,
+     "Zigzag": 0.0225
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tte9zzkg_2026.png",
+    "baseline_chip": "chips/PK-tte9zzkg_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttecbpvs",
+   "lat": 31.288482,
+   "lon": 72.781291,
+   "district": "Toba Tek Singh",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RBQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttecbpvs_2026.png",
+    "baseline_chip": "chips/PK-ttecbpvs_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  }
+ ]
+}

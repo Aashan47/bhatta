@@ -184,3 +184,76 @@ Zigzag kiln from an FCBK reliably enough to certify a conversion (T3, T6 miss; b
 precision for Zigzag about 0.57). The product therefore never certifies a conversion from imagery.
 It marks about a quarter of kilns as still FCBK (with a 3.7% false-accusation share among those
 calls on test) and sends the rest to an inspector. That is the honest output of these models.
+
+## The October 2026 scan (`ml/scan.py`, outputs `data/kilns.json`, `data/summary.json`, `data/manifest.json`)
+
+Commands: `ml/scan.py --districts Lahore Kasur Sheikhpura --mode full`, then
+`ml/scan.py --all-known --only-fetched` district by district while `ml/scan.py --fetch-only --all-known`
+downloaded imagery, then `ml/scan.py --merge`. Imagery: Element84 Earth Search, `sentinel-2-l2a`,
+105 scenes dated 2026-10-01 to 2026-10-24 (list in `data/summary.json`). Districts: geoBoundaries
+ADM2 PAK (https://www.geoboundaries.org/api/current/gbOpen/PAK/ADM2/, release 9469f09; the API
+lists the licence as Public Domain, source "geoBoundaries, Wikipedia", year 2019; names as given there,
+for example "Sheikhpura").
+
+**Coverage.** 22 districts, all in Punjab: Lahore, Kasur and Sheikhpura scanned in full (every
+patch, so new kilns can be found), and the 19 next districts by 2023-24 kiln count scanned around
+known kilns only (Faisalabad, Bahawalpur, Vihari, Sargodha, Jhang, Gujranwala, Mandi Bahauddin,
+Rahim Yar Khan, Muzaffargarh, Multan, Gujrat, Sialkot, Khanewal, Pakpattan, Okara, Rawalpindi,
+Lodhran, Toba Tek Singh, Sahiwal). 8,369 of the 11,761 Pakistan 2023-24 kilns (71%) were checked.
+**Not done:** the other 64 districts with 3,392 kilns, including the Punjab districts Bahawalnagar,
+Narowal, Layyah, Bhakkar, Dera Ghazi Khan, Jhelum, Hafizabad, Rajanpur, Khushab, Chakwal, Mianwali
+and Attock. The download rate from the imagery bucket fell from about 3 s to about 10 minutes per
+district during the run, and the scan was stopped at 17:50 PKT so results could be written.
+
+**Result: 8,879 kilns** (8,369 from 2023-24 plus 510 new detections in the three fully scanned
+districts).
+
+| Status | All | 2023-24 FCBK (n = 6,850) | 2023-24 Zigzag (n = 1,518) | 2023-24 CFCBK (n = 1) | New detections (n = 510) |
+|---|---|---|---|---|---|
+| ZIGZAG | 0 | 0 | 0 | 0 | 0 |
+| FCBK | 1,316 | 1,185 | 59 | 0 | 72 |
+| UNDETERMINED | 5,255 | 3,729 | 1,088 | 0 | 438 |
+| NOT_DETECTED | 2,308 | 1,936 | 371 | 1 | n/a |
+
+278 of the UNDETERMINED 2023-24 kilns had no usable pixels (cloud, cloud shadow or no data in every
+scene); the rest were detected and given the set {FCBK, Zigzag}.
+
+How to read it:
+* **No kiln is certified Zigzag.** This follows from the calibration result: no p(Zigzag) floor
+  keeps false certificates at or below 5% (D3). The product says "cannot be determined from 10 m
+  imagery; needs an inspector" instead.
+* **FCBK calls**: 1,244 of the 5,783 detected 2023-24 kilns (21.5%; 24.7% on test kilns), with large
+  differences between districts (Bahawalpur 221 of 309 detected, Gujranwala 0 of 228), which may
+  reflect differences in imagery between districts as well as differences in kilns. Mean
+  p(Zigzag) on detected kilns labelled FCBK in 2023-24 was 0.199, and 0.427 on kilns labelled Zigzag.
+  59 kilns labelled Zigzag in 2023-24 are now called FCBK (3.9% of them): either a reversion or a
+  false accusation; on test the false-accusation share among FCBK calls was 3.7%.
+* **NOT_DETECTED (2,308, 28% of the 2023-24 kilns checked)** means not seen: demolished, dismantled
+  or missed. The test-block detector recall was 0.88 per box and 0.91 per kiln on Nov-Feb imagery,
+  so a share of these, likely larger in October single-date imagery, are misses. A random sample of
+  NOT_DETECTED chips includes kilns that are visible in the October image. Treat this status as "check",
+  never as "gone".
+* **Domain shift.** The models were trained on median composites from the Nov-Feb firing season and
+  run on single October dates (D4, D6). One measurable effect is the lower share of confident FCBK
+  calls; another is the share of known kilns not detected. The calibration guarantee (90% coverage)
+  was established on Nov-Feb imagery and is not guaranteed on October imagery.
+* **Scene misregistration.** Every Sentinel-2B scene acquired on 2026-10-21 that we used is offset by
+  about 7 px east-west and 10 to 11 px north-south from both the dataset and the other October
+  scenes (per-district list in `data/summary.json`), handled as in D5.
+* **New detections (510)** in Lahore, Kasur and Sheikhpura use the stricter 0.60 threshold (D7);
+  their precision in open country is not measured. They are candidates, not findings.
+
+**Recomputation (`ml/verify_scan.py --district Lahore`).** The verifier checked both weight hashes
+against `data/manifest.json`, re-read all imagery for Lahore from the network (no cache) with the
+manifest's fixed scene ids, and re-ran detection, classification and conformal sets on CPU with
+deterministic settings. Result: 211 of 211 records identical field by field, 368 of 368 chips
+byte-identical, "RESULT: IDENTICAL".
+
+**Human audit sample.** `data/audit/sample.json`: 10 random kilns per status (seed 20261031), with
+both chips and empty `human_label` fields. ZIGZAG has no kilns, so the sample has 30 kilns (FCBK,
+UNDETERMINED, NOT_DETECTED). Not labelled by us.
+
+**Chips.** 64 x 64 px PNG, current image and 2023-24 dataset patch, in `data/chips/` (16,840 files,
+169 MB). Baseline chips of kilns near a dataset patch edge are padded by reflection, which shows as
+a mirror pattern at one side. 2023-24 kilns that were never fully inside any dataset patch have no
+baseline chip (`baseline_chip` null).

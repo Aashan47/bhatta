@@ -1,0 +1,8471 @@
+{
+ "stats": {
+  "district": "Okara",
+  "mode": "known",
+  "patches_planned": 269,
+  "patches_skipped_invalid": 0,
+  "chunks": 42,
+  "detections_raw": 313,
+  "detections_merged": 262,
+  "known_kilns": 311,
+  "known_kilns_aligned": 277,
+  "known_kilns_shifted": 9,
+  "scene_shift_px": {},
+  "known_kilns_moved_for_matching": 9,
+  "shift_px_counts": {
+   "0,0": 268,
+   "0,-1": 3,
+   "1,0": 2,
+   "1,1": 1,
+   "-18,13": 1,
+   "-1,-1": 1,
+   "0,1": 1
+  },
+  "status": {
+   "UNDETERMINED": 228,
+   "NOT_DETECTED": 75,
+   "FCBK": 16
+  },
+  "unmatched_dropped_near_known_or_low_conf": 20,
+  "new_detections": 8,
+  "seconds": 8.0
+ },
+ "scenes": [
+  "S2C_43RCP_20261006_0_L2A",
+  "S2C_43RDP_20261006_0_L2A",
+  "S2B_43RCP_20261001_0_L2A",
+  "S2B_43RDP_20261001_0_L2A",
+  "S2B_43RDQ_20261018_0_L2A",
+  "S2B_43RCP_20261018_0_L2A",
+  "S2C_43RDQ_20261006_0_L2A",
+  "S2B_43RCQ_20261018_0_L2A",
+  "S2B_43RDQ_20261001_0_L2A",
+  "S2B_43RDP_20261018_0_L2A",
+  "S2B_43RCQ_20261001_0_L2A",
+  "S2C_43RCQ_20261006_0_L2A"
+ ],
+ "records": [
+  {
+   "id": "PK-ttkkgjwn",
+   "lat": 30.397584,
+   "lon": 73.616832,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.378,
+    "probs": {
+     "FCBK": 0.8705,
+     "Zigzag": 0.1295
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkkgjwn_2026.png",
+    "baseline_chip": "chips/PK-ttkkgjwn_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkkurrz",
+   "lat": 30.407368,
+   "lon": 73.674259,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.679,
+    "probs": {
+     "FCBK": 0.7438,
+     "Zigzag": 0.2562
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkkurrz_2026.png",
+    "baseline_chip": "chips/PK-ttkkurrz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkkzqqt",
+   "lat": 30.401499,
+   "lon": 73.804255,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkkzqqt_2026.png",
+    "baseline_chip": "chips/PK-ttkkzqqt_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkm73b1",
+   "lat": 30.463914,
+   "lon": 73.619535,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkm73b1_2026.png",
+    "baseline_chip": "chips/PK-ttkm73b1_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkm74pn",
+   "lat": 30.466227,
+   "lon": 73.618012,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.549,
+    "probs": {
+     "FCBK": 0.991,
+     "Zigzag": 0.009
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-ttkm74pn_2026.png",
+    "baseline_chip": "chips/PK-ttkm74pn_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-ttkmf5b6",
+   "lat": 30.5631,
+   "lon": 73.564983,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.564,
+    "probs": {
+     "FCBK": 0.8642,
+     "Zigzag": 0.1358
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkmf5b6_2026.png",
+    "baseline_chip": "chips/PK-ttkmf5b6_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkmgcn7",
+   "lat": 30.548002,
+   "lon": 73.649991,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.555,
+    "probs": {
+     "FCBK": 0.7797,
+     "Zigzag": 0.2203
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkmgcn7_2026.png",
+    "baseline_chip": "chips/PK-ttkmgcn7_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkmguhb",
+   "lat": 30.564079,
+   "lon": 73.648212,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.302,
+    "probs": {
+     "FCBK": 0.6402,
+     "Zigzag": 0.3598
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkmguhb_2026.png",
+    "baseline_chip": "chips/PK-ttkmguhb_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkmgvkt",
+   "lat": 30.571758,
+   "lon": 73.64761,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.628,
+    "probs": {
+     "FCBK": 0.9909,
+     "Zigzag": 0.0091
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-ttkmgvkt_2026.png",
+    "baseline_chip": "chips/PK-ttkmgvkt_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-ttkmgyq4",
+   "lat": 30.576815,
+   "lon": 73.649905,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.444,
+    "probs": {
+     "FCBK": 0.9334,
+     "Zigzag": 0.0666
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkmgyq4_2026.png",
+    "baseline_chip": "chips/PK-ttkmgyq4_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkmhpyh",
+   "lat": 30.453563,
+   "lon": 73.660624,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.418,
+    "probs": {
+     "FCBK": 0.5862,
+     "Zigzag": 0.4138
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkmhpyh_2026.png",
+    "baseline_chip": "chips/PK-ttkmhpyh_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkmhrdh",
+   "lat": 30.452058,
+   "lon": 73.666173,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.659,
+    "probs": {
+     "FCBK": 0.8349,
+     "Zigzag": 0.1651
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkmhrdh_2026.png",
+    "baseline_chip": "chips/PK-ttkmhrdh_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkmhs8f",
+   "lat": 30.435254,
+   "lon": 73.675611,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkmhs8f_2026.png",
+    "baseline_chip": "chips/PK-ttkmhs8f_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkmj5tz",
+   "lat": 30.43062,
+   "lon": 73.704454,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkmj5tz_2026.png",
+    "baseline_chip": "chips/PK-ttkmj5tz_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkmjkgz",
+   "lat": 30.4375,
+   "lon": 73.712465,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.456,
+    "probs": {
+     "FCBK": 0.9727,
+     "Zigzag": 0.0273
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkmjkgz_2026.png",
+    "baseline_chip": "chips/PK-ttkmjkgz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkmjm54",
+   "lat": 30.438101,
+   "lon": 73.711572,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkmjm54_2026.png",
+    "baseline_chip": "chips/PK-ttkmjm54_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkmjmk4",
+   "lat": 30.439432,
+   "lon": 73.71298,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.408,
+    "probs": {
+     "FCBK": 0.9674,
+     "Zigzag": 0.0326
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkmjmk4_2026.png",
+    "baseline_chip": "chips/PK-ttkmjmk4_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkmjsqq",
+   "lat": 30.434656,
+   "lon": 73.72713,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.816,
+    "probs": {
+     "FCBK": 0.84,
+     "Zigzag": 0.16
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkmjsqq_2026.png",
+    "baseline_chip": "chips/PK-ttkmjsqq_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkmk016",
+   "lat": 30.454451,
+   "lon": 73.654299,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.548,
+    "probs": {
+     "FCBK": 0.5857,
+     "Zigzag": 0.4143
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkmk016_2026.png",
+    "baseline_chip": "chips/PK-ttkmk016_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkmk072",
+   "lat": 30.455505,
+   "lon": 73.65711,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.643,
+    "probs": {
+     "FCBK": 0.9918,
+     "Zigzag": 0.0082
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-ttkmk072_2026.png",
+    "baseline_chip": "chips/PK-ttkmk072_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-ttkmm7t1",
+   "lat": 30.473565,
+   "lon": 73.714417,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkmm7t1_2026.png",
+    "baseline_chip": "chips/PK-ttkmm7t1_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkmmrwb",
+   "lat": 30.495452,
+   "lon": 73.716627,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkmmrwb_2026.png",
+    "baseline_chip": null
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkmmy2c",
+   "lat": 30.488659,
+   "lon": 73.730312,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.696,
+    "probs": {
+     "FCBK": 0.9484,
+     "Zigzag": 0.0516
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkmmy2c_2026.png",
+    "baseline_chip": "chips/PK-ttkmmy2c_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkmn5jc",
+   "lat": 30.426895,
+   "lon": 73.748436,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.615,
+    "probs": {
+     "FCBK": 0.9974,
+     "Zigzag": 0.0026
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-ttkmn5jc_2026.png",
+    "baseline_chip": "chips/PK-ttkmn5jc_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-ttkmn6fx",
+   "lat": 30.426622,
+   "lon": 73.754735,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.585,
+    "probs": {
+     "FCBK": 0.9914,
+     "Zigzag": 0.0086
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-ttkmn6fx_2026.png",
+    "baseline_chip": "chips/PK-ttkmn6fx_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-ttkmn9tt",
+   "lat": 30.419349,
+   "lon": 73.769763,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.687,
+    "probs": {
+     "FCBK": 0.9425,
+     "Zigzag": 0.0575
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkmn9tt_2026.png",
+    "baseline_chip": "chips/PK-ttkmn9tt_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkmrkcs",
+   "lat": 30.481014,
+   "lon": 73.797552,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkmrkcs_2026.png",
+    "baseline_chip": "chips/PK-ttkmrkcs_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkmrm08",
+   "lat": 30.481671,
+   "lon": 73.796116,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.418,
+    "probs": {
+     "FCBK": 0.9829,
+     "Zigzag": 0.0171
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkmrm08_2026.png",
+    "baseline_chip": "chips/PK-ttkmrm08_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkmrms6",
+   "lat": 30.484685,
+   "lon": 73.801015,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.596,
+    "probs": {
+     "FCBK": 0.9894,
+     "Zigzag": 0.0106
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-ttkmrms6_2026.png",
+    "baseline_chip": "chips/PK-ttkmrms6_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-ttkmtdsk",
+   "lat": 30.512534,
+   "lon": 73.724315,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkmtdsk_2026.png",
+    "baseline_chip": "chips/PK-ttkmtdsk_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkmttrt",
+   "lat": 30.527772,
+   "lon": 73.72879,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.66,
+    "probs": {
+     "FCBK": 0.9973,
+     "Zigzag": 0.0027
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-ttkmttrt_2026.png",
+    "baseline_chip": "chips/PK-ttkmttrt_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-ttkmzurv",
+   "lat": 30.566273,
+   "lon": 73.827811,
+   "district": "Okara",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.696,
+    "probs": {
+     "FCBK": 0.9456,
+     "Zigzag": 0.0544
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkmzurv_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkmzuuk",
+   "lat": 30.568849,
+   "lon": 73.823067,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.41,
+    "probs": {
+     "FCBK": 0.9668,
+     "Zigzag": 0.0332
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkmzuuk_2026.png",
+    "baseline_chip": "chips/PK-ttkmzuuk_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkmzypm",
+   "lat": 30.57593,
+   "lon": 73.82735,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkmzypm_2026.png",
+    "baseline_chip": "chips/PK-ttkmzypm_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkmzzvg",
+   "lat": 30.585245,
+   "lon": 73.825086,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkmzzvg_2026.png",
+    "baseline_chip": "chips/PK-ttkmzzvg_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttknh8x9",
+   "lat": 30.5889,
+   "lon": 73.333084,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttknh8x9_2026.png",
+    "baseline_chip": "chips/PK-ttknh8x9_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttknj5bu",
+   "lat": 30.607371,
+   "lon": 73.345891,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.712,
+    "probs": {
+     "FCBK": 0.9938,
+     "Zigzag": 0.0062
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-ttknj5bu_2026.png",
+    "baseline_chip": "chips/PK-ttknj5bu_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-ttknjk0e",
+   "lat": 30.608461,
+   "lon": 73.356632,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.558,
+    "probs": {
+     "FCBK": 0.9018,
+     "Zigzag": 0.0982
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttknjk0e_2026.png",
+    "baseline_chip": "chips/PK-ttknjk0e_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttknjr3t",
+   "lat": 30.626764,
+   "lon": 73.358096,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.312,
+    "probs": {
+     "FCBK": 0.9778,
+     "Zigzag": 0.0222
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttknjr3t_2026.png",
+    "baseline_chip": "chips/PK-ttknjr3t_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttknju0e",
+   "lat": 30.608516,
+   "lon": 73.378649,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.6,
+    "probs": {
+     "FCBK": 0.6335,
+     "Zigzag": 0.3665
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttknju0e_2026.png",
+    "baseline_chip": "chips/PK-ttknju0e_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttknkcg5",
+   "lat": 30.640041,
+   "lon": 73.338083,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.678,
+    "probs": {
+     "FCBK": 0.9881,
+     "Zigzag": 0.0119
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-ttknkcg5_2026.png",
+    "baseline_chip": "chips/PK-ttknkcg5_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-ttknmdds",
+   "lat": 30.644453,
+   "lon": 73.370327,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.674,
+    "probs": {
+     "FCBK": 0.7799,
+     "Zigzag": 0.2201
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttknmdds_2026.png",
+    "baseline_chip": "chips/PK-ttknmdds_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttknmvv1",
+   "lat": 30.66168,
+   "lon": 73.38461,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.662,
+    "probs": {
+     "FCBK": 0.8611,
+     "Zigzag": 0.1389
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttknmvv1_2026.png",
+    "baseline_chip": "chips/PK-ttknmvv1_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttknmxgx",
+   "lat": 30.673819,
+   "lon": 73.371827,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.642,
+    "probs": {
+     "FCBK": 0.9405,
+     "Zigzag": 0.0595
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttknmxgx_2026.png",
+    "baseline_chip": "chips/PK-ttknmxgx_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttknpk3z",
+   "lat": 30.61055,
+   "lon": 73.446266,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.555,
+    "probs": {
+     "FCBK": 0.6125,
+     "Zigzag": 0.3875
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttknpk3z_2026.png",
+    "baseline_chip": "chips/PK-ttknpk3z_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttknpmnp",
+   "lat": 30.614607,
+   "lon": 73.451854,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttknpmnp_2026.png",
+    "baseline_chip": "chips/PK-ttknpmnp_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttknpw0h",
+   "lat": 30.619738,
+   "lon": 73.454643,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.573,
+    "probs": {
+     "FCBK": 0.6375,
+     "Zigzag": 0.3625
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttknpw0h_2026.png",
+    "baseline_chip": "chips/PK-ttknpw0h_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttknsv5z",
+   "lat": 30.702661,
+   "lon": 73.339176,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.702,
+    "probs": {
+     "FCBK": 0.8584,
+     "Zigzag": 0.1416
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttknsv5z_2026.png",
+    "baseline_chip": "chips/PK-ttknsv5z_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttknw8qs",
+   "lat": 30.676033,
+   "lon": 73.419647,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.408,
+    "probs": {
+     "FCBK": 0.9888,
+     "Zigzag": 0.0112
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-ttknw8qs_2026.png",
+    "baseline_chip": "chips/PK-ttknw8qs_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-ttknxmqy",
+   "lat": 30.703851,
+   "lon": 73.453058,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.654,
+    "probs": {
+     "FCBK": 0.8739,
+     "Zigzag": 0.1261
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttknxmqy_2026.png",
+    "baseline_chip": "chips/PK-ttknxmqy_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttknzjxz",
+   "lat": 30.749247,
+   "lon": 73.443433,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.712,
+    "probs": {
+     "FCBK": 0.8398,
+     "Zigzag": 0.1602
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttknzjxz_2026.png",
+    "baseline_chip": "chips/PK-ttknzjxz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttknzmfw",
+   "lat": 30.750556,
+   "lon": 73.447081,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttknzmfw_2026.png",
+    "baseline_chip": "chips/PK-ttknzmfw_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttknzn32",
+   "lat": 30.752268,
+   "lon": 73.434639,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.484,
+    "probs": {
+     "FCBK": 0.6949,
+     "Zigzag": 0.3051
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttknzn32_2026.png",
+    "baseline_chip": "chips/PK-ttknzn32_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttknzq5t",
+   "lat": 30.75169,
+   "lon": 73.448603,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttknzq5t_2026.png",
+    "baseline_chip": "chips/PK-ttknzq5t_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkp5bvg",
+   "lat": 30.766377,
+   "lon": 73.297884,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.792,
+    "probs": {
+     "FCBK": 0.4389,
+     "Zigzag": 0.5611
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkp5bvg_2026.png",
+    "baseline_chip": "chips/PK-ttkp5bvg_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkp5cwt",
+   "lat": 30.770819,
+   "lon": 73.298979,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.308,
+    "probs": {
+     "FCBK": 0.8636,
+     "Zigzag": 0.1364
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkp5cwt_2026.png",
+    "baseline_chip": "chips/PK-ttkp5cwt_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkp7eb2",
+   "lat": 30.826407,
+   "lon": 73.27931,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.761,
+    "probs": {
+     "FCBK": 0.6128,
+     "Zigzag": 0.3872
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkp7eb2_2026.png",
+    "baseline_chip": "chips/PK-ttkp7eb2_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkp7eh4",
+   "lat": 30.8225,
+   "lon": 73.284343,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.388,
+    "probs": {
+     "FCBK": 0.6086,
+     "Zigzag": 0.3914
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkp7eh4_2026.png",
+    "baseline_chip": "chips/PK-ttkp7eh4_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkp7kt8",
+   "lat": 30.830477,
+   "lon": 73.275634,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.718,
+    "probs": {
+     "FCBK": 0.7605,
+     "Zigzag": 0.2395
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkp7kt8_2026.png",
+    "baseline_chip": "chips/PK-ttkp7kt8_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkp7p0d",
+   "lat": 30.844575,
+   "lon": 73.257715,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.748,
+    "probs": {
+     "FCBK": 0.7621,
+     "Zigzag": 0.2379
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkp7p0d_2026.png",
+    "baseline_chip": "chips/PK-ttkp7p0d_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpe4cf",
+   "lat": 30.865217,
+   "lon": 73.259425,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.749,
+    "probs": {
+     "FCBK": 0.665,
+     "Zigzag": 0.335
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpe4cf_2026.png",
+    "baseline_chip": "chips/PK-ttkpe4cf_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkph1yk",
+   "lat": 30.772172,
+   "lon": 73.309603,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.811,
+    "probs": {
+     "FCBK": 0.7263,
+     "Zigzag": 0.2737
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkph1yk_2026.png",
+    "baseline_chip": "chips/PK-ttkph1yk_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkph2xp",
+   "lat": 30.765787,
+   "lon": 73.321395,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.511,
+    "probs": {
+     "FCBK": 0.6519,
+     "Zigzag": 0.3481
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkph2xp_2026.png",
+    "baseline_chip": "chips/PK-ttkph2xp_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkph88p",
+   "lat": 30.765759,
+   "lon": 73.322766,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.5,
+    "probs": {
+     "FCBK": 0.5409,
+     "Zigzag": 0.4591
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkph88p_2026.png",
+    "baseline_chip": "chips/PK-ttkph88p_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkphdjh",
+   "lat": 30.773435,
+   "lon": 73.32974,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkphdjh_2026.png",
+    "baseline_chip": "chips/PK-ttkphdjh_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkphsfd",
+   "lat": 30.788205,
+   "lon": 73.326521,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.641,
+    "probs": {
+     "FCBK": 0.937,
+     "Zigzag": 0.063
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkphsfd_2026.png",
+    "baseline_chip": "chips/PK-ttkphsfd_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpmtp9",
+   "lat": 30.83334,
+   "lon": 73.37719,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkpmtp9_2026.png",
+    "baseline_chip": "chips/PK-ttkpmtp9_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkpp3ez",
+   "lat": 30.771307,
+   "lon": 73.448903,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.6,
+    "probs": {
+     "FCBK": 0.8186,
+     "Zigzag": 0.1814
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpp3ez_2026.png",
+    "baseline_chip": "chips/PK-ttkpp3ez_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpp7yd",
+   "lat": 30.782787,
+   "lon": 73.452714,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.739,
+    "probs": {
+     "FCBK": 0.9015,
+     "Zigzag": 0.0985
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpp7yd_2026.png",
+    "baseline_chip": "chips/PK-ttkpp7yd_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpp85r",
+   "lat": 30.762966,
+   "lon": 73.459295,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkpp85r_2026.png",
+    "baseline_chip": "chips/PK-ttkpp85r_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkpp8hz",
+   "lat": 30.762929,
+   "lon": 73.461441,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.743,
+    "probs": {
+     "FCBK": 0.8614,
+     "Zigzag": 0.1386
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpp8hz_2026.png",
+    "baseline_chip": "chips/PK-ttkpp8hz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkppb5n",
+   "lat": 30.762901,
+   "lon": 73.469972,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.688,
+    "probs": {
+     "FCBK": 0.6965,
+     "Zigzag": 0.3035
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkppb5n_2026.png",
+    "baseline_chip": "chips/PK-ttkppb5n_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkppbmm",
+   "lat": 30.764026,
+   "lon": 73.472824,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkppbmm_2026.png",
+    "baseline_chip": "chips/PK-ttkppbmm_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkppkwn",
+   "lat": 30.787528,
+   "lon": 73.452016,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.413,
+    "probs": {
+     "FCBK": 0.8858,
+     "Zigzag": 0.1142
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkppkwn_2026.png",
+    "baseline_chip": "chips/PK-ttkppkwn_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpq1ud",
+   "lat": 30.815663,
+   "lon": 73.395076,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkpq1ud_2026.png",
+    "baseline_chip": "chips/PK-ttkpq1ud_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkpsxuv",
+   "lat": 30.893207,
+   "lon": 73.32959,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.783,
+    "probs": {
+     "FCBK": 0.7376,
+     "Zigzag": 0.2624
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpsxuv_2026.png",
+    "baseline_chip": "chips/PK-ttkpsxuv_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpu0wz",
+   "lat": 30.897516,
+   "lon": 73.310075,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.487,
+    "probs": {
+     "FCBK": 0.8999,
+     "Zigzag": 0.1001
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpu0wz_2026.png",
+    "baseline_chip": "chips/PK-ttkpu0wz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpu342",
+   "lat": 30.899146,
+   "lon": 73.315045,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkpu342_2026.png",
+    "baseline_chip": "chips/PK-ttkpu342_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkpu34m",
+   "lat": 30.900039,
+   "lon": 73.315002,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.372,
+    "probs": {
+     "FCBK": 0.8144,
+     "Zigzag": 0.1856
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpu34m_2026.png",
+    "baseline_chip": "chips/PK-ttkpu34m_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpu3zs",
+   "lat": 30.904,
+   "lon": 73.322186,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.681,
+    "probs": {
+     "FCBK": 0.9596,
+     "Zigzag": 0.0404
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpu3zs_2026.png",
+    "baseline_chip": "chips/PK-ttkpu3zs_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpu8su",
+   "lat": 30.897083,
+   "lon": 73.329568,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.642,
+    "probs": {
+     "FCBK": 0.874,
+     "Zigzag": 0.126
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpu8su_2026.png",
+    "baseline_chip": "chips/PK-ttkpu8su_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpud0g",
+   "lat": 30.905215,
+   "lon": 73.323947,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkpud0g_2026.png",
+    "baseline_chip": "chips/PK-ttkpud0g_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkpud3y",
+   "lat": 30.907038,
+   "lon": 73.325449,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.72,
+    "probs": {
+     "FCBK": 0.4088,
+     "Zigzag": 0.5912
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpud3y_2026.png",
+    "baseline_chip": "chips/PK-ttkpud3y_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpud60",
+   "lat": 30.906053,
+   "lon": 73.325642,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.704,
+    "probs": {
+     "FCBK": 0.5037,
+     "Zigzag": 0.4963
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpud60_2026.png",
+    "baseline_chip": "chips/PK-ttkpud60_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpudcx",
+   "lat": 30.909921,
+   "lon": 73.324826,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.765,
+    "probs": {
+     "FCBK": 0.9029,
+     "Zigzag": 0.0971
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpudcx_2026.png",
+    "baseline_chip": "chips/PK-ttkpudcx_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpudsd",
+   "lat": 30.907746,
+   "lon": 73.329032,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.531,
+    "probs": {
+     "FCBK": 0.8908,
+     "Zigzag": 0.1092
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpudsd_2026.png",
+    "baseline_chip": "chips/PK-ttkpudsd_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpudt2",
+   "lat": 30.907367,
+   "lon": 73.330125,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.757,
+    "probs": {
+     "FCBK": 0.584,
+     "Zigzag": 0.416
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpudt2_2026.png",
+    "baseline_chip": "chips/PK-ttkpudt2_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpue55",
+   "lat": 30.910566,
+   "lon": 73.326972,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.697,
+    "probs": {
+     "FCBK": 0.534,
+     "Zigzag": 0.466
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpue55_2026.png",
+    "baseline_chip": "chips/PK-ttkpue55_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkput3t",
+   "lat": 30.92327,
+   "lon": 73.324826,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.704,
+    "probs": {
+     "FCBK": 0.734,
+     "Zigzag": 0.266
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkput3t_2026.png",
+    "baseline_chip": "chips/PK-ttkput3t_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkput4n",
+   "lat": 30.922193,
+   "lon": 73.325513,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.743,
+    "probs": {
+     "FCBK": 0.403,
+     "Zigzag": 0.597
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkput4n_2026.png",
+    "baseline_chip": "chips/PK-ttkput4n_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkput9p",
+   "lat": 30.925037,
+   "lon": 73.32429,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.745,
+    "probs": {
+     "FCBK": 0.6759,
+     "Zigzag": 0.3241
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkput9p_2026.png",
+    "baseline_chip": "chips/PK-ttkput9p_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpuwdh",
+   "lat": 30.930107,
+   "lon": 73.325513,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.638,
+    "probs": {
+     "FCBK": 0.7881,
+     "Zigzag": 0.2119
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpuwdh_2026.png",
+    "baseline_chip": "chips/PK-ttkpuwdh_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpux4f",
+   "lat": 30.932507,
+   "lon": 73.326586,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.547,
+    "probs": {
+     "FCBK": 0.9812,
+     "Zigzag": 0.0188
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpux4f_2026.png",
+    "baseline_chip": "chips/PK-ttkpux4f_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpvmsf",
+   "lat": 30.924218,
+   "lon": 73.36243,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.674,
+    "probs": {
+     "FCBK": 0.6492,
+     "Zigzag": 0.3508
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpvmsf_2026.png",
+    "baseline_chip": "chips/PK-ttkpvmsf_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpwqmz",
+   "lat": 30.885265,
+   "lon": 73.407618,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.68,
+    "probs": {
+     "FCBK": 0.3586,
+     "Zigzag": 0.6414
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpwqmz_2026.png",
+    "baseline_chip": "chips/PK-ttkpwqmz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpwtcx",
+   "lat": 30.882447,
+   "lon": 73.412953,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkpwtcx_2026.png",
+    "baseline_chip": "chips/PK-ttkpwtcx_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkpwtn1",
+   "lat": 30.877368,
+   "lon": 73.418918,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkpwtn1_2026.png",
+    "baseline_chip": "chips/PK-ttkpwtn1_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkpy12f",
+   "lat": 30.900794,
+   "lon": 73.389886,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkpy12f_2026.png",
+    "baseline_chip": "chips/PK-ttkpy12f_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkpz518",
+   "lat": 30.910179,
+   "lon": 73.434896,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.656,
+    "probs": {
+     "FCBK": 0.3726,
+     "Zigzag": 0.6274
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpz518_2026.png",
+    "baseline_chip": "chips/PK-ttkpz518_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkpzrzc",
+   "lat": 30.936353,
+   "lon": 73.454409,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.807,
+    "probs": {
+     "FCBK": 0.1913,
+     "Zigzag": 0.8087
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkpzrzc_2026.png",
+    "baseline_chip": "chips/PK-ttkpzrzc_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkq024k",
+   "lat": 30.586722,
+   "lon": 73.490647,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.662,
+    "probs": {
+     "FCBK": 0.9591,
+     "Zigzag": 0.0409
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkq024k_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkq14yt",
+   "lat": 30.60196,
+   "lon": 73.529757,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.592,
+    "probs": {
+     "FCBK": 0.7705,
+     "Zigzag": 0.2295
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkq14yt_2026.png",
+    "baseline_chip": "chips/PK-ttkq14yt_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkq1d6x",
+   "lat": 30.599528,
+   "lon": 73.546101,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.699,
+    "probs": {
+     "FCBK": 0.8678,
+     "Zigzag": 0.1322
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkq1d6x_2026.png",
+    "baseline_chip": "chips/PK-ttkq1d6x_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkq328x",
+   "lat": 30.633915,
+   "lon": 73.532242,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.646,
+    "probs": {
+     "FCBK": 0.4824,
+     "Zigzag": 0.5176
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkq328x_2026.png",
+    "baseline_chip": "chips/PK-ttkq328x_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkq3d0v",
+   "lat": 30.641758,
+   "lon": 73.54374,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.631,
+    "probs": {
+     "FCBK": 0.8236,
+     "Zigzag": 0.1764
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkq3d0v_2026.png",
+    "baseline_chip": "chips/PK-ttkq3d0v_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkq3v3g",
+   "lat": 30.65939,
+   "lon": 73.55612,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.742,
+    "probs": {
+     "FCBK": 0.7381,
+     "Zigzag": 0.2619
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkq3v3g_2026.png",
+    "baseline_chip": "chips/PK-ttkq3v3g_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkq4u21",
+   "lat": 30.609476,
+   "lon": 73.597565,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.489,
+    "probs": {
+     "FCBK": 0.9405,
+     "Zigzag": 0.0595
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkq4u21_2026.png",
+    "baseline_chip": "chips/PK-ttkq4u21_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkq4yq9",
+   "lat": 30.620444,
+   "lon": 73.606524,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.555,
+    "probs": {
+     "FCBK": 0.8238,
+     "Zigzag": 0.1762
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkq4yq9_2026.png",
+    "baseline_chip": "chips/PK-ttkq4yq9_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkq4ys6",
+   "lat": 30.62212,
+   "lon": 73.603328,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkq4ys6_2026.png",
+    "baseline_chip": "chips/PK-ttkq4ys6_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkq6edg",
+   "lat": 30.649725,
+   "lon": 73.590337,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.363,
+    "probs": {
+     "FCBK": 0.9715,
+     "Zigzag": 0.0285
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkq6edg_2026.png",
+    "baseline_chip": "chips/PK-ttkq6edg_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkq6rr1",
+   "lat": 30.669991,
+   "lon": 73.585103,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.64,
+    "probs": {
+     "FCBK": 0.7772,
+     "Zigzag": 0.2228
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkq6rr1_2026.png",
+    "baseline_chip": "chips/PK-ttkq6rr1_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkq754d",
+   "lat": 30.646872,
+   "lon": 73.612068,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkq754d_2026.png",
+    "baseline_chip": "chips/PK-ttkq754d_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkq7mmt",
+   "lat": 30.659621,
+   "lon": 73.626956,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkq7mmt_2026.png",
+    "baseline_chip": "chips/PK-ttkq7mmt_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkq7mvr",
+   "lat": 30.66275,
+   "lon": 73.62672,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.565,
+    "probs": {
+     "FCBK": 0.2793,
+     "Zigzag": 0.7207
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkq7mvr_2026.png",
+    "baseline_chip": "chips/PK-ttkq7mvr_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkq7t5n",
+   "lat": 30.658541,
+   "lon": 73.634527,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.633,
+    "probs": {
+     "FCBK": 0.9724,
+     "Zigzag": 0.0276
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkq7t5n_2026.png",
+    "baseline_chip": "chips/PK-ttkq7t5n_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkq7tw9",
+   "lat": 30.660288,
+   "lon": 73.639353,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.766,
+    "probs": {
+     "FCBK": 0.9591,
+     "Zigzag": 0.0409
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkq7tw9_2026.png",
+    "baseline_chip": "chips/PK-ttkq7tw9_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkq7upd",
+   "lat": 30.6522,
+   "lon": 73.65196,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.498,
+    "probs": {
+     "FCBK": 0.7544,
+     "Zigzag": 0.2456
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkq7upd_2026.png",
+    "baseline_chip": "chips/PK-ttkq7upd_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkq7vt1",
+   "lat": 30.660361,
+   "lon": 73.648426,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.599,
+    "probs": {
+     "FCBK": 0.9797,
+     "Zigzag": 0.0203
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkq7vt1_2026.png",
+    "baseline_chip": "chips/PK-ttkq7vt1_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkq93bx",
+   "lat": 30.684749,
+   "lon": 73.532521,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.742,
+    "probs": {
+     "FCBK": 0.6715,
+     "Zigzag": 0.3285
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkq93bx_2026.png",
+    "baseline_chip": "chips/PK-ttkq93bx_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkqd39p",
+   "lat": 30.683375,
+   "lon": 73.576867,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.451,
+    "probs": {
+     "FCBK": 0.8474,
+     "Zigzag": 0.1526
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkqd39p_2026.png",
+    "baseline_chip": "chips/PK-ttkqd39p_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkqeq2b",
+   "lat": 30.708241,
+   "lon": 73.620436,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkqeq2b_2026.png",
+    "baseline_chip": "chips/PK-ttkqeq2b_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkqf042",
+   "lat": 30.717902,
+   "lon": 73.567708,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.594,
+    "probs": {
+     "FCBK": 0.9964,
+     "Zigzag": 0.0036
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-ttkqf042_2026.png",
+    "baseline_chip": "chips/PK-ttkqf042_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-ttkqfq65",
+   "lat": 30.752693,
+   "lon": 73.578498,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkqfq65_2026.png",
+    "baseline_chip": "chips/PK-ttkqfq65_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkqg2x0",
+   "lat": 30.720538,
+   "lon": 73.629102,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkqg2x0_2026.png",
+    "baseline_chip": "chips/PK-ttkqg2x0_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkqgbw2",
+   "lat": 30.720547,
+   "lon": 73.65012,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.806,
+    "probs": {
+     "FCBK": 0.4462,
+     "Zigzag": 0.5538
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkqgbw2_2026.png",
+    "baseline_chip": "chips/PK-ttkqgbw2_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkqgjue",
+   "lat": 30.749957,
+   "lon": 73.614707,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.666,
+    "probs": {
+     "FCBK": 0.8854,
+     "Zigzag": 0.1146
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkqgjue_2026.png",
+    "baseline_chip": "chips/PK-ttkqgjue_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkqhvbn",
+   "lat": 30.618626,
+   "lon": 73.685478,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkqhvbn_2026.png",
+    "baseline_chip": "chips/PK-ttkqhvbn_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkqhy19",
+   "lat": 30.619189,
+   "lon": 73.687602,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkqhy19_2026.png",
+    "baseline_chip": "chips/PK-ttkqhy19_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkqk1cj",
+   "lat": 30.640438,
+   "lon": 73.653918,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkqk1cj_2026.png",
+    "baseline_chip": "chips/PK-ttkqk1cj_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkqk413",
+   "lat": 30.641176,
+   "lon": 73.654111,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkqk413_2026.png",
+    "baseline_chip": "chips/PK-ttkqk413_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkqku51",
+   "lat": 30.652134,
+   "lon": 73.689704,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.416,
+    "probs": {
+     "FCBK": 0.9823,
+     "Zigzag": 0.0177
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkqku51_2026.png",
+    "baseline_chip": "chips/PK-ttkqku51_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkqm6zt",
+   "lat": 30.645986,
+   "lon": 73.717893,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkqm6zt_2026.png",
+    "baseline_chip": "chips/PK-ttkqm6zt_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkqm7nb",
+   "lat": 30.64647,
+   "lon": 73.716664,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkqm7nb_2026.png",
+    "baseline_chip": "chips/PK-ttkqm7nb_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkqm968",
+   "lat": 30.636869,
+   "lon": 73.721861,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.566,
+    "probs": {
+     "FCBK": 0.9609,
+     "Zigzag": 0.0391
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkqm968_2026.png",
+    "baseline_chip": "chips/PK-ttkqm968_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkqm9p1",
+   "lat": 30.635558,
+   "lon": 73.728104,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": null,
+    "date": null,
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkqm9p1_2026.png",
+    "baseline_chip": "chips/PK-ttkqm9p1_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkqn7q7",
+   "lat": 30.604378,
+   "lon": 73.759925,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkqn7q7_2026.png",
+    "baseline_chip": "chips/PK-ttkqn7q7_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkqpbh3",
+   "lat": 30.586149,
+   "lon": 73.823157,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.729,
+    "probs": {
+     "FCBK": 0.6706,
+     "Zigzag": 0.3294
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkqpbh3_2026.png",
+    "baseline_chip": "chips/PK-ttkqpbh3_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkqrndf",
+   "lat": 30.666052,
+   "lon": 73.787973,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkqrndf_2026.png",
+    "baseline_chip": "chips/PK-ttkqrndf_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkqs482",
+   "lat": 30.687617,
+   "lon": 73.65269,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.77,
+    "probs": {
+     "FCBK": 0.8118,
+     "Zigzag": 0.1882
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkqs482_2026.png",
+    "baseline_chip": "chips/PK-ttkqs482_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkqsf6q",
+   "lat": 30.687294,
+   "lon": 73.688568,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkqsf6q_2026.png",
+    "baseline_chip": "chips/PK-ttkqsf6q_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkqsg53",
+   "lat": 30.690558,
+   "lon": 73.690092,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkqsg53_2026.png",
+    "baseline_chip": "chips/PK-ttkqsg53_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkqthh2",
+   "lat": 30.6959,
+   "lon": 73.702318,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkqthh2_2026.png",
+    "baseline_chip": "chips/PK-ttkqthh2_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkqwpc0",
+   "lat": 30.716482,
+   "lon": 73.741615,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.743,
+    "probs": {
+     "FCBK": 0.3222,
+     "Zigzag": 0.6778
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkqwpc0_2026.png",
+    "baseline_chip": "chips/PK-ttkqwpc0_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkqx3bt",
+   "lat": 30.68438,
+   "lon": 73.796074,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.786,
+    "probs": {
+     "FCBK": 0.7491,
+     "Zigzag": 0.2509
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkqx3bt_2026.png",
+    "baseline_chip": "chips/PK-ttkqx3bt_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkqxrzs",
+   "lat": 30.717164,
+   "lon": 73.805479,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.755,
+    "probs": {
+     "FCBK": 0.8468,
+     "Zigzag": 0.1532
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkqxrzs_2026.png",
+    "baseline_chip": "chips/PK-ttkqxrzs_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkqxsb0",
+   "lat": 30.70008,
+   "lon": 73.806337,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.351,
+    "probs": {
+     "FCBK": 0.2171,
+     "Zigzag": 0.7829
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkqxsb0_2026.png",
+    "baseline_chip": "chips/PK-ttkqxsb0_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkqydwr",
+   "lat": 30.732744,
+   "lon": 73.77107,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.65,
+    "probs": {
+     "FCBK": 0.9286,
+     "Zigzag": 0.0714
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkqydwr_2026.png",
+    "baseline_chip": "chips/PK-ttkqydwr_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkqz8m1",
+   "lat": 30.719323,
+   "lon": 73.813033,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.702,
+    "probs": {
+     "FCBK": 0.8494,
+     "Zigzag": 0.1506
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkqz8m1_2026.png",
+    "baseline_chip": "chips/PK-ttkqz8m1_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkqzj28",
+   "lat": 30.746747,
+   "lon": 73.785077,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.722,
+    "probs": {
+     "FCBK": 0.9666,
+     "Zigzag": 0.0334
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkqzj28_2026.png",
+    "baseline_chip": "chips/PK-ttkqzj28_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkqzq9f",
+   "lat": 30.753903,
+   "lon": 73.797845,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.439,
+    "probs": {
+     "FCBK": 0.7465,
+     "Zigzag": 0.2535
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkqzq9f_2026.png",
+    "baseline_chip": "chips/PK-ttkqzq9f_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkqzz4s",
+   "lat": 30.756961,
+   "lon": 73.820863,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkqzz4s_2026.png",
+    "baseline_chip": "chips/PK-ttkqzz4s_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkr01un",
+   "lat": 30.772449,
+   "lon": 73.482174,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.743,
+    "probs": {
+     "FCBK": 0.84,
+     "Zigzag": 0.16
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr01un_2026.png",
+    "baseline_chip": "chips/PK-ttkr01un_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr04kk",
+   "lat": 30.774873,
+   "lon": 73.482561,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.683,
+    "probs": {
+     "FCBK": 0.8575,
+     "Zigzag": 0.1425
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr04kk_2026.png",
+    "baseline_chip": "chips/PK-ttkr04kk_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr054x",
+   "lat": 30.779508,
+   "lon": 73.480159,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.477,
+    "probs": {
+     "FCBK": 0.9295,
+     "Zigzag": 0.0705
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr054x_2026.png",
+    "baseline_chip": "chips/PK-ttkr054x_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr05jp",
+   "lat": 30.779526,
+   "lon": 73.483612,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.569,
+    "probs": {
+     "FCBK": 0.9613,
+     "Zigzag": 0.0387
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr05jp_2026.png",
+    "baseline_chip": "chips/PK-ttkr05jp_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr05sf",
+   "lat": 30.781322,
+   "lon": 73.483333,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.58,
+    "probs": {
+     "FCBK": 0.8071,
+     "Zigzag": 0.1929
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr05sf_2026.png",
+    "baseline_chip": "chips/PK-ttkr05sf_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr05tp",
+   "lat": 30.782234,
+   "lon": 73.483612,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.327,
+    "probs": {
+     "FCBK": 0.6504,
+     "Zigzag": 0.3496
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr05tp_2026.png",
+    "baseline_chip": "chips/PK-ttkr05tp_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr05v4",
+   "lat": 30.782824,
+   "lon": 73.48368,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkr05v4_2026.png",
+    "baseline_chip": "chips/PK-ttkr05v4_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkr09zy",
+   "lat": 30.772412,
+   "lon": 73.509319,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkr09zy_2026.png",
+    "baseline_chip": null
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkr0jeq",
+   "lat": 30.792987,
+   "lon": 73.481252,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.596,
+    "probs": {
+     "FCBK": 0.9896,
+     "Zigzag": 0.0104
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-ttkr0jeq_2026.png",
+    "baseline_chip": "chips/PK-ttkr0jeq_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-ttkr0jfm",
+   "lat": 30.794249,
+   "lon": 73.479921,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.391,
+    "probs": {
+     "FCBK": 0.9907,
+     "Zigzag": 0.0093
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-ttkr0jfm_2026.png",
+    "baseline_chip": "chips/PK-ttkr0jfm_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-ttkr0nuq",
+   "lat": 30.799844,
+   "lon": 73.482668,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.607,
+    "probs": {
+     "FCBK": 0.9275,
+     "Zigzag": 0.0725
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr0nuq_2026.png",
+    "baseline_chip": "chips/PK-ttkr0nuq_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr0p73",
+   "lat": 30.801865,
+   "lon": 73.481039,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.515,
+    "probs": {
+     "FCBK": 0.8578,
+     "Zigzag": 0.1422
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr0p73_2026.png",
+    "baseline_chip": "chips/PK-ttkr0p73_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr0yud",
+   "lat": 30.799162,
+   "lon": 73.515963,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.674,
+    "probs": {
+     "FCBK": 0.7777,
+     "Zigzag": 0.2223
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr0yud_2026.png",
+    "baseline_chip": "chips/PK-ttkr0yud_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr1c1v",
+   "lat": 30.768165,
+   "lon": 73.555917,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.342,
+    "probs": {
+     "FCBK": 0.5021,
+     "Zigzag": 0.4979
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr1c1v_2026.png",
+    "baseline_chip": "chips/PK-ttkr1c1v_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr1fdc",
+   "lat": 30.775693,
+   "lon": 73.557407,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.624,
+    "probs": {
+     "FCBK": 0.5575,
+     "Zigzag": 0.4425
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr1fdc_2026.png",
+    "baseline_chip": "chips/PK-ttkr1fdc_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr1vdb",
+   "lat": 30.792065,
+   "lon": 73.557515,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.645,
+    "probs": {
+     "FCBK": 0.8443,
+     "Zigzag": 0.1557
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr1vdb_2026.png",
+    "baseline_chip": "chips/PK-ttkr1vdb_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr2bm9",
+   "lat": 30.807287,
+   "lon": 73.517208,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.706,
+    "probs": {
+     "FCBK": 0.9413,
+     "Zigzag": 0.0587
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr2bm9_2026.png",
+    "baseline_chip": "chips/PK-ttkr2bm9_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr30e5",
+   "lat": 30.808943,
+   "lon": 73.524932,
+   "district": "Okara",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.699,
+    "probs": {
+     "FCBK": 0.8881,
+     "Zigzag": 0.1119
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr30e5_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr30s9",
+   "lat": 30.808707,
+   "lon": 73.526731,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.717,
+    "probs": {
+     "FCBK": 0.6507,
+     "Zigzag": 0.3493
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr30s9_2026.png",
+    "baseline_chip": "chips/PK-ttkr30s9_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr30xh",
+   "lat": 30.80926,
+   "lon": 73.530184,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.477,
+    "probs": {
+     "FCBK": 0.5931,
+     "Zigzag": 0.4069
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr30xh_2026.png",
+    "baseline_chip": "chips/PK-ttkr30xh_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr31p7",
+   "lat": 30.811679,
+   "lon": 73.530548,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.606,
+    "probs": {
+     "FCBK": 0.9805,
+     "Zigzag": 0.0195
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr31p7_2026.png",
+    "baseline_chip": "chips/PK-ttkr31p7_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr328h",
+   "lat": 30.809241,
+   "lon": 73.531514,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkr328h_2026.png",
+    "baseline_chip": "chips/PK-ttkr328h_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkr32uf",
+   "lat": 30.81016,
+   "lon": 73.538207,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.729,
+    "probs": {
+     "FCBK": 0.4807,
+     "Zigzag": 0.5193
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr32uf_2026.png",
+    "baseline_chip": "chips/PK-ttkr32uf_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr33kv",
+   "lat": 30.813391,
+   "lon": 73.538358,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.604,
+    "probs": {
+     "FCBK": 0.2011,
+     "Zigzag": 0.7989
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr33kv_2026.png",
+    "baseline_chip": "chips/PK-ttkr33kv_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr3swg",
+   "lat": 30.830972,
+   "lon": 73.552012,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.745,
+    "probs": {
+     "FCBK": 0.5946,
+     "Zigzag": 0.4054
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr3swg_2026.png",
+    "baseline_chip": "chips/PK-ttkr3swg_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr3vv6",
+   "lat": 30.837685,
+   "lon": 73.560915,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.6,
+    "probs": {
+     "FCBK": 0.5486,
+     "Zigzag": 0.4514
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr3vv6_2026.png",
+    "baseline_chip": "chips/PK-ttkr3vv6_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr3y0h",
+   "lat": 30.839335,
+   "lon": 73.553742,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.745,
+    "probs": {
+     "FCBK": 0.5222,
+     "Zigzag": 0.4778
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr3y0h_2026.png",
+    "baseline_chip": "chips/PK-ttkr3y0h_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr45dr",
+   "lat": 30.782179,
+   "lon": 73.567665,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkr45dr_2026.png",
+    "baseline_chip": "chips/PK-ttkr45dr_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkr4xzz",
+   "lat": 30.805527,
+   "lon": 73.597094,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.771,
+    "probs": {
+     "FCBK": 0.8956,
+     "Zigzag": 0.1044
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr4xzz_2026.png",
+    "baseline_chip": "chips/PK-ttkr4xzz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr4z22",
+   "lat": 30.801696,
+   "lon": 73.597951,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.662,
+    "probs": {
+     "FCBK": 0.3769,
+     "Zigzag": 0.6231
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr4z22_2026.png",
+    "baseline_chip": "chips/PK-ttkr4z22_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr6f3y",
+   "lat": 30.819104,
+   "lon": 73.599816,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.383,
+    "probs": {
+     "FCBK": 0.5161,
+     "Zigzag": 0.4839
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr6f3y_2026.png",
+    "baseline_chip": "chips/PK-ttkr6f3y_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr6nu1",
+   "lat": 30.843,
+   "lon": 73.570068,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.765,
+    "probs": {
+     "FCBK": 0.4705,
+     "Zigzag": 0.5295
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr6nu1_2026.png",
+    "baseline_chip": "chips/PK-ttkr6nu1_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr6r60",
+   "lat": 30.845634,
+   "lon": 73.578476,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.702,
+    "probs": {
+     "FCBK": 0.2859,
+     "Zigzag": 0.7141
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr6r60_2026.png",
+    "baseline_chip": "chips/PK-ttkr6r60_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr6v07",
+   "lat": 30.833782,
+   "lon": 73.598039,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.817,
+    "probs": {
+     "FCBK": 0.779,
+     "Zigzag": 0.221
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr6v07_2026.png",
+    "baseline_chip": "chips/PK-ttkr6v07_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr6y1w",
+   "lat": 30.839758,
+   "lon": 73.599773,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.775,
+    "probs": {
+     "FCBK": 0.5191,
+     "Zigzag": 0.4809
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr6y1w_2026.png",
+    "baseline_chip": "chips/PK-ttkr6y1w_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr6ycr",
+   "lat": 30.843977,
+   "lon": 73.599239,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkr6ycr_2026.png",
+    "baseline_chip": "chips/PK-ttkr6ycr_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkr7z1e",
+   "lat": 30.844672,
+   "lon": 73.643627,
+   "district": "Okara",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.704,
+    "probs": {
+     "FCBK": 0.5108,
+     "Zigzag": 0.4892
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr7z1e_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr7z70",
+   "lat": 30.845502,
+   "lon": 73.645557,
+   "district": "Okara",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.682,
+    "probs": {
+     "FCBK": 0.5665,
+     "Zigzag": 0.4335
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr7z70_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr7zj6",
+   "lat": 30.844612,
+   "lon": 73.648575,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.668,
+    "probs": {
+     "FCBK": 0.2691,
+     "Zigzag": 0.7309
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr7zj6_2026.png",
+    "baseline_chip": "chips/PK-ttkr7zj6_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr86zj",
+   "lat": 30.86565,
+   "lon": 73.497469,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.359,
+    "probs": {
+     "FCBK": 0.9771,
+     "Zigzag": 0.0229
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr86zj_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkr8xmg",
+   "lat": 30.890058,
+   "lon": 73.506773,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.72,
+    "probs": {
+     "FCBK": 0.9535,
+     "Zigzag": 0.0465
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkr8xmg_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrbf0u",
+   "lat": 30.905326,
+   "lon": 73.510586,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.731,
+    "probs": {
+     "FCBK": 0.6186,
+     "Zigzag": 0.3814
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrbf0u_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrcxgr",
+   "lat": 30.937355,
+   "lon": 73.547109,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.78,
+    "probs": {
+     "FCBK": 0.2438,
+     "Zigzag": 0.7562
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrcxgr_2026.png",
+    "baseline_chip": "chips/PK-ttkrcxgr_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrdb2f",
+   "lat": 30.851392,
+   "lon": 73.598488,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.688,
+    "probs": {
+     "FCBK": 0.871,
+     "Zigzag": 0.129
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrdb2f_2026.png",
+    "baseline_chip": "chips/PK-ttkrdb2f_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrezwb",
+   "lat": 30.89096,
+   "lon": 73.650699,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.619,
+    "probs": {
+     "FCBK": 0.5399,
+     "Zigzag": 0.4601
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrezwb_2026.png",
+    "baseline_chip": "chips/PK-ttkrezwb_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrf9u1",
+   "lat": 30.903503,
+   "lon": 73.592181,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkrf9u1_2026.png",
+    "baseline_chip": "chips/PK-ttkrf9u1_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkrft73",
+   "lat": 30.922589,
+   "lon": 73.590893,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.832,
+    "probs": {
+     "FCBK": 0.4513,
+     "Zigzag": 0.5487
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrft73_2026.png",
+    "baseline_chip": "chips/PK-ttkrft73_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrfx4u",
+   "lat": 30.9327,
+   "lon": 73.590209,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.731,
+    "probs": {
+     "FCBK": 0.7798,
+     "Zigzag": 0.2202
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrfx4u_2026.png",
+    "baseline_chip": "chips/PK-ttkrfx4u_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrfxnz",
+   "lat": 30.933353,
+   "lon": 73.595807,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.66,
+    "probs": {
+     "FCBK": 0.402,
+     "Zigzag": 0.598
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrfxnz_2026.png",
+    "baseline_chip": "chips/PK-ttkrfxnz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrfxsn",
+   "lat": 30.935949,
+   "lon": 73.592074,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.728,
+    "probs": {
+     "FCBK": 0.8661,
+     "Zigzag": 0.1339
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrfxsn_2026.png",
+    "baseline_chip": "chips/PK-ttkrfxsn_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrfz62",
+   "lat": 30.933408,
+   "lon": 73.600589,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkrfz62_2026.png",
+    "baseline_chip": "chips/PK-ttkrfz62_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkrfzx3",
+   "lat": 30.934973,
+   "lon": 73.607434,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.765,
+    "probs": {
+     "FCBK": 0.6273,
+     "Zigzag": 0.3727
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrfzx3_2026.png",
+    "baseline_chip": "chips/PK-ttkrfzx3_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrknbb",
+   "lat": 30.842889,
+   "lon": 73.65366,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.702,
+    "probs": {
+     "FCBK": 0.5113,
+     "Zigzag": 0.4887
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrknbb_2026.png",
+    "baseline_chip": "chips/PK-ttkrknbb_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrkp53",
+   "lat": 30.844391,
+   "lon": 73.656879,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.686,
+    "probs": {
+     "FCBK": 0.5415,
+     "Zigzag": 0.4585
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrkp53_2026.png",
+    "baseline_chip": "chips/PK-ttkrkp53_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrkph1",
+   "lat": 30.844336,
+   "lon": 73.657973,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.588,
+    "probs": {
+     "FCBK": 0.3988,
+     "Zigzag": 0.6012
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrkph1_2026.png",
+    "baseline_chip": "chips/PK-ttkrkph1_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrkx0d",
+   "lat": 30.844593,
+   "lon": 73.675289,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.73,
+    "probs": {
+     "FCBK": 0.3377,
+     "Zigzag": 0.6623
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrkx0d_2026.png",
+    "baseline_chip": "chips/PK-ttkrkx0d_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrkxnx",
+   "lat": 30.845367,
+   "lon": 73.683311,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkrkxnx_2026.png",
+    "baseline_chip": "chips/PK-ttkrkxnx_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkrmrjr",
+   "lat": 30.845453,
+   "lon": 73.714725,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkrmrjr_2026.png",
+    "baseline_chip": "chips/PK-ttkrmrjr_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkrmv6e",
+   "lat": 30.835053,
+   "lon": 73.732907,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.765,
+    "probs": {
+     "FCBK": 0.7756,
+     "Zigzag": 0.2244
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrmv6e_2026.png",
+    "baseline_chip": "chips/PK-ttkrmv6e_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrmw5q",
+   "lat": 30.839803,
+   "lon": 73.722975,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.819,
+    "probs": {
+     "FCBK": 0.6441,
+     "Zigzag": 0.3559
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrmw5q_2026.png",
+    "baseline_chip": "chips/PK-ttkrmw5q_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrmwnq",
+   "lat": 30.839656,
+   "lon": 73.726923,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.792,
+    "probs": {
+     "FCBK": 0.2268,
+     "Zigzag": 0.7732
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrmwnq_2026.png",
+    "baseline_chip": "chips/PK-ttkrmwnq_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrnrxp",
+   "lat": 30.804265,
+   "lon": 73.760931,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkrnrxp_2026.png",
+    "baseline_chip": "chips/PK-ttkrnrxp_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkrp3dt",
+   "lat": 30.770954,
+   "lon": 73.798805,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkrp3dt_2026.png",
+    "baseline_chip": "chips/PK-ttkrp3dt_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkrp5b2",
+   "lat": 30.782345,
+   "lon": 73.784712,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.429,
+    "probs": {
+     "FCBK": 0.8147,
+     "Zigzag": 0.1853
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrp5b2_2026.png",
+    "baseline_chip": "chips/PK-ttkrp5b2_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrsjff",
+   "lat": 30.881674,
+   "lon": 73.656278,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.726,
+    "probs": {
+     "FCBK": 0.7494,
+     "Zigzag": 0.2506
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrsjff_2026.png",
+    "baseline_chip": "chips/PK-ttkrsjff_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrt8tb",
+   "lat": 30.852398,
+   "lon": 73.726323,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.68,
+    "probs": {
+     "FCBK": 0.8664,
+     "Zigzag": 0.1336
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrt8tb_2026.png",
+    "baseline_chip": "chips/PK-ttkrt8tb_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrtb1j",
+   "lat": 30.850563,
+   "lon": 73.730743,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.759,
+    "probs": {
+     "FCBK": 0.7407,
+     "Zigzag": 0.2593
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrtb1j_2026.png",
+    "baseline_chip": "chips/PK-ttkrtb1j_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrtb4w",
+   "lat": 30.850655,
+   "lon": 73.732723,
+   "district": "Okara",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.738,
+    "probs": {
+     "FCBK": 0.4864,
+     "Zigzag": 0.5136
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrtb4w_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrtc20",
+   "lat": 30.856617,
+   "lon": 73.729434,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.664,
+    "probs": {
+     "FCBK": 0.3723,
+     "Zigzag": 0.6277
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrtc20_2026.png",
+    "baseline_chip": "chips/PK-ttkrtc20_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrtc9s",
+   "lat": 30.858705,
+   "lon": 73.731364,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.785,
+    "probs": {
+     "FCBK": 0.6923,
+     "Zigzag": 0.3077
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrtc9s_2026.png",
+    "baseline_chip": "chips/PK-ttkrtc9s_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrtdgr",
+   "lat": 30.865954,
+   "lon": 73.723061,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.691,
+    "probs": {
+     "FCBK": 0.3766,
+     "Zigzag": 0.6234
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrtdgr_2026.png",
+    "baseline_chip": "chips/PK-ttkrtdgr_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrtfcw",
+   "lat": 30.865752,
+   "lon": 73.731449,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.475,
+    "probs": {
+     "FCBK": 0.9883,
+     "Zigzag": 0.0117
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-ttkrtfcw_2026.png",
+    "baseline_chip": "chips/PK-ttkrtfcw_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-ttkrtg1p",
+   "lat": 30.867409,
+   "lon": 73.730655,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.728,
+    "probs": {
+     "FCBK": 0.5906,
+     "Zigzag": 0.4094
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrtg1p_2026.png",
+    "baseline_chip": "chips/PK-ttkrtg1p_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrtg6p",
+   "lat": 30.868763,
+   "lon": 73.732284,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.773,
+    "probs": {
+     "FCBK": 0.7046,
+     "Zigzag": 0.2954
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrtg6p_2026.png",
+    "baseline_chip": "chips/PK-ttkrtg6p_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrtmsn",
+   "lat": 30.880928,
+   "lon": 73.712872,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.759,
+    "probs": {
+     "FCBK": 0.6823,
+     "Zigzag": 0.3177
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrtmsn_2026.png",
+    "baseline_chip": "chips/PK-ttkrtmsn_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrtmtq",
+   "lat": 30.881002,
+   "lon": 73.714803,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.761,
+    "probs": {
+     "FCBK": 0.6275,
+     "Zigzag": 0.3725
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrtmtq_2026.png",
+    "baseline_chip": "chips/PK-ttkrtmtq_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkru694",
+   "lat": 30.907793,
+   "lon": 73.664714,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.743,
+    "probs": {
+     "FCBK": 0.7933,
+     "Zigzag": 0.2067
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkru694_2026.png",
+    "baseline_chip": "chips/PK-ttkru694_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrusmb",
+   "lat": 30.917042,
+   "lon": 73.682453,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkrusmb_2026.png",
+    "baseline_chip": "chips/PK-ttkrusmb_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkrv0st",
+   "lat": 30.897313,
+   "lon": 73.702788,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.439,
+    "probs": {
+     "FCBK": 0.7345,
+     "Zigzag": 0.2655
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrv0st_2026.png",
+    "baseline_chip": "chips/PK-ttkrv0st_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrv4w5",
+   "lat": 30.90783,
+   "lon": 73.704712,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.706,
+    "probs": {
+     "FCBK": 0.661,
+     "Zigzag": 0.339
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrv4w5_2026.png",
+    "baseline_chip": "chips/PK-ttkrv4w5_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkryhe1",
+   "lat": 30.918487,
+   "lon": 73.744597,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.743,
+    "probs": {
+     "FCBK": 0.6965,
+     "Zigzag": 0.3035
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkryhe1_2026.png",
+    "baseline_chip": "chips/PK-ttkryhe1_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkryjff",
+   "lat": 30.925488,
+   "lon": 73.74434,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.826,
+    "probs": {
+     "FCBK": 0.3749,
+     "Zigzag": 0.6251
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkryjff_2026.png",
+    "baseline_chip": "chips/PK-ttkryjff_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkrynj6",
+   "lat": 30.926988,
+   "lon": 73.747516,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.815,
+    "probs": {
+     "FCBK": 0.5192,
+     "Zigzag": 0.4808
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkrynj6_2026.png",
+    "baseline_chip": "chips/PK-ttkrynj6_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkt20vd",
+   "lat": 30.458585,
+   "lon": 73.835856,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.358,
+    "probs": {
+     "FCBK": 0.987,
+     "Zigzag": 0.013
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkt20vd_2026.png",
+    "baseline_chip": "chips/PK-ttkt20vd_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttktb46z",
+   "lat": 30.55566,
+   "lon": 73.83208,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttktb46z_2026.png",
+    "baseline_chip": "chips/PK-ttktb46z_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttktb56g",
+   "lat": 30.560514,
+   "lon": 73.831989,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.513,
+    "probs": {
+     "FCBK": 0.9764,
+     "Zigzag": 0.0236
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttktb56g_2026.png",
+    "baseline_chip": "chips/PK-ttktb56g_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttktbcvz",
+   "lat": 30.552898,
+   "lon": 73.869086,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.527,
+    "probs": {
+     "FCBK": 0.963,
+     "Zigzag": 0.037
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttktbcvz_2026.png",
+    "baseline_chip": "chips/PK-ttktbcvz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttktbhe4",
+   "lat": 30.56722,
+   "lon": 73.832445,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.755,
+    "probs": {
+     "FCBK": 0.9877,
+     "Zigzag": 0.0123
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-ttktbhe4_2026.png",
+    "baseline_chip": "chips/PK-ttktbhe4_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-ttktbrwe",
+   "lat": 30.583715,
+   "lon": 73.848176,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttktbrwe_2026.png",
+    "baseline_chip": "chips/PK-ttktbrwe_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttktbw8t",
+   "lat": 30.578596,
+   "lon": 73.850887,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.726,
+    "probs": {
+     "FCBK": 0.5823,
+     "Zigzag": 0.4177
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttktbw8t_2026.png",
+    "baseline_chip": "chips/PK-ttktbw8t_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttktdyw6",
+   "lat": 30.534238,
+   "lon": 73.957746,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.601,
+    "probs": {
+     "FCBK": 0.8105,
+     "Zigzag": 0.1895
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttktdyw6_2026.png",
+    "baseline_chip": "chips/PK-ttktdyw6_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkw00hz",
+   "lat": 30.587193,
+   "lon": 73.834977,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkw00hz_2026.png",
+    "baseline_chip": "chips/PK-ttkw00hz_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkw00mr",
+   "lat": 30.588577,
+   "lon": 73.835663,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkw00mr_2026.png",
+    "baseline_chip": "chips/PK-ttkw00mr_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkw029n",
+   "lat": 30.589794,
+   "lon": 73.840554,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.806,
+    "probs": {
+     "FCBK": 0.211,
+     "Zigzag": 0.789
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkw029n_2026.png",
+    "baseline_chip": "chips/PK-ttkw029n_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkw0cky",
+   "lat": 30.593879,
+   "lon": 73.867787,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.301,
+    "probs": {
+     "FCBK": 0.7684,
+     "Zigzag": 0.2316
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkw0cky_2026.png",
+    "baseline_chip": "chips/PK-ttkw0cky_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkw16d6",
+   "lat": 30.600129,
+   "lon": 73.886439,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkw16d6_2026.png",
+    "baseline_chip": "chips/PK-ttkw16d6_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkw5nqj",
+   "lat": 30.621176,
+   "lon": 73.968539,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.399,
+    "probs": {
+     "FCBK": 0.4198,
+     "Zigzag": 0.5802
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkw5nqj_2026.png",
+    "baseline_chip": "chips/PK-ttkw5nqj_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkw5sym",
+   "lat": 30.612967,
+   "lon": 73.990759,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.504,
+    "probs": {
+     "FCBK": 0.9565,
+     "Zigzag": 0.0435
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkw5sym_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkw6jz9",
+   "lat": 30.661652,
+   "lon": 73.926493,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.351,
+    "probs": {
+     "FCBK": 0.9344,
+     "Zigzag": 0.0656
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkw6jz9_2026.png",
+    "baseline_chip": "chips/PK-ttkw6jz9_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkw6qb8",
+   "lat": 30.667123,
+   "lon": 73.927952,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.754,
+    "probs": {
+     "FCBK": 0.6236,
+     "Zigzag": 0.3764
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkw6qb8_2026.png",
+    "baseline_chip": "chips/PK-ttkw6qb8_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkw7cm4",
+   "lat": 30.637118,
+   "lon": 74.000089,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.674,
+    "probs": {
+     "FCBK": 0.7957,
+     "Zigzag": 0.2043
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkw7cm4_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkw7dfz",
+   "lat": 30.646253,
+   "lon": 73.985827,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.684,
+    "probs": {
+     "FCBK": 0.9477,
+     "Zigzag": 0.0523
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkw7dfz_2026.png",
+    "baseline_chip": "chips/PK-ttkw7dfz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkw7fnj",
+   "lat": 30.641841,
+   "lon": 74.001205,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkw7fnj_2026.png",
+    "baseline_chip": null
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkw84kv",
+   "lat": 30.687216,
+   "lon": 73.834711,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.686,
+    "probs": {
+     "FCBK": 0.3494,
+     "Zigzag": 0.6506
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkw84kv_2026.png",
+    "baseline_chip": "chips/PK-ttkw84kv_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkw8xzx",
+   "lat": 30.717662,
+   "lon": 73.860555,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.748,
+    "probs": {
+     "FCBK": 0.8254,
+     "Zigzag": 0.1746
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkw8xzx_2026.png",
+    "baseline_chip": "chips/PK-ttkw8xzx_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkw8yqm",
+   "lat": 30.709173,
+   "lon": 73.869988,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.601,
+    "probs": {
+     "FCBK": 0.9798,
+     "Zigzag": 0.0202
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkw8yqm_2026.png",
+    "baseline_chip": "chips/PK-ttkw8yqm_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkw9s5j",
+   "lat": 30.69674,
+   "lon": 73.898364,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.644,
+    "probs": {
+     "FCBK": 0.753,
+     "Zigzag": 0.247
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkw9s5j_2026.png",
+    "baseline_chip": "chips/PK-ttkw9s5j_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkwb2yr",
+   "lat": 30.723119,
+   "lon": 73.847823,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkwb2yr_2026.png",
+    "baseline_chip": "chips/PK-ttkwb2yr_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkwb3td",
+   "lat": 30.726414,
+   "lon": 73.846681,
+   "district": "Okara",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.743,
+    "probs": {
+     "FCBK": 0.546,
+     "Zigzag": 0.454
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkwb3td_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkwb3xj",
+   "lat": 30.726937,
+   "lon": 73.84881,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.768,
+    "probs": {
+     "FCBK": 0.7664,
+     "Zigzag": 0.2336
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkwb3xj_2026.png",
+    "baseline_chip": "chips/PK-ttkwb3xj_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkwb68z",
+   "lat": 30.732808,
+   "lon": 73.840425,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.679,
+    "probs": {
+     "FCBK": 0.7427,
+     "Zigzag": 0.2573
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkwb68z_2026.png",
+    "baseline_chip": "chips/PK-ttkwb68z_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkwbm4s",
+   "lat": 30.745945,
+   "lon": 73.842634,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.692,
+    "probs": {
+     "FCBK": 0.7576,
+     "Zigzag": 0.2424
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkwbm4s_2026.png",
+    "baseline_chip": "chips/PK-ttkwbm4s_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkwbmc1",
+   "lat": 30.749533,
+   "lon": 73.840788,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.669,
+    "probs": {
+     "FCBK": 0.9489,
+     "Zigzag": 0.0511
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkwbmc1_2026.png",
+    "baseline_chip": "chips/PK-ttkwbmc1_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkwbp75",
+   "lat": 30.758279,
+   "lon": 73.832509,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.75,
+    "probs": {
+     "FCBK": 0.4914,
+     "Zigzag": 0.5086
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkwbp75_2026.png",
+    "baseline_chip": "chips/PK-ttkwbp75_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkwcxt7",
+   "lat": 30.759503,
+   "lon": 73.901409,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.738,
+    "probs": {
+     "FCBK": 0.5964,
+     "Zigzag": 0.4036
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkwcxt7_2026.png",
+    "baseline_chip": "chips/PK-ttkwcxt7_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkwgrfh",
+   "lat": 30.761152,
+   "lon": 73.973943,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.366,
+    "probs": {
+     "FCBK": 0.6416,
+     "Zigzag": 0.3584
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkwgrfh_2026.png",
+    "baseline_chip": "chips/PK-ttkwgrfh_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkwk7jt",
+   "lat": 30.647268,
+   "lon": 74.022596,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkwk7jt_2026.png",
+    "baseline_chip": "chips/PK-ttkwk7jt_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkwkkjn",
+   "lat": 30.652957,
+   "lon": 74.021866,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkwkkjn_2026.png",
+    "baseline_chip": "chips/PK-ttkwkkjn_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkwkwvq",
+   "lat": 30.668036,
+   "lon": 74.033191,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCP_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.816,
+    "probs": {
+     "FCBK": 0.2534,
+     "Zigzag": 0.7466
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkwkwvq_2026.png",
+    "baseline_chip": "chips/PK-ttkwkwvq_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkwmpg2",
+   "lat": 30.672591,
+   "lon": 74.052626,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.412,
+    "probs": {
+     "FCBK": 0.749,
+     "Zigzag": 0.251
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkwmpg2_2026.png",
+    "baseline_chip": "chips/PK-ttkwmpg2_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkws2py",
+   "lat": 30.674889,
+   "lon": 74.02577,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2C_43RCP_20261006_0_L2A",
+    "date": "2026-10-06",
+    "detected": true,
+    "det_conf": 0.662,
+    "probs": {
+     "FCBK": 0.3663,
+     "Zigzag": 0.6337
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkws2py_2026.png",
+    "baseline_chip": "chips/PK-ttkws2py_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkws8q2",
+   "lat": 30.675369,
+   "lon": 74.03465,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCP_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.582,
+    "probs": {
+     "FCBK": 0.9355,
+     "Zigzag": 0.0645
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkws8q2_2026.png",
+    "baseline_chip": "chips/PK-ttkws8q2_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkws9xr",
+   "lat": 30.68343,
+   "lon": 74.036023,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCP_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.45,
+    "probs": {
+     "FCBK": 0.9937,
+     "Zigzag": 0.0063
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-ttkws9xr_2026.png",
+    "baseline_chip": "chips/PK-ttkws9xr_2023.png"
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-ttkwvbrq",
+   "lat": 30.720261,
+   "lon": 74.090897,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.684,
+    "probs": {
+     "FCBK": 0.5707,
+     "Zigzag": 0.4293
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkwvbrq_2026.png",
+    "baseline_chip": "chips/PK-ttkwvbrq_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkwy08r",
+   "lat": 30.721864,
+   "lon": 74.092185,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.633,
+    "probs": {
+     "FCBK": 0.361,
+     "Zigzag": 0.639
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkwy08r_2026.png",
+    "baseline_chip": "chips/PK-ttkwy08r_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkx00uz",
+   "lat": 30.767133,
+   "lon": 73.834848,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkx00uz_2026.png",
+    "baseline_chip": "chips/PK-ttkx00uz_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkx0yhb",
+   "lat": 30.794719,
+   "lon": 73.86767,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.347,
+    "probs": {
+     "FCBK": 0.5375,
+     "Zigzag": 0.4625
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkx0yhb_2026.png",
+    "baseline_chip": "chips/PK-ttkx0yhb_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkx2jy8",
+   "lat": 30.837355,
+   "lon": 73.837273,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.657,
+    "probs": {
+     "FCBK": 0.3906,
+     "Zigzag": 0.6094
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkx2jy8_2026.png",
+    "baseline_chip": "chips/PK-ttkx2jy8_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkx325c",
+   "lat": 30.805997,
+   "lon": 73.888284,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.717,
+    "probs": {
+     "FCBK": 0.5737,
+     "Zigzag": 0.4263
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkx325c_2026.png",
+    "baseline_chip": "chips/PK-ttkx325c_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkx3265",
+   "lat": 30.80769,
+   "lon": 73.885981,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkx3265_2026.png",
+    "baseline_chip": "chips/PK-ttkx3265_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkx3c2x",
+   "lat": 30.813778,
+   "lon": 73.905932,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttkx3c2x_2026.png",
+    "baseline_chip": "chips/PK-ttkx3c2x_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttkx3cdn",
+   "lat": 30.814939,
+   "lon": 73.908035,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.543,
+    "probs": {
+     "FCBK": 0.6901,
+     "Zigzag": 0.3099
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkx3cdn_2026.png",
+    "baseline_chip": "chips/PK-ttkx3cdn_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttkx67w0",
+   "lat": 30.824923,
+   "lon": 73.93533,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.737,
+    "probs": {
+     "FCBK": 0.5239,
+     "Zigzag": 0.4761
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttkx67w0_2026.png",
+    "baseline_chip": "chips/PK-ttkx67w0_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts0h5h5",
+   "lat": 30.954576,
+   "lon": 73.306483,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.33,
+    "probs": {
+     "FCBK": 0.9329,
+     "Zigzag": 0.0671
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts0h5h5_2026.png",
+    "baseline_chip": "chips/PK-tts0h5h5_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts0h6sz",
+   "lat": 30.952469,
+   "lon": 73.318564,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.627,
+    "probs": {
+     "FCBK": 0.8029,
+     "Zigzag": 0.1971
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts0h6sz_2026.png",
+    "baseline_chip": "chips/PK-tts0h6sz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts0hc5k",
+   "lat": 30.943776,
+   "lon": 73.33832,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.474,
+    "probs": {
+     "FCBK": 0.5799,
+     "Zigzag": 0.4201
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts0hc5k_2026.png",
+    "baseline_chip": "chips/PK-tts0hc5k_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts0hc93",
+   "lat": 30.945985,
+   "lon": 73.335616,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tts0hc93_2026.png",
+    "baseline_chip": "chips/PK-tts0hc93_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tts0jp05",
+   "lat": 30.976545,
+   "lon": 73.344796,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tts0jp05_2026.png",
+    "baseline_chip": "chips/PK-tts0jp05_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tts0jp3x",
+   "lat": 30.97865,
+   "lon": 73.347092,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tts0jp3x_2026.png",
+    "baseline_chip": "chips/PK-tts0jp3x_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tts0msjr",
+   "lat": 31.004735,
+   "lon": 73.37425,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.717,
+    "probs": {
+     "FCBK": 0.7604,
+     "Zigzag": 0.2396
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts0msjr_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts0nuyt",
+   "lat": 30.964571,
+   "lon": 73.430884,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tts0nuyt_2026.png",
+    "baseline_chip": "chips/PK-tts0nuyt_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tts0p4jx",
+   "lat": 30.949822,
+   "lon": 73.440282,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.714,
+    "probs": {
+     "FCBK": 0.6862,
+     "Zigzag": 0.3138
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts0p4jx_2026.png",
+    "baseline_chip": "chips/PK-tts0p4jx_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts0p60j",
+   "lat": 30.94945,
+   "lon": 73.443614,
+   "district": "Okara",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.757,
+    "probs": {
+     "FCBK": 0.7084,
+     "Zigzag": 0.2916
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts0p60j_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts0p65b",
+   "lat": 30.948617,
+   "lon": 73.449009,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tts0p65b_2026.png",
+    "baseline_chip": "chips/PK-tts0p65b_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tts0p7q6",
+   "lat": 30.955828,
+   "lon": 73.452478,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.692,
+    "probs": {
+     "FCBK": 0.726,
+     "Zigzag": 0.274
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts0p7q6_2026.png",
+    "baseline_chip": "chips/PK-tts0p7q6_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts0pc6m",
+   "lat": 30.945239,
+   "lon": 73.468835,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.721,
+    "probs": {
+     "FCBK": 0.7808,
+     "Zigzag": 0.2192
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts0pc6m_2026.png",
+    "baseline_chip": "chips/PK-tts0pc6m_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts0pcd8",
+   "lat": 30.945782,
+   "lon": 73.46935,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tts0pcd8_2026.png",
+    "baseline_chip": "chips/PK-tts0pcd8_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tts0qeeb",
+   "lat": 31.000765,
+   "lon": 73.416064,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.706,
+    "probs": {
+     "FCBK": 0.4742,
+     "Zigzag": 0.5258
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts0qeeb_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts0qeqg",
+   "lat": 30.999978,
+   "lon": 73.420221,
+   "district": "Okara",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.756,
+    "probs": {
+     "FCBK": 0.5082,
+     "Zigzag": 0.4918
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts0qeqg_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts0xwgd",
+   "lat": 31.062939,
+   "lon": 73.459445,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.626,
+    "probs": {
+     "FCBK": 0.7492,
+     "Zigzag": 0.2508
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts0xwgd_2026.png",
+    "baseline_chip": "chips/PK-tts0xwgd_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts0xwk5",
+   "lat": 31.06025,
+   "lon": 73.460218,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": true,
+    "det_conf": 0.709,
+    "probs": {
+     "FCBK": 0.8823,
+     "Zigzag": 0.1177
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts0xwk5_2026.png",
+    "baseline_chip": "chips/PK-tts0xwk5_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts2132h",
+   "lat": 30.945193,
+   "lon": 73.531664,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.727,
+    "probs": {
+     "FCBK": 0.5478,
+     "Zigzag": 0.4522
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts2132h_2026.png",
+    "baseline_chip": "chips/PK-tts2132h_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts22e7p",
+   "lat": 31.00059,
+   "lon": 73.502948,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.756,
+    "probs": {
+     "FCBK": 0.8818,
+     "Zigzag": 0.1182
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts22e7p_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts22ebx",
+   "lat": 31.003282,
+   "lon": 73.499464,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261001_0_L2A",
+    "date": "2026-10-01",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tts22ebx_2026.png",
+    "baseline_chip": null
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tts23km1",
+   "lat": 31.004992,
+   "lon": 73.538656,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.788,
+    "probs": {
+     "FCBK": 0.3652,
+     "Zigzag": 0.6348
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts23km1_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts23mbh",
+   "lat": 31.013768,
+   "lon": 73.531708,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.772,
+    "probs": {
+     "FCBK": 0.3389,
+     "Zigzag": 0.6611
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts23mbh_2026.png",
+    "baseline_chip": "chips/PK-tts23mbh_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts23q05",
+   "lat": 31.015038,
+   "lon": 73.531701,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.339,
+    "probs": {
+     "FCBK": 0.3528,
+     "Zigzag": 0.6472
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts23q05_2026.png",
+    "baseline_chip": "chips/PK-tts23q05_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts249tz",
+   "lat": 30.946942,
+   "lon": 73.594327,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.773,
+    "probs": {
+     "FCBK": 0.5158,
+     "Zigzag": 0.4842
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts249tz_2026.png",
+    "baseline_chip": "chips/PK-tts249tz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts24x7x",
+   "lat": 30.978585,
+   "lon": 73.591322,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tts24x7x_2026.png",
+    "baseline_chip": "chips/PK-tts24x7x_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tts24xge",
+   "lat": 30.980754,
+   "lon": 73.591323,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.309,
+    "probs": {
+     "FCBK": 0.6617,
+     "Zigzag": 0.3383
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts24xge_2026.png",
+    "baseline_chip": "chips/PK-tts24xge_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts24ykp",
+   "lat": 30.97315,
+   "lon": 73.602906,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.315,
+    "probs": {
+     "FCBK": 0.7029,
+     "Zigzag": 0.2971
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts24ykp_2026.png",
+    "baseline_chip": "chips/PK-tts24ykp_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts268qy",
+   "lat": 30.983925,
+   "lon": 73.595915,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.66,
+    "probs": {
+     "FCBK": 0.5091,
+     "Zigzag": 0.4909
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts268qy_2026.png",
+    "baseline_chip": "chips/PK-tts268qy_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts26ddj",
+   "lat": 30.996129,
+   "lon": 73.589198,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.665,
+    "probs": {
+     "FCBK": 0.5789,
+     "Zigzag": 0.4211
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts26ddj_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts26dfn",
+   "lat": 30.997628,
+   "lon": 73.589263,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.789,
+    "probs": {
+     "FCBK": 0.4372,
+     "Zigzag": 0.5628
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts26dfn_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts29mfy",
+   "lat": 31.058074,
+   "lon": 73.535354,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": null,
+    "date": null,
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tts29mfy_2026.png",
+    "baseline_chip": "chips/PK-tts29mfy_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts2huve",
+   "lat": 30.964267,
+   "lon": 73.693006,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.408,
+    "probs": {
+     "FCBK": 0.7459,
+     "Zigzag": 0.2541
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts2huve_2026.png",
+    "baseline_chip": "chips/PK-tts2huve_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts2kfsc",
+   "lat": 30.995467,
+   "lon": 73.692041,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.791,
+    "probs": {
+     "FCBK": 0.5493,
+     "Zigzag": 0.4507
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts2kfsc_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts2s5b0",
+   "lat": 31.046082,
+   "lon": 73.652454,
+   "district": "Okara",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RCQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.735,
+    "probs": {
+     "FCBK": 0.5924,
+     "Zigzag": 0.4076
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts2s5b0_2026.png",
+    "baseline_chip": "chips/PK-tts2s5b0_2023.png"
+   },
+   "status": "UNDETERMINED"
+  }
+ ]
+}

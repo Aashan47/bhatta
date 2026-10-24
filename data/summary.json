@@ -1,13 +1,13 @@
 {
  "generated_from": "ml/scan.py",
  "counts_by_status": {
-  "FCBK": 309,
-  "NOT_DETECTED": 526,
-  "UNDETERMINED": 1919
+  "FCBK": 1316,
+  "NOT_DETECTED": 2308,
+  "UNDETERMINED": 5255
  },
- "n_kilns": 2754,
- "n_baseline_kilns_checked": 2459,
- "n_new_detections": 295,
+ "n_kilns": 8879,
+ "n_baseline_kilns_checked": 8369,
+ "n_new_detections": 510,
  "districts": {
   "Bahawalpur": {
    "mode": "known",
@@ -80,6 +80,119 @@
    "new_detections": 28,
    "seconds": 25.3
   },
+  "Gujranwala": {
+   "mode": "known",
+   "patches_planned": 297,
+   "patches_skipped_invalid": 0,
+   "chunks": 33,
+   "detections_raw": 315,
+   "detections_merged": 247,
+   "known_kilns": 402,
+   "known_kilns_aligned": 362,
+   "known_kilns_shifted": 45,
+   "scene_shift_px": {
+    "S2B_43SCR_20261021_0_L2A": [
+     -7,
+     -11
+    ]
+   },
+   "known_kilns_moved_for_matching": 47,
+   "shift_px_counts": {
+    "0,0": 317,
+    "0,-1": 22,
+    "1,0": 12,
+    "-7,-11": 5,
+    "0,1": 3,
+    "-6,-11": 1,
+    "-8,-11": 1,
+    "1,1": 1
+   },
+   "status": {
+    "UNDETERMINED": 236,
+    "NOT_DETECTED": 171
+   },
+   "unmatched_dropped_near_known_or_low_conf": 14,
+   "new_detections": 5,
+   "seconds": 11.4
+  },
+  "Gujrat": {
+   "mode": "known",
+   "patches_planned": 286,
+   "patches_skipped_invalid": 0,
+   "chunks": 35,
+   "detections_raw": 247,
+   "detections_merged": 218,
+   "known_kilns": 348,
+   "known_kilns_aligned": 310,
+   "known_kilns_shifted": 278,
+   "scene_shift_px": {
+    "S2B_43SDS_20261021_0_L2A": [
+     -7,
+     -11
+    ],
+    "S2B_43SCS_20261021_0_L2A": [
+     -7,
+     -11
+    ]
+   },
+   "known_kilns_moved_for_matching": 313,
+   "shift_px_counts": {
+    "-7,-11": 235,
+    "0,0": 32,
+    "-8,-11": 15,
+    "-6,-11": 14,
+    "-7,-10": 7,
+    "-7,-12": 7
+   },
+   "status": {
+    "NOT_DETECTED": 138,
+    "UNDETERMINED": 223,
+    "FCBK": 3
+   },
+   "unmatched_dropped_near_known_or_low_conf": 14,
+   "new_detections": 16,
+   "seconds": 8.5
+  },
+  "Jhang": {
+   "mode": "known",
+   "patches_planned": 353,
+   "patches_skipped_invalid": 45,
+   "chunks": 74,
+   "detections_raw": 366,
+   "detections_merged": 300,
+   "known_kilns": 406,
+   "known_kilns_aligned": 316,
+   "known_kilns_shifted": 60,
+   "scene_shift_px": {
+    "S2B_42RYU_20261021_0_L2A": [
+     -7,
+     -10
+    ],
+    "S2B_43SCR_20261021_0_L2A": [
+     -7,
+     -10
+    ]
+   },
+   "known_kilns_moved_for_matching": 64,
+   "shift_px_counts": {
+    "0,0": 256,
+    "-7,-10": 28,
+    "0,-1": 13,
+    "1,0": 5,
+    "-8,-10": 4,
+    "-7,-9": 3,
+    "-8,-11": 3,
+    "1,1": 2
+   },
+   "status": {
+    "NOT_DETECTED": 85,
+    "FCBK": 60,
+    "UNDETERMINED": 270
+   },
+   "unmatched_dropped_near_known_or_low_conf": 24,
+   "new_detections": 9,
+   "seconds": 17.0
+  },
   "Kasur": {
    "mode": "full",
    "patches_planned": 5263,
@@ -107,6 +220,46 @@
    "new_detections": 94,
    "seconds": 80.3
   },
+  "Khanewal": {
+   "mode": "known",
+   "patches_planned": 300,
+   "patches_skipped_invalid": 0,
+   "chunks": 47,
+   "detections_raw": 335,
+   "detections_merged": 291,
+   "known_kilns": 333,
+   "known_kilns_aligned": 283,
+   "known_kilns_shifted": 272,
+   "scene_shift_px": {
+    "S2B_42RYU_20261021_0_L2A": [
+     -7,
+     -10
+    ],
+    "S2B_43RBP_20261021_0_L2A": [
+     -7,
+     -10
+    ]
+   },
+   "known_kilns_moved_for_matching": 320,
+   "shift_px_counts": {
+    "-7,-10": 211,
+    "-8,-10": 20,
+    "-6,-10": 13,
+    "-7,-11": 11,
+    "0,0": 11,
+    "-8,-9": 8,
+    "-7,-9": 7,
+    "-6,-11": 1
+   },
+   "status": {
+    "NOT_DETECTED": 78,
+    "FCBK": 57,
+    "UNDETERMINED": 214
+   },
+   "unmatched_dropped_near_known_or_low_conf": 26,
+   "new_detections": 16,
+   "seconds": 10.5
+  },
   "Lahore": {
    "mode": "full",
    "patches_planned": 2327,
@@ -133,6 +286,356 @@
    "unmatched_dropped_near_known_or_low_conf": 205,
    "new_detections": 54,
    "seconds": 235.2
+  },
+  "Lodhran": {
+   "mode": "known",
+   "patches_planned": 264,
+   "patches_skipped_invalid": 0,
+   "chunks": 32,
+   "detections_raw": 305,
+   "detections_merged": 259,
+   "known_kilns": 298,
+   "known_kilns_aligned": 267,
+   "known_kilns_shifted": 69,
+   "scene_shift_px": {
+    "S2B_42RYU_20261021_0_L2A": [
+     -7,
+     -10
+    ]
+   },
+   "known_kilns_moved_for_matching": 77,
+   "shift_px_counts": {
+    "0,0": 198,
+    "-7,-10": 48,
+    "0,-1": 7,
+    "1,0": 4,
+    "-7,-9": 3,
+    "-7,-11": 3,
+    "-8,-10": 2,
+    "-1,0": 1
+   },
+   "status": {
+    "FCBK": 158,
+    "NOT_DETECTED": 81,
+    "UNDETERMINED": 69
+   },
+   "unmatched_dropped_near_known_or_low_conf": 32,
+   "new_detections": 10,
+   "seconds": 9.4
+  },
+  "Mandi Bahauddin": {
+   "mode": "known",
+   "patches_planned": 311,
+   "patches_skipped_invalid": 0,
+   "chunks": 29,
+   "detections_raw": 290,
+   "detections_merged": 243,
+   "known_kilns": 371,
+   "known_kilns_aligned": 338,
+   "known_kilns_shifted": 324,
+   "scene_shift_px": {
+    "S2B_43SCS_20261021_0_L2A": [
+     -7,
+     -11
+    ],
+    "S2B_43SCR_20261021_0_L2A": [
+     -7,
+     -10
+    ]
+   },
+   "known_kilns_moved_for_matching": 357,
+   "shift_px_counts": {
+    "-7,-10": 150,
+    "-7,-11": 126,
+    "-6,-10": 14,
+    "0,0": 14,
+    "-6,-11": 13,
+    "-7,-9": 7,
+    "-8,-11": 5,
+    "-8,-10": 4
+   },
+   "status": {
+    "NOT_DETECTED": 153,
+    "FCBK": 4,
+    "UNDETERMINED": 224
+   },
+   "unmatched_dropped_near_known_or_low_conf": 24,
+   "new_detections": 10,
+   "seconds": 11.8
+  },
+  "Multan": {
+   "mode": "known",
+   "patches_planned": 299,
+   "patches_skipped_invalid": 0,
+   "chunks": 35,
+   "detections_raw": 472,
+   "detections_merged": 392,
+   "known_kilns": 362,
+   "known_kilns_aligned": 320,
+   "known_kilns_shifted": 213,
+   "scene_shift_px": {
+    "S2B_42RYU_20261021_0_L2A": [
+     -8,
+     -10
+    ]
+   },
+   "known_kilns_moved_for_matching": 238,
+   "shift_px_counts": {
+    "0,0": 107,
+    "-8,-10": 89,
+    "-7,-10": 64,
+    "-8,-9": 16,
+    "-9,-10": 12,
+    "-8,-11": 8,
+    "-7,-9": 8,
+    "-6,-10": 4
+   },
+   "status": {
+    "UNDETERMINED": 224,
+    "NOT_DETECTED": 72,
+    "FCBK": 104
+   },
+   "unmatched_dropped_near_known_or_low_conf": 67,
+   "new_detections": 38,
+   "seconds": 11.2
+  },
+  "Muzaffargarh": {
+   "mode": "known",
+   "patches_planned": 295,
+   "patches_skipped_invalid": 0,
+   "chunks": 45,
+   "detections_raw": 390,
+   "detections_merged": 338,
+   "known_kilns": 367,
+   "known_kilns_aligned": 323,
+   "known_kilns_shifted": 62,
+   "scene_shift_px": {},
+   "known_kilns_moved_for_matching": 62,
+   "shift_px_counts": {
+    "0,0": 261,
+    "1,0": 22,
+    "-1,0": 17,
+    "0,-1": 12,
+    "0,1": 5,
+    "-1,-1": 3,
+    "1,-1": 2,
+    "-1,1": 1
+   },
+   "status": {
+    "UNDETERMINED": 168,
+    "FCBK": 135,
+    "NOT_DETECTED": 80
+   },
+   "unmatched_dropped_near_known_or_low_conf": 35,
+   "new_detections": 16,
+   "seconds": 14.1
+  },
+  "Okara": {
+   "mode": "known",
+   "patches_planned": 269,
+   "patches_skipped_invalid": 0,
+   "chunks": 42,
+   "detections_raw": 313,
+   "detections_merged": 262,
+   "known_kilns": 311,
+   "known_kilns_aligned": 277,
+   "known_kilns_shifted": 9,
+   "scene_shift_px": {},
+   "known_kilns_moved_for_matching": 9,
+   "shift_px_counts": {
+    "0,0": 268,
+    "0,-1": 3,
+    "1,0": 2,
+    "1,1": 1,
+    "-18,13": 1,
+    "-1,-1": 1,
+    "0,1": 1
+   },
+   "status": {
+    "UNDETERMINED": 228,
+    "NOT_DETECTED": 75,
+    "FCBK": 16
+   },
+   "unmatched_dropped_near_known_or_low_conf": 20,
+   "new_detections": 8,
+   "seconds": 8.0
+  },
+  "Pakpattan": {
+   "mode": "known",
+   "patches_planned": 260,
+   "patches_skipped_invalid": 0,
+   "chunks": 28,
+   "detections_raw": 262,
+   "detections_merged": 230,
+   "known_kilns": 315,
+   "known_kilns_aligned": 287,
+   "known_kilns_shifted": 30,
+   "scene_shift_px": {},
+   "known_kilns_moved_for_matching": 30,
+   "shift_px_counts": {
+    "0,0": 257,
+    "0,-1": 16,
+    "1,0": 6,
+    "1,-1": 4,
+    "0,1": 2,
+    "-7,-11": 2
+   },
+   "status": {
+    "UNDETERMINED": 118,
+    "NOT_DETECTED": 121,
+    "FCBK": 80
+   },
+   "unmatched_dropped_near_known_or_low_conf": 32,
+   "new_detections": 4,
+   "seconds": 8.3
+  },
+  "Rahim Yar Khan": {
+   "mode": "known",
+   "patches_planned": 306,
+   "patches_skipped_invalid": 88,
+   "chunks": 52,
+   "detections_raw": 276,
+   "detections_merged": 237,
+   "known_kilns": 367,
+   "known_kilns_aligned": 226,
+   "known_kilns_shifted": 12,
+   "scene_shift_px": {},
+   "known_kilns_moved_for_matching": 12,
+   "shift_px_counts": {
+    "0,0": 214,
+    "1,0": 5,
+    "0,-1": 5,
+    "0,1": 1,
+    "-1,0": 1
+   },
+   "status": {
+    "UNDETERMINED": 236,
+    "NOT_DETECTED": 62,
+    "FCBK": 82
+   },
+   "unmatched_dropped_near_known_or_low_conf": 23,
+   "new_detections": 13,
+   "seconds": 8.0
+  },
+  "Rawalpindi": {
+   "mode": "known",
+   "patches_planned": 206,
+   "patches_skipped_invalid": 0,
+   "chunks": 34,
+   "detections_raw": 277,
+   "detections_merged": 220,
+   "known_kilns": 304,
+   "known_kilns_aligned": 284,
+   "known_kilns_shifted": 260,
+   "scene_shift_px": {
+    "S2B_43SCT_20261021_0_L2A": [
+     -7,
+     -10
+    ],
+    "S2B_43SCS_20261021_0_L2A": [
+     -7,
+     -10
+    ]
+   },
+   "known_kilns_moved_for_matching": 277,
+   "shift_px_counts": {
+    "-7,-10": 193,
+    "-8,-10": 33,
+    "0,0": 24,
+    "-6,-10": 9,
+    "-7,-9": 8,
+    "1,0": 7,
+    "0,-1": 5,
+    "0,1": 2
+   },
+   "status": {
+    "NOT_DETECTED": 120,
+    "UNDETERMINED": 147,
+    "FCBK": 51
+   },
+   "unmatched_dropped_near_known_or_low_conf": 30,
+   "new_detections": 14,
+   "seconds": 8.1
+  },
+  "Sahiwal": {
+   "mode": "known",
+   "patches_planned": 231,
+   "patches_skipped_invalid": 0,
+   "chunks": 34,
+   "detections_raw": 282,
+   "detections_merged": 245,
+   "known_kilns": 272,
+   "known_kilns_aligned": 220,
+   "known_kilns_shifted": 89,
+   "scene_shift_px": {
+    "S2B_43RBP_20261021_0_L2A": [
+     -7,
+     -10
+    ]
+   },
+   "known_kilns_moved_for_matching": 122,
+   "shift_px_counts": {
+    "0,0": 131,
+    "-7,-10": 54,
+    "-7,-11": 19,
+    "-7,-9": 6,
+    "0,1": 4,
+    "-6,-10": 3,
+    "-7,-12": 2,
+    "1,0": 1
+   },
+   "status": {
+    "FCBK": 28,
+    "UNDETERMINED": 211,
+    "NOT_DETECTED": 48
+   },
+   "unmatched_dropped_near_known_or_low_conf": 11,
+   "new_detections": 15,
+   "seconds": 11.5
+  },
+  "Sargodha": {
+   "mode": "known",
+   "patches_planned": 346,
+   "patches_skipped_invalid": 0,
+   "chunks": 57,
+   "detections_raw": 291,
+   "detections_merged": 251,
+   "known_kilns": 408,
+   "known_kilns_aligned": 331,
+   "known_kilns_shifted": 325,
+   "scene_shift_px": {
+    "S2B_43SCS_20261021_0_L2A": [
+     -7,
+     -10
+    ],
+    "S2B_43SBR_20261021_0_L2A": [
+     -7,
+     -10
+    ],
+    "S2B_43SCR_20261021_0_L2A": [
+     -7,
+     -10
+    ]
+   },
+   "known_kilns_moved_for_matching": 402,
+   "shift_px_counts": {
+    "-7,-10": 257,
+    "-6,-10": 23,
+    "-8,-10": 20,
+    "-7,-9": 13,
+    "-7,-11": 6,
+    "0,0": 6,
+    "-8,-11": 2,
+    "-9,-10": 2
+   },
+   "status": {
+    "NOT_DETECTED": 164,
+    "FCBK": 49,
+    "UNDETERMINED": 205
+   },
+   "unmatched_dropped_near_known_or_low_conf": 21,
+   "new_detections": 10,
+   "seconds": 16.1
   },
   "Sheikhpura": {
    "mode": "full",
@@ -169,6 +672,115 @@
    "unmatched_dropped_near_known_or_low_conf": 638,
    "new_detections": 99,
    "seconds": 158.8
+  },
+  "Sialkot": {
+   "mode": "known",
+   "patches_planned": 262,
+   "patches_skipped_invalid": 0,
+   "chunks": 30,
+   "detections_raw": 318,
+   "detections_merged": 253,
+   "known_kilns": 342,
+   "known_kilns_aligned": 296,
+   "known_kilns_shifted": 78,
+   "scene_shift_px": {
+    "S2B_43SDS_20261021_0_L2A": [
+     -7,
+     -11
+    ]
+   },
+   "known_kilns_moved_for_matching": 103,
+   "shift_px_counts": {
+    "0,0": 218,
+    "-7,-11": 43,
+    "1,0": 15,
+    "0,1": 7,
+    "0,-1": 5,
+    "-8,-11": 3,
+    "-6,-11": 2,
+    "-7,-12": 1
+   },
+   "status": {
+    "NOT_DETECTED": 129,
+    "UNDETERMINED": 229
+   },
+   "unmatched_dropped_near_known_or_low_conf": 26,
+   "new_detections": 16,
+   "seconds": 9.3
+  },
+  "Toba Tek Singh": {
+   "mode": "known",
+   "patches_planned": 231,
+   "patches_skipped_invalid": 0,
+   "chunks": 34,
+   "detections_raw": 273,
+   "detections_merged": 229,
+   "known_kilns": 283,
+   "known_kilns_aligned": 241,
+   "known_kilns_shifted": 53,
+   "scene_shift_px": {
+    "S2B_43RBP_20261021_0_L2A": [
+     -7,
+     -10
+    ]
+   },
+   "known_kilns_moved_for_matching": 59,
+   "shift_px_counts": {
+    "0,0": 188,
+    "-7,-10": 34,
+    "-7,-9": 8,
+    "0,-1": 8,
+    "-7,-11": 2,
+    "1,-1": 1
+   },
+   "status": {
+    "NOT_DETECTED": 70,
+    "UNDETERMINED": 186,
+    "FCBK": 33
+   },
+   "unmatched_dropped_near_known_or_low_conf": 12,
+   "new_detections": 6,
+   "seconds": 11.0
+  },
+  "Vihari": {
+   "mode": "known",
+   "patches_planned": 353,
+   "patches_skipped_invalid": 0,
+   "chunks": 44,
+   "detections_raw": 362,
+   "detections_merged": 323,
+   "known_kilns": 421,
+   "known_kilns_aligned": 389,
+   "known_kilns_shifted": 371,
+   "scene_shift_px": {
+    "S2B_42RYU_20261021_0_L2A": [
+     -7,
+     -10
+    ],
+    "S2B_43RBP_20261021_0_L2A": [
+     -7,
+     -10
+    ]
+   },
+   "known_kilns_moved_for_matching": 400,
+   "shift_px_counts": {
+    "-7,-10": 250,
+    "-7,-11": 80,
+    "0,0": 18,
+    "-7,-9": 13,
+    "-8,-10": 7,
+    "-7,-12": 7,
+    "-6,-10": 6,
+    "-6,-11": 3
+   },
+   "status": {
+    "NOT_DETECTED": 135,
+    "UNDETERMINED": 148,
+    "FCBK": 147
+   },
+   "unmatched_dropped_near_known_or_low_conf": 45,
+   "new_detections": 9,
+   "seconds": 28.1
   }
  },
  "aoi": {
@@ -179,28 +791,71 @@
   ],
   "known_kiln_districts": [
    "Bahawalpur",
-   "Faisalabad"
+   "Faisalabad",
+   "Gujranwala",
+   "Gujrat",
+   "Jhang",
+   "Khanewal",
+   "Lodhran",
+   "Mandi Bahauddin",
+   "Multan",
+   "Muzaffargarh",
+   "Okara",
+   "Pakpattan",
+   "Rahim Yar Khan",
+   "Rawalpindi",
+   "Sahiwal",
+   "Sargodha",
+   "Sialkot",
+   "Toba Tek Singh",
+   "Vihari"
   ]
  },
  "scenes": {
   "S2A_42RXS_20261008_0_L2A": "2026-10-08",
   "S2A_42RXT_20261001_1_L2A": "2026-10-01",
   "S2A_42RXT_20261008_1_L2A": "2026-10-08",
+  "S2A_42RXT_20261021_1_L2A": "2026-10-21",
   "S2A_42RXU_20261001_1_L2A": "2026-10-01",
+  "S2A_42RXV_20261008_0_L2A": "2026-10-08",
+  "S2A_42RXV_20261021_1_L2A": "2026-10-21",
   "S2A_42RYS_20261008_0_L2A": "2026-10-08",
   "S2A_42RYS_20261008_1_L2A": "2026-10-08",
+  "S2A_42RYT_20261008_0_L2A": "2026-10-08",
   "S2A_42RYT_20261008_1_L2A": "2026-10-08",
+  "S2A_42RYU_20261008_0_L2A": "2026-10-08",
   "S2A_42RYU_20261021_1_L2A": "2026-10-21",
+  "S2A_42RYV_20261008_0_L2A": "2026-10-08",
+  "S2A_42SYA_20261021_1_L2A": "2026-10-21",
   "S2A_43RBM_20261008_0_L2A": "2026-10-08",
   "S2A_43RBP_20261008_0_L2A": "2026-10-08",
   "S2A_43RBQ_20261008_0_L2A": "2026-10-08",
+  "S2A_43RCP_20261008_1_L2A": "2026-10-08",
+  "S2A_43SBR_20261001_1_L2A": "2026-10-01",
+  "S2A_43SBR_20261021_1_L2A": "2026-10-21",
+  "S2B_42RWS_20261004_0_L2A": "2026-10-04",
+  "S2B_42RWS_20261024_0_L2A": "2026-10-24",
+  "S2B_42RWT_20261004_0_L2A": "2026-10-04",
+  "S2B_42RWT_20261024_0_L2A": "2026-10-24",
   "S2B_42RXS_20261004_0_L2A": "2026-10-04",
+  "S2B_42RXS_20261021_1_L2A": "2026-10-21",
   "S2B_42RXT_20261004_0_L2A": "2026-10-04",
   "S2B_42RXU_20261004_0_L2A": "2026-10-04",
   "S2B_42RXU_20261024_0_L2A": "2026-10-24",
+  "S2B_42RXV_20261004_0_L2A": "2026-10-04",
+  "S2B_42RYT_20261004_0_L2A": "2026-10-04",
   "S2B_42RYT_20261021_0_L2A": "2026-10-21",
+  "S2B_42RYU_20261001_0_L2A": "2026-10-01",
   "S2B_42RYU_20261004_0_L2A": "2026-10-04",
   "S2B_42RYU_20261021_0_L2A": "2026-10-21",
+  "S2B_42RYV_20261001_0_L2A": "2026-10-01",
+  "S2B_42RYV_20261004_0_L2A": "2026-10-04",
+  "S2B_42RYV_20261021_0_L2A": "2026-10-21",
+  "S2B_42SYA_20261001_0_L2A": "2026-10-01",
+  "S2B_42SYA_20261004_1_L2A": "2026-10-04",
+  "S2B_42SYA_20261021_0_L2A": "2026-10-21",
+  "S2B_42SYB_20261001_0_L2A": "2026-10-01",
+  "S2B_42SYB_20261021_0_L2A": "2026-10-21",
   "S2B_43RBM_20261021_1_L2A": "2026-10-21",
   "S2B_43RBN_20261001_0_L2A": "2026-10-01",
   "S2B_43RBN_20261021_0_L2A": "2026-10-21",
@@ -208,31 +863,59 @@
   "S2B_43RBP_20261021_0_L2A": "2026-10-21",
   "S2B_43RBQ_20261001_0_L2A": "2026-10-01",
   "S2B_43RBQ_20261021_0_L2A": "2026-10-21",
+  "S2B_43RCN_20261001_0_L2A": "2026-10-01",
   "S2B_43RCP_20261001_0_L2A": "2026-10-01",
   "S2B_43RCP_20261018_0_L2A": "2026-10-18",
   "S2B_43RCQ_20261001_0_L2A": "2026-10-01",
   "S2B_43RCQ_20261018_0_L2A": "2026-10-18",
+  "S2B_43RCQ_20261021_0_L2A": "2026-10-21",
   "S2B_43RDP_20261001_0_L2A": "2026-10-01",
   "S2B_43RDP_20261018_0_L2A": "2026-10-18",
   "S2B_43RDQ_20261001_0_L2A": "2026-10-01",
   "S2B_43RDQ_20261018_0_L2A": "2026-10-18",
   "S2B_43SBR_20261001_0_L2A": "2026-10-01",
+  "S2B_43SBR_20261004_1_L2A": "2026-10-04",
   "S2B_43SBR_20261021_0_L2A": "2026-10-21",
+  "S2B_43SBS_20261001_0_L2A": "2026-10-01",
+  "S2B_43SBS_20261011_0_L2A": "2026-10-11",
+  "S2B_43SBS_20261021_0_L2A": "2026-10-21",
+  "S2B_43SBT_20261001_0_L2A": "2026-10-01",
+  "S2B_43SBT_20261021_0_L2A": "2026-10-21",
+  "S2B_43SCR_20261001_0_L2A": "2026-10-01",
   "S2B_43SCR_20261018_0_L2A": "2026-10-18",
   "S2B_43SCR_20261021_0_L2A": "2026-10-21",
+  "S2B_43SCS_20261001_0_L2A": "2026-10-01",
+  "S2B_43SCS_20261018_0_L2A": "2026-10-18",
+  "S2B_43SCS_20261021_0_L2A": "2026-10-21",
+  "S2B_43SCT_20261001_0_L2A": "2026-10-01",
+  "S2B_43SCT_20261021_0_L2A": "2026-10-21",
   "S2B_43SDR_20261001_0_L2A": "2026-10-01",
   "S2B_43SDR_20261018_0_L2A": "2026-10-18",
+  "S2B_43SDS_20261001_0_L2A": "2026-10-01",
+  "S2B_43SDS_20261018_0_L2A": "2026-10-18",
+  "S2B_43SDS_20261021_0_L2A": "2026-10-21",
+  "S2C_42RWS_20261009_1_L2A": "2026-10-09",
+  "S2C_42RWT_20261009_0_L2A": "2026-10-09",
   "S2C_42RXS_20261006_0_L2A": "2026-10-06",
+  "S2C_42RXS_20261016_0_L2A": "2026-10-16",
   "S2C_42RYS_20261006_0_L2A": "2026-10-06",
   "S2C_42RYT_20261006_0_L2A": "2026-10-06",
+  "S2C_42RYV_20261009_0_L2A": "2026-10-09",
+  "S2C_42RYV_20261019_0_L2A": "2026-10-19",
+  "S2C_42SYA_20261006_0_L2A": "2026-10-06",
   "S2C_43RBM_20261006_0_L2A": "2026-10-06",
   "S2C_43RBN_20261006_0_L2A": "2026-10-06",
+  "S2C_43RCN_20261006_0_L2A": "2026-10-06",
+  "S2C_43RCN_20261016_0_L2A": "2026-10-16",
   "S2C_43RCP_20261006_0_L2A": "2026-10-06",
   "S2C_43RCQ_20261006_0_L2A": "2026-10-06",
   "S2C_43RDP_20261006_0_L2A": "2026-10-06",
   "S2C_43RDQ_20261006_0_L2A": "2026-10-06",
   "S2C_43SBR_20261006_0_L2A": "2026-10-06",
+  "S2C_43SBT_20261016_0_L2A": "2026-10-16",
   "S2C_43SCR_20261003_0_L2A": "2026-10-03",
+  "S2C_43SCR_20261006_0_L2A": "2026-10-06",
+  "S2C_43SCT_20261016_0_L2A": "2026-10-16",
   "S2C_43SDR_20261023_0_L2A": "2026-10-23"
  },
  "models": {
