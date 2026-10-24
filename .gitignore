@@ -1,0 +1,13 @@
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+.env
+*.key
+data/raw/
+ml/runs/
+ml/work/
+web/dist/
+contracts/cache/
+contracts/artifacts/
+.DS_Store
