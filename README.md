@@ -57,6 +57,10 @@ At 10 m the satellite finds kilns well but cannot tell a Zigzag from an FCBK rel
 **never certifies a conversion from imagery**. On held-out kilns it called 24.7% FCBK (3.7% of those
 calls were wrong) and refused the other 75.3%. Certification needs a signed inspector finding.
 
+A second pre-registered experiment (E2, [`docs/E2-RESULTS.md`](docs/E2-RESULTS.md)) tried ten Sentinel-2
+bands from two winter dates per kiln. It missed all four of its targets (test AUC 0.736 against 0.759
+for RGB, and still no safe Zigzag threshold), so the product rule did not change.
+
 **The October 2026 scan:** 22 Punjab districts, 105 Sentinel-2 scenes from 1 to 24 October 2026, 8,879
 kilns. 1,316 still show the FCBK shape, 5,255 cannot be decided from 10 m, 2,308 were not seen this
 season (demolished, dismantled or missed: the product cannot tell which), and none is certified from
