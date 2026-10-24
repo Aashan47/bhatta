@@ -21,7 +21,7 @@ Pakistan patches are used. The pre-registered Pakistan-only classifier reached A
 calibration blocks, and no probability threshold gave a {Zigzag} precision above 0.57 there
 (numbers in "Calibration diagnostics" below). This was seen on calibration data, before any test
 look. We therefore trained a second arm on Pakistan train blocks plus 48,505 SentinelKilnDB kilns
-from India, Bangladesh and Afghanistan (24,098 Zigzag), all assigned to training only; an external
+from outside Pakistan (the dataset also covers India, Bangladesh and Afghanistan; 24,098 Zigzag), all assigned to training only; an external
 kiln within 3 km of any Pakistan calibration or test patch centre is dropped. Calibration and test
 remain Pakistan-only. The arm used by the product is chosen on the Pakistan train-block "val"
 hold-out, never on calibration or test, by AUC of p(Zigzag) with 8-view TTA (the certificate floor
@@ -71,3 +71,97 @@ names imply, and their kilns with them. The scan estimates the shift per dataset
 This does not affect the model evaluation (labels and pixels agree within each patch).
 
 <!-- numbers below are filled from data/split_counts.json, data/conformal.json, data/eval_results.json and data/summary.json -->
+
+## Data and split (`ml/.venv/bin/python ml/prepare.py`, output `data/split_counts.json`)
+
+Pakistan filter: patch centre inside Natural Earth 10m admin-0 "Pakistan"
+(https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_admin_0_countries.geojson,
+public domain). 18,117 of 114,300 published patches are in Pakistan (train 11,449, val 3,810, test
+2,858 of the published splits, all pooled). 11,761 unique kilns after merging copies (FCBK 10,079,
+Zigzag 1,679, CFCBK 3; CFCBK folded into FCBK). 165 blocks of 0.5 degrees: 99 train (15 of them
+held out as "val"), 33 calibration, 33 test. 967 patches dropped by the 1.3 km edge buffer; after
+it, no kiln is visible in more than one of train/cal/test.
+
+| Split | Patches | Patches with a kiln | Unique kilns FCBK | Unique kilns Zigzag | Unique kilns CFCBK | Classifier crops |
+|---|---|---|---|---|---|---|
+| fit (train blocks) | 8,635 | 6,784 | 4,940 | 900 | 1 | 5,840 |
+| val (train blocks, early stopping only) | 1,843 | 1,071 | 841 | 106 | 0 | 947 |
+| cal | 3,469 | 2,616 | 1,865 | 276 | 0 | 2,139 |
+| test | 3,203 | 2,816 | 1,991 | 329 | 1 | 2,320 |
+| dropped by edge buffer | 967 | | 442 | 68 | 1 | |
+
+Detector boxes per split (kiln instances at least half visible, counted per patch, so a kiln in two
+overlapping patches counts twice): fit 10,009, val 1,556, cal 3,652, test 3,947.
+
+## Models
+
+| Model | File | Size | sha256 |
+|---|---|---|---|
+| Detector, YOLO11n-OBB, imgsz 256, 40 epochs, 1.00 h on MPS | `ml/weights/detector.pt` (gitignored) | 5.6 MB | `e429b251b9728a7ca7796287ffc829e204f4899eff680df5e8dfdbdf1d673243` |
+| Classifier, ResNet18, pk arm (product) | `ml/weights/classifier.pt` (gitignored) | 44.8 MB | `4d07730005a33adf76e315d3a6ffe8b8686822215d58c2dfa145f2d02cbf154a` |
+| Classifier, pk+ext arm | `ml/weights/classifier_pkext.pt` | 44.8 MB | `6cc86e80f4cf57b8c0d60bc486e7be241e260c8fbb00d2cb69f810fc96839d3e` |
+| Classifier, pk+ext fine-tuned | `ml/weights/classifier_pkext_ft.pt` | 44.8 MB | `724ef771e5568bc4486185d67636c88d6a311a4acdbcbaa5473283657c37fef1` |
+
+Detector confidence threshold, chosen on the val hold-out (max F1 at IoU 0.3): **0.30** (val:
+precision 0.850, recall 0.888, n = 1,556 boxes).
+
+Conformal (`ml/.venv/bin/python ml/conformal.py`, `data/conformal.json`), calibration n = 2,139
+(1,863 FCBK, 276 Zigzag): marginal **qhat = 0.6005** (alpha 0.10). Mondrian qhat: FCBK 0.4659,
+Zigzag 0.9871. Learn-then-Test Zigzag floor: **none valid** (at every floor from 0.50 to 0.875 the
+false-certificate share on calibration was 0.29 to 0.56; above 0.875 no kiln qualifies), so the
+product never issues a {Zigzag} certificate.
+
+Calibration diagnostics (the reason for D2 and D3), pk arm on calibration kilns: AUC of p(Zigzag)
+0.772; kilns with p(Zigzag) >= 0.5: 289, of which 44% are Zigzag; >= 0.7: 84, 54%; >= 0.8: 21, 57%;
+>= 0.9: none.
+
+## T1 to T6 on test blocks (`ml/.venv/bin/python ml/evaluate.py`, `data/eval_results.json`)
+
+Run once, after D1 to D3 were fixed and the classifier arm chosen.
+
+| ID | Metric | Target | Result | n | Verdict |
+|---|---|---|---|---|---|
+| T1 | Detector recall, IoU 0.3, conf 0.30 | >= 0.80 | **0.880** (3,473 of 3,947 boxes) | 3,203 test patches | **HIT** |
+| T2 | Detector precision, IoU 0.3, conf 0.30 | >= 0.75 | **0.881** (3,473 TP, 469 FP) | 3,942 detections | **HIT** |
+| T3 | Classifier accuracy, FCBK vs Zigzag, true kilns | >= 0.85 | **0.793** (balanced 0.657, AUC 0.759) | 2,320 kilns (1,991 FCBK, 329 Zigzag) | **MISS** |
+| T4 | Conformal coverage, pre-registered marginal rule | 0.87 to 0.93 | **0.863** (2,002 of 2,320) | 2,320 | **MISS** |
+| T5 | Share given a single-class set | >= 0.70 | **0.856** (1,985 of 2,320) | 2,320 | **HIT** |
+| T6 | Of {Zigzag} sets, share truly FCBK | <= 0.05 | **0.619** (174 of 281) | 281 | **MISS** |
+
+Supporting numbers. Kiln-level detector recall (a unique test kiln found in at least one patch):
+0.909 (2,109 of 2,321). Classifier confusion on test (rows true, columns predicted, FCBK then
+Zigzag): [[1,686, 305], [175, 154]]. Coverage by class under the pre-registered rule: FCBK 0.913,
+Zigzag 0.562; the rule covers the average while missing Zigzag kilns. Calibration coverage was 0.901
+and test coverage 0.863: the calibration and test blocks are not exchangeable (spatial shift between
+regions), which is the most likely reason T4 misses.
+
+T6 fallbacks, both computed on calibration data and then applied to test, labelled **post-hoc**:
+* the simple floor from PREREG's remedy ("widen until T6 passes on calibration"): p(Zigzag) >= 0.89
+  gives 1 certificate on calibration (0 false); on test it gives 3 {Zigzag} sets, 2 of them truly
+  FCBK (0.667). It does not pass on test.
+* the Learn-then-Test floor (D3): no floor is valid, so no {Zigzag} certificates are issued; T6 is
+  then vacuous (0 certificates, 0 false).
+
+## The product rule on test (D3: Mondrian sets, no {Zigzag} certificate)
+
+| Measure | Result | n |
+|---|---|---|
+| Coverage, all | 0.991 (2,299 of 2,320) | 2,320 |
+| Coverage, true FCBK | 1.000 | 1,991 |
+| Coverage, true Zigzag | 0.936 | 329 |
+| Certified Zigzag ({Zigzag}) | 0 | 2,320 |
+| Called FCBK ({FCBK}) | 573 (24.7%); 21 of them truly Zigzag (3.7% of the FCBK calls; 6.4% of all Zigzag kilns) | 2,320 |
+| Refused ({FCBK, Zigzag}: needs an inspector) | 1,747 (75.3%) | 2,320 |
+
+Mondrian sets without the certificate floor, for reference: 517 {Zigzag} sets of which 353 are
+truly FCBK (0.683); this is why the floor exists.
+
+End to end (detected test kilns, crop around the detected box rather than the hand label):
+n = 2,109, accuracy 0.785; product rule: 493 {FCBK}, 18 of them truly Zigzag; 1,616 refused; 0
+{Zigzag}.
+
+**Plain reading.** At 10 m, Sentinel-2 finds Pakistani kilns well (T1, T2 hit) but cannot tell a
+Zigzag kiln from an FCBK reliably enough to certify a conversion (T3, T6 miss; best calibration
+precision for Zigzag about 0.57). The product therefore never certifies a conversion from imagery.
+It marks about a quarter of kilns as still FCBK (with a 3.7% false-accusation share among those
+calls on test) and sends the rest to an inspector. That is the honest output of these models.

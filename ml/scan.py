@@ -67,6 +67,7 @@ CHUNK_W = STRIDE * (CHUNK_P - 1) + PATCH + 2 * MARGIN  # 1334
 BAD_SCL = {0, 1, 3, 8, 9, 10}
 MAX_INVALID_FRAC = 0.02
 MERGE_KM = 0.050
+NEW_MIN_CONF = 0.60  # stricter confidence for a kiln not in the 2023-24 labels (val precision 0.937 at 0.60)
 NEW_MIN_KM = 0.150  # an unmatched detection counts as a new kiln only this far from every 2023-24 kiln
 MATCH_KM = 0.100
 CHIP = 64
@@ -477,8 +478,35 @@ def scan_district(dname, mode, scenes, params, districts, known, det, clf, out_d
     kl = known.reset_index(drop=True).copy()
     kl["lon0"], kl["lat0"] = kl.lon, kl.lat
     offs = align_known(kl, mosaics)
-    for ki, (dx, dy, pk, c0) in offs.items():
+    # a shift shared by many kilns imaged by the same scene is a scene misregistration; use the
+    # per-scene median shift for kilns whose own alignment was not possible, and to put new
+    # detections back on the dataset's frame
+    by_scene = defaultdict(list)
+    for ki, o in offs.items():
+        if o[4] != 255:
+            by_scene[o[4]].append((o[0], o[1]))
+    scene_shift = {}
+    for si, v in by_scene.items():
+        if len(v) >= 5:
+            a = np.array(v)
+            scene_shift[si] = (int(np.median(a[:, 0])), int(np.median(a[:, 1])))
+
+    def sidx_at(col, row):
+        ab = find_chunk(col, row, mosaics, need=1)
+        if ab is None:
+            return 255
+        c0_, r0_ = chunk_origin(*ab)
+        return int(mosaics[ab][1][row - r0_, col - c0_])
+
+    applied = {}
+    for ki in kl.index:
+        if ki in offs:
+            dx, dy = offs[ki][0], offs[ki][1]
+        else:
+            si = sidx_at(int(col_of(kl.lon0[ki])), int(row_of(kl.lat0[ki])))
+            dx, dy = scene_shift.get(si, (0, 0))
         if dx or dy:
+            applied[ki] = (dx, dy)
             kl.loc[ki, "lon"] = kl.lon0[ki] + dx * PIX_DEG
             kl.loc[ki, "lat"] = kl.lat0[ki] - dy * PIX_DEG
     # match to ALL 2023-24 kilns within 100 m, greedy by distance
@@ -550,7 +578,7 @@ def scan_district(dname, mode, scenes, params, districts, known, det, clf, out_d
             obs = dict(scene_id=sc["id"] if sc else None, date=sc["date"] if sc else None, detected=False,
                        det_conf=None, probs=None, set=None, chip=obs_chip(k.id, col, row), baseline_chip=brel)
             status = "NOT_DETECTED" if usable else "UNDETERMINED"
-        records.append(dict(id=k.id, lat=round(float(k.lat), 6), lon=round(float(k.lon), 6), district=dname,
+        records.append(dict(id=k.id, lat=round(float(k.lat0), 6), lon=round(float(k.lon0), 6), district=dname,
                             baseline=dict(source="SentinelKilnDB hand label", period="2023-09/2024-02", **{"class": k.cls_src}),
                             observation=obs, status=status))
     # new detections located in this district
@@ -562,14 +590,18 @@ def scan_district(dname, mode, scenes, params, districts, known, det, clf, out_d
         for di in new_idx:
             d = merged[di]
             dist, _ = ktree.query([d["lon"] * 111.32 * math.cos(math.radians(d["lat"])), d["lat"] * 111.32])
-            if dist >= NEW_MIN_KM:
+            if dist >= NEW_MIN_KM and d["conf"] >= NEW_MIN_CONF:
                 far.append(di)
-        n_dup_near_known = len(new_idx) - len(far)
+        n_dup_near_known = len(new_idx) - len(far)  # near a known kiln, or below NEW_MIN_CONF
         new_idx = far
     else:
         n_dup_near_known = 0
+    for di in new_idx:  # back to the dataset frame
+        d = merged[di]
+        dx, dy = scene_shift.get(sidx_at(int(d["gcol"]), int(d["grow"])), (0, 0))
+        d["lat_true"], d["lon_true"] = d["lat"] + dy * PIX_DEG, d["lon"] - dx * PIX_DEG
     if new_idx:
-        dd = assign_district([merged[di]["lat"] for di in new_idx], [merged[di]["lon"] for di in new_idx], districts)
+        dd = assign_district([merged[di]["lat_true"] for di in new_idx], [merged[di]["lon_true"] for di in new_idx], districts)
         existing = set(kl.id)
         for di, dn in zip(new_idx, dd):
             if dn != dname:
@@ -577,7 +609,7 @@ def scan_district(dname, mode, scenes, params, districts, known, det, clf, out_d
             d = merged[di]
             p = probs[di]
             s = conformal_set(p, params["qhat"], params["zig_min"])
-            kid = f"PK-{geohash(d['lat'], d['lon'])}"
+            kid = f"PK-{geohash(d['lat_true'], d['lon_true'])}"
             while kid in existing:
                 kid += "x"
             existing.add(kid)
@@ -585,16 +617,18 @@ def scan_district(dname, mode, scenes, params, districts, known, det, clf, out_d
             obs = dict(scene_id=sc["id"] if sc else None, date=sc["date"] if sc else None, detected=True,
                        det_conf=round(d["conf"], 3), probs={"FCBK": round(float(p[0]), 4), "Zigzag": round(float(p[1]), 4)},
                        set=s, chip=obs_chip(kid, int(d["gcol"]), int(d["grow"])), baseline_chip=None)
-            records.append(dict(id=kid, lat=round(d["lat"], 6), lon=round(d["lon"], 6), district=dname,
+            records.append(dict(id=kid, lat=round(d["lat_true"], 6), lon=round(d["lon_true"], 6), district=dname,
                                 baseline=None, observation=obs, status=status_of(s)))
     records.sort(key=lambda r: r["id"])
     stats = dict(district=dname, mode=mode, patches_planned=len(P), patches_skipped_invalid=n_skipped,
                  chunks=len(chunks), detections_raw=len(dets), detections_merged=len(merged),
                  known_kilns=len(kd_idx), known_kilns_aligned=sum(1 for ki in kd_idx if ki in offs),
                  known_kilns_shifted=sum(1 for ki in kd_idx if ki in offs and (offs[ki][0] or offs[ki][1])),
+                 scene_shift_px={scenes[si]["id"]: list(v) for si, v in sorted(scene_shift.items()) if v != (0, 0)},
+                 known_kilns_moved_for_matching=sum(1 for ki in kd_idx if ki in applied),
                  shift_px_counts=dict(Counter(f"{offs[ki][0]},{offs[ki][1]}" for ki in kd_idx if ki in offs).most_common(8)),
                  status=dict(Counter(r["status"] for r in records)),
-                 unmatched_near_known_dropped=n_dup_near_known,
+                 unmatched_dropped_near_known_or_low_conf=n_dup_near_known,
                  new_detections=sum(1 for r in records if r["baseline"] is None), seconds=round(time.time() - t0, 1))
     with open(out_dir / "districts" / f"{dname}.json", "w") as fh:
         json.dump(dict(stats=stats, scenes=[s["id"] for s in scenes], records=records), fh, indent=1)
@@ -641,7 +675,7 @@ def align_known(kl, mosaics):
             dx, dy = int(x - S), int(y - S)
             if not (pk >= 0.3 and pk - cz >= 0.05):
                 dx = dy = 0
-            cache[nm] = (dx, dy, round(pk, 4), round(cz, 4))
+            cache[nm] = (dx, dy, round(pk, 4), round(cz, 4), int(sidx[lr, lc]))
         if cache[nm] is not None:
             out[ki] = cache[nm]
     return out
@@ -778,6 +812,7 @@ def main():
     ap.add_argument("--chip-root", default=str(DATA), help="chips are written to <chip-root>/chips/")
     ap.add_argument("--fetch-only", action="store_true", help="only download and cache the mosaics")
     ap.add_argument("--no-cache", action="store_true", help="always read imagery from the network")
+    ap.add_argument("--only-fetched", action="store_true", help="with --all-known: only districts already in fetched.json")
     args = ap.parse_args()
     out_dir = Path(args.out_dir)
     (out_dir / "districts").mkdir(parents=True, exist_ok=True)
@@ -795,9 +830,16 @@ def main():
     todo = [(d, args.mode) for d in args.districts]
     if args.all_known:
         counts = known.district.value_counts()
-        todo += [(d, "known") for d in counts.index if isinstance(d, str) and d not in plan["districts"] and d not in args.districts]
+        done_fetch = json.load(open(out_dir / "fetched.json")) if (args.fetch_only and (out_dir / "fetched.json").exists()) else {}
+        todo += [(d, "known") for d in counts.index if isinstance(d, str) and d not in plan["districts"]
+                 and d not in args.districts and d not in done_fetch]
     global USE_CACHE
     USE_CACHE = not args.no_cache
+    if args.only_fetched:
+        todo = [(d, m) for d, m in todo if d in fetched_prev]
+    if not todo:
+        print("nothing to do")
+        return
     det, clf = (None, None) if args.fetch_only else load_models()
     logf = open(out_dir / "scan.log", "a")
 
@@ -833,7 +875,9 @@ def main():
         if args.fetch_only:
             fetched = json.load(open(out_dir / "fetched.json")) if (out_dir / "fetched.json").exists() else {}
             fetched[dname] = dict(mode=mode, scenes=scenes)
-            json.dump(fetched, open(out_dir / "fetched.json", "w"), indent=1)
+            with open(out_dir / "fetched.tmp.json", "w") as fh:
+                json.dump(fetched, fh, indent=1)
+            os.replace(out_dir / "fetched.tmp.json", out_dir / "fetched.json")
             continue
         plan["districts"][dname] = dict(mode=mode, scenes=scenes)
         plan["code_commit"] = git_commit()
