@@ -2,7 +2,7 @@
 
 **Punjab's brick kiln claims, checked from space and kept on a public ledger.**
 
-Live: https://bhatta.aashanjaved.com · Contract (Ethereum Sepolia):
+Live: https://bhatta.aashanjaved.com · Demo video: https://youtu.be/rfIB3Gt3k3A · Contract (Ethereum Sepolia):
 [`0xD5ED8D10aD23bAc601C065D4179d488037070baC`](https://sepolia.etherscan.io/address/0xD5ED8D10aD23bAc601C065D4179d488037070baC)
 · IEEE ClimateChain Global Hackathon 2026, Track 4: Climate Data & Environmental Monitoring.
 
