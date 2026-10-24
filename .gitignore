@@ -11,3 +11,4 @@ web/dist/
 contracts/cache/
 contracts/artifacts/
 .DS_Store
+ml/weights/
