@@ -1,0 +1,20 @@
+{
+  "name": "Bhatta",
+  "short_name": "Bhatta",
+  "description": "Brick kiln conversion claims in Punjab, checked with free Sentinel-2 imagery and kept on a public ledger.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#FBF6F1",
+  "theme_color": "#A8432A",
+  "lang": "en",
+  "dir": "auto",
+  "categories": ["government", "utilities", "education"],
+  "icons": [
+    { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

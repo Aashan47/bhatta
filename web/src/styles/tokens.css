@@ -1,0 +1,130 @@
+/* Design tokens from docs/PRODUCT.md: fired brick, clay, soot, ash. */
+:root {
+  color-scheme: light;
+  --clay-50: #fbf6f1;
+  --clay-100: #f3e7db;
+  --clay-200: #eadac9;
+  --brick-600: #a8432a;
+  --brick-700: #86331f;
+  --soot-900: #1f1b18;
+  --soot-600: #5b524b;
+  --ash-300: #cfc6bd;
+
+  --zigzag: #1f7a5a;
+  --fcbk: #b3261e;
+  --undetermined: #b7791f;
+  --notseen: #6b6f76;
+  /* text-safe variants (4.5:1 on page and surface) */
+  --zigzag-ink: #17664a;
+  --fcbk-ink: #a32019;
+  --undetermined-ink: #85560f;
+  --notseen-ink: #565a61;
+
+  --page: var(--clay-50);
+  --surface: var(--clay-100);
+  --surface-2: var(--clay-200);
+  --raised: #fffdfa;
+  --text: var(--soot-900);
+  --muted: var(--soot-600);
+  --border: var(--ash-300);
+  --primary: var(--brick-600);
+  --primary-hover: var(--brick-700);
+  --on-primary: #ffffff;
+  --rule: var(--brick-600);
+  --focus: #1f1b18;
+  --sample-bg: #fff1c7;
+  --sample-text: #5e4100;
+  --sample-border: #e0b84a;
+  --shadow: 0 1px 0 rgba(31, 27, 24, 0.06), 0 8px 24px -12px rgba(31, 27, 24, 0.25);
+
+  --font-sans: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-urdu: "Noto Nastaliq Urdu", "Public Sans", serif;
+
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.5625rem;
+  --step-3: 1.953rem;
+  --step-4: 2.441rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+
+  --radius-s: 4px;
+  --radius-m: 8px;
+  --gutter: 16px;
+  --measure: 68ch;
+  --header-h: 60px;
+  --tabbar-h: 64px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #14110f;
+    --surface: #1f1a17;
+    --surface-2: #2a2420;
+    --raised: #241e1a;
+    --text: #f3e7db;
+    --muted: #b8aea5;
+    --border: #3d3530;
+    --primary: #e07a5f;
+    --primary-hover: #f09a82;
+    --on-primary: #14110f;
+    --rule: #e07a5f;
+    --focus: #f3e7db;
+    --zigzag: #5fc59c;
+    --fcbk: #f07a6e;
+    --undetermined: #e3a64a;
+    --notseen: #a3a8b0;
+    --zigzag-ink: #6fd2a9;
+    --fcbk-ink: #f68a7f;
+    --undetermined-ink: #ebb460;
+    --notseen-ink: #b1b6bd;
+    --sample-bg: #3a2e10;
+    --sample-text: #f6dc93;
+    --sample-border: #7a6020;
+    --shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 10px 28px -14px rgba(0, 0, 0, 0.7);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #14110f;
+  --surface: #1f1a17;
+  --surface-2: #2a2420;
+  --raised: #241e1a;
+  --text: #f3e7db;
+  --muted: #b8aea5;
+  --border: #3d3530;
+  --primary: #e07a5f;
+  --primary-hover: #f09a82;
+  --on-primary: #14110f;
+  --rule: #e07a5f;
+  --focus: #f3e7db;
+  --zigzag: #5fc59c;
+  --fcbk: #f07a6e;
+  --undetermined: #e3a64a;
+  --notseen: #a3a8b0;
+  --zigzag-ink: #6fd2a9;
+  --fcbk-ink: #f68a7f;
+  --undetermined-ink: #ebb460;
+  --notseen-ink: #b1b6bd;
+  --sample-bg: #3a2e10;
+  --sample-text: #f6dc93;
+  --sample-border: #7a6020;
+  --shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 10px 28px -14px rgba(0, 0, 0, 0.7);
+}
+
+@media (min-width: 900px) {
+  :root {
+    --gutter: 32px;
+  }
+}
