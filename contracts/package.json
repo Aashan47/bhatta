@@ -1,0 +1,24 @@
+{
+  "name": "bhatta-contracts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "KilnLedger: append-only season roots, EIP-712 inspector findings, public conflicts and disputes for Bhatta",
+  "license": "MIT",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "gas": "REPORT_GAS=1 hardhat test",
+    "merkle": "hardhat run scripts/build-merkle.ts",
+    "node": "hardhat node"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.2",
+    "@openzeppelin/contracts": "^5.6.1",
+    "@openzeppelin/merkle-tree": "^1.0.8",
+    "@types/node": "^26.6.5",
+    "dotenv": "^18.0.9",
+    "hardhat": "^2.29.1",
+    "ts-node": "^10.9.2",
+    "typescript": "5.9"
+  }
+}
