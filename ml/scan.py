@@ -348,6 +348,41 @@ def baseline_chip(row):
     return pad[cy:cy + CHIP, cx:cx + CHIP]
 
 
+_patch_index = {}
+
+
+def baseline_chip_central(row):
+    """CHIP crop around a 2023-24 kiln for display. Among all SentinelKilnDB Pakistan patches
+    holding the kiln centre, use the one where the kiln is most central (largest distance to the
+    nearest patch edge, ties by patch name); where the chip still runs past that patch, fill with
+    flat grey (128, 128, 128). Kilns without a fully visible copy (best_patch empty) keep no
+    baseline chip, as in the published scan."""
+    from common import EXTENT_DEG, lonlat_to_norm
+    if not isinstance(row.best_patch, str):
+        return None
+    if not _patch_index:
+        sp = pd.read_csv(DATA / "splits.csv", usecols=["image_name", "lat", "lon"])
+        _patch_index["df"] = sp.sort_values("image_name").reset_index(drop=True)
+    sp = _patch_index["df"]
+    h = EXTENT_DEG / 2
+    cand = sp[(abs(sp.lat - row.lat) < h) & (abs(sp.lon - row.lon) < h)]
+    best = None
+    for nm, la, lo in zip(cand.image_name, cand.lat, cand.lon):
+        u, v = lonlat_to_norm(np.array([row.lon]), np.array([row.lat]), la, lo)
+        cx, cy = int(round(u[0] * PATCH)), int(round(v[0] * PATCH))
+        margin = min(cx, cy, PATCH - cx, PATCH - cy)
+        if best is None or margin > best[0]:
+            best = (margin, nm, cx, cy)
+    if best is None:
+        return None
+    _, nm, cx, cy = best
+    _load_baseline_imgs()
+    arr = np.array(Image.open(io.BytesIO(_baseline_imgs[nm])).convert("RGB"))
+    hc = CHIP // 2
+    pad = np.pad(arr, ((hc, hc), (hc, hc), (0, 0)), mode="constant", constant_values=128)
+    return pad[cy:cy + CHIP, cx:cx + CHIP]
+
+
 def save_png(arr, path):
     path.parent.mkdir(parents=True, exist_ok=True)
     Image.fromarray(arr).save(path, optimize=False, compress_level=6)
@@ -556,7 +591,7 @@ def scan_district(dname, mode, scenes, params, districts, known, det, clf, out_d
     for ki in kd_idx:
         k = kl.loc[ki]
         col, row = int(col_of(k.lon)), int(row_of(k.lat))
-        bchip = baseline_chip(k.rename({"lon": "lon_c", "lat": "lat_c", "lon0": "lon", "lat0": "lat"}))
+        bchip = baseline_chip_central(k.rename({"lon": "lon_c", "lat": "lat_c", "lon0": "lon", "lat0": "lat"}))
         brel = None
         if bchip is not None:
             brel = f"chips/{k.id}_2023.png"
