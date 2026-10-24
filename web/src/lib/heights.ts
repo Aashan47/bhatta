@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { getQueue } from "../api";
 
-/** p(FCBK) per kiln for 3D column heights, loaded only once 3D is switched on. The queue carries
- *  p(Zigzag) for every kiln that has probabilities; p(FCBK) = 1 - p(Zigzag). */
+/** Fallback for 3D column heights when /api/kilns has no p_fcbk: read p(Zigzag) from the queue,
+ *  only once 3D is switched on; p(FCBK) = 1 - p(Zigzag). */
 export function usePFcbk(enabled: boolean): Map<string, number> | undefined {
   const [m, setM] = useState<Map<string, number>>();
   useEffect(() => {

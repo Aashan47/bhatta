@@ -152,6 +152,7 @@ function normKiln(k: Raw): KilnListItem {
     district: k.district ?? "",
     status: normStatus(k.status),
     baseline_class: normClass(k.baseline_class ?? k.baseline?.class),
+    p_fcbk: typeof k.p_fcbk === "number" ? k.p_fcbk : null,
   };
 }
 

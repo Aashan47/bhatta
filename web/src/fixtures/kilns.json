@@ -5,7 +5,8 @@
   "lon": 74.2422,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.8546
  },
  {
   "id": "PK-ttkzfz8z",
@@ -13,7 +14,8 @@
   "lon": 74.3019,
   "district": "Kasur",
   "status": "NOT_DETECTED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": null
  },
  {
   "id": "PK-tts9hr1j",
@@ -21,7 +23,8 @@
   "lon": 74.0165,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.4156
  },
  {
   "id": "PK-tts9mtfh",
@@ -29,7 +32,8 @@
   "lon": 74.0727,
   "district": "Kasur",
   "status": "FCBK",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.9181
  },
  {
   "id": "PK-tts9ez3m",
@@ -37,7 +41,8 @@
   "lon": 73.9947,
   "district": "Kasur",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9302
  },
  {
   "id": "PK-tts8uy5n",
@@ -45,7 +50,8 @@
   "lon": 74.0412,
   "district": "Kasur",
   "status": "NOT_DETECTED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": null
  },
  {
   "id": "PK-ttsc2c2c",
@@ -53,7 +59,8 @@
   "lon": 74.214,
   "district": "Kasur",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.8886
  },
  {
   "id": "PK-ttsb92g8",
@@ -61,7 +68,8 @@
   "lon": 74.2396,
   "district": "Kasur",
   "status": "NOT_DETECTED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": null
  },
  {
   "id": "PK-tts8reuk",
@@ -69,7 +77,8 @@
   "lon": 74.1638,
   "district": "Kasur",
   "status": "NOT_DETECTED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": null
  },
  {
   "id": "PK-tts8nfc6",
@@ -77,7 +86,8 @@
   "lon": 74.1265,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.4711
  },
  {
   "id": "PK-ttsc5jug",
@@ -85,7 +95,8 @@
   "lon": 74.3183,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.6949
  },
  {
   "id": "PK-ttscnszm",
@@ -93,7 +104,8 @@
   "lon": 74.4754,
   "district": "Kasur",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9201
  },
  {
   "id": "PK-ttsb3xcu",
@@ -101,7 +113,8 @@
   "lon": 74.2482,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.2788
  },
  {
   "id": "PK-tts95qzq",
@@ -109,7 +122,8 @@
   "lon": 73.9812,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.707
  },
  {
   "id": "PK-tts9nzmw",
@@ -117,7 +131,8 @@
   "lon": 74.1326,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.4715
  },
  {
   "id": "PK-tts8t7b6",
@@ -125,7 +140,8 @@
   "lon": 74.0592,
   "district": "Kasur",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9655
  },
  {
   "id": "PK-tts8jdqf",
@@ -133,7 +149,8 @@
   "lon": 74.0794,
   "district": "Kasur",
   "status": "NOT_DETECTED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": null
  },
  {
   "id": "PK-ttscjzwk",
@@ -141,7 +158,8 @@
   "lon": 74.441,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.2163
  },
  {
   "id": "PK-ttsce4pr",
@@ -149,7 +167,8 @@
   "lon": 74.3216,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.3689
  },
  {
   "id": "PK-tts8sceb",
@@ -157,7 +176,8 @@
   "lon": 74.0423,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.2957
  },
  {
   "id": "PK-ttt08jq4",
@@ -165,7 +185,8 @@
   "lon": 74.5396,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.2052
  },
  {
   "id": "PK-tts8qu4s",
@@ -173,7 +194,8 @@
   "lon": 74.1285,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.3863
  },
  {
   "id": "PK-ttsctbrw",
@@ -181,7 +203,8 @@
   "lon": 74.4428,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.7937
  },
  {
   "id": "PK-tts9rbep",
@@ -189,7 +212,8 @@
   "lon": 74.173,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.2468
  },
  {
   "id": "PK-tts8t6dy",
@@ -197,7 +221,8 @@
   "lon": 74.0628,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.4826
  },
  {
   "id": "PK-ttsbh5vs",
@@ -205,7 +230,8 @@
   "lon": 74.3631,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.6167
  },
  {
   "id": "PK-ttsb0bk5",
@@ -213,7 +239,8 @@
   "lon": 74.2183,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.6457
  },
  {
   "id": "PK-tts8hym2",
@@ -221,7 +248,8 @@
   "lon": 74.0443,
   "district": "Kasur",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9484
  },
  {
   "id": "PK-ttsc5tbn",
@@ -229,7 +257,8 @@
   "lon": 74.3335,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.7284
  },
  {
   "id": "PK-ttsbqj49",
@@ -237,7 +266,8 @@
   "lon": 74.447,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.4872
  },
  {
   "id": "PK-ttsbbzcm",
@@ -245,7 +275,8 @@
   "lon": 74.2144,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.8114
  },
  {
   "id": "PK-tts8v8xu",
@@ -253,7 +284,8 @@
   "lon": 74.0805,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.7197
  },
  {
   "id": "PK-ttscx25g",
@@ -261,7 +293,8 @@
   "lon": 74.5037,
   "district": "Kasur",
   "status": "NOT_DETECTED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": null
  },
  {
   "id": "PK-ttsbx5tc",
@@ -269,7 +302,8 @@
   "lon": 74.4953,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.4378
  },
  {
   "id": "PK-ttsc8qwk",
@@ -277,7 +311,8 @@
   "lon": 74.1995,
   "district": "Kasur",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9733
  },
  {
   "id": "PK-ttsbb0bq",
@@ -285,7 +320,8 @@
   "lon": 74.1801,
   "district": "Kasur",
   "status": "NOT_DETECTED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": null
  },
  {
   "id": "PK-ttt185ns",
@@ -293,7 +329,8 @@
   "lon": 74.5405,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.8114
  },
  {
   "id": "PK-ttsbhn1s",
@@ -301,7 +338,8 @@
   "lon": 74.3578,
   "district": "Kasur",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9304
  },
  {
   "id": "PK-ttscpdff",
@@ -309,7 +347,8 @@
   "lon": 74.5131,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.5938
  },
  {
   "id": "PK-tts8yy7x",
@@ -317,7 +356,8 @@
   "lon": 74.1299,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.7897
  },
  {
   "id": "PK-ttsb5727",
@@ -325,7 +365,8 @@
   "lon": 74.3231,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.768
  },
  {
   "id": "PK-tts9n50r",
@@ -333,7 +374,8 @@
   "lon": 74.0924,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.3784
  },
  {
   "id": "PK-ttsc9bvb",
@@ -341,7 +383,8 @@
   "lon": 74.2646,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.1223
  },
  {
   "id": "PK-tts9m7d4",
@@ -349,7 +392,8 @@
   "lon": 74.0616,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.2908
  },
  {
   "id": "PK-ttsbsjzt",
@@ -357,7 +401,8 @@
   "lon": 74.3658,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.8454
  },
  {
   "id": "PK-tts8kj9n",
@@ -365,7 +410,8 @@
   "lon": 74.0053,
   "district": "Kasur",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.2602
  },
  {
   "id": "PK-ttsfzmg5",
@@ -373,7 +419,8 @@
   "lon": 74.5026,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.6569
  },
  {
   "id": "PK-ttsgzk00",
@@ -381,7 +428,8 @@
   "lon": 74.4985,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.5535
  },
  {
   "id": "PK-ttserh4t",
@@ -389,7 +437,8 @@
   "lon": 74.1395,
   "district": "Lahore",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9198
  },
  {
   "id": "PK-ttsspdb6",
@@ -397,7 +446,8 @@
   "lon": 74.1582,
   "district": "Lahore",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9136
  },
  {
   "id": "PK-ttsdztjs",
@@ -405,7 +455,8 @@
   "lon": 74.1655,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.3362
  },
  {
   "id": "PK-ttsg09g7",
@@ -413,7 +464,8 @@
   "lon": 74.2063,
   "district": "Lahore",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.8844
  },
  {
   "id": "PK-ttsgx5s8",
@@ -421,7 +473,8 @@
   "lon": 74.4937,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.4206
  },
  {
   "id": "PK-ttsfcde4",
@@ -429,7 +482,8 @@
   "lon": 74.25,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.272
  },
  {
   "id": "PK-ttsg9k8d",
@@ -437,7 +491,8 @@
   "lon": 74.2356,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.8199
  },
  {
   "id": "PK-ttsfhrz5",
@@ -445,7 +500,8 @@
   "lon": 74.3764,
   "district": "Lahore",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9704
  },
  {
   "id": "PK-ttsgq5zn",
@@ -453,7 +509,8 @@
   "lon": 74.4531,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.5893
  },
  {
   "id": "PK-ttsf8ns8",
@@ -461,7 +518,8 @@
   "lon": 74.1859,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.7519
  },
  {
   "id": "PK-ttsgy8bh",
@@ -469,7 +527,8 @@
   "lon": 74.4654,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.5827
  },
  {
   "id": "PK-ttsg8dk1",
@@ -477,7 +536,8 @@
   "lon": 74.2073,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.6776
  },
  {
   "id": "PK-ttsdr8py",
@@ -485,7 +545,8 @@
   "lon": 74.1685,
   "district": "Lahore",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9847
  },
  {
   "id": "PK-ttsupghu",
@@ -493,7 +554,8 @@
   "lon": 74.5268,
   "district": "Lahore",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9611
  },
  {
   "id": "PK-ttsg960f",
@@ -501,7 +563,8 @@
   "lon": 74.2358,
   "district": "Lahore",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9436
  },
  {
   "id": "PK-ttsuhuce",
@@ -509,7 +572,8 @@
   "lon": 74.3907,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.1424
  },
  {
   "id": "PK-ttsgfzej",
@@ -517,7 +581,8 @@
   "lon": 74.3047,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.2988
  },
  {
   "id": "PK-ttt524ft",
@@ -525,7 +590,8 @@
   "lon": 74.5348,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.5998
  },
  {
   "id": "PK-ttsgbd4t",
@@ -533,7 +599,8 @@
   "lon": 74.2053,
   "district": "Lahore",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.8921
  },
  {
   "id": "PK-ttsgc6jz",
@@ -541,7 +608,8 @@
   "lon": 74.2426,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.4607
  },
  {
   "id": "PK-ttsfx093",
@@ -549,7 +617,8 @@
   "lon": 74.4892,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.4083
  },
  {
   "id": "PK-ttsu15vw",
@@ -557,7 +626,8 @@
   "lon": 74.2315,
   "district": "Lahore",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9638
  },
  {
   "id": "PK-ttsgch86",
@@ -565,7 +635,8 @@
   "lon": 74.2243,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.4346
  },
  {
   "id": "PK-ttsuph9u",
@@ -573,7 +644,8 @@
   "lon": 74.4898,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.4335
  },
  {
   "id": "PK-ttsgbybj",
@@ -581,7 +653,8 @@
   "lon": 74.2127,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.3971
  },
  {
   "id": "PK-ttsu1efx",
@@ -589,7 +662,8 @@
   "lon": 74.2491,
   "district": "Lahore",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.8851
  },
  {
   "id": "PK-ttsfy0j8",
@@ -597,7 +671,8 @@
   "lon": 74.4511,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.5788
  },
  {
   "id": "PK-ttsgvcvq",
@@ -605,7 +680,8 @@
   "lon": 74.4399,
   "district": "Lahore",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9135
  },
  {
   "id": "PK-ttsfm3qe",
@@ -613,7 +689,8 @@
   "lon": 74.4195,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.2144
  },
  {
   "id": "PK-ttsg06fm",
@@ -621,7 +698,8 @@
   "lon": 74.194,
   "district": "Lahore",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.6847
  },
  {
   "id": "PK-ttsdzsd1",
@@ -629,7 +707,8 @@
   "lon": 74.1606,
   "district": "Lahore",
   "status": "NOT_DETECTED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": null
  },
  {
   "id": "PK-ttsgb0pu",
@@ -637,7 +716,8 @@
   "lon": 74.1906,
   "district": "Lahore",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9363
  },
  {
   "id": "PK-ttssvudg",
@@ -645,7 +725,8 @@
   "lon": 74.0848,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.6898
  },
  {
   "id": "PK-ttst03du",
@@ -653,7 +734,8 @@
   "lon": 73.8429,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.5051
  },
  {
   "id": "PK-ttst228x",
@@ -661,7 +743,8 @@
   "lon": 73.84,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.3653
  },
  {
   "id": "PK-ttss3084",
@@ -669,7 +752,8 @@
   "lon": 73.8724,
   "district": "Sheikhupura",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9179
  },
  {
   "id": "PK-ttsstjxr",
@@ -677,7 +761,8 @@
   "lon": 74.0581,
   "district": "Sheikhupura",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.8817
  },
  {
   "id": "PK-ttssjkvg",
@@ -685,7 +770,8 @@
   "lon": 74.0668,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.4685
  },
  {
   "id": "PK-ttst47hs",
@@ -693,7 +779,8 @@
   "lon": 73.9334,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.4986
  },
  {
   "id": "PK-ttsskb20",
@@ -701,7 +788,8 @@
   "lon": 74.037,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.2618
  },
  {
   "id": "PK-ttsstnyf",
@@ -709,7 +797,8 @@
   "lon": 74.0574,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.2131
  },
  {
   "id": "PK-ttskrdm6",
@@ -717,7 +806,8 @@
   "lon": 73.8137,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.5035
  },
  {
   "id": "PK-ttskzcu8",
@@ -725,7 +815,8 @@
   "lon": 73.8234,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.7434
  },
  {
   "id": "PK-ttssw30y",
@@ -733,7 +824,8 @@
   "lon": 74.1039,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.5184
  },
  {
   "id": "PK-ttskrz10",
@@ -741,7 +833,8 @@
   "lon": 73.8187,
   "district": "Sheikhupura",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9572
  },
  {
   "id": "PK-ttss1uu6",
@@ -749,7 +842,8 @@
   "lon": 73.911,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.4853
  },
  {
   "id": "PK-ttsety8v",
@@ -757,7 +851,8 @@
   "lon": 74.082,
   "district": "Sheikhupura",
   "status": "NOT_DETECTED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": null
  },
  {
   "id": "PK-ttssh06q",
@@ -765,7 +860,8 @@
   "lon": 74.0073,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.6508
  },
  {
   "id": "PK-ttsswhxd",
@@ -773,7 +869,8 @@
   "lon": 74.1024,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.1094
  },
  {
   "id": "PK-ttssdzpr",
@@ -781,7 +878,8 @@
   "lon": 73.959,
   "district": "Sheikhupura",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.8964
  },
  {
   "id": "PK-ttss3jnv",
@@ -789,7 +887,8 @@
   "lon": 73.8815,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.6278
  },
  {
   "id": "PK-ttsshk3v",
@@ -797,7 +896,8 @@
   "lon": 74.0175,
   "district": "Sheikhupura",
   "status": "NOT_DETECTED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": null
  },
  {
   "id": "PK-ttsedt6r",
@@ -805,7 +905,8 @@
   "lon": 73.9414,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.3143
  },
  {
   "id": "PK-ttskzff9",
@@ -813,7 +914,8 @@
   "lon": 73.8207,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.5067
  },
  {
   "id": "PK-ttss3d13",
@@ -821,7 +923,8 @@
   "lon": 73.8958,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.7189
  },
  {
   "id": "PK-ttsshyhe",
@@ -829,7 +932,8 @@
   "lon": 74.0433,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.0923
  },
  {
   "id": "PK-ttsshjmp",
@@ -837,7 +941,8 @@
   "lon": 74.0111,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.6055
  },
  {
   "id": "PK-ttst4bp0",
@@ -845,7 +950,8 @@
   "lon": 73.9589,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.3823
  },
  {
   "id": "PK-ttsef5tn",
@@ -853,7 +959,8 @@
   "lon": 73.9229,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.4078
  },
  {
   "id": "PK-ttss4k1n",
@@ -861,7 +968,8 @@
   "lon": 73.9285,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.2911
  },
  {
   "id": "PK-ttsstm18",
@@ -869,7 +977,8 @@
   "lon": 74.0609,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.226
  },
  {
   "id": "PK-ttskqvnz",
@@ -877,7 +986,8 @@
   "lon": 73.7826,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.2846
  },
  {
   "id": "PK-ttss1g8g",
@@ -885,7 +995,8 @@
   "lon": 73.9061,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.2433
  },
  {
   "id": "PK-ttsskh5m",
@@ -893,7 +1004,8 @@
   "lon": 74.0087,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.2887
  },
  {
   "id": "PK-ttss26mv",
@@ -901,7 +1013,8 @@
   "lon": 73.8473,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.0423
  },
  {
   "id": "PK-ttsegftc",
@@ -909,7 +1022,8 @@
   "lon": 74.0009,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.8409
  },
  {
   "id": "PK-ttsmp7xn",
@@ -917,7 +1031,8 @@
   "lon": 73.8048,
   "district": "Sheikhupura",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9547
  },
  {
   "id": "PK-ttss3mxp",
@@ -925,7 +1040,8 @@
   "lon": 73.8928,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.4544
  },
  {
   "id": "PK-ttsssv3z",
@@ -933,7 +1049,8 @@
   "lon": 74.0395,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.6015
  },
  {
   "id": "PK-ttssjzt4",
@@ -941,7 +1058,8 @@
   "lon": 74.0878,
   "district": "Sheikhupura",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.6197
  },
  {
   "id": "PK-tts7kuf5",
@@ -949,7 +1067,8 @@
   "lon": 73.6881,
   "district": "Nankana Sahib",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9298
  },
  {
   "id": "PK-tts6ymvt",
@@ -957,7 +1076,8 @@
   "lon": 73.759,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.7574
  },
  {
   "id": "PK-ttsd2tu1",
@@ -965,7 +1085,8 @@
   "lon": 73.8558,
   "district": "Nankana Sahib",
   "status": "FCBK",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.9412
  },
  {
   "id": "PK-ttse1ngu",
@@ -973,7 +1094,8 @@
   "lon": 73.8774,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.5113
  },
  {
   "id": "PK-ttsdcmb2",
@@ -981,7 +1103,8 @@
   "lon": 73.8837,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.5753
  },
  {
   "id": "PK-tts6v9d8",
@@ -989,7 +1112,8 @@
   "lon": 73.722,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.0498
  },
  {
   "id": "PK-tts6tk6t",
@@ -997,7 +1121,8 @@
   "lon": 73.711,
   "district": "Nankana Sahib",
   "status": "NOT_DETECTED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": null
  },
  {
   "id": "PK-tts6uwcj",
@@ -1005,7 +1130,8 @@
   "lon": 73.676,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.3849
  },
  {
   "id": "PK-tts6smtd",
@@ -1013,7 +1139,8 @@
   "lon": 73.671,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.5341
  },
  {
   "id": "PK-tts6z7jh",
@@ -1021,7 +1148,8 @@
   "lon": 73.8022,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.4411
  },
  {
   "id": "PK-tts7h7fc",
@@ -1029,7 +1157,8 @@
   "lon": 73.6673,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.2843
  },
  {
   "id": "PK-ttse1jx2",
@@ -1037,7 +1166,8 @@
   "lon": 73.8822,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.5886
  },
  {
   "id": "PK-tts6dbh6",
@@ -1045,7 +1175,8 @@
   "lon": 73.6033,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.1171
  },
  {
   "id": "PK-tts6w7fn",
@@ -1053,7 +1184,8 @@
   "lon": 73.7543,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.0829
  },
  {
   "id": "PK-ttsd8dwt",
@@ -1061,7 +1193,8 @@
   "lon": 73.8592,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.6331
  },
  {
   "id": "PK-tts7rzju",
@@ -1069,7 +1202,8 @@
   "lon": 73.8252,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.6817
  },
  {
   "id": "PK-tts6zmmt",
@@ -1077,7 +1211,8 @@
   "lon": 73.803,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.5636
  },
  {
   "id": "PK-tts7nbg8",
@@ -1085,7 +1220,8 @@
   "lon": 73.7783,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.8502
  },
  {
   "id": "PK-tts6ky9t",
@@ -1093,7 +1229,8 @@
   "lon": 73.6877,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.1528
  },
  {
   "id": "PK-tts6hfhv",
@@ -1101,7 +1238,8 @@
   "lon": 73.6919,
   "district": "Nankana Sahib",
   "status": "FCBK",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.9876
  },
  {
   "id": "PK-tts6hqmj",
@@ -1109,7 +1247,8 @@
   "lon": 73.6703,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.4731
  },
  {
   "id": "PK-ttsd1pn6",
@@ -1117,7 +1256,8 @@
   "lon": 73.8808,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.4418
  },
  {
   "id": "PK-tts75znr",
@@ -1125,7 +1265,8 @@
   "lon": 73.6502,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.4463
  },
  {
   "id": "PK-tts6y4em",
@@ -1133,7 +1274,8 @@
   "lon": 73.7447,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "Zigzag"
+  "baseline_class": "Zigzag",
+  "p_fcbk": 0.2611
  },
  {
   "id": "PK-tts6eckv",
@@ -1141,7 +1283,8 @@
   "lon": 73.6481,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.3777
  },
  {
   "id": "PK-ttsdbn83",
@@ -1149,6 +1292,7 @@
   "lon": 73.8288,
   "district": "Nankana Sahib",
   "status": "UNDETERMINED",
-  "baseline_class": "FCBK"
+  "baseline_class": "FCBK",
+  "p_fcbk": 0.3154
  }
 ]

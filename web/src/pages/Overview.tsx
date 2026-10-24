@@ -20,7 +20,7 @@ export function Overview() {
   const kilns = useAsync(() => getKilns(), []);
   const ledger = useAsync(getLedger, []);
   const [threeD, setThreeD] = useState(false);
-  const pFcbk = usePFcbk(threeD);
+  const pFcbk = usePFcbk(threeD && !(kilns.data ?? []).some((k) => k.p_fcbk != null));
   const s = summary.data;
 
   const shares = useMemo(() => {

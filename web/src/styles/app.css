@@ -2980,3 +2980,44 @@ html[lang="ur"] .tenm-caption {
     stroke-width: 2.2;
   }
 }
+
+/* On a match the whole path turns green, leaf to root; siblings stay neutral. */
+.path-ok .mk-leaf rect,
+.path-ok .mk-mid rect,
+.path-ok .mk-root rect {
+  animation: mk-green 0.45s ease-out both;
+  animation-delay: var(--d, 0ms);
+}
+.path-ok .mk-leaf text,
+.path-ok .mk-mid text,
+.path-ok .mk-root text {
+  fill: var(--text);
+}
+.path-ok .mk-path {
+  stroke: var(--zigzag);
+  stroke-width: 2;
+  transition: stroke 0.3s;
+  transition-delay: var(--d, 0ms);
+}
+.path-ok .mk-sib rect {
+  fill: var(--surface);
+  stroke: var(--border);
+}
+@keyframes mk-green {
+  from {
+    fill: color-mix(in srgb, var(--primary) 14%, var(--raised));
+    stroke: var(--primary);
+  }
+  to {
+    fill: color-mix(in srgb, var(--zigzag) 22%, var(--raised));
+    stroke: var(--zigzag);
+    stroke-width: 2.2;
+  }
+}
+.path-ok .mk-edge line.mk-path {
+  stroke: var(--zigzag);
+  stroke-width: 2;
+}
+.path-ok .mk-edge line:not(.mk-path) {
+  stroke: var(--border);
+}

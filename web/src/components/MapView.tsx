@@ -109,7 +109,7 @@ function toColumns(kilns: KilnListItem[], pFcbk?: Map<string, number>): GeoJSON.
     features: kilns.map((k) => {
       const dLat = half / 111320;
       const dLon = half / (111320 * Math.cos((k.lat * Math.PI) / 180));
-      const p = pFcbk?.get(k.id);
+      const p = k.p_fcbk ?? pFcbk?.get(k.id);
       const h = k.status === "NOT_DETECTED" ? 500 : p == null ? 900 : 400 + p * 3200;
       return {
         type: "Feature",

@@ -31,7 +31,10 @@ for (const [vn, vp, dpr] of [
     const shot = async (name, loc) => {
       const ov = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
       if (ov > 0) problems.push({ name, vn, lang, overflow: ov });
-      await (loc ?? page).screenshot({ path: join(OUT, `3d-${name}-${vn}-${lang}.png`), animations: "allow" });
+      // section shots keep the full page width, so the page gutters are visible in review
+      const box = loc ? await loc.boundingBox() : null;
+      if (box) await page.screenshot({ path: join(OUT, `3d-${name}-${vn}-${lang}.png`), clip: { x: 0, y: Math.max(0, box.y - 16 + (await page.evaluate(() => window.scrollY))), width: vp.width, height: Math.min(box.height + 32, Math.floor(7600 / dpr)) }, fullPage: true, animations: "allow" });
+      else await page.screenshot({ path: join(OUT, `3d-${name}-${vn}-${lang}.png`), animations: "allow" });
     };
     // explainer
     await page.goto(`${BASE}/?lang=${lang}&theme=light`, { waitUntil: "networkidle" });

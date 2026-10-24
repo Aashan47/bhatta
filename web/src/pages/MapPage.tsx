@@ -19,10 +19,10 @@ export function MapPage() {
   const [threeD, setThreeD] = useState(false);
   const [touring, setTouring] = useState(false);
   const [tourAt, setTourAt] = useState<string | null>(null);
-  const pFcbk = usePFcbk(threeD);
   const reduced = prefersReducedMotion();
 
   const all = useAsync(() => getKilns(), []);
+  const pFcbk = usePFcbk(threeD && !(all.data ?? []).some((k) => k.p_fcbk != null));
   const summary = useAsync(getSummary, []);
   const districts = useMemo(() => [...new Set((all.data ?? []).map((k) => k.district))].sort(), [all.data]);
   const shown = useMemo(

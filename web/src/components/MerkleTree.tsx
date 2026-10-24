@@ -38,8 +38,8 @@ export function MerkleTree({
   const n = levels.length;
   const H = (n + 1) * ROW + 84;
   const yOf = (lvl: number) => H - 44 - lvl * ROW; // level 0 = leaf at the bottom
-  const node = (x: number, y: number, label: string, cls: string, title: string, key: string) => (
-    <g key={key} className={`mk-node ${cls}`} transform={`translate(${x - NW / 2}, ${y - NH / 2})`}>
+  const node = (x: number, y: number, label: string, cls: string, title: string, key: string, delay = 0) => (
+    <g key={key} className={`mk-node ${cls}`} transform={`translate(${x - NW / 2}, ${y - NH / 2})`} style={{ ["--d" as string]: `${delay}ms` }}>
       <title>{title}</title>
       <rect width={NW} height={NH} rx={5} />
       <text x={NW / 2} y={NH / 2 + 4}>
@@ -52,7 +52,7 @@ export function MerkleTree({
 
   return (
     <figure className="merkle">
-      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={m.label(n)} className="merkle-svg">
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={m.label(n)} className={`merkle-svg ${done && outcome === "match" ? "path-ok" : ""}`}>
         {/* edges */}
         {levels.map((lv, i) => {
           const y0 = yOf(i);
@@ -60,8 +60,8 @@ export function MerkleTree({
           const sx = lv.siblingLeft ? cx - NW - 4 : cx + NW + 4;
           const lit = revealed > i ? "lit" : "";
           return (
-            <g key={`e${i}`} className={`mk-edge ${lit}`}>
-              <line x1={cx} y1={y0 - NH / 2} x2={cx} y2={y1 + NH / 2} />
+            <g key={`e${i}`} className={`mk-edge ${lit}`} style={{ ["--d" as string]: `${i * 90}ms` }}>
+              <line className="mk-path" x1={cx} y1={y0 - NH / 2} x2={cx} y2={y1 + NH / 2} />
               <line x1={sx} y1={y0 - NH / 2} x2={cx + (lv.siblingLeft ? -20 : 20)} y2={y1 + NH / 2} />
             </g>
           );
@@ -76,7 +76,7 @@ export function MerkleTree({
           return (
             <g key={`l${i}`}>
               {node(sx, yOf(i), shortHex(lv.sibling, 4, 4), `mk-sib ${revealed > i ? "lit" : ""}`, `${m.sibling} ${i + 1}: ${lv.sibling}`, `s${i}`)}
-              {node(cx, yOf(i + 1), shortHex(lv.out, 4, 4), top ? `mk-root ${rootCls}` : `mk-mid ${revealed > i ? "lit" : ""}`, `${top ? m.folded : m.level(i + 1)}: ${lv.out}`, `o${i}`)}
+              {node(cx, yOf(i + 1), shortHex(lv.out, 4, 4), top ? `mk-root ${rootCls}` : `mk-mid ${revealed > i ? "lit" : ""}`, `${top ? m.folded : m.level(i + 1)}: ${lv.out}`, `o${i}`, (i + 1) * 90)}
             </g>
           );
         })}

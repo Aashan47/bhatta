@@ -21,10 +21,9 @@ function cssVar(name: string) {
 }
 
 /** Stills rendered from this same scene (scripts/make-explainer-stills.mjs), for browsers without WebGL. */
-function stillFor(t: number, fire: boolean) {
-  if (t >= 0.75) return "/explainer/tenm.png";
-  if (t >= 0.25) return "/explainer/top.png";
-  return fire ? "/explainer/fire.png" : "/explainer/full.png";
+function stillFor(t: number, fire: boolean, dark: boolean) {
+  const name = t >= 0.75 ? "tenm" : t >= 0.25 ? "top" : fire ? "fire" : "full";
+  return `/explainer/${name}${dark ? "-dark" : ""}.png`;
 }
 
 export function KilnExplainer({ impact, id = "kilns-3d" }: { impact?: ImpactSummary; id?: string }) {
@@ -177,7 +176,7 @@ export function KilnExplainer({ impact, id = "kilns-3d" }: { impact?: ImpactSumm
             aria-roledescription={mode === "3d" ? k.roleDesc : undefined}
             onKeyDown={onKey}
           >
-            {mode === "fallback" && <img className="stage-still" src={stillFor(tv, fire)} alt={tv >= 0.75 ? k.altTenm : tv >= 0.25 ? k.altTop : k.altFull} width={1200} height={700} />}
+            {mode === "fallback" && <img className="stage-still" src={stillFor(tv, fire, resolvedTheme === "dark")} alt={tv >= 0.75 ? k.altTenm : tv >= 0.25 ? k.altTop : k.altFull} width={1200} height={700} />}
             {(mode === "idle" || mode === "loading") && <div className="stage-loading">{t.common.loading}</div>}
             {mode === "3d" && (
               <>

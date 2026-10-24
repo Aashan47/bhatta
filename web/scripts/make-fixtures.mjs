@@ -298,7 +298,7 @@ for (const rec of und.slice(-2)) {
 const counts = { ZIGZAG: 0, FCBK: 0, UNDETERMINED: 0, NOT_DETECTED: 0 };
 for (const r of records) counts[r.status]++;
 
-const kilnList = records.map((r) => ({ id: r.id, lat: r.lat, lon: r.lon, district: r.district, status: r.status, baseline_class: r.baseline.class }));
+const kilnList = records.map((r) => ({ id: r.id, lat: r.lat, lon: r.lon, district: r.district, status: r.status, baseline_class: r.baseline.class, p_fcbk: r.observation.probs ? r.observation.probs.FCBK : null }));
 
 const conflictIds = new Set(ledgerEvents.filter((e) => e.type === "Conflict").map((e) => e.kiln_id));
 const queue = [];

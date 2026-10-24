@@ -410,8 +410,12 @@ export function createKilnScene(container: HTMLElement, opts: KilnSceneOptions):
 
   const SMOKE_BASE = 180;
   const smokeF = pointCloud(SMOKE_BASE, COLORS.smoke, false);
-  const smokeZ = pointCloud(SMOKE_BASE, COLORS.smoke, false);
-  const zigSmokeCount = opts.smokeRatio == null ? SMOKE_BASE : Math.round(SMOKE_BASE * opts.smokeRatio);
+  // Black carbon is what makes smoke black. With a measured reduction, the Zigzag plume gets fewer
+  // particles, lower opacity (both scaled by 1 - reduction) and a mid-grey colour instead of soot.
+  const ratio = opts.smokeRatio ?? 1;
+  const smokeZ = pointCloud(SMOKE_BASE, opts.smokeRatio == null ? COLORS.smoke.clone() : new THREE.Color(0xb3ada7), false);
+  const zigSmokeCount = Math.round(SMOKE_BASE * ratio);
+  const smokeAlpha = (zig: boolean) => (zig ? ratio : 1);
   const smokeSeed = Array.from({ length: SMOKE_BASE }, (_, i) => ({ t0: i / SMOKE_BASE, dx: Math.sin(i * 12.9898) * 0.5 + 0.5, dz: Math.cos(i * 78.233) }));
   scene.add(smokeF, smokeZ);
 
@@ -513,9 +517,9 @@ export function createKilnScene(container: HTMLElement, opts: KilnSceneOptions):
       pos.needsUpdate = al.needsUpdate = sz.needsUpdate = true;
       (pts.material as THREE.ShaderMaterial).uniforms.uFade!.value = fade;
     }
-    for (const [pts, top, count] of [
-      [smokeF, fcbk.chimneyTop, SMOKE_BASE],
-      [smokeZ, zig.chimneyTop, zigSmokeCount],
+    for (const [pts, top, count, zigSide] of [
+      [smokeF, fcbk.chimneyTop, SMOKE_BASE, false],
+      [smokeZ, zig.chimneyTop, zigSmokeCount, true],
     ] as const) {
       pts.visible = show;
       if (!show) continue;
@@ -528,9 +532,10 @@ export function createKilnScene(container: HTMLElement, opts: KilnSceneOptions):
           continue;
         }
         const s = smokeSeed[i]!;
-        const life = (((s.t0 + elapsed / 7) % 1) + 1) % 1;
+        // spread the phases over the plume's own particle count, so a thinner plume is still continuous
+        const life = (((i / count + s.dx * 0.02 + elapsed / 7) % 1) + 1) % 1;
         pos.setXYZ(i, top.x + life * 14 * s.dx + Math.sin(elapsed + i) * life * 2, top.y + life * 24, top.z + life * 8 * s.dz);
-        al.setX(i, (1 - life) * 0.55);
+        al.setX(i, (1 - life) * 0.6 * smokeAlpha(zigSide));
         sz.setX(i, 3 + life * 9);
       }
       pos.needsUpdate = al.needsUpdate = sz.needsUpdate = true;

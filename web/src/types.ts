@@ -81,6 +81,8 @@ export interface KilnListItem {
   district: string;
   status: Status;
   baseline_class: KilnClass | null;
+  /** p(FCBK) from the classifier, or null when there are no probabilities. */
+  p_fcbk?: number | null;
 }
 
 export type EventType =
