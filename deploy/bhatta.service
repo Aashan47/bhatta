@@ -1,0 +1,17 @@
+[Unit]
+Description=Bhatta, brick kiln claims checked from space (IEEE ClimateChain 2026)
+After=network-online.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/bhatta/api
+EnvironmentFile=/home/ubuntu/bhatta/env
+Environment=BHATTA_DATA_DIR=/home/ubuntu/bhatta/data
+Environment=BHATTA_DOCS_DIR=/home/ubuntu/bhatta/docs
+Environment=BHATTA_WEB_DIST=/home/ubuntu/bhatta/web/dist
+ExecStart=/home/ubuntu/bhatta/.venv/bin/python -m uvicorn bhatta_api.app:app --host 127.0.0.1 --port 8418 --workers 1 --proxy-headers
+Restart=on-failure
+MemoryMax=300M
+
+[Install]
+WantedBy=multi-user.target
