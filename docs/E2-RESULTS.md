@@ -67,3 +67,45 @@ the blob centroid sits 0.22 to 0.29 px east and 0.53 to 0.62 px south of the lab
 median shift of (0, 0) px. There is no systematic offset of a pixel or more, so the chips are used
 as cut. The model input is the centre 20 px with +-2 px random shifts in training, which absorbs
 offsets of this size.
+
+E2-D7. **Training length.** CNN arms were trained for 30 epochs (OneCycle learning rate, AdamW,
+batch 128) on MPS, 3 seeds each (seeds 20261024 to 20261026); `train.py` defaults to 40 but the
+run used `--epochs 30`, the setting of the one-date preliminary run.
+
+## Data (`ml/e2/fetch.py`, outputs `data/e2/chips_meta.csv`, `data/e2/raw/X.npy`)
+
+Planetary Computer, `sentinel-2-l2a`, 2023-11-01 to 2024-02-29, `eo:cloud_cover` < 5: 3,731 items
+over 158 MGRS tiles; kilns fall in 55 tiles. Two fetch rounds (16:47 to 17:54 and 17:54 to 18:50 PKT). Round 1 had
+downloaded 15.0 GB of COG blocks by 17:48 (nettop), because each kiln window pulls whole internal
+tiles; only the 24 x 24 chips are stored (`data/e2/` is 1.0 GB).
+
+| Split | FCBK kilns with chip | Zigzag kilns with chip | Pre-registered kilns | Dates per kiln |
+|---|---|---|---|---|
+| fit | 4,940 | 900 | 5,840 | 2 for every kiln |
+| val | 841 | 106 | 947 | 2 for every kiln |
+| cal | 1,863 | 276 | 2,139 | 2 for every kiln |
+| test | 1,991 | 329 | 2,320 | 2 for every kiln |
+
+Every one of the 11,246 kilns got two locally clear dates; none was left without a chip, so E2-D4
+never applies. The first date is November 2023 for 10,448 kilns (December 435, February 361,
+January 2); the second is December 2023 for 10,384 (February 542, January 310, November 10).
+Median gap between the two dates: 20 days. 127 distinct scenes; per-kiln scene ids are in
+`data/e2/chips_meta.csv` (`scene0`, `scene1`).
+
+## Arms on val (train-block hold-out, n = 947: 841 FCBK, 106 Zigzag; `ml/e2/train.py`)
+
+AUC of p(Zigzag); CNN arms with 8-view TTA and the mean of 3 seeds. Every arm that was run is listed.
+
+| Arm | Input | Val AUC | Notes |
+|---|---|---|---|
+| **early** | 2 dates x 10 bands as channels, small CNN | **0.874** | per seed, best epoch without TTA: 0.871, 0.875, 0.871 |
+| shared | per-date CNN encoder, mean + max over dates | 0.864 | per seed: 0.861, 0.864, 0.859 |
+| hgb | 186 per-band summary features, gradient boosting | 0.846 | |
+| ens | mean of early and hgb | 0.874 (0.8737 vs early 0.8743) | |
+| preliminary, one date (first fetch round) | same arms, 1 seed, 30 epochs | early 0.868, shared 0.859, hgb 0.816, ens 0.858 | run to check the pipeline; not used |
+| reference: pk arm (RGB ResNet18, product) | `docs/RESULTS.md` D2 | 0.856 | same val kilns |
+
+**Chosen arm: early** (highest val AUC). Weights `ml/e2/weights/e2_early_s{0,1,2}.pt` (gitignored;
+sha256 in `data/e2/e2_results.json`). Note that on val the pk arm also looked fine (0.856) and then
+reached 0.759 on test; val here is 15 train blocks next to the fit blocks, so a val gain this small
+(0.874 against 0.856) says little about test.

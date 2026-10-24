@@ -1,0 +1,41 @@
+kilns with >= 1 date: 11246; fit 5840 (Zigzag 900), val 947 (Zigzag 106)
+hgb val AUC 0.8457
+  early seed 20261024 ep 04 val_auc(no TTA) 0.8563 best 0.8603@1
+  early seed 20261024 ep 09 val_auc(no TTA) 0.8393 best 0.8652@5
+  early seed 20261024 ep 14 val_auc(no TTA) 0.8537 best 0.8696@10
+  early seed 20261024 ep 19 val_auc(no TTA) 0.8593 best 0.8696@10
+  early seed 20261024 ep 24 val_auc(no TTA) 0.8659 best 0.8705@23
+  early seed 20261024 ep 29 val_auc(no TTA) 0.8623 best 0.8705@23
+  early seed 20261025 ep 04 val_auc(no TTA) 0.8632 best 0.8670@3
+  early seed 20261025 ep 09 val_auc(no TTA) 0.8754 best 0.8754@9
+  early seed 20261025 ep 14 val_auc(no TTA) 0.8505 best 0.8754@9
+  early seed 20261025 ep 19 val_auc(no TTA) 0.8482 best 0.8754@9
+  early seed 20261025 ep 24 val_auc(no TTA) 0.8607 best 0.8754@9
+  early seed 20261025 ep 29 val_auc(no TTA) 0.8578 best 0.8754@9
+  early seed 20261026 ep 04 val_auc(no TTA) 0.8516 best 0.8581@3
+  early seed 20261026 ep 09 val_auc(no TTA) 0.8599 best 0.8599@9
+  early seed 20261026 ep 14 val_auc(no TTA) 0.8348 best 0.8621@13
+  early seed 20261026 ep 19 val_auc(no TTA) 0.8663 best 0.8663@19
+  early seed 20261026 ep 24 val_auc(no TTA) 0.8669 best 0.8714@20
+  early seed 20261026 ep 29 val_auc(no TTA) 0.8648 best 0.8714@20
+early: val AUC with TTA, 3-seed mean prob 0.8743; per-seed best no-TTA [(0.8705157830973909, 23), (0.8754066363044892, 9), (0.8714356224620287, 20)]
+  shared seed 20261024 ep 04 val_auc(no TTA) 0.8431 best 0.8571@2
+  shared seed 20261024 ep 09 val_auc(no TTA) 0.8456 best 0.8571@2
+  shared seed 20261024 ep 14 val_auc(no TTA) 0.8555 best 0.8571@2
+  shared seed 20261024 ep 19 val_auc(no TTA) 0.8595 best 0.8609@15
+  shared seed 20261024 ep 24 val_auc(no TTA) 0.8524 best 0.8609@15
+  shared seed 20261024 ep 29 val_auc(no TTA) 0.8502 best 0.8609@15
+  shared seed 20261025 ep 04 val_auc(no TTA) 0.8490 best 0.8490@4
+  shared seed 20261025 ep 09 val_auc(no TTA) 0.8453 best 0.8490@4
+  shared seed 20261025 ep 14 val_auc(no TTA) 0.8499 best 0.8640@10
+  shared seed 20261025 ep 19 val_auc(no TTA) 0.8604 best 0.8640@10
+  shared seed 20261025 ep 24 val_auc(no TTA) 0.8544 best 0.8640@10
+  shared seed 20261025 ep 29 val_auc(no TTA) 0.8557 best 0.8640@10
+  shared seed 20261026 ep 04 val_auc(no TTA) 0.7780 best 0.8582@3
+  shared seed 20261026 ep 09 val_auc(no TTA) 0.7753 best 0.8582@3
+  shared seed 20261026 ep 14 val_auc(no TTA) 0.8557 best 0.8582@3
+  shared seed 20261026 ep 19 val_auc(no TTA) 0.8408 best 0.8582@3
+  shared seed 20261026 ep 24 val_auc(no TTA) 0.8568 best 0.8594@23
+  shared seed 20261026 ep 29 val_auc(no TTA) 0.8492 best 0.8594@23
+shared: val AUC with TTA, 3-seed mean prob 0.8640; per-seed best no-TTA [(0.8608911224283761, 15), (0.8639759495658806, 10), (0.8593655351894645, 23)]
+ens (early+hgb) val AUC 0.8737
