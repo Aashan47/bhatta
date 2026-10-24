@@ -9,18 +9,23 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import threading
 import time
 from pathlib import Path
 
 EVENT_NAMES = [
     "SeasonPublished",
-    "SeasonCorrected",
+    "SeasonConfirmed",
+    "SeasonActivated",
+    "CorrectionPublished",
     "SatelliteProven",
-    "FindingRecorded",
+    "FindingAttested",
     "FindingRevised",
     "Conflict",
     "Disputed",
+    "Certified",
+    "CertificateWithdrawn",
 ]
 
 
@@ -99,3 +104,95 @@ def _plain(v):
     if isinstance(v, int):
         return v if abs(v) < 2**53 else str(v)
     return v
+
+
+class Relay:
+    """Pays gas for a signed finding or a dispute. The contract, not this code, decides validity."""
+
+    def __init__(self, chain: Chain):
+        self.chain = chain
+        self.key = os.environ.get("BHATTA_RELAYER_KEY", "")
+        self._nonce_lock = threading.Lock()
+
+    @property
+    def configured(self) -> bool:
+        return self.chain.configured and bool(self.key)
+
+    def _send(self, fn) -> str:
+        from web3.exceptions import ContractLogicError
+
+        c = self.chain._connect()
+        w3 = self.chain._w3
+        acct = w3.eth.account.from_key(self.key)
+        try:
+            fn.call({"from": acct.address})
+        except ContractLogicError as exc:
+            raise RelayRejected(_revert_reason(c, exc)) from exc
+        with self._nonce_lock:
+            tx = fn.build_transaction(
+                {
+                    "from": acct.address,
+                    "nonce": w3.eth.get_transaction_count(acct.address, "pending"),
+                    "chainId": int(self.chain.info["chain_id"]),
+                }
+            )
+            signed = acct.sign_transaction(tx)
+            h = w3.eth.send_raw_transaction(signed.raw_transaction)
+        self.chain._events_cache = (0.0, [])
+        return "0x" + h.hex().removeprefix("0x")
+
+    def attest(self, body: dict, revise: bool = False) -> str:
+        from web3 import Web3
+
+        c = self.chain._connect()
+        args = (
+            _b32(body["kiln_id"]),
+            int(body["season"]),
+            int(body["finding"]),
+            _b32(body["evidence_hash"]),
+            Web3.to_checksum_address(body["inspector"]),
+            int(body["nonce"]),
+            int(body["deadline"]),
+            bytes.fromhex(str(body["signature"]).removeprefix("0x")),
+        )
+        fn = c.functions.revise(*args) if revise else c.functions.attest(*args)
+        return self._send(fn)
+
+    def dispute(self, body: dict) -> str:
+        c = self.chain._connect()
+        note = str(body.get("note", ""))[:280]
+        fn = c.functions.dispute(_b32(body["kiln_id"]), int(body["season"]), _b32(body["evidence_hash"]), note)
+        return self._send(fn)
+
+
+class RelayRejected(Exception):
+    pass
+
+
+def _b32(v: str) -> bytes:
+    """Accepts a 0x-prefixed 32-byte hex value or a short id string such as PK-ttnf2b3c."""
+    v = str(v)
+    if v.startswith("0x") and len(v) == 66:
+        return bytes.fromhex(v[2:])
+    raw = v.encode("utf-8")
+    if len(raw) > 32:
+        raise ValueError("id longer than 32 bytes")
+    return raw.ljust(32, b"\0")
+
+
+def _revert_reason(contract, exc) -> str:
+    data = getattr(exc, "data", None)
+    if isinstance(data, str) and data.startswith("0x") and len(data) >= 10:
+        sel = data[:10].lower()
+        from web3 import Web3
+
+        for e in contract.abi:
+            if e.get("type") == "error":
+                sig = e["name"] + "(" + ",".join(i["type"] for i in e["inputs"]) + ")"
+                if "0x" + Web3.keccak(text=sig).hex().removeprefix("0x")[:8] == sel:
+                    return e["name"]
+    m = re.search(r"custom error '([A-Za-z0-9_]+)", str(exc))
+    if m:
+        return m.group(1)
+    return str(exc)[:200]
+

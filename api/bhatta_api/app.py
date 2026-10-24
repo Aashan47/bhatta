@@ -12,7 +12,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
-from .chain import Chain
+from .chain import Chain, Relay, RelayRejected
 from .store import CLAIM, Store, default_dirs
 
 FIXTURE = os.environ.get("BHATTA_FIXTURE", "0") == "1"
@@ -21,6 +21,7 @@ WEB_DIST = Path(os.environ.get("BHATTA_WEB_DIST", Path(__file__).resolve().paren
 
 store = Store.load(DATA_DIR, DOCS_DIR, FIXTURE)
 chain = Chain(DATA_DIR, store.chain, FIXTURE)
+relay = Relay(chain)
 
 app = FastAPI(title="Bhatta API", docs_url="/api/docs", openapi_url="/api/openapi.json")
 
@@ -117,16 +118,38 @@ def results():
     return {"targets": store.results, "source": "docs/RESULTS.md", "prereg": "docs/PREREG.md"}
 
 
+_FINDING_FIELDS = ("kiln_id", "season", "finding", "evidence_hash", "inspector", "nonce", "deadline", "signature")
+
+
+def _relay(request_body: dict, action) -> dict:
+    if not relay.configured:
+        raise HTTPException(503, "The relay is not configured on this server.")
+    try:
+        return {"tx": action(request_body), "explorer": store.chain.get("explorer_base")}
+    except RelayRejected as exc:
+        raise HTTPException(400, f"The contract rejected this: {exc}")
+    except (KeyError, ValueError, TypeError) as exc:
+        raise HTTPException(422, f"Malformed request: {exc}")
+
+
 @app.post("/api/relay/attest")
 async def relay_attest(request: Request):
     _rate_limit(request, limit=10, window=3600)
-    raise HTTPException(503, "Relay not configured yet.")
+    body = await request.json()
+    missing = [f for f in _FINDING_FIELDS if f not in body]
+    if missing:
+        raise HTTPException(422, f"Missing fields: {', '.join(missing)}")
+    return _relay(body, lambda b: relay.attest(b, revise=bool(b.get("revise"))))
 
 
 @app.post("/api/relay/dispute")
 async def relay_dispute(request: Request):
     _rate_limit(request, limit=10, window=3600)
-    raise HTTPException(503, "Relay not configured yet.")
+    body = await request.json() if await request.body() else {}
+    missing = [f for f in ("kiln_id", "season", "evidence_hash") if f not in body]
+    if missing:
+        raise HTTPException(422, f"Missing fields: {', '.join(missing)}")
+    return _relay(body, relay.dispute)
 
 
 @app.exception_handler(HTTPException)
