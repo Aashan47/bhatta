@@ -2881,3 +2881,102 @@ html[lang="ur"] .tenm-caption {
 .prose-page > .wide-block {
   max-inline-size: none;
 }
+
+.toggle-s {
+  min-block-size: 40px;
+  padding: 0 var(--space-3);
+  font-size: 0.9rem;
+}
+.btn-s {
+  min-block-size: 40px;
+  padding: 0 var(--space-4);
+  font-size: 0.9rem;
+}
+.legend-note {
+  font-weight: 400;
+  font-size: 0.72rem;
+  color: var(--muted);
+  max-inline-size: 15em;
+  display: block !important;
+}
+.section-tools {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* ---------- Merkle proof tree ---------- */
+.merkle {
+  margin: var(--space-3) 0;
+}
+.merkle-svg {
+  display: block;
+  inline-size: 100%;
+  max-inline-size: 420px;
+  margin-inline: auto;
+  block-size: auto;
+}
+.mk-node rect {
+  fill: var(--surface);
+  stroke: var(--border);
+  stroke-width: 1.2;
+  transition: fill 0.25s, stroke 0.25s;
+}
+.mk-node text {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  fill: var(--muted);
+  text-anchor: middle;
+}
+.mk-node.lit rect {
+  fill: color-mix(in srgb, var(--primary) 14%, var(--raised));
+  stroke: var(--primary);
+}
+.mk-node.lit text {
+  fill: var(--text);
+}
+.mk-root.is-match rect {
+  animation: mk-pulse 1.1s ease-out 1 forwards;
+}
+@keyframes mk-pulse {
+  0% {
+    fill: color-mix(in srgb, var(--primary) 30%, var(--raised));
+    stroke: var(--primary);
+    stroke-width: 1.2;
+  }
+  40% {
+    stroke-width: 4;
+  }
+  100% {
+    fill: color-mix(in srgb, var(--zigzag) 22%, var(--raised));
+    stroke: var(--zigzag);
+    stroke-width: 2.2;
+  }
+}
+.mk-node.is-bad rect {
+  fill: color-mix(in srgb, var(--fcbk) 18%, var(--raised));
+  stroke: var(--fcbk);
+  stroke-width: 2.2;
+}
+.mk-edge line {
+  stroke: var(--border);
+  stroke-width: 1.4;
+  transition: stroke 0.25s;
+}
+.mk-edge.lit line {
+  stroke: var(--primary);
+}
+.mk-cap {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  fill: var(--muted);
+}
+@media (prefers-reduced-motion: reduce) {
+  .mk-root.is-match rect {
+    animation: none;
+    fill: color-mix(in srgb, var(--zigzag) 22%, var(--raised));
+    stroke: var(--zigzag);
+    stroke-width: 2.2;
+  }
+}

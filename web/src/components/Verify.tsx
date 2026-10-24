@@ -2,7 +2,8 @@ import { useState, type ReactNode } from "react";
 import type { Abi } from "viem";
 import { chipUrl, FIXTURE, getLedger } from "../api";
 import { usePrefs } from "../i18n";
-import { computeLeaf, DEFAULT_RPC, processProof, pZigzagBp, readCurrentRoot, recomputeEvidence } from "../lib/chain";
+import { computeLeaf, DEFAULT_RPC, hashPair, pZigzagBp, readCurrentRoot, recomputeEvidence } from "../lib/chain";
+import { MerkleTree, type ProofLevel, type TreeOutcome } from "./MerkleTree";
 import { prefersReducedMotion } from "../lib/util";
 import { STATUS_CODE, type Hex, type KilnRecord, type Ledger } from "../types";
 import { CheckGlyph, CrossGlyph, Hash, TxLink } from "./ui";
@@ -43,6 +44,8 @@ export function VerifyPanel({ rec, modelSha }: { rec: KilnRecord; modelSha?: str
   const [running, setRunning] = useState(false);
   const [ledger, setLedger] = useState<Ledger | null>(null);
   const [done, setDone] = useState<null | "pass" | "fail">(null);
+  const [tree, setTree] = useState<{ leaf: Hex; levels: ProofLevel[]; chainRoot: Hex | null; outcome: TreeOutcome; leafBad: boolean } | null>(null);
+  const [revealed, setRevealed] = useState(0);
 
   const set = (key: StepKey, state: StepState, detail?: ReactNode) =>
     setSteps((s) => s.map((x) => (x.key === key ? { key, state, detail } : x)));
@@ -51,7 +54,10 @@ export function VerifyPanel({ rec, modelSha }: { rec: KilnRecord; modelSha?: str
     setRunning(true);
     setDone(null);
     setSteps(KEYS.map((key) => ({ key, state: "idle" })));
+    setTree(null);
+    setRevealed(0);
     let ok = true;
+    let leafOk = true;
     const fail = (k: StepKey, d: ReactNode) => {
       ok = false;
       set(k, "fail", d);
@@ -104,6 +110,7 @@ export function VerifyPanel({ rec, modelSha }: { rec: KilnRecord; modelSha?: str
     await sleep(250);
     const bp = pZigzagBp(rec.observation.probs);
     const leaf = computeLeaf(rec.id, chain.season, chain.status_code, chain.p_zigzag_bp, chain.evidence_hash);
+    leafOk = leaf.toLowerCase() === chain.leaf.toLowerCase();
     if (chain.status_code !== STATUS_CODE[rec.status] || chain.p_zigzag_bp !== bp) {
       fail("leaf", t.verify.statusMismatch);
     } else if (leaf.toLowerCase() !== chain.leaf.toLowerCase()) {
@@ -169,11 +176,26 @@ export function VerifyPanel({ rec, modelSha }: { rec: KilnRecord; modelSha?: str
 
     // 4. Proof.
     set("proof", "run");
-    await sleep(300);
+    // fold the proof one level at a time and draw it
+    const levels: ProofLevel[] = [];
+    let h = leaf;
+    for (const sib of chain.proof) {
+      const out = hashPair(h, sib);
+      levels.push({ sibling: sib, siblingLeft: BigInt(sib) < BigInt(h), out });
+      h = out;
+    }
+    setTree({ leaf, levels, chainRoot: root, outcome: "pending", leafBad: !leafOk });
+    for (let i = 1; i <= levels.length; i++) {
+      await sleep(320);
+      setRevealed(i);
+    }
+    await sleep(200);
+    const foldedAll = h;
+    setTree((tr) => tr && { ...tr, outcome: !root ? "noroot" : foldedAll.toLowerCase() === root.toLowerCase() ? "match" : "mismatch" });
     if (!root) {
       set("proof", "skip");
     } else {
-      const folded = processProof(leaf, chain.proof);
+      const folded = foldedAll;
       const d = (
         <>
           <p>{t.verify.proofLevels(chain.proof.length)}</p>
@@ -229,6 +251,7 @@ export function VerifyPanel({ rec, modelSha }: { rec: KilnRecord; modelSha?: str
           </li>
         ))}
       </ol>
+      {tree && <MerkleTree leaf={tree.leaf} levels={tree.levels} chainRoot={tree.chainRoot} revealed={revealed} outcome={tree.outcome} leafBad={tree.leafBad} />}
       <div aria-live="polite">
         {done === "pass" && <p className="verdict verdict-pass">{mock ? t.verify.allPassMock : t.verify.allPass}</p>}
         {done === "fail" && <p className="verdict verdict-fail">{t.verify.someFail}</p>}
