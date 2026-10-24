@@ -54,21 +54,40 @@ Bonferroni over 20 floors (0.50 to 0.975), exact binomial p-value for "false-cer
 D4. **Rendering of the live imagery.** The dataset scripts (`data_scripts/sentinel_tile_bulk_download.py`)
 take GEE `COPERNICUS/S2_SR_HARMONIZED` images with CLOUDY_PIXEL_PERCENTAGE < 1 and keep the median
 composite unless the single least-cloudy image has strictly more valid pixels, so most dataset
-patches are median composites. The scan uses single-date Earth Search L2A scenes (newest clear
-scene per pixel). Bands (B4, B3, B2), grid (EPSG:4326 at 10/111319.49 deg), nearest resampling,
+patches are median composites. The scan uses single-date Earth Search L2A scenes (per pixel, the first valid
+scene in the order given in D6). Bands (B4, B3, B2), grid (EPSG:4326 at 10/111319.49 deg), nearest resampling,
 128 px patches with 30 px overlap and per-patch per-band min-max scaling are reproduced exactly.
 The date range in the dataset is inconsistent across sources (script: 2024-01-01 to 2025-02-28; HF
 card: Nov 2023 to Feb 2024; PREREG and GitHub README: Sep 2023 to Feb 2024); the baseline period
 in `kilns.json` follows the brief ("2023-09/2024-02").
 
-D5. **Georeference correction of 2023-24 labels in the scan.** Matching the dataset patches to the
-October 2026 mosaic by normalised cross-correlation showed that some dataset patches are displaced
-by about 7 px east-west and 11 px north-south (about 60 m and 110 m) from the position their file
-names imply, and their kilns with them. The scan estimates the shift per dataset patch (search
-+-20 px, applied only if peak correlation >= 0.3 and beats zero shift by >= 0.05) and moves the
-2023-24 kiln to its corrected position before matching. `id` stays the geohash of the uncorrected
-2023-24 centroid so it traces back to the dataset; `lat`/`lon` in `kilns.json` are corrected.
-This does not affect the model evaluation (labels and pixels agree within each patch).
+D5. **Image-to-label alignment in the scan.** Each 2023-24 kiln's SentinelKilnDB patch is matched
+to the October 2026 mosaic by normalised cross-correlation (search +-20 px; a shift is used only if
+the peak correlation is >= 0.3 and beats zero shift by >= 0.05). In a first scan with the newest
+scenes (21 and 23 October), 44 of 142 aligned Lahore kilns needed a shift of about 7 px east-west and
+11 px north-south (about 60 m and 110 m). With the 18 October scenes the same 142 kilns needed no
+shift beyond 1 px. The dataset and the 18 October scenes agree, so we read the large shift as a
+misregistration of some October 2026 scenes, not of the dataset. The scan therefore (a) moves a
+2023-24 kiln to where it appears in the image only for matching and chips, (b) gives kilns whose own
+alignment is not possible the median shift of the scene that imaged them (scenes with at least 5
+aligned kilns), (c) moves new detections back by their scene's shift, and (d) writes the dataset
+coordinates for 2023-24 kilns in `kilns.json` (`lat`/`lon` = 2023-24 label centroid; `id` = its
+geohash). Scene shifts found are listed per district in `data/summary.json`. The model evaluation is
+unaffected (labels and pixels agree within each dataset patch).
+
+D6. **Scene choice for the scan.** The brief asks for the most recent low-cloud scenes. Late October
+is smog season in Punjab: chips from the 21 and 23 October scenes were visibly hazy and many known
+kilns were not detected in them. The scan therefore takes, per MGRS tile, the cloud-free (< 1%,
+as the dataset) October 2026 scenes ranked by the median Sen2Cor aerosol optical thickness (clearest
+first, newest as tie-break), keeps three per tile, and fills each pixel from the first valid one.
+Scene ids and dates per kiln are in `kilns.json`; all scenes used are in `data/summary.json`.
+
+D7. **Stricter threshold for new kilns.** A detection more than 150 m from every 2023-24 kiln is
+reported as a new kiln only if its confidence is >= 0.60 (val precision 0.937, recall 0.721 at that
+threshold, n = 1,556 val boxes; at 0.30: precision 0.850). A first full scan of Lahore at 0.30
+reported 218 new kilns, most of them visibly buildings in the urban area. Precision in open
+country, outside the kiln-rich dataset patches, is not measured and is likely lower than 0.937.
+Known kilns count as detected at the evaluated threshold of 0.30.
 
 <!-- numbers below are filled from data/split_counts.json, data/conformal.json, data/eval_results.json and data/summary.json -->
 

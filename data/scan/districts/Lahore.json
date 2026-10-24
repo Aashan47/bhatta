@@ -1,0 +1,5556 @@
+{
+ "stats": {
+  "district": "Lahore",
+  "mode": "full",
+  "patches_planned": 2327,
+  "patches_skipped_invalid": 0,
+  "chunks": 27,
+  "detections_raw": 581,
+  "detections_merged": 401,
+  "known_kilns": 157,
+  "known_kilns_aligned": 142,
+  "known_kilns_shifted": 12,
+  "scene_shift_px": {},
+  "known_kilns_moved_for_matching": 12,
+  "shift_px_counts": {
+   "0,0": 130,
+   "0,-1": 5,
+   "0,1": 4,
+   "1,0": 3
+  },
+  "status": {
+   "UNDETERMINED": 179,
+   "NOT_DETECTED": 30,
+   "FCBK": 2
+  },
+  "unmatched_dropped_near_known_or_low_conf": 205,
+  "new_detections": 54,
+  "seconds": 235.2
+ },
+ "scenes": [
+  "S2B_43SDR_20261018_0_L2A",
+  "S2B_43SCR_20261018_0_L2A",
+  "S2B_43RDQ_20261018_0_L2A",
+  "S2C_43RDQ_20261006_0_L2A",
+  "S2B_43RCQ_20261018_0_L2A",
+  "S2B_43RDQ_20261001_0_L2A",
+  "S2C_43SDR_20261023_0_L2A",
+  "S2B_43RCQ_20261001_0_L2A",
+  "S2B_43SDR_20261001_0_L2A",
+  "S2C_43RCQ_20261006_0_L2A",
+  "S2B_43SCR_20261021_0_L2A",
+  "S2C_43SCR_20261003_0_L2A"
+ ],
+ "records": [
+  {
+   "id": "PK-tts9v5rk",
+   "lat": 31.263801,
+   "lon": 74.058108,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.782,
+    "probs": {
+     "FCBK": 0.142,
+     "Zigzag": 0.858
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts9v5rk_2026.png",
+    "baseline_chip": "chips/PK-tts9v5rk_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts9vzm0",
+   "lat": 31.285077,
+   "lon": 74.087983,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.745,
+    "probs": {
+     "FCBK": 0.226,
+     "Zigzag": 0.774
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts9vzm0_2026.png",
+    "baseline_chip": "chips/PK-tts9vzm0_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts9xzm7",
+   "lat": 31.241536,
+   "lon": 74.176108,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.668,
+    "probs": {
+     "FCBK": 0.6696,
+     "Zigzag": 0.3304
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts9xzm7_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts9y4fs",
+   "lat": 31.261007,
+   "lon": 74.095532,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.761,
+    "probs": {
+     "FCBK": 0.5077,
+     "Zigzag": 0.4923
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts9y4fs_2026.png",
+    "baseline_chip": "chips/PK-tts9y4fs_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts9y51f",
+   "lat": 31.262023,
+   "lon": 74.094524,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.468,
+    "probs": {
+     "FCBK": 0.2234,
+     "Zigzag": 0.7766
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts9y51f_2026.png",
+    "baseline_chip": "chips/PK-tts9y51f_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts9y6y9",
+   "lat": 31.260468,
+   "lon": 74.11203,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.689,
+    "probs": {
+     "FCBK": 0.6078,
+     "Zigzag": 0.3922
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts9y6y9_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts9yhh8",
+   "lat": 31.267212,
+   "lon": 74.097998,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tts9yhh8_2026.png",
+    "baseline_chip": "chips/PK-tts9yhh8_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tts9yq5c",
+   "lat": 31.278286,
+   "lon": 74.108004,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.721,
+    "probs": {
+     "FCBK": 0.3361,
+     "Zigzag": 0.6639
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts9yq5c_2026.png",
+    "baseline_chip": "chips/PK-tts9yq5c_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts9yu8m",
+   "lat": 31.270787,
+   "lon": 74.125394,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-tts9yu8m_2026.png",
+    "baseline_chip": "chips/PK-tts9yu8m_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-tts9yv28",
+   "lat": 31.274041,
+   "lon": 74.12563,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.794,
+    "probs": {
+     "FCBK": 0.8636,
+     "Zigzag": 0.1364
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts9yv28_2026.png",
+    "baseline_chip": "chips/PK-tts9yv28_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts9zb9s",
+   "lat": 31.248679,
+   "lon": 74.170921,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.622,
+    "probs": {
+     "FCBK": 0.4274,
+     "Zigzag": 0.5726
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts9zb9s_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts9zk3w",
+   "lat": 31.26963,
+   "lon": 74.148889,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.636,
+    "probs": {
+     "FCBK": 0.9979,
+     "Zigzag": 0.0021
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-tts9zk3w_2026.png",
+    "baseline_chip": null
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-tts9zpxx",
+   "lat": 31.28767,
+   "lon": 74.146179,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.653,
+    "probs": {
+     "FCBK": 0.6429,
+     "Zigzag": 0.3571
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts9zpxx_2026.png",
+    "baseline_chip": "chips/PK-tts9zpxx_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts9zqec",
+   "lat": 31.281116,
+   "lon": 74.152141,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.67,
+    "probs": {
+     "FCBK": 0.427,
+     "Zigzag": 0.573
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts9zqec_2026.png",
+    "baseline_chip": "chips/PK-tts9zqec_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-tts9zqkd",
+   "lat": 31.279881,
+   "lon": 74.153196,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.668,
+    "probs": {
+     "FCBK": 0.2627,
+     "Zigzag": 0.7373
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-tts9zqkd_2026.png",
+    "baseline_chip": "chips/PK-tts9zqkd_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsc8rs8",
+   "lat": 31.242443,
+   "lon": 74.197017,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.785,
+    "probs": {
+     "FCBK": 0.7608,
+     "Zigzag": 0.2392
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsc8rs8_2026.png",
+    "baseline_chip": "chips/PK-ttsc8rs8_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsc9zn3",
+   "lat": 31.239843,
+   "lon": 74.26524,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.724,
+    "probs": {
+     "FCBK": 0.5169,
+     "Zigzag": 0.4831
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsc9zn3_2026.png",
+    "baseline_chip": "chips/PK-ttsc9zn3_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttscbfps",
+   "lat": 31.256936,
+   "lon": 74.223041,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.64,
+    "probs": {
+     "FCBK": 0.9725,
+     "Zigzag": 0.0275
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttscbfps_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttscc0yj",
+   "lat": 31.250134,
+   "lon": 74.232203,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.784,
+    "probs": {
+     "FCBK": 0.3732,
+     "Zigzag": 0.6268
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttscc0yj_2026.png",
+    "baseline_chip": "chips/PK-ttscc0yj_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttscc1t2",
+   "lat": 31.253429,
+   "lon": 74.230896,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.731,
+    "probs": {
+     "FCBK": 0.3514,
+     "Zigzag": 0.6486
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttscc1t2_2026.png",
+    "baseline_chip": "chips/PK-ttscc1t2_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttscc5dy",
+   "lat": 31.265378,
+   "lon": 74.227679,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.458,
+    "probs": {
+     "FCBK": 0.2916,
+     "Zigzag": 0.7084
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttscc5dy_2026.png",
+    "baseline_chip": "chips/PK-ttscc5dy_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttscc5gd",
+   "lat": 31.266075,
+   "lon": 74.228644,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.728,
+    "probs": {
+     "FCBK": 0.3662,
+     "Zigzag": 0.6338
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttscc5gd_2026.png",
+    "baseline_chip": "chips/PK-ttscc5gd_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttscc883",
+   "lat": 31.248129,
+   "lon": 74.246211,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.718,
+    "probs": {
+     "FCBK": 0.1612,
+     "Zigzag": 0.8388
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttscc883_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsccbyj",
+   "lat": 31.250207,
+   "lon": 74.264875,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.692,
+    "probs": {
+     "FCBK": 0.2957,
+     "Zigzag": 0.7043
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsccbyj_2026.png",
+    "baseline_chip": "chips/PK-ttsccbyj_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsccewg",
+   "lat": 31.264965,
+   "lon": 74.25497,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsccewg_2026.png",
+    "baseline_chip": "chips/PK-ttsccewg_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsccfmy",
+   "lat": 31.258565,
+   "lon": 74.264532,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.724,
+    "probs": {
+     "FCBK": 0.6214,
+     "Zigzag": 0.3786
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsccfmy_2026.png",
+    "baseline_chip": "chips/PK-ttsccfmy_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsccftz",
+   "lat": 31.260182,
+   "lon": 74.264553,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.675,
+    "probs": {
+     "FCBK": 0.6255,
+     "Zigzag": 0.3745
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsccftz_2026.png",
+    "baseline_chip": "chips/PK-ttsccftz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttscchrf",
+   "lat": 31.268881,
+   "lon": 74.234456,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.744,
+    "probs": {
+     "FCBK": 0.2787,
+     "Zigzag": 0.7213
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttscchrf_2026.png",
+    "baseline_chip": "chips/PK-ttscchrf_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttscctsx",
+   "lat": 31.276681,
+   "lon": 74.251979,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.719,
+    "probs": {
+     "FCBK": 0.3973,
+     "Zigzag": 0.6027
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttscctsx_2026.png",
+    "baseline_chip": "chips/PK-ttscctsx_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsccuwz",
+   "lat": 31.271126,
+   "lon": 74.265948,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.744,
+    "probs": {
+     "FCBK": 0.6496,
+     "Zigzag": 0.3504
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsccuwz_2026.png",
+    "baseline_chip": "chips/PK-ttsccuwz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsccv88",
+   "lat": 31.275334,
+   "lon": 74.257608,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.824,
+    "probs": {
+     "FCBK": 0.2192,
+     "Zigzag": 0.7808
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsccv88_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsccvcs",
+   "lat": 31.277417,
+   "lon": 74.258786,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.732,
+    "probs": {
+     "FCBK": 0.2427,
+     "Zigzag": 0.7573
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsccvcs_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsccvmn",
+   "lat": 31.275077,
+   "lon": 74.263673,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.683,
+    "probs": {
+     "FCBK": 0.4141,
+     "Zigzag": 0.5859
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsccvmn_2026.png",
+    "baseline_chip": "chips/PK-ttsccvmn_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsccxj4",
+   "lat": 31.28394,
+   "lon": 74.252531,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.666,
+    "probs": {
+     "FCBK": 0.3063,
+     "Zigzag": 0.6937
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsccxj4_2026.png",
+    "baseline_chip": "chips/PK-ttsccxj4_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttscczff",
+   "lat": 31.288101,
+   "lon": 74.260571,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.576,
+    "probs": {
+     "FCBK": 0.7203,
+     "Zigzag": 0.2797
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttscczff_2026.png",
+    "baseline_chip": "chips/PK-ttscczff_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttscczp8",
+   "lat": 31.283702,
+   "lon": 74.267128,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.821,
+    "probs": {
+     "FCBK": 0.514,
+     "Zigzag": 0.486
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttscczp8_2026.png",
+    "baseline_chip": "chips/PK-ttscczp8_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttscf6qs",
+   "lat": 31.258207,
+   "lon": 74.287785,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.804,
+    "probs": {
+     "FCBK": 0.5962,
+     "Zigzag": 0.4038
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttscf6qs_2026.png",
+    "baseline_chip": "chips/PK-ttscf6qs_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttscfp8d",
+   "lat": 31.286755,
+   "lon": 74.268544,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.802,
+    "probs": {
+     "FCBK": 0.571,
+     "Zigzag": 0.429
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttscfp8d_2026.png",
+    "baseline_chip": "chips/PK-ttscfp8d_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttscfpfm",
+   "lat": 31.288623,
+   "lon": 74.270668,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.676,
+    "probs": {
+     "FCBK": 0.6129,
+     "Zigzag": 0.3871
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttscfpfm_2026.png",
+    "baseline_chip": "chips/PK-ttscfpfm_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttscfpxf",
+   "lat": 31.286782,
+   "lon": 74.278454,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.746,
+    "probs": {
+     "FCBK": 0.3206,
+     "Zigzag": 0.6794
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttscfpxf_2026.png",
+    "baseline_chip": "chips/PK-ttscfpxf_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdj7er",
+   "lat": 31.309491,
+   "lon": 74.063442,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.716,
+    "probs": {
+     "FCBK": 0.4111,
+     "Zigzag": 0.5889
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdj7er_2026.png",
+    "baseline_chip": "chips/PK-ttsdj7er_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdju0h",
+   "lat": 31.31174,
+   "lon": 74.081131,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.62,
+    "probs": {
+     "FCBK": 0.4968,
+     "Zigzag": 0.5032
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdju0h_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdjuv0",
+   "lat": 31.315281,
+   "lon": 74.087725,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.576,
+    "probs": {
+     "FCBK": 0.188,
+     "Zigzag": 0.812
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdjuv0_2026.png",
+    "baseline_chip": "chips/PK-ttsdjuv0_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdjvnm",
+   "lat": 31.31748,
+   "lon": 74.089612,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.66,
+    "probs": {
+     "FCBK": 0.2163,
+     "Zigzag": 0.7837
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdjvnm_2026.png",
+    "baseline_chip": "chips/PK-ttsdjvnm_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdjvrm",
+   "lat": 31.31891,
+   "lon": 74.090811,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.66,
+    "probs": {
+     "FCBK": 0.2477,
+     "Zigzag": 0.7523
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdjvrm_2026.png",
+    "baseline_chip": "chips/PK-ttsdjvrm_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdjycb",
+   "lat": 31.326221,
+   "lon": 74.083262,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.767,
+    "probs": {
+     "FCBK": 0.3222,
+     "Zigzag": 0.6778
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdjycb_2026.png",
+    "baseline_chip": "chips/PK-ttsdjycb_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdne3j",
+   "lat": 31.307826,
+   "lon": 74.115312,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsdne3j_2026.png",
+    "baseline_chip": "chips/PK-ttsdne3j_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsdnfje",
+   "lat": 31.300724,
+   "lon": 74.132342,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.686,
+    "probs": {
+     "FCBK": 0.4465,
+     "Zigzag": 0.5535
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdnfje_2026.png",
+    "baseline_chip": "chips/PK-ttsdnfje_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdngr7",
+   "lat": 31.307496,
+   "lon": 74.134875,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.504,
+    "probs": {
+     "FCBK": 0.9311,
+     "Zigzag": 0.0689
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdngr7_2026.png",
+    "baseline_chip": "chips/PK-ttsdngr7_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdnkd2",
+   "lat": 31.313787,
+   "lon": 74.10615,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.816,
+    "probs": {
+     "FCBK": 0.1988,
+     "Zigzag": 0.8012
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdnkd2_2026.png",
+    "baseline_chip": "chips/PK-ttsdnkd2_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdnnm1",
+   "lat": 31.3237,
+   "lon": 74.098812,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.712,
+    "probs": {
+     "FCBK": 0.1495,
+     "Zigzag": 0.8505
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdnnm1_2026.png",
+    "baseline_chip": "chips/PK-ttsdnnm1_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdnvk7",
+   "lat": 31.318507,
+   "lon": 74.130907,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.659,
+    "probs": {
+     "FCBK": 0.3302,
+     "Zigzag": 0.6698
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdnvk7_2026.png",
+    "baseline_chip": "chips/PK-ttsdnvk7_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdp05h",
+   "lat": 31.289804,
+   "lon": 74.139873,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.571,
+    "probs": {
+     "FCBK": 0.3435,
+     "Zigzag": 0.6565
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdp05h_2026.png",
+    "baseline_chip": "chips/PK-ttsdp05h_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdp1ng",
+   "lat": 31.295159,
+   "lon": 74.145192,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.788,
+    "probs": {
+     "FCBK": 0.5984,
+     "Zigzag": 0.4016
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdp1ng_2026.png",
+    "baseline_chip": "chips/PK-ttsdp1ng_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdp2db",
+   "lat": 31.29195,
+   "lon": 74.150703,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.607,
+    "probs": {
+     "FCBK": 0.6032,
+     "Zigzag": 0.3968
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdp2db_2026.png",
+    "baseline_chip": "chips/PK-ttsdp2db_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdp31p",
+   "lat": 31.295919,
+   "lon": 74.148259,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.839,
+    "probs": {
+     "FCBK": 0.54,
+     "Zigzag": 0.46
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdp31p_2026.png",
+    "baseline_chip": "chips/PK-ttsdp31p_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdpbbd",
+   "lat": 31.293548,
+   "lon": 74.169493,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.73,
+    "probs": {
+     "FCBK": 0.4146,
+     "Zigzag": 0.5854
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdpbbd_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdpezg",
+   "lat": 31.310334,
+   "lon": 74.168645,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.681,
+    "probs": {
+     "FCBK": 0.645,
+     "Zigzag": 0.355
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdpezg_2026.png",
+    "baseline_chip": "chips/PK-ttsdpezg_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdphq6",
+   "lat": 31.312881,
+   "lon": 74.144398,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.777,
+    "probs": {
+     "FCBK": 0.4352,
+     "Zigzag": 0.5648
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdphq6_2026.png",
+    "baseline_chip": "chips/PK-ttsdphq6_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdprph",
+   "lat": 31.328228,
+   "lon": 74.156347,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.72,
+    "probs": {
+     "FCBK": 0.4373,
+     "Zigzag": 0.5627
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdprph_2026.png",
+    "baseline_chip": "chips/PK-ttsdprph_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdqwre",
+   "lat": 31.367911,
+   "lon": 74.124403,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.725,
+    "probs": {
+     "FCBK": 0.7956,
+     "Zigzag": 0.2044
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdqwre_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdr9yd",
+   "lat": 31.343029,
+   "lon": 74.166757,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.644,
+    "probs": {
+     "FCBK": 0.229,
+     "Zigzag": 0.771
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdr9yd_2026.png",
+    "baseline_chip": "chips/PK-ttsdr9yd_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdrb1p",
+   "lat": 31.334367,
+   "lon": 74.17036,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.606,
+    "probs": {
+     "FCBK": 0.7722,
+     "Zigzag": 0.2278
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdrb1p_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdrc6h",
+   "lat": 31.340656,
+   "lon": 74.171626,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsdrc6h_2026.png",
+    "baseline_chip": "chips/PK-ttsdrc6h_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsdru2n",
+   "lat": 31.357417,
+   "lon": 74.168838,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsdru2n_2026.png",
+    "baseline_chip": "chips/PK-ttsdru2n_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsdrvgp",
+   "lat": 31.365821,
+   "lon": 74.173008,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.72,
+    "probs": {
+     "FCBK": 0.4507,
+     "Zigzag": 0.5493
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdrvgp_2026.png",
+    "baseline_chip": "chips/PK-ttsdrvgp_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsdxxjw",
+   "lat": 31.416554,
+   "lon": 74.165362,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsdxxjw_2026.png",
+    "baseline_chip": "chips/PK-ttsdxxjw_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsdxz3n",
+   "lat": 31.417922,
+   "lon": 74.170179,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.6,
+    "probs": {
+     "FCBK": 0.9585,
+     "Zigzag": 0.0415
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsdxz3n_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf0nmh",
+   "lat": 31.324195,
+   "lon": 74.186641,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.674,
+    "probs": {
+     "FCBK": 0.497,
+     "Zigzag": 0.503
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf0nmh_2026.png",
+    "baseline_chip": "chips/PK-ttsf0nmh_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf14vx",
+   "lat": 31.3054,
+   "lon": 74.23147,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.713,
+    "probs": {
+     "FCBK": 0.3917,
+     "Zigzag": 0.6083
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf14vx_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf1ch8",
+   "lat": 31.294709,
+   "lon": 74.262944,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.779,
+    "probs": {
+     "FCBK": 0.4959,
+     "Zigzag": 0.5041
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf1ch8_2026.png",
+    "baseline_chip": "chips/PK-ttsf1ch8_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf1drk",
+   "lat": 31.302118,
+   "lon": 74.255876,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.76,
+    "probs": {
+     "FCBK": 0.418,
+     "Zigzag": 0.582
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf1drk_2026.png",
+    "baseline_chip": "chips/PK-ttsf1drk_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf1euh",
+   "lat": 31.310463,
+   "lon": 74.251215,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.768,
+    "probs": {
+     "FCBK": 0.2022,
+     "Zigzag": 0.7978
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf1euh_2026.png",
+    "baseline_chip": "chips/PK-ttsf1euh_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf1fzw",
+   "lat": 31.305369,
+   "lon": 74.266935,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.824,
+    "probs": {
+     "FCBK": 0.696,
+     "Zigzag": 0.304
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf1fzw_2026.png",
+    "baseline_chip": "chips/PK-ttsf1fzw_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf1vrd",
+   "lat": 31.31826,
+   "lon": 74.267193,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.76,
+    "probs": {
+     "FCBK": 0.6698,
+     "Zigzag": 0.3302
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf1vrd_2026.png",
+    "baseline_chip": "chips/PK-ttsf1vrd_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf41k2",
+   "lat": 31.296094,
+   "lon": 74.273712,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.653,
+    "probs": {
+     "FCBK": 0.3765,
+     "Zigzag": 0.6235
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf41k2_2026.png",
+    "baseline_chip": "chips/PK-ttsf41k2_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf443d",
+   "lat": 31.301769,
+   "lon": 74.269789,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.727,
+    "probs": {
+     "FCBK": 0.9136,
+     "Zigzag": 0.0864
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf443d_2026.png",
+    "baseline_chip": "chips/PK-ttsf443d_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf44rz",
+   "lat": 31.302729,
+   "lon": 74.278304,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.704,
+    "probs": {
+     "FCBK": 0.3995,
+     "Zigzag": 0.6005
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf44rz_2026.png",
+    "baseline_chip": "chips/PK-ttsf44rz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf473n",
+   "lat": 31.3081,
+   "lon": 74.280191,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.659,
+    "probs": {
+     "FCBK": 0.7565,
+     "Zigzag": 0.2435
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf473n_2026.png",
+    "baseline_chip": "chips/PK-ttsf473n_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf4hhn",
+   "lat": 31.31212,
+   "lon": 74.273283,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsf4hhn_2026.png",
+    "baseline_chip": "chips/PK-ttsf4hhn_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsf4jgj",
+   "lat": 31.321613,
+   "lon": 74.271954,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.645,
+    "probs": {
+     "FCBK": 0.9427,
+     "Zigzag": 0.0573
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf4jgj_2026.png",
+    "baseline_chip": "chips/PK-ttsf4jgj_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf4k3f",
+   "lat": 31.312787,
+   "lon": 74.281178,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.702,
+    "probs": {
+     "FCBK": 0.4751,
+     "Zigzag": 0.5249
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf4k3f_2026.png",
+    "baseline_chip": "chips/PK-ttsf4k3f_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf4m22",
+   "lat": 31.317957,
+   "lon": 74.279205,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.687,
+    "probs": {
+     "FCBK": 0.3441,
+     "Zigzag": 0.6559
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf4m22_2026.png",
+    "baseline_chip": "chips/PK-ttsf4m22_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf4q4x",
+   "lat": 31.323352,
+   "lon": 74.282013,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.515,
+    "probs": {
+     "FCBK": 0.6591,
+     "Zigzag": 0.3409
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf4q4x_2026.png",
+    "baseline_chip": "chips/PK-ttsf4q4x_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf4s7y",
+   "lat": 31.313449,
+   "lon": 74.294958,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.709,
+    "probs": {
+     "FCBK": 0.9163,
+     "Zigzag": 0.0837
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf4s7y_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf59yb",
+   "lat": 31.298685,
+   "lon": 74.343103,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.828,
+    "probs": {
+     "FCBK": 0.5129,
+     "Zigzag": 0.4871
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf59yb_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf5eq9",
+   "lat": 31.307245,
+   "lon": 74.342423,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.78,
+    "probs": {
+     "FCBK": 0.3674,
+     "Zigzag": 0.6326
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf5eq9_2026.png",
+    "baseline_chip": "chips/PK-ttsf5eq9_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf5fbu",
+   "lat": 31.304935,
+   "lon": 74.345685,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.852,
+    "probs": {
+     "FCBK": 0.6429,
+     "Zigzag": 0.3571
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf5fbu_2026.png",
+    "baseline_chip": "chips/PK-ttsf5fbu_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf5sxg",
+   "lat": 31.314465,
+   "lon": 74.34429,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.86,
+    "probs": {
+     "FCBK": 0.354,
+     "Zigzag": 0.646
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf5sxg_2026.png",
+    "baseline_chip": "chips/PK-ttsf5sxg_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf5u43",
+   "lat": 31.311359,
+   "lon": 74.347829,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsf5u43_2026.png",
+    "baseline_chip": "chips/PK-ttsf5u43_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsf5ux0",
+   "lat": 31.313924,
+   "lon": 74.354322,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.746,
+    "probs": {
+     "FCBK": 0.7101,
+     "Zigzag": 0.2899
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf5ux0_2026.png",
+    "baseline_chip": "chips/PK-ttsf5ux0_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf5yqs",
+   "lat": 31.324158,
+   "lon": 74.353685,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.389,
+    "probs": {
+     "FCBK": 0.423,
+     "Zigzag": 0.577
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf5yqs_2026.png",
+    "baseline_chip": "chips/PK-ttsf5yqs_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf5yw6",
+   "lat": 31.325158,
+   "lon": 74.353084,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.729,
+    "probs": {
+     "FCBK": 0.3148,
+     "Zigzag": 0.6852
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf5yw6_2026.png",
+    "baseline_chip": "chips/PK-ttsf5yw6_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf6334",
+   "lat": 31.340381,
+   "lon": 74.279997,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.738,
+    "probs": {
+     "FCBK": 0.7966,
+     "Zigzag": 0.2034
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf6334_2026.png",
+    "baseline_chip": "chips/PK-ttsf6334_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf63jw",
+   "lat": 31.339639,
+   "lon": 74.286304,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsf63jw_2026.png",
+    "baseline_chip": "chips/PK-ttsf63jw_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsf63nw",
+   "lat": 31.339593,
+   "lon": 74.287527,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsf63nw_2026.png",
+    "baseline_chip": "chips/PK-ttsf63nw_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsf63t0",
+   "lat": 31.34127,
+   "lon": 74.285703,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.731,
+    "probs": {
+     "FCBK": 0.62,
+     "Zigzag": 0.38
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf63t0_2026.png",
+    "baseline_chip": "chips/PK-ttsf63t0_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf66tc",
+   "lat": 31.346951,
+   "lon": 74.28669,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.754,
+    "probs": {
+     "FCBK": 0.6131,
+     "Zigzag": 0.3869
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf66tc_2026.png",
+    "baseline_chip": "chips/PK-ttsf66tc_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf68je",
+   "lat": 31.333631,
+   "lon": 74.297108,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.554,
+    "probs": {
+     "FCBK": 0.3728,
+     "Zigzag": 0.6272
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf68je_2026.png",
+    "baseline_chip": "chips/PK-ttsf68je_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf6c4b",
+   "lat": 31.338623,
+   "lon": 74.304328,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.778,
+    "probs": {
+     "FCBK": 0.2705,
+     "Zigzag": 0.7295
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf6c4b_2026.png",
+    "baseline_chip": "chips/PK-ttsf6c4b_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf7je8",
+   "lat": 31.36338,
+   "lon": 74.316577,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.744,
+    "probs": {
+     "FCBK": 0.8653,
+     "Zigzag": 0.1347
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf7je8_2026.png",
+    "baseline_chip": "chips/PK-ttsf7je8_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf7tbf",
+   "lat": 31.364937,
+   "lon": 74.334669,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.572,
+    "probs": {
+     "FCBK": 0.9757,
+     "Zigzag": 0.0243
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf7tbf_2026.png",
+    "baseline_chip": "chips/PK-ttsf7tbf_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf7whz",
+   "lat": 31.367264,
+   "lon": 74.340215,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.792,
+    "probs": {
+     "FCBK": 0.6825,
+     "Zigzag": 0.3175
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf7whz_2026.png",
+    "baseline_chip": "chips/PK-ttsf7whz_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf7wvy",
+   "lat": 31.371165,
+   "lon": 74.341501,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.783,
+    "probs": {
+     "FCBK": 0.7578,
+     "Zigzag": 0.2422
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf7wvy_2026.png",
+    "baseline_chip": "chips/PK-ttsf7wvy_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf8ugm",
+   "lat": 31.404046,
+   "lon": 74.217326,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.658,
+    "probs": {
+     "FCBK": 0.8236,
+     "Zigzag": 0.1764
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf8ugm_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsf9p23",
+   "lat": 31.417066,
+   "lon": 74.224247,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.707,
+    "probs": {
+     "FCBK": 0.4557,
+     "Zigzag": 0.5443
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsf9p23_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsfe277",
+   "lat": 31.378855,
+   "lon": 74.327281,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsfe277_2026.png",
+    "baseline_chip": "chips/PK-ttsfe277_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsfebdh",
+   "lat": 31.380495,
+   "lon": 74.347273,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.685,
+    "probs": {
+     "FCBK": 0.3203,
+     "Zigzag": 0.6797
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsfebdh_2026.png",
+    "baseline_chip": "chips/PK-ttsfebdh_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsfef7n",
+   "lat": 31.390465,
+   "lon": 74.348867,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.626,
+    "probs": {
+     "FCBK": 0.286,
+     "Zigzag": 0.714
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsfef7n_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsff2mt",
+   "lat": 31.423203,
+   "lon": 74.286245,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.609,
+    "probs": {
+     "FCBK": 0.7221,
+     "Zigzag": 0.2779
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsff2mt_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsfhrcn",
+   "lat": 31.332757,
+   "lon": 74.368122,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.76,
+    "probs": {
+     "FCBK": 0.5109,
+     "Zigzag": 0.4891
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsfhrcn_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsfhrem",
+   "lat": 31.331157,
+   "lon": 74.371169,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.802,
+    "probs": {
+     "FCBK": 0.6916,
+     "Zigzag": 0.3084
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsfhrem_2026.png",
+    "baseline_chip": "chips/PK-ttsfhrem_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsfjy00",
+   "lat": 31.322023,
+   "lon": 74.432374,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.766,
+    "probs": {
+     "FCBK": 0.459,
+     "Zigzag": 0.541
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsfjy00_2026.png",
+    "baseline_chip": "chips/PK-ttsfjy00_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsfk6qc",
+   "lat": 31.345573,
+   "lon": 74.375903,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.792,
+    "probs": {
+     "FCBK": 0.2223,
+     "Zigzag": 0.7777
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsfk6qc_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsfkr7g",
+   "lat": 31.373403,
+   "lon": 74.371689,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.686,
+    "probs": {
+     "FCBK": 0.4735,
+     "Zigzag": 0.5265
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsfkr7g_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsfm05e",
+   "lat": 31.333558,
+   "lon": 74.404349,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.548,
+    "probs": {
+     "FCBK": 0.7366,
+     "Zigzag": 0.2634
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsfm05e_2026.png",
+    "baseline_chip": "chips/PK-ttsfm05e_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsfm3jt",
+   "lat": 31.339525,
+   "lon": 74.418116,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.654,
+    "probs": {
+     "FCBK": 0.9931,
+     "Zigzag": 0.0069
+    },
+    "set": [
+     "FCBK"
+    ],
+    "chip": "chips/PK-ttsfm3jt_2026.png",
+    "baseline_chip": null
+   },
+   "status": "FCBK"
+  },
+  {
+   "id": "PK-ttsfqpn5",
+   "lat": 31.371996,
+   "lon": 74.451736,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsfqpn5_2026.png",
+    "baseline_chip": "chips/PK-ttsfqpn5_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsfqum2",
+   "lat": 31.356515,
+   "lon": 74.483758,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.774,
+    "probs": {
+     "FCBK": 0.3476,
+     "Zigzag": 0.6524
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsfqum2_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsfrbfh",
+   "lat": 31.337937,
+   "lon": 74.523285,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.815,
+    "probs": {
+     "FCBK": 0.2605,
+     "Zigzag": 0.7395
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsfrbfh_2026.png",
+    "baseline_chip": "chips/PK-ttsfrbfh_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsfs8bu",
+   "lat": 31.38177,
+   "lon": 74.378636,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.66,
+    "probs": {
+     "FCBK": 0.985,
+     "Zigzag": 0.015
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsfs8bu_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsfs9cs",
+   "lat": 31.387352,
+   "lon": 74.379838,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsfs9cs_2026.png",
+    "baseline_chip": "chips/PK-ttsfs9cs_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsfs9pw",
+   "lat": 31.38358,
+   "lon": 74.387967,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.695,
+    "probs": {
+     "FCBK": 0.4816,
+     "Zigzag": 0.5184
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsfs9pw_2026.png",
+    "baseline_chip": "chips/PK-ttsfs9pw_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsfscc4",
+   "lat": 31.386978,
+   "lon": 74.389939,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsfscc4_2026.png",
+    "baseline_chip": "chips/PK-ttsfscc4_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsfsch9",
+   "lat": 31.382627,
+   "lon": 74.394679,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.66,
+    "probs": {
+     "FCBK": 0.9546,
+     "Zigzag": 0.0454
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsfsch9_2026.png",
+    "baseline_chip": "chips/PK-ttsfsch9_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsfsdrq",
+   "lat": 31.390473,
+   "lon": 74.387495,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsfsdrq_2026.png",
+    "baseline_chip": "chips/PK-ttsfsdrq_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsfsf9q",
+   "lat": 31.391829,
+   "lon": 74.390388,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.823,
+    "probs": {
+     "FCBK": 0.6143,
+     "Zigzag": 0.3857
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsfsf9q_2026.png",
+    "baseline_chip": "chips/PK-ttsfsf9q_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsft54z",
+   "lat": 31.394659,
+   "lon": 74.403443,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.804,
+    "probs": {
+     "FCBK": 0.2831,
+     "Zigzag": 0.7169
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsft54z_2026.png",
+    "baseline_chip": "chips/PK-ttsft54z_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsftk2r",
+   "lat": 31.401518,
+   "lon": 74.410832,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.674,
+    "probs": {
+     "FCBK": 0.7818,
+     "Zigzag": 0.2182
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsftk2r_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsfu98w",
+   "lat": 31.43025,
+   "lon": 74.3783,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.816,
+    "probs": {
+     "FCBK": 0.3233,
+     "Zigzag": 0.6767
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsfu98w_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsfvbs4",
+   "lat": 31.424076,
+   "lon": 74.438017,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.69,
+    "probs": {
+     "FCBK": 0.9027,
+     "Zigzag": 0.0973
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsfvbs4_2026.png",
+    "baseline_chip": "chips/PK-ttsfvbs4_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsfvwj5",
+   "lat": 31.454417,
+   "lon": 74.428429,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsfvwj5_2026.png",
+    "baseline_chip": "chips/PK-ttsfvwj5_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsfw224",
+   "lat": 31.378673,
+   "lon": 74.454587,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.616,
+    "probs": {
+     "FCBK": 0.6744,
+     "Zigzag": 0.3256
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsfw224_2026.png",
+    "baseline_chip": "chips/PK-ttsfw224_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsfxhhr",
+   "lat": 31.400291,
+   "lon": 74.493403,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.529,
+    "probs": {
+     "FCBK": 0.8895,
+     "Zigzag": 0.1105
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsfxhhr_2026.png",
+    "baseline_chip": "chips/PK-ttsfxhhr_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsg3n5m",
+   "lat": 31.542612,
+   "lon": 74.228169,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.684,
+    "probs": {
+     "FCBK": 0.6899,
+     "Zigzag": 0.3101
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsg3n5m_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsg4u6q",
+   "lat": 31.489256,
+   "lon": 74.303903,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.613,
+    "probs": {
+     "FCBK": 0.5856,
+     "Zigzag": 0.4144
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsg4u6q_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsg4xdg",
+   "lat": 31.506568,
+   "lon": 74.293436,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.705,
+    "probs": {
+     "FCBK": 0.4498,
+     "Zigzag": 0.5502
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsg4xdg_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsg5khf",
+   "lat": 31.487203,
+   "lon": 74.329187,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.701,
+    "probs": {
+     "FCBK": 0.5872,
+     "Zigzag": 0.4128
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsg5khf_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsg7xgc",
+   "lat": 31.551563,
+   "lon": 74.338828,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.633,
+    "probs": {
+     "FCBK": 0.9325,
+     "Zigzag": 0.0675
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsg7xgc_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsggkqp",
+   "lat": 31.621277,
+   "lon": 74.330884,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.635,
+    "probs": {
+     "FCBK": 0.8521,
+     "Zigzag": 0.1479
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsggkqp_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgk9by",
+   "lat": 31.519453,
+   "lon": 74.378578,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.707,
+    "probs": {
+     "FCBK": 0.5793,
+     "Zigzag": 0.4207
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgk9by_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgkmgs",
+   "lat": 31.541211,
+   "lon": 74.371311,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.606,
+    "probs": {
+     "FCBK": 0.7567,
+     "Zigzag": 0.2433
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgkmgs_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgkq5e",
+   "lat": 31.54238,
+   "lon": 74.3713,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.63,
+    "probs": {
+     "FCBK": 0.6715,
+     "Zigzag": 0.3285
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgkq5e_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgm328",
+   "lat": 31.515813,
+   "lon": 74.411292,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.646,
+    "probs": {
+     "FCBK": 0.9248,
+     "Zigzag": 0.0752
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgm328_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgpf0h",
+   "lat": 31.476577,
+   "lon": 74.52049,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.763,
+    "probs": {
+     "FCBK": 0.6344,
+     "Zigzag": 0.3656
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgpf0h_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgq36m",
+   "lat": 31.516636,
+   "lon": 74.457707,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.661,
+    "probs": {
+     "FCBK": 0.1832,
+     "Zigzag": 0.8168
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgq36m_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgqv9h",
+   "lat": 31.539721,
+   "lon": 74.477937,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.662,
+    "probs": {
+     "FCBK": 0.9857,
+     "Zigzag": 0.0143
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgqv9h_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgqw2e",
+   "lat": 31.543749,
+   "lon": 74.466084,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.658,
+    "probs": {
+     "FCBK": 0.4855,
+     "Zigzag": 0.5145
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgqw2e_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgqzxc",
+   "lat": 31.550309,
+   "lon": 74.48714,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.683,
+    "probs": {
+     "FCBK": 0.6357,
+     "Zigzag": 0.3643
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgqzxc_2026.png",
+    "baseline_chip": "chips/PK-ttsgqzxc_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgrdpd",
+   "lat": 31.520278,
+   "lon": 74.519769,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsgrdpd_2026.png",
+    "baseline_chip": "chips/PK-ttsgrdpd_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsgrjf7",
+   "lat": 31.540937,
+   "lon": 74.490484,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsgrjf7_2026.png",
+    "baseline_chip": "chips/PK-ttsgrjf7_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsgrr2j",
+   "lat": 31.549523,
+   "lon": 74.498357,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.823,
+    "probs": {
+     "FCBK": 0.223,
+     "Zigzag": 0.777
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgrr2j_2026.png",
+    "baseline_chip": "chips/PK-ttsgrr2j_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgry5z",
+   "lat": 31.543067,
+   "lon": 74.52556,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.848,
+    "probs": {
+     "FCBK": 0.3312,
+     "Zigzag": 0.6688
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgry5z_2026.png",
+    "baseline_chip": "chips/PK-ttsgry5z_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgrzt2",
+   "lat": 31.550002,
+   "lon": 74.527777,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.766,
+    "probs": {
+     "FCBK": 0.285,
+     "Zigzag": 0.715
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgrzt2_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgs5qh",
+   "lat": 31.5714,
+   "lon": 74.364008,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.633,
+    "probs": {
+     "FCBK": 0.4653,
+     "Zigzag": 0.5347
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgs5qh_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgsvbw",
+   "lat": 31.585409,
+   "lon": 74.389234,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.633,
+    "probs": {
+     "FCBK": 0.8709,
+     "Zigzag": 0.1291
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgsvbw_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgtt73",
+   "lat": 31.581886,
+   "lon": 74.425854,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.787,
+    "probs": {
+     "FCBK": 0.4007,
+     "Zigzag": 0.5993
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgtt73_2026.png",
+    "baseline_chip": "chips/PK-ttsgtt73_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgv86s",
+   "lat": 31.598772,
+   "lon": 74.424867,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsgv86s_2026.png",
+    "baseline_chip": "chips/PK-ttsgv86s_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsgw0hy",
+   "lat": 31.5539,
+   "lon": 74.450005,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.418,
+    "probs": {
+     "FCBK": 0.658,
+     "Zigzag": 0.342
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgw0hy_2026.png",
+    "baseline_chip": "chips/PK-ttsgw0hy_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgwhju",
+   "lat": 31.575473,
+   "lon": 74.451435,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsgwhju_2026.png",
+    "baseline_chip": "chips/PK-ttsgwhju_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsgwn08",
+   "lat": 31.585715,
+   "lon": 74.444199,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.657,
+    "probs": {
+     "FCBK": 0.914,
+     "Zigzag": 0.086
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgwn08_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgx0t1",
+   "lat": 31.555728,
+   "lon": 74.494368,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsgx0t1_2026.png",
+    "baseline_chip": "chips/PK-ttsgx0t1_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsgx4pq",
+   "lat": 31.5648,
+   "lon": 74.497347,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.83,
+    "probs": {
+     "FCBK": 0.4851,
+     "Zigzag": 0.5149
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgx4pq_2026.png",
+    "baseline_chip": "chips/PK-ttsgx4pq_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgx5pw",
+   "lat": 31.570383,
+   "lon": 74.49769,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.835,
+    "probs": {
+     "FCBK": 0.3452,
+     "Zigzag": 0.6548
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgx5pw_2026.png",
+    "baseline_chip": "chips/PK-ttsgx5pw_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgxfbn",
+   "lat": 31.568913,
+   "lon": 74.520563,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.78,
+    "probs": {
+     "FCBK": 0.6459,
+     "Zigzag": 0.3541
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgxfbn_2026.png",
+    "baseline_chip": "chips/PK-ttsgxfbn_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgxg5s",
+   "lat": 31.570064,
+   "lon": 74.525088,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.627,
+    "probs": {
+     "FCBK": 0.4912,
+     "Zigzag": 0.5088
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgxg5s_2026.png",
+    "baseline_chip": "chips/PK-ttsgxg5s_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgxgk3",
+   "lat": 31.570822,
+   "lon": 74.526439,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.528,
+    "probs": {
+     "FCBK": 0.3165,
+     "Zigzag": 0.6835
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgxgk3_2026.png",
+    "baseline_chip": "chips/PK-ttsgxgk3_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgxkuq",
+   "lat": 31.579959,
+   "lon": 74.504442,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.757,
+    "probs": {
+     "FCBK": 0.2933,
+     "Zigzag": 0.7067
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgxkuq_2026.png",
+    "baseline_chip": "chips/PK-ttsgxkuq_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgxms8",
+   "lat": 31.582992,
+   "lon": 74.504614,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsgxms8_2026.png",
+    "baseline_chip": "chips/PK-ttsgxms8_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsgxqxd",
+   "lat": 31.588894,
+   "lon": 74.508835,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.321,
+    "probs": {
+     "FCBK": 0.6492,
+     "Zigzag": 0.3508
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgxqxd_2026.png",
+    "baseline_chip": "chips/PK-ttsgxqxd_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgxz5w",
+   "lat": 31.592283,
+   "lon": 74.525216,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.795,
+    "probs": {
+     "FCBK": 0.4128,
+     "Zigzag": 0.5872
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgxz5w_2026.png",
+    "baseline_chip": "chips/PK-ttsgxz5w_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgy17q",
+   "lat": 31.604741,
+   "lon": 74.448033,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsgy17q_2026.png",
+    "baseline_chip": "chips/PK-ttsgy17q_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsgy3dv",
+   "lat": 31.605783,
+   "lon": 74.458338,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.422,
+    "probs": {
+     "FCBK": 0.8674,
+     "Zigzag": 0.1326
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgy3dv_2026.png",
+    "baseline_chip": "chips/PK-ttsgy3dv_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgy4wj",
+   "lat": 31.611272,
+   "lon": 74.451862,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.766,
+    "probs": {
+     "FCBK": 0.5079,
+     "Zigzag": 0.4921
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgy4wj_2026.png",
+    "baseline_chip": "chips/PK-ttsgy4wj_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgyfxw",
+   "lat": 31.611581,
+   "lon": 74.486668,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.6,
+    "probs": {
+     "FCBK": 0.2514,
+     "Zigzag": 0.7486
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgyfxw_2026.png",
+    "baseline_chip": "chips/PK-ttsgyfxw_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgyuwc",
+   "lat": 31.62173,
+   "lon": 74.485617,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.819,
+    "probs": {
+     "FCBK": 0.8011,
+     "Zigzag": 0.1989
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgyuwc_2026.png",
+    "baseline_chip": "chips/PK-ttsgyuwc_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgyv9c",
+   "lat": 31.627191,
+   "lon": 74.478743,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.759,
+    "probs": {
+     "FCBK": 0.244,
+     "Zigzag": 0.756
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgyv9c_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgz4g8",
+   "lat": 31.611836,
+   "lon": 74.492437,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsgz4g8_2026.png",
+    "baseline_chip": "chips/PK-ttsgz4g8_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsgz4jr",
+   "lat": 31.609008,
+   "lon": 74.49469,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.676,
+    "probs": {
+     "FCBK": 0.2488,
+     "Zigzag": 0.7512
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgz4jr_2026.png",
+    "baseline_chip": "chips/PK-ttsgz4jr_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgz58e",
+   "lat": 31.616507,
+   "lon": 74.488299,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsgz58e_2026.png",
+    "baseline_chip": "chips/PK-ttsgz58e_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsgz5j0",
+   "lat": 31.613264,
+   "lon": 74.494303,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.587,
+    "probs": {
+     "FCBK": 0.6204,
+     "Zigzag": 0.3796
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgz5j0_2026.png",
+    "baseline_chip": "chips/PK-ttsgz5j0_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgz5m9",
+   "lat": 31.614735,
+   "lon": 74.495119,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.706,
+    "probs": {
+     "FCBK": 0.9306,
+     "Zigzag": 0.0694
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgz5m9_2026.png",
+    "baseline_chip": "chips/PK-ttsgz5m9_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgz5xr",
+   "lat": 31.617175,
+   "lon": 74.49752,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.802,
+    "probs": {
+     "FCBK": 0.6227,
+     "Zigzag": 0.3773
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgz5xr_2026.png",
+    "baseline_chip": "chips/PK-ttsgz5xr_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgz8fg",
+   "lat": 31.601348,
+   "lon": 74.513354,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.833,
+    "probs": {
+     "FCBK": 0.8108,
+     "Zigzag": 0.1892
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgz8fg_2026.png",
+    "baseline_chip": "chips/PK-ttsgz8fg_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgz8he",
+   "lat": 31.597309,
+   "lon": 74.515564,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.734,
+    "probs": {
+     "FCBK": 0.6551,
+     "Zigzag": 0.3449
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgz8he_2026.png",
+    "baseline_chip": "chips/PK-ttsgz8he_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgz9tp",
+   "lat": 31.606166,
+   "lon": 74.51625,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.823,
+    "probs": {
+     "FCBK": 0.525,
+     "Zigzag": 0.475
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgz9tp_2026.png",
+    "baseline_chip": "chips/PK-ttsgz9tp_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgzb6s",
+   "lat": 31.598872,
+   "lon": 74.524036,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.828,
+    "probs": {
+     "FCBK": 0.1844,
+     "Zigzag": 0.8156
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgzb6s_2026.png",
+    "baseline_chip": "chips/PK-ttsgzb6s_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgzb84",
+   "lat": 31.599923,
+   "lon": 74.520478,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsgzb84_2026.png",
+    "baseline_chip": "chips/PK-ttsgzb84_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsgzh1x",
+   "lat": 31.619877,
+   "lon": 74.489392,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.624,
+    "probs": {
+     "FCBK": 0.4161,
+     "Zigzag": 0.5839
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgzh1x_2026.png",
+    "baseline_chip": "chips/PK-ttsgzh1x_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgzhd5",
+   "lat": 31.622016,
+   "lon": 74.490073,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.759,
+    "probs": {
+     "FCBK": 0.3242,
+     "Zigzag": 0.6758
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgzhd5_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgzkbh",
+   "lat": 31.623549,
+   "lon": 74.498421,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.674,
+    "probs": {
+     "FCBK": 0.5251,
+     "Zigzag": 0.4749
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgzkbh_2026.png",
+    "baseline_chip": "chips/PK-ttsgzkbh_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgzm1v",
+   "lat": 31.625049,
+   "lon": 74.500789,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.739,
+    "probs": {
+     "FCBK": 0.3976,
+     "Zigzag": 0.6024
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgzm1v_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgzmk9",
+   "lat": 31.625832,
+   "lon": 74.504557,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.699,
+    "probs": {
+     "FCBK": 0.2947,
+     "Zigzag": 0.7053
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgzmk9_2026.png",
+    "baseline_chip": "chips/PK-ttsgzmk9_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgzscq",
+   "lat": 31.623968,
+   "lon": 74.511259,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.761,
+    "probs": {
+     "FCBK": 0.5546,
+     "Zigzag": 0.4454
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgzscq_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsgzwe9",
+   "lat": 31.632662,
+   "lon": 74.514319,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.728,
+    "probs": {
+     "FCBK": 0.3929,
+     "Zigzag": 0.6071
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsgzwe9_2026.png",
+    "baseline_chip": "chips/PK-ttsgzwe9_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsunbd3",
+   "lat": 31.64362,
+   "lon": 74.479569,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.595,
+    "probs": {
+     "FCBK": 0.4526,
+     "Zigzag": 0.5474
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsunbd3_2026.png",
+    "baseline_chip": "chips/PK-ttsunbd3_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttsune1t",
+   "lat": 31.658029,
+   "lon": 74.467427,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttsune1t_2026.png",
+    "baseline_chip": "chips/PK-ttsune1t_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttsupxdx",
+   "lat": 31.683085,
+   "lon": 74.512912,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.709,
+    "probs": {
+     "FCBK": 0.0783,
+     "Zigzag": 0.9217
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttsupxdx_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttt48xje",
+   "lat": 31.415999,
+   "lon": 74.561117,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.643,
+    "probs": {
+     "FCBK": 0.7932,
+     "Zigzag": 0.2068
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttt48xje_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttt50hue",
+   "lat": 31.491584,
+   "lon": 74.537565,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.766,
+    "probs": {
+     "FCBK": 0.414,
+     "Zigzag": 0.586
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttt50hue_2026.png",
+    "baseline_chip": "chips/PK-ttt50hue_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttt52jf0",
+   "lat": 31.540545,
+   "lon": 74.534223,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43RDQ_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.615,
+    "probs": {
+     "FCBK": 0.7833,
+     "Zigzag": 0.2167
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttt52jf0_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttt52pfg",
+   "lat": 31.552034,
+   "lon": 74.535162,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.791,
+    "probs": {
+     "FCBK": 0.2835,
+     "Zigzag": 0.7165
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttt52pfg_2026.png",
+    "baseline_chip": "chips/PK-ttt52pfg_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttt580wm",
+   "lat": 31.556365,
+   "lon": 74.540175,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttt580wm_2026.png",
+    "baseline_chip": "chips/PK-ttt580wm_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttt5810b",
+   "lat": 31.558361,
+   "lon": 74.53248,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.689,
+    "probs": {
+     "FCBK": 0.4135,
+     "Zigzag": 0.5865
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttt5810b_2026.png",
+    "baseline_chip": "chips/PK-ttt5810b_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttt581ys",
+   "lat": 31.563196,
+   "lon": 74.540201,
+   "district": "Lahore",
+   "baseline": null,
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.738,
+    "probs": {
+     "FCBK": 0.7991,
+     "Zigzag": 0.2009
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttt581ys_2026.png",
+    "baseline_chip": null
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttt583vu",
+   "lat": 31.563063,
+   "lon": 74.550369,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.717,
+    "probs": {
+     "FCBK": 0.9211,
+     "Zigzag": 0.0789
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttt583vu_2026.png",
+    "baseline_chip": "chips/PK-ttt583vu_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttt5841q",
+   "lat": 31.564855,
+   "lon": 74.53323,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": false,
+    "det_conf": null,
+    "probs": null,
+    "set": null,
+    "chip": "chips/PK-ttt5841q_2026.png",
+    "baseline_chip": "chips/PK-ttt5841q_2023.png"
+   },
+   "status": "NOT_DETECTED"
+  },
+  {
+   "id": "PK-ttt585bp",
+   "lat": 31.574705,
+   "lon": 74.531294,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.696,
+    "probs": {
+     "FCBK": 0.7278,
+     "Zigzag": 0.2722
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttt585bp_2026.png",
+    "baseline_chip": "chips/PK-ttt585bp_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttt58m0u",
+   "lat": 31.580999,
+   "lon": 74.543313,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "FCBK"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.76,
+    "probs": {
+     "FCBK": 0.2797,
+     "Zigzag": 0.7203
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttt58m0u_2026.png",
+    "baseline_chip": "chips/PK-ttt58m0u_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttt58scs",
+   "lat": 31.579594,
+   "lon": 74.555553,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.606,
+    "probs": {
+     "FCBK": 0.3907,
+     "Zigzag": 0.6093
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttt58scs_2026.png",
+    "baseline_chip": "chips/PK-ttt58scs_2023.png"
+   },
+   "status": "UNDETERMINED"
+  },
+  {
+   "id": "PK-ttt5b2yd",
+   "lat": 31.601266,
+   "lon": 74.551182,
+   "district": "Lahore",
+   "baseline": {
+    "source": "SentinelKilnDB hand label",
+    "period": "2023-09/2024-02",
+    "class": "Zigzag"
+   },
+   "observation": {
+    "scene_id": "S2B_43SDR_20261018_0_L2A",
+    "date": "2026-10-18",
+    "detected": true,
+    "det_conf": 0.85,
+    "probs": {
+     "FCBK": 0.2428,
+     "Zigzag": 0.7572
+    },
+    "set": [
+     "FCBK",
+     "Zigzag"
+    ],
+    "chip": "chips/PK-ttt5b2yd_2026.png",
+    "baseline_chip": "chips/PK-ttt5b2yd_2023.png"
+   },
+   "status": "UNDETERMINED"
+  }
+ ]
+}

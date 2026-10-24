@@ -1,0 +1,5100 @@
+[
+ {
+  "id": "PK-tt4mw96c",
+  "lat": 29.098848,
+  "lon": 70.953503,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_42RXT_20261004_0_L2A",
+   "date": "2026-10-04",
+   "detected": true,
+   "det_conf": 0.707,
+   "probs": {
+    "FCBK": 0.9972,
+    "Zigzag": 0.0028
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4mw96c_2026.png",
+   "baseline_chip": "chips/PK-tt4mw96c_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4myj29",
+  "lat": 29.164871,
+  "lon": 70.928587,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_42RXT_20261004_0_L2A",
+   "date": "2026-10-04",
+   "detected": true,
+   "det_conf": 0.698,
+   "probs": {
+    "FCBK": 0.9769,
+    "Zigzag": 0.0231
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tt4myj29_2026.png",
+   "baseline_chip": "chips/PK-tt4myj29_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tt4sy35c",
+  "lat": 28.965775,
+  "lon": 71.295694,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tt4sy35c_2026.png",
+   "baseline_chip": "chips/PK-tt4sy35c_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tt4tqpvh",
+  "lat": 29.091244,
+  "lon": 71.286214,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.305,
+   "probs": {
+    "FCBK": 0.9978,
+    "Zigzag": 0.0022
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4tqpvh_2026.png",
+   "baseline_chip": "chips/PK-tt4tqpvh_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4tujd8",
+  "lat": 29.166108,
+  "lon": 71.195012,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.515,
+   "probs": {
+    "FCBK": 0.9903,
+    "Zigzag": 0.0097
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4tujd8_2026.png",
+   "baseline_chip": "chips/PK-tt4tujd8_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4tvj34",
+  "lat": 29.165087,
+  "lon": 71.236726,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.615,
+   "probs": {
+    "FCBK": 0.993,
+    "Zigzag": 0.007
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4tvj34_2026.png",
+   "baseline_chip": "chips/PK-tt4tvj34_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4tvvsc",
+  "lat": 29.166164,
+  "lon": 71.27508,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.655,
+   "probs": {
+    "FCBK": 0.9669,
+    "Zigzag": 0.0331
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tt4tvvsc_2026.png",
+   "baseline_chip": "chips/PK-tt4tvvsc_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tt4tw0nh",
+  "lat": 29.092622,
+  "lon": 71.28778,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tt4tw0nh_2026.png",
+   "baseline_chip": "chips/PK-tt4tw0nh_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tt4tzs14",
+  "lat": 29.158202,
+  "lon": 71.346817,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.744,
+   "probs": {
+    "FCBK": 0.999,
+    "Zigzag": 0.001
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4tzs14_2026.png",
+   "baseline_chip": "chips/PK-tt4tzs14_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4v0fbd",
+  "lat": 29.01946,
+  "lon": 71.401095,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.593,
+   "probs": {
+    "FCBK": 0.9969,
+    "Zigzag": 0.0031
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4v0fbd_2026.png",
+   "baseline_chip": "chips/PK-tt4v0fbd_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4vqnuy",
+  "lat": 29.08599,
+  "lon": 71.637538,
+  "district": "Bahawalpur",
+  "baseline": null,
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.64,
+   "probs": {
+    "FCBK": 0.9963,
+    "Zigzag": 0.0037
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4vqnuy_2026.png",
+   "baseline_chip": null
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4w3p51",
+  "lat": 29.262259,
+  "lon": 71.063716,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tt4w3p51_2026.png",
+   "baseline_chip": "chips/PK-tt4w3p51_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tt4w8gfr",
+  "lat": 29.289388,
+  "lon": 71.051906,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_42RXT_20261004_0_L2A",
+   "date": "2026-10-04",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tt4w8gfr_2026.png",
+   "baseline_chip": "chips/PK-tt4w8gfr_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tt4wd6s3",
+  "lat": 29.281651,
+  "lon": 71.1205,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tt4wd6s3_2026.png",
+   "baseline_chip": "chips/PK-tt4wd6s3_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tt4wdpvb",
+  "lat": 29.310265,
+  "lon": 71.11154,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tt4wdpvb_2026.png",
+   "baseline_chip": "chips/PK-tt4wdpvb_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tt4wkv4r",
+  "lat": 29.252306,
+  "lon": 71.227717,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.391,
+   "probs": {
+    "FCBK": 0.998,
+    "Zigzag": 0.002
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4wkv4r_2026.png",
+   "baseline_chip": "chips/PK-tt4wkv4r_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4wkyk8",
+  "lat": 29.257968,
+  "lon": 71.23059,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.797,
+   "probs": {
+    "FCBK": 0.998,
+    "Zigzag": 0.002
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4wkyk8_2026.png",
+   "baseline_chip": "chips/PK-tt4wkyk8_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4wnfvs",
+  "lat": 29.195547,
+  "lon": 71.320049,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.68,
+   "probs": {
+    "FCBK": 0.9934,
+    "Zigzag": 0.0066
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4wnfvs_2026.png",
+   "baseline_chip": "chips/PK-tt4wnfvs_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4wptx0",
+  "lat": 29.21005,
+  "lon": 71.355111,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tt4wptx0_2026.png",
+   "baseline_chip": "chips/PK-tt4wptx0_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tt4wr33b",
+  "lat": 29.23063,
+  "lon": 71.3368,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.746,
+   "probs": {
+    "FCBK": 0.9925,
+    "Zigzag": 0.0075
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4wr33b_2026.png",
+   "baseline_chip": "chips/PK-tt4wr33b_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4wumbw",
+  "lat": 29.344308,
+  "lon": 71.203107,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": null,
+   "date": null,
+   "detected": true,
+   "det_conf": 0.701,
+   "probs": {
+    "FCBK": 0.9992,
+    "Zigzag": 0.0008
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4wumbw_2026.png",
+   "baseline_chip": "chips/PK-tt4wumbw_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4wvr00",
+  "lat": 29.350098,
+  "lon": 71.246464,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.569,
+   "probs": {
+    "FCBK": 0.9971,
+    "Zigzag": 0.0029
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4wvr00_2026.png",
+   "baseline_chip": "chips/PK-tt4wvr00_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4wwdkn",
+  "lat": 29.281015,
+  "lon": 71.306823,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.666,
+   "probs": {
+    "FCBK": 0.9981,
+    "Zigzag": 0.0019
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4wwdkn_2026.png",
+   "baseline_chip": "chips/PK-tt4wwdkn_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4y01ef",
+  "lat": 29.188281,
+  "lon": 71.372389,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.767,
+   "probs": {
+    "FCBK": 0.9967,
+    "Zigzag": 0.0033
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4y01ef_2026.png",
+   "baseline_chip": "chips/PK-tt4y01ef_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4y028f",
+  "lat": 29.182856,
+  "lon": 71.379517,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.638,
+   "probs": {
+    "FCBK": 0.9901,
+    "Zigzag": 0.0099
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4y028f_2026.png",
+   "baseline_chip": "chips/PK-tt4y028f_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4y0w4g",
+  "lat": 29.213243,
+  "lon": 71.393013,
+  "district": "Bahawalpur",
+  "baseline": null,
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.644,
+   "probs": {
+    "FCBK": 0.9933,
+    "Zigzag": 0.0067
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4y0w4g_2026.png",
+   "baseline_chip": null
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4ydhdf",
+  "lat": 29.292671,
+  "lon": 71.458891,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.557,
+   "probs": {
+    "FCBK": 0.9942,
+    "Zigzag": 0.0058
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4ydhdf_2026.png",
+   "baseline_chip": "chips/PK-tt4ydhdf_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4yggxu",
+  "lat": 29.331536,
+  "lon": 71.542757,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.586,
+   "probs": {
+    "FCBK": 0.9729,
+    "Zigzag": 0.0271
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tt4yggxu_2026.png",
+   "baseline_chip": "chips/PK-tt4yggxu_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tt4yk2ce",
+  "lat": 29.228301,
+  "lon": 71.556301,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.543,
+   "probs": {
+    "FCBK": 0.9936,
+    "Zigzag": 0.0064
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4yk2ce_2026.png",
+   "baseline_chip": "chips/PK-tt4yk2ce_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4yvnjs",
+  "lat": 29.345338,
+  "lon": 71.594481,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.539,
+   "probs": {
+    "FCBK": 0.9987,
+    "Zigzag": 0.0013
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4yvnjs_2026.png",
+   "baseline_chip": "chips/PK-tt4yvnjs_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt4zr7gz",
+  "lat": 29.421341,
+  "lon": 71.69124,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tt4zr7gz_2026.png",
+   "baseline_chip": "chips/PK-tt4zr7gz_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tt4zw15f",
+  "lat": 29.449206,
+  "lon": 71.636291,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.759,
+   "probs": {
+    "FCBK": 0.9994,
+    "Zigzag": 0.0006
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt4zw15f_2026.png",
+   "baseline_chip": "chips/PK-tt4zw15f_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt5j8fdg",
+  "lat": 29.106214,
+  "lon": 71.755633,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tt5j8fdg_2026.png",
+   "baseline_chip": "chips/PK-tt5j8fdg_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tt5j9jv1",
+  "lat": 29.123686,
+  "lon": 71.769617,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tt5j9jv1_2026.png",
+   "baseline_chip": "chips/PK-tt5j9jv1_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tt5jb0qe",
+  "lat": 29.137788,
+  "lon": 71.727678,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.705,
+   "probs": {
+    "FCBK": 0.9972,
+    "Zigzag": 0.0028
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt5jb0qe_2026.png",
+   "baseline_chip": "chips/PK-tt5jb0qe_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt5jbdcf",
+  "lat": 29.151265,
+  "lon": 71.743185,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.316,
+   "probs": {
+    "FCBK": 0.9341,
+    "Zigzag": 0.0659
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tt5jbdcf_2026.png",
+   "baseline_chip": "chips/PK-tt5jbdcf_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tt5jdmwe",
+  "lat": 29.122617,
+  "lon": 71.826701,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.682,
+   "probs": {
+    "FCBK": 0.9941,
+    "Zigzag": 0.0059
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt5jdmwe_2026.png",
+   "baseline_chip": "chips/PK-tt5jdmwe_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt5jgwfy",
+  "lat": 29.173936,
+  "lon": 71.876576,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tt5jgwfy_2026.png",
+   "baseline_chip": "chips/PK-tt5jgwfy_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tt5jgxye",
+  "lat": 29.178847,
+  "lon": 71.881658,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.7,
+   "probs": {
+    "FCBK": 0.9954,
+    "Zigzag": 0.0046
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt5jgxye_2026.png",
+   "baseline_chip": "chips/PK-tt5jgxye_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt5p34f4",
+  "lat": 29.41496,
+  "lon": 71.765604,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.737,
+   "probs": {
+    "FCBK": 0.9988,
+    "Zigzag": 0.0012
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt5p34f4_2026.png",
+   "baseline_chip": "chips/PK-tt5p34f4_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt5p6ee3",
+  "lat": 29.41882,
+  "lon": 71.833389,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tt5p6ee3_2026.png",
+   "baseline_chip": "chips/PK-tt5p6ee3_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tt5p6wj0",
+  "lat": 29.432493,
+  "lon": 71.835646,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.303,
+   "probs": {
+    "FCBK": 0.4663,
+    "Zigzag": 0.5337
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tt5p6wj0_2026.png",
+   "baseline_chip": "chips/PK-tt5p6wj0_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tt5pfhyq",
+  "lat": 29.514449,
+  "lon": 71.815423,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_42RYT_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.785,
+   "probs": {
+    "FCBK": 0.9978,
+    "Zigzag": 0.0022
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt5pfhyq_2026.png",
+   "baseline_chip": "chips/PK-tt5pfhyq_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt70q91b",
+  "lat": 29.580853,
+  "lon": 72.006867,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_43RBN_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.486,
+   "probs": {
+    "FCBK": 0.9993,
+    "Zigzag": 0.0007
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt70q91b_2026.png",
+   "baseline_chip": "chips/PK-tt70q91b_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt72t99b",
+  "lat": 29.627536,
+  "lon": 72.314435,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_43RBN_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.678,
+   "probs": {
+    "FCBK": 0.9982,
+    "Zigzag": 0.0018
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt72t99b_2026.png",
+   "baseline_chip": "chips/PK-tt72t99b_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt72tgmg",
+  "lat": 29.637578,
+  "lon": 72.330931,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_43RBN_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.634,
+   "probs": {
+    "FCBK": 0.9939,
+    "Zigzag": 0.0061
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt72tgmg_2026.png",
+   "baseline_chip": "chips/PK-tt72tgmg_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt72vtmd",
+  "lat": 29.692314,
+  "lon": 72.319585,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_43RBN_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.742,
+   "probs": {
+    "FCBK": 0.9994,
+    "Zigzag": 0.0006
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt72vtmd_2026.png",
+   "baseline_chip": "chips/PK-tt72vtmd_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt72y5te",
+  "lat": 29.682885,
+  "lon": 72.341569,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_43RBN_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.65,
+   "probs": {
+    "FCBK": 0.9917,
+    "Zigzag": 0.0083
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt72y5te_2026.png",
+   "baseline_chip": "chips/PK-tt72y5te_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt73jb42",
+  "lat": 29.707167,
+  "lon": 72.326233,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_43RBN_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.571,
+   "probs": {
+    "FCBK": 0.9987,
+    "Zigzag": 0.0013
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt73jb42_2026.png",
+   "baseline_chip": "chips/PK-tt73jb42_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt73r9vu",
+  "lat": 29.761345,
+  "lon": 72.408086,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_43RBN_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.704,
+   "probs": {
+    "FCBK": 0.9989,
+    "Zigzag": 0.0011
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt73r9vu_2026.png",
+   "baseline_chip": "chips/PK-tt73r9vu_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt76n3r5",
+  "lat": 29.890299,
+  "lon": 72.35489,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RBP_20261021_0_L2A",
+   "date": "2026-10-21",
+   "detected": true,
+   "det_conf": 0.346,
+   "probs": {
+    "FCBK": 0.9985,
+    "Zigzag": 0.0015
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt76n3r5_2026.png",
+   "baseline_chip": "chips/PK-tt76n3r5_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt785ksw",
+  "lat": 29.557136,
+  "lon": 72.570939,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_43RBN_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tt785ksw_2026.png",
+   "baseline_chip": "chips/PK-tt785ksw_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tt78bjhq",
+  "lat": 29.691631,
+  "lon": 72.427884,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_43RBN_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.706,
+   "probs": {
+    "FCBK": 0.9989,
+    "Zigzag": 0.0011
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt78bjhq_2026.png",
+   "baseline_chip": "chips/PK-tt78bjhq_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt79578h",
+  "lat": 29.72707,
+  "lon": 72.565038,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_43RBN_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": true,
+   "det_conf": 0.733,
+   "probs": {
+    "FCBK": 0.9954,
+    "Zigzag": 0.0046
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt79578h_2026.png",
+   "baseline_chip": "chips/PK-tt79578h_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt796gww",
+  "lat": 29.771279,
+  "lon": 72.55192,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2C_43RBN_20261006_0_L2A",
+   "date": "2026-10-06",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tt796gww_2026.png",
+   "baseline_chip": "chips/PK-tt796gww_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tt7d4b4t",
+  "lat": 29.8838,
+  "lon": 72.546499,
+  "district": "Bahawalpur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RBP_20261021_0_L2A",
+   "date": "2026-10-21",
+   "detected": true,
+   "det_conf": 0.559,
+   "probs": {
+    "FCBK": 0.9991,
+    "Zigzag": 0.0009
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tt7d4b4t_2026.png",
+   "baseline_chip": "chips/PK-tt7d4b4t_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tt7z3n01",
+  "lat": 30.838829,
+  "lon": 72.817637,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RBQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.635,
+   "probs": {
+    "FCBK": 0.8605,
+    "Zigzag": 0.1395
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tt7z3n01_2026.png",
+   "baseline_chip": "chips/PK-tt7z3n01_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tt7zexe3",
+  "lat": 30.891053,
+  "lon": 72.931717,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RBQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.815,
+   "probs": {
+    "FCBK": 0.5178,
+    "Zigzag": 0.4822
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tt7zexe3_2026.png",
+   "baseline_chip": "chips/PK-tt7zexe3_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tteb1n8n",
+  "lat": 30.974236,
+  "lon": 72.81768,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RBQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.593,
+   "probs": {
+    "FCBK": 0.8831,
+    "Zigzag": 0.1169
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tteb1n8n_2026.png",
+   "baseline_chip": "chips/PK-tteb1n8n_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tteberwq",
+  "lat": 31.067782,
+  "lon": 72.925089,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RBQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.778,
+   "probs": {
+    "FCBK": 0.9951,
+    "Zigzag": 0.0049
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tteberwq_2026.png",
+   "baseline_chip": "chips/PK-tteberwq_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-ttebj36q",
+  "lat": 30.945561,
+  "lon": 73.007455,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RBQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.675,
+   "probs": {
+    "FCBK": 0.446,
+    "Zigzag": 0.554
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttebj36q_2026.png",
+   "baseline_chip": "chips/PK-ttebj36q_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttebw80z",
+  "lat": 31.026748,
+  "lon": 73.060377,
+  "district": "Faisalabad",
+  "baseline": null,
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.618,
+   "probs": {
+    "FCBK": 0.9998,
+    "Zigzag": 0.0002
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-ttebw80z_2026.png",
+   "baseline_chip": null
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-ttebxc8u",
+  "lat": 31.034355,
+  "lon": 73.11511,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.59,
+   "probs": {
+    "FCBK": 0.8539,
+    "Zigzag": 0.1461
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttebxc8u_2026.png",
+   "baseline_chip": "chips/PK-ttebxc8u_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttebyg6k",
+  "lat": 31.088017,
+  "lon": 73.073386,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.764,
+   "probs": {
+    "FCBK": 0.7601,
+    "Zigzag": 0.2399
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttebyg6k_2026.png",
+   "baseline_chip": "chips/PK-ttebyg6k_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttec0cnu",
+  "lat": 31.119544,
+  "lon": 72.815813,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RBQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttec0cnu_2026.png",
+   "baseline_chip": "chips/PK-ttec0cnu_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttec4nf1",
+  "lat": 31.150638,
+  "lon": 72.864336,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RBQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.775,
+   "probs": {
+    "FCBK": 0.9484,
+    "Zigzag": 0.0516
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttec4nf1_2026.png",
+   "baseline_chip": "chips/PK-ttec4nf1_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttecsp1u",
+  "lat": 31.240402,
+  "lon": 72.951722,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RBQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.792,
+   "probs": {
+    "FCBK": 0.6153,
+    "Zigzag": 0.3847
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttecsp1u_2026.png",
+   "baseline_chip": "chips/PK-ttecsp1u_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttecyxzt",
+  "lat": 31.288568,
+  "lon": 73.069592,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.739,
+   "probs": {
+    "FCBK": 0.9949,
+    "Zigzag": 0.0051
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-ttecyxzt_2026.png",
+   "baseline_chip": "chips/PK-ttecyxzt_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-ttef0zgv",
+  "lat": 31.332534,
+  "lon": 72.811633,
+  "district": "Faisalabad",
+  "baseline": null,
+  "observation": {
+   "scene_id": "S2B_43RBQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.665,
+   "probs": {
+    "FCBK": 0.995,
+    "Zigzag": 0.005
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-ttef0zgv_2026.png",
+   "baseline_chip": null
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-ttef35u8",
+  "lat": 31.353633,
+  "lon": 72.823642,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RBQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttef35u8_2026.png",
+   "baseline_chip": "chips/PK-ttef35u8_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttef4z49",
+  "lat": 31.327843,
+  "lon": 72.898033,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RBQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.772,
+   "probs": {
+    "FCBK": 0.3046,
+    "Zigzag": 0.6954
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttef4z49_2026.png",
+   "baseline_chip": "chips/PK-ttef4z49_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttef5t4j",
+  "lat": 31.317471,
+  "lon": 72.93013,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RBQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.758,
+   "probs": {
+    "FCBK": 0.7747,
+    "Zigzag": 0.2253
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttef5t4j_2026.png",
+   "baseline_chip": "chips/PK-ttef5t4j_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttefers0",
+  "lat": 31.418184,
+  "lon": 72.922087,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RBQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.736,
+   "probs": {
+    "FCBK": 0.247,
+    "Zigzag": 0.753
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttefers0_2026.png",
+   "baseline_chip": "chips/PK-ttefers0_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttefje6q",
+  "lat": 31.307972,
+  "lon": 73.018233,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.795,
+   "probs": {
+    "FCBK": 0.8317,
+    "Zigzag": 0.1683
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttefje6q_2026.png",
+   "baseline_chip": "chips/PK-ttefje6q_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttefjfgn",
+  "lat": 31.305295,
+  "lon": 73.030458,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.695,
+   "probs": {
+    "FCBK": 0.9895,
+    "Zigzag": 0.0105
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-ttefjfgn_2026.png",
+   "baseline_chip": "chips/PK-ttefjfgn_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-ttefjmk3",
+  "lat": 31.31814,
+  "lon": 73.010044,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttefjmk3_2026.png",
+   "baseline_chip": "chips/PK-ttefjmk3_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttefjq6k",
+  "lat": 31.324159,
+  "lon": 73.007448,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttefjq6k_2026.png",
+   "baseline_chip": "chips/PK-ttefjq6k_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttefjr6z",
+  "lat": 31.33026,
+  "lon": 73.007942,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.464,
+   "probs": {
+    "FCBK": 0.808,
+    "Zigzag": 0.192
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttefjr6z_2026.png",
+   "baseline_chip": "chips/PK-ttefjr6z_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttefjtwh",
+  "lat": 31.31999,
+  "lon": 73.023508,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttefjtwh_2026.png",
+   "baseline_chip": "chips/PK-ttefjtwh_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttefn678",
+  "lat": 31.301485,
+  "lon": 73.05324,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.642,
+   "probs": {
+    "FCBK": 0.5776,
+    "Zigzag": 0.4224
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttefn678_2026.png",
+   "baseline_chip": "chips/PK-ttefn678_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttefnk9n",
+  "lat": 31.31485,
+  "lon": 73.04969,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.787,
+   "probs": {
+    "FCBK": 0.3914,
+    "Zigzag": 0.6086
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttefnk9n_2026.png",
+   "baseline_chip": "chips/PK-ttefnk9n_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttefnw2t",
+  "lat": 31.32436,
+  "lon": 73.059837,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.81,
+   "probs": {
+    "FCBK": 0.8926,
+    "Zigzag": 0.1074
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttefnw2t_2026.png",
+   "baseline_chip": "chips/PK-ttefnw2t_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttefuxvj",
+  "lat": 31.464468,
+  "lon": 72.978082,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RBQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttefuxvj_2026.png",
+   "baseline_chip": "chips/PK-ttefuxvj_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tteg51vf",
+  "lat": 31.474884,
+  "lon": 72.91327,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RBQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tteg51vf_2026.png",
+   "baseline_chip": "chips/PK-tteg51vf_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttegn5ev",
+  "lat": 31.484991,
+  "lon": 73.042298,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttegn5ev_2026.png",
+   "baseline_chip": "chips/PK-ttegn5ev_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttegn9zy",
+  "lat": 31.475652,
+  "lon": 73.069978,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttegn9zy_2026.png",
+   "baseline_chip": "chips/PK-ttegn9zy_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttegyvfd",
+  "lat": 31.62869,
+  "lon": 73.073837,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SCR_20261021_0_L2A",
+   "date": "2026-10-21",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttegyvfd_2026.png",
+   "baseline_chip": "chips/PK-ttegyvfd_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttkwyyhq",
+  "lat": 30.751801,
+  "lon": 74.130778,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttkwyyhq_2026.png",
+   "baseline_chip": "chips/PK-ttkwyyhq_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttkxbhc7",
+  "lat": 30.920216,
+  "lon": 73.830129,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttkxbhc7_2026.png",
+   "baseline_chip": "chips/PK-ttkxbhc7_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttkxs37f",
+  "lat": 30.856828,
+  "lon": 74.020259,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttkxs37f_2026.png",
+   "baseline_chip": "chips/PK-ttkxs37f_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttkxztzj",
+  "lat": 30.926095,
+  "lon": 74.167443,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttkxztzj_2026.png",
+   "baseline_chip": "chips/PK-ttkxztzj_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttkz0sg2",
+  "lat": 30.787889,
+  "lon": 74.206234,
+  "district": "Kasur",
+  "baseline": null,
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.608,
+   "probs": {
+    "FCBK": 0.9306,
+    "Zigzag": 0.0694
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttkz0sg2_2026.png",
+   "baseline_chip": null
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttkz2s41",
+  "lat": 30.827963,
+  "lon": 74.204609,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttkz2s41_2026.png",
+   "baseline_chip": "chips/PK-ttkz2s41_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tts02hj7",
+  "lat": 31.0041,
+  "lon": 73.132527,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tts02hj7_2026.png",
+   "baseline_chip": null
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tts08hhn",
+  "lat": 31.048511,
+  "lon": 73.130754,
+  "district": "Faisalabad",
+  "baseline": null,
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.802,
+   "probs": {
+    "FCBK": 0.5255,
+    "Zigzag": 0.4745
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts08hhn_2026.png",
+   "baseline_chip": null
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts1m0hz",
+  "lat": 31.158465,
+  "lon": 73.351479,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.768,
+   "probs": {
+    "FCBK": 0.9924,
+    "Zigzag": 0.0076
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tts1m0hz_2026.png",
+   "baseline_chip": "chips/PK-tts1m0hz_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tts2jzmn",
+  "lat": 30.978401,
+  "lon": 73.736211,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tts2jzmn_2026.png",
+   "baseline_chip": "chips/PK-tts2jzmn_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tts2mu2u",
+  "lat": 31.00559,
+  "lon": 73.730571,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.737,
+   "probs": {
+    "FCBK": 0.659,
+    "Zigzag": 0.341
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts2mu2u_2026.png",
+   "baseline_chip": null
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts2tfj1",
+  "lat": 31.036574,
+  "lon": 73.736165,
+  "district": "Kasur",
+  "baseline": null,
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.813,
+   "probs": {
+    "FCBK": 0.6133,
+    "Zigzag": 0.3867
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts2tfj1_2026.png",
+   "baseline_chip": null
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts2wb9c",
+  "lat": 31.028447,
+  "lon": 73.775703,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.753,
+   "probs": {
+    "FCBK": 0.7555,
+    "Zigzag": 0.2445
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts2wb9c_2026.png",
+   "baseline_chip": "chips/PK-tts2wb9c_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts31j25",
+  "lat": 31.142703,
+  "lon": 73.520555,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.793,
+   "probs": {
+    "FCBK": 0.4888,
+    "Zigzag": 0.5112
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts31j25_2026.png",
+   "baseline_chip": "chips/PK-tts31j25_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts3jk46",
+  "lat": 31.135739,
+  "lon": 73.710584,
+  "district": "Kasur",
+  "baseline": null,
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.608,
+   "probs": {
+    "FCBK": 0.9364,
+    "Zigzag": 0.0636
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts3jk46_2026.png",
+   "baseline_chip": null
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts3zvgp",
+  "lat": 31.277956,
+  "lon": 73.821485,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.643,
+   "probs": {
+    "FCBK": 0.2874,
+    "Zigzag": 0.7126
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts3zvgp_2026.png",
+   "baseline_chip": "chips/PK-tts3zvgp_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts49fq4",
+  "lat": 31.389713,
+  "lon": 73.210344,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.72,
+   "probs": {
+    "FCBK": 0.6306,
+    "Zigzag": 0.3694
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts49fq4_2026.png",
+   "baseline_chip": "chips/PK-tts49fq4_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts4dnpd",
+  "lat": 31.410423,
+  "lon": 73.223421,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.634,
+   "probs": {
+    "FCBK": 0.2401,
+    "Zigzag": 0.7599
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts4dnpd_2026.png",
+   "baseline_chip": "chips/PK-tts4dnpd_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts4fgf7",
+  "lat": 31.44203,
+  "lon": 73.24899,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tts4fgf7_2026.png",
+   "baseline_chip": "chips/PK-tts4fgf7_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tts4fwpf",
+  "lat": 31.454333,
+  "lon": 73.245636,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tts4fwpf_2026.png",
+   "baseline_chip": "chips/PK-tts4fwpf_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tts4jyu3",
+  "lat": 31.326358,
+  "lon": 73.383666,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tts4jyu3_2026.png",
+   "baseline_chip": "chips/PK-tts4jyu3_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tts4k6nj",
+  "lat": 31.344862,
+  "lon": 73.320109,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.597,
+   "probs": {
+    "FCBK": 0.9888,
+    "Zigzag": 0.0112
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tts4k6nj_2026.png",
+   "baseline_chip": "chips/PK-tts4k6nj_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tts4qtg9",
+  "lat": 31.36491,
+  "lon": 73.415721,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.757,
+   "probs": {
+    "FCBK": 0.2634,
+    "Zigzag": 0.7366
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts4qtg9_2026.png",
+   "baseline_chip": "chips/PK-tts4qtg9_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts51hsu",
+  "lat": 31.49034,
+  "lon": 73.175693,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.801,
+   "probs": {
+    "FCBK": 0.894,
+    "Zigzag": 0.106
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts51hsu_2026.png",
+   "baseline_chip": null
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts51my8",
+  "lat": 31.496432,
+  "lon": 73.189054,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.825,
+   "probs": {
+    "FCBK": 0.7458,
+    "Zigzag": 0.2542
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts51my8_2026.png",
+   "baseline_chip": null
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts5h5ve",
+  "lat": 31.48597,
+  "lon": 73.30838,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.646,
+   "probs": {
+    "FCBK": 0.9432,
+    "Zigzag": 0.0568
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts5h5ve_2026.png",
+   "baseline_chip": "chips/PK-tts5h5ve_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts5hjqw",
+  "lat": 31.494868,
+  "lon": 73.309904,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.607,
+   "probs": {
+    "FCBK": 0.9948,
+    "Zigzag": 0.0052
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tts5hjqw_2026.png",
+   "baseline_chip": null
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tts5hvwb",
+  "lat": 31.495142,
+  "lon": 73.343294,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.725,
+   "probs": {
+    "FCBK": 0.7993,
+    "Zigzag": 0.2007
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts5hvwb_2026.png",
+   "baseline_chip": null
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts5jn2t",
+  "lat": 31.500137,
+  "lon": 73.345655,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.63,
+   "probs": {
+    "FCBK": 0.9925,
+    "Zigzag": 0.0075
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tts5jn2t_2026.png",
+   "baseline_chip": null
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tts5kbg2",
+  "lat": 31.513,
+  "lon": 73.338448,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tts5kbg2_2026.png",
+   "baseline_chip": "chips/PK-tts5kbg2_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tts5rx09",
+  "lat": 31.547465,
+  "lon": 73.455311,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261001_0_L2A",
+   "date": "2026-10-01",
+   "detected": true,
+   "det_conf": 0.674,
+   "probs": {
+    "FCBK": 0.9967,
+    "Zigzag": 0.0033
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tts5rx09_2026.png",
+   "baseline_chip": "chips/PK-tts5rx09_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tts67jh3",
+  "lat": 31.360727,
+  "lon": 73.614385,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.655,
+   "probs": {
+    "FCBK": 0.9855,
+    "Zigzag": 0.0145
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts67jh3_2026.png",
+   "baseline_chip": "chips/PK-tts67jh3_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts6wme9",
+  "lat": 31.407468,
+  "lon": 73.756131,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.738,
+   "probs": {
+    "FCBK": 0.6154,
+    "Zigzag": 0.3846
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts6wme9_2026.png",
+   "baseline_chip": "chips/PK-tts6wme9_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts7sexp",
+  "lat": 31.573261,
+  "lon": 73.684019,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43SCR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.732,
+   "probs": {
+    "FCBK": 0.8315,
+    "Zigzag": 0.1685
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts7sexp_2026.png",
+   "baseline_chip": "chips/PK-tts7sexp_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts7t1x2",
+  "lat": 31.561145,
+  "lon": 73.706471,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SCR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tts7t1x2_2026.png",
+   "baseline_chip": "chips/PK-tts7t1x2_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tts7trxr",
+  "lat": 31.595289,
+  "lon": 73.717335,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SCR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.815,
+   "probs": {
+    "FCBK": 0.4997,
+    "Zigzag": 0.5003
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts7trxr_2026.png",
+   "baseline_chip": "chips/PK-tts7trxr_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts7v43b",
+  "lat": 31.609202,
+  "lon": 73.698713,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SCR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.783,
+   "probs": {
+    "FCBK": 0.829,
+    "Zigzag": 0.171
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts7v43b_2026.png",
+   "baseline_chip": "chips/PK-tts7v43b_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts7zz6c",
+  "lat": 31.636736,
+  "lon": 73.821034,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SCR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tts7zz6c_2026.png",
+   "baseline_chip": "chips/PK-tts7zz6c_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tts8096y",
+  "lat": 30.945469,
+  "lon": 73.85421,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.756,
+   "probs": {
+    "FCBK": 0.5279,
+    "Zigzag": 0.4721
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts8096y_2026.png",
+   "baseline_chip": "chips/PK-tts8096y_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts82871",
+  "lat": 30.983146,
+  "lon": 73.854532,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.769,
+   "probs": {
+    "FCBK": 0.8199,
+    "Zigzag": 0.1801
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts82871_2026.png",
+   "baseline_chip": "chips/PK-tts82871_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts82b2h",
+  "lat": 30.983661,
+  "lon": 73.861306,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.719,
+   "probs": {
+    "FCBK": 0.9614,
+    "Zigzag": 0.0386
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts82b2h_2026.png",
+   "baseline_chip": "chips/PK-tts82b2h_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts87vgu",
+  "lat": 31.013823,
+  "lon": 73.998095,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.761,
+   "probs": {
+    "FCBK": 0.4688,
+    "Zigzag": 0.5312
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts87vgu_2026.png",
+   "baseline_chip": "chips/PK-tts87vgu_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts88d60",
+  "lat": 31.037755,
+  "lon": 73.852964,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tts88d60_2026.png",
+   "baseline_chip": "chips/PK-tts88d60_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tts8v0t0",
+  "lat": 31.072153,
+  "lon": 74.054772,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.695,
+   "probs": {
+    "FCBK": 0.7747,
+    "Zigzag": 0.2253
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts8v0t0_2026.png",
+   "baseline_chip": "chips/PK-tts8v0t0_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts92eqt",
+  "lat": 31.176108,
+  "lon": 73.859355,
+  "district": "Kasur",
+  "baseline": null,
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.613,
+   "probs": {
+    "FCBK": 0.4811,
+    "Zigzag": 0.5189
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts92eqt_2026.png",
+   "baseline_chip": null
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts94t3h",
+  "lat": 31.142896,
+  "lon": 73.939489,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RCQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.823,
+   "probs": {
+    "FCBK": 0.4107,
+    "Zigzag": 0.5893
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts94t3h_2026.png",
+   "baseline_chip": "chips/PK-tts94t3h_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts94v3y",
+  "lat": 31.143153,
+  "lon": 73.951467,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tts94v3y_2026.png",
+   "baseline_chip": "chips/PK-tts94v3y_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tts975ks",
+  "lat": 31.175772,
+  "lon": 73.9662,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.76,
+   "probs": {
+    "FCBK": 0.3639,
+    "Zigzag": 0.6361
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts975ks_2026.png",
+   "baseline_chip": "chips/PK-tts975ks_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts97fre",
+  "lat": 31.17011,
+  "lon": 74.003345,
+  "district": "Kasur",
+  "baseline": null,
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.759,
+   "probs": {
+    "FCBK": 0.9999,
+    "Zigzag": 0.0001
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tts97fre_2026.png",
+   "baseline_chip": null
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tts97pgk",
+  "lat": 31.200592,
+  "lon": 73.964591,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.782,
+   "probs": {
+    "FCBK": 0.9917,
+    "Zigzag": 0.0083
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tts97pgk_2026.png",
+   "baseline_chip": "chips/PK-tts97pgk_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tts9g3qb",
+  "lat": 31.252124,
+  "lon": 73.98055,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.773,
+   "probs": {
+    "FCBK": 0.7727,
+    "Zigzag": 0.2273
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts9g3qb_2026.png",
+   "baseline_chip": "chips/PK-tts9g3qb_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts9nb2h",
+  "lat": 31.115393,
+  "lon": 74.125008,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tts9nb2h_2026.png",
+   "baseline_chip": "chips/PK-tts9nb2h_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tts9nnrx",
+  "lat": 31.148985,
+  "lon": 74.102432,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tts9nnrx_2026.png",
+   "baseline_chip": "chips/PK-tts9nnrx_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tts9pvwu",
+  "lat": 31.144338,
+  "lon": 74.178298,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.701,
+   "probs": {
+    "FCBK": 0.9996,
+    "Zigzag": 0.0004
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-tts9pvwu_2026.png",
+   "baseline_chip": "chips/PK-tts9pvwu_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-tts9qm83",
+  "lat": 31.187644,
+  "lon": 74.10344,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.755,
+   "probs": {
+    "FCBK": 0.9332,
+    "Zigzag": 0.0668
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts9qm83_2026.png",
+   "baseline_chip": "chips/PK-tts9qm83_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts9wg8p",
+  "lat": 31.22166,
+  "lon": 74.12502,
+  "district": "Kasur",
+  "baseline": null,
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.734,
+   "probs": {
+    "FCBK": 0.7148,
+    "Zigzag": 0.2852
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts9wg8p_2026.png",
+   "baseline_chip": null
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts9wqxh",
+  "lat": 31.237734,
+  "lon": 74.112587,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.706,
+   "probs": {
+    "FCBK": 0.3481,
+    "Zigzag": 0.6519
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts9wqxh_2026.png",
+   "baseline_chip": "chips/PK-tts9wqxh_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts9wygy",
+  "lat": 31.239365,
+  "lon": 74.129939,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-tts9wygy_2026.png",
+   "baseline_chip": "chips/PK-tts9wygy_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-tts9wyn1",
+  "lat": 31.234305,
+  "lon": 74.133223,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.789,
+   "probs": {
+    "FCBK": 0.3093,
+    "Zigzag": 0.6907
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts9wyn1_2026.png",
+   "baseline_chip": "chips/PK-tts9wyn1_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-tts9y8q7",
+  "lat": 31.247034,
+  "lon": 74.122651,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.609,
+   "probs": {
+    "FCBK": 0.5443,
+    "Zigzag": 0.4557
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-tts9y8q7_2026.png",
+   "baseline_chip": "chips/PK-tts9y8q7_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttsb2bvy",
+  "lat": 30.986705,
+  "lon": 74.220837,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttsb2bvy_2026.png",
+   "baseline_chip": "chips/PK-ttsb2bvy_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttsburj0",
+  "lat": 31.107871,
+  "lon": 74.373486,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.685,
+   "probs": {
+    "FCBK": 0.9936,
+    "Zigzag": 0.0064
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-ttsburj0_2026.png",
+   "baseline_chip": "chips/PK-ttsburj0_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-ttsbuw0h",
+  "lat": 31.103131,
+  "lon": 74.377606,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttsbuw0h_2026.png",
+   "baseline_chip": "chips/PK-ttsbuw0h_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttsc203e",
+  "lat": 31.159261,
+  "lon": 74.181942,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttsc203e_2026.png",
+   "baseline_chip": "chips/PK-ttsc203e_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttsc4wv5",
+  "lat": 31.150931,
+  "lon": 74.296507,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttsc4wv5_2026.png",
+   "baseline_chip": "chips/PK-ttsc4wv5_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttsc8e33",
+  "lat": 31.21922,
+  "lon": 74.203393,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.787,
+   "probs": {
+    "FCBK": 0.6048,
+    "Zigzag": 0.3952
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttsc8e33_2026.png",
+   "baseline_chip": "chips/PK-ttsc8e33_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttsc9bpp",
+  "lat": 31.202508,
+  "lon": 74.266484,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.341,
+   "probs": {
+    "FCBK": 0.8637,
+    "Zigzag": 0.1363
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttsc9bpp_2026.png",
+   "baseline_chip": "chips/PK-ttsc9bpp_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttscc0yj",
+  "lat": 31.250134,
+  "lon": 74.232203,
+  "district": "Lahore",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.784,
+   "probs": {
+    "FCBK": 0.3732,
+    "Zigzag": 0.6268
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttscc0yj_2026.png",
+   "baseline_chip": "chips/PK-ttscc0yj_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttschc71",
+  "lat": 31.120465,
+  "lon": 74.392598,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttschc71_2026.png",
+   "baseline_chip": "chips/PK-ttschc71_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttscj6dr",
+  "lat": 31.128274,
+  "lon": 74.413627,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.593,
+   "probs": {
+    "FCBK": 0.6728,
+    "Zigzag": 0.3272
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttscj6dr_2026.png",
+   "baseline_chip": "chips/PK-ttscj6dr_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttscj6tr",
+  "lat": 31.12832,
+  "lon": 74.417768,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.572,
+   "probs": {
+    "FCBK": 0.2621,
+    "Zigzag": 0.7379
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttscj6tr_2026.png",
+   "baseline_chip": "chips/PK-ttscj6tr_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttscjreq",
+  "lat": 31.155605,
+  "lon": 74.415123,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.518,
+   "probs": {
+    "FCBK": 0.9935,
+    "Zigzag": 0.0065
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-ttscjreq_2026.png",
+   "baseline_chip": "chips/PK-ttscjreq_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-ttscmtrv",
+  "lat": 31.186985,
+  "lon": 74.432095,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.575,
+   "probs": {
+    "FCBK": 0.3304,
+    "Zigzag": 0.6696
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttscmtrv_2026.png",
+   "baseline_chip": "chips/PK-ttscmtrv_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttscmvqk",
+  "lat": 31.186884,
+  "lon": 74.441189,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.684,
+   "probs": {
+    "FCBK": 0.1717,
+    "Zigzag": 0.8283
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttscmvqk_2026.png",
+   "baseline_chip": "chips/PK-ttscmvqk_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttscnx72",
+  "lat": 31.15311,
+  "lon": 74.470131,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.758,
+   "probs": {
+    "FCBK": 0.5758,
+    "Zigzag": 0.4242
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttscnx72_2026.png",
+   "baseline_chip": "chips/PK-ttscnx72_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttscq82y",
+  "lat": 31.159778,
+  "lon": 74.466548,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.478,
+   "probs": {
+    "FCBK": 0.3687,
+    "Zigzag": 0.6313
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttscq82y_2026.png",
+   "baseline_chip": "chips/PK-ttscq82y_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttsct845",
+  "lat": 31.201767,
+  "lon": 74.424223,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.716,
+   "probs": {
+    "FCBK": 0.2525,
+    "Zigzag": 0.7475
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttsct845_2026.png",
+   "baseline_chip": "chips/PK-ttsct845_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttsdjycb",
+  "lat": 31.326221,
+  "lon": 74.083262,
+  "district": "Lahore",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.767,
+   "probs": {
+    "FCBK": 0.3222,
+    "Zigzag": 0.6778
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttsdjycb_2026.png",
+   "baseline_chip": "chips/PK-ttsdjycb_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttsdru2n",
+  "lat": 31.357417,
+  "lon": 74.168838,
+  "district": "Lahore",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttsdru2n_2026.png",
+   "baseline_chip": "chips/PK-ttsdru2n_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttsewk69",
+  "lat": 31.57635,
+  "lon": 74.106315,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.692,
+   "probs": {
+    "FCBK": 0.9731,
+    "Zigzag": 0.0269
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttsewk69_2026.png",
+   "baseline_chip": "chips/PK-ttsewk69_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttsexdrb",
+  "lat": 31.565202,
+  "lon": 74.168538,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.569,
+   "probs": {
+    "FCBK": 0.9974,
+    "Zigzag": 0.0026
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-ttsexdrb_2026.png",
+   "baseline_chip": "chips/PK-ttsexdrb_2023.png"
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-ttsezyqw",
+  "lat": 31.632178,
+  "lon": 74.177911,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttsezyqw_2026.png",
+   "baseline_chip": "chips/PK-ttsezyqw_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttsf1vrd",
+  "lat": 31.31826,
+  "lon": 74.267193,
+  "district": "Lahore",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.76,
+   "probs": {
+    "FCBK": 0.6698,
+    "Zigzag": 0.3302
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttsf1vrd_2026.png",
+   "baseline_chip": "chips/PK-ttsf1vrd_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttsf4hhn",
+  "lat": 31.31212,
+  "lon": 74.273283,
+  "district": "Lahore",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttsf4hhn_2026.png",
+   "baseline_chip": "chips/PK-ttsf4hhn_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttsfscc4",
+  "lat": 31.386978,
+  "lon": 74.389939,
+  "district": "Lahore",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttsfscc4_2026.png",
+   "baseline_chip": "chips/PK-ttsfscc4_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttsfvwj5",
+  "lat": 31.454417,
+  "lon": 74.428429,
+  "district": "Lahore",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43RDQ_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttsfvwj5_2026.png",
+   "baseline_chip": "chips/PK-ttsfvwj5_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttsgrr2j",
+  "lat": 31.549523,
+  "lon": 74.498357,
+  "district": "Lahore",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.823,
+   "probs": {
+    "FCBK": 0.223,
+    "Zigzag": 0.777
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttsgrr2j_2026.png",
+   "baseline_chip": "chips/PK-ttsgrr2j_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttsgv86s",
+  "lat": 31.598772,
+  "lon": 74.424867,
+  "district": "Lahore",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttsgv86s_2026.png",
+   "baseline_chip": "chips/PK-ttsgv86s_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttsgx0t1",
+  "lat": 31.555728,
+  "lon": 74.494368,
+  "district": "Lahore",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttsgx0t1_2026.png",
+   "baseline_chip": "chips/PK-ttsgx0t1_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttsh2vs8",
+  "lat": 31.714891,
+  "lon": 73.164173,
+  "district": "Faisalabad",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SCR_20261021_0_L2A",
+   "date": "2026-10-21",
+   "detected": true,
+   "det_conf": 0.768,
+   "probs": {
+    "FCBK": 0.6245,
+    "Zigzag": 0.3755
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttsh2vs8_2026.png",
+   "baseline_chip": "chips/PK-ttsh2vs8_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttshj99w",
+  "lat": 31.649903,
+  "lon": 73.368917,
+  "district": "Sheikhpura",
+  "baseline": null,
+  "observation": {
+   "scene_id": "S2B_43SCR_20261021_0_L2A",
+   "date": "2026-10-21",
+   "detected": true,
+   "det_conf": 0.603,
+   "probs": {
+    "FCBK": 0.9963,
+    "Zigzag": 0.0037
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-ttshj99w_2026.png",
+   "baseline_chip": null
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-ttshx7ju",
+  "lat": 31.745788,
+  "lon": 73.451577,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43SCR_20261021_0_L2A",
+   "date": "2026-10-21",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttshx7ju_2026.png",
+   "baseline_chip": "chips/PK-ttshx7ju_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttsk130f",
+  "lat": 31.646552,
+  "lon": 73.532843,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SCR_20261021_0_L2A",
+   "date": "2026-10-21",
+   "detected": true,
+   "det_conf": 0.633,
+   "probs": {
+    "FCBK": 0.9822,
+    "Zigzag": 0.0178
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttsk130f_2026.png",
+   "baseline_chip": "chips/PK-ttsk130f_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttsk717x",
+  "lat": 31.692809,
+  "lon": 73.613484,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SCR_20261021_0_L2A",
+   "date": "2026-10-21",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttsk717x_2026.png",
+   "baseline_chip": "chips/PK-ttsk717x_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttskvc0n",
+  "lat": 31.778988,
+  "lon": 73.729477,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SCR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.728,
+   "probs": {
+    "FCBK": 0.3235,
+    "Zigzag": 0.6765
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttskvc0n_2026.png",
+   "baseline_chip": "chips/PK-ttskvc0n_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttskwr6n",
+  "lat": 31.769451,
+  "lon": 73.754174,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43SCR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttskwr6n_2026.png",
+   "baseline_chip": "chips/PK-ttskwr6n_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttss2835",
+  "lat": 31.686518,
+  "lon": 73.851618,
+  "district": "Sheikhpura",
+  "baseline": null,
+  "observation": {
+   "scene_id": "S2B_43SCR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.687,
+   "probs": {
+    "FCBK": 0.6423,
+    "Zigzag": 0.3577
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttss2835_2026.png",
+   "baseline_chip": null
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttss47b3",
+  "lat": 31.661486,
+  "lon": 73.927351,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SCR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.657,
+   "probs": {
+    "FCBK": 0.4362,
+    "Zigzag": 0.5638
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttss47b3_2026.png",
+   "baseline_chip": "chips/PK-ttss47b3_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttss70sy",
+  "lat": 31.688491,
+  "lon": 73.966758,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttss70sy_2026.png",
+   "baseline_chip": "chips/PK-ttss70sy_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttss7210",
+  "lat": 31.684587,
+  "lon": 73.972612,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttss7210_2026.png",
+   "baseline_chip": "chips/PK-ttss7210_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttss79sb",
+  "lat": 31.692828,
+  "lon": 73.988573,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttss79sb_2026.png",
+   "baseline_chip": "chips/PK-ttss79sb_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttssdvt4",
+  "lat": 31.759117,
+  "lon": 73.955935,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.499,
+   "probs": {
+    "FCBK": 0.7103,
+    "Zigzag": 0.2897
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttssdvt4_2026.png",
+   "baseline_chip": "chips/PK-ttssdvt4_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttssgecu",
+  "lat": 31.793875,
+  "lon": 73.984496,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttssgecu_2026.png",
+   "baseline_chip": "chips/PK-ttssgecu_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttsskm2k",
+  "lat": 31.714097,
+  "lon": 74.015281,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.802,
+   "probs": {
+    "FCBK": 0.5073,
+    "Zigzag": 0.4927
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttsskm2k_2026.png",
+   "baseline_chip": "chips/PK-ttsskm2k_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttssku81",
+  "lat": 31.709528,
+  "lon": 74.036924,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttssku81_2026.png",
+   "baseline_chip": "chips/PK-ttssku81_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttsskuw9",
+  "lat": 31.709583,
+  "lon": 74.046054,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.763,
+   "probs": {
+    "FCBK": 0.4117,
+    "Zigzag": 0.5883
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttsskuw9_2026.png",
+   "baseline_chip": "chips/PK-ttsskuw9_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttssm7ck",
+  "lat": 31.705975,
+  "lon": 74.06079,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.623,
+   "probs": {
+    "FCBK": 0.6115,
+    "Zigzag": 0.3885
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttssm7ck_2026.png",
+   "baseline_chip": "chips/PK-ttssm7ck_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttsu7yxm",
+  "lat": 31.721159,
+  "lon": 74.35458,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.679,
+   "probs": {
+    "FCBK": 0.6941,
+    "Zigzag": 0.3059
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttsu7yxm_2026.png",
+   "baseline_chip": "chips/PK-ttsu7yxm_2023.png"
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-ttsufphn",
+  "lat": 31.812023,
+  "lon": 74.273155,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttsufphn_2026.png",
+   "baseline_chip": "chips/PK-ttsufphn_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttsukxw9",
+  "lat": 31.725994,
+  "lon": 74.386701,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttsukxw9_2026.png",
+   "baseline_chip": "chips/PK-ttsukxw9_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttsv1ejs",
+  "lat": 31.833647,
+  "lon": 74.253346,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttsv1ejs_2026.png",
+   "baseline_chip": "chips/PK-ttsv1ejs_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttsv4jmx",
+  "lat": 31.846485,
+  "lon": 74.27545,
+  "district": "Sheikhpura",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": "chips/PK-ttsv4jmx_2026.png",
+   "baseline_chip": "chips/PK-ttsv4jmx_2023.png"
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-ttt58m0u",
+  "lat": 31.580999,
+  "lon": 74.543313,
+  "district": "Lahore",
+  "baseline": {
+   "source": "SentinelKilnDB hand label",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "S2B_43SDR_20261018_0_L2A",
+   "date": "2026-10-18",
+   "detected": true,
+   "det_conf": 0.76,
+   "probs": {
+    "FCBK": 0.2797,
+    "Zigzag": 0.7203
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": "chips/PK-ttt58m0u_2026.png",
+   "baseline_chip": "chips/PK-ttt58m0u_2023.png"
+  },
+  "status": "UNDETERMINED"
+ }
+]
