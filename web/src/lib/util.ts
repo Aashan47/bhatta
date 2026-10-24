@@ -1,0 +1,121 @@
+import { useCallback, useEffect, useRef, useState } from "react";
+import type { Strings } from "../i18n/en";
+import type { ChainEvent, KilnClass, KilnRecord, Range, Status } from "../types";
+
+export interface AsyncState<T> {
+  data: T | undefined;
+  error: Error | undefined;
+  loading: boolean;
+  reload: () => void;
+}
+
+/** Minimal data hook: runs fn when deps change, ignores stale responses. */
+export function useAsync<T>(fn: () => Promise<T>, deps: unknown[]): AsyncState<T> {
+  const [state, setState] = useState<{ data?: T; error?: Error; loading: boolean }>({ loading: true });
+  const [tick, setTick] = useState(0);
+  const seq = useRef(0);
+  useEffect(() => {
+    const my = ++seq.current;
+    setState((s) => ({ ...s, loading: true, error: undefined }));
+    fn().then(
+      (data) => my === seq.current && setState({ data, loading: false }),
+      (error: unknown) =>
+        my === seq.current &&
+        setState({ error: error instanceof Error ? error : new Error(String(error)), loading: false }),
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [...deps, tick]);
+  const reload = useCallback(() => setTick((t) => t + 1), []);
+  return { data: state.data, error: state.error, loading: state.loading, reload };
+}
+
+export function seasonLabel(season: number, lang: string): string {
+  const y = Math.floor(season / 100);
+  const m = season % 100;
+  const d = new Date(Date.UTC(y, m - 1, 1));
+  return d.toLocaleDateString(lang === "ur" ? "ur-PK" : "en-GB", { month: "long", year: "numeric", timeZone: "UTC" });
+}
+
+export function dateLabel(iso: string, lang: string, withTime = false): string {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleString(lang === "ur" ? "ur-PK" : "en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    ...(withTime ? { hour: "2-digit", minute: "2-digit", timeZone: "Asia/Karachi" } : { timeZone: "UTC" }),
+    numberingSystem: "latn",
+  });
+}
+
+export function pctStr(x: number | null | undefined, digits = 1): string {
+  if (x === null || x === undefined) return "n/a";
+  return `${(x * 100).toFixed(digits)}%`;
+}
+
+export function rangeStr(r: Range, digits = 0): string {
+  const f = (x: number) => x.toLocaleString("en", { maximumFractionDigits: digits });
+  return `${f(r.low)}–${f(r.high)}`;
+}
+
+/** The conformal set, explained in words. */
+export function setInWords(t: Strings, status: Status, set: KilnClass[], alpha: number): string {
+  if (status === "NOT_DETECTED") return t.set.notSeen;
+  if (set.length === 1) {
+    const only = set[0]!;
+    return t.set.only(1 - alpha, only === "Zigzag" ? t.status.ZIGZAG : t.status.FCBK);
+  }
+  if (set.length === 2) return t.set.both;
+  return t.set.empty;
+}
+
+export type CertState = "certified" | "pending" | "contradicted";
+
+export interface Certificate {
+  state: CertState;
+  missing: ("sat" | "proof" | "inspector")[];
+  satelliteProven: boolean;
+  lastFinding: number | null;
+  inspector: string | null;
+}
+
+/** Certificate rule from PRODUCT.md: satellite set {Zigzag} proven against the root AND an inspector's
+ *  Zigzag confirmed, with no FCBK found finding outstanding. Computed from the record's events. */
+export function certificateFor(rec: KilnRecord): Certificate {
+  const ev = rec.events;
+  const findings = ev.filter((e) => e.type === "Finding");
+  const fcbkFound = findings.some((e) => Number(e.detail.finding) === 2);
+  const confirmed = findings.filter((e) => Number(e.detail.finding) === 1);
+  const conflict = ev.some((e) => e.type === "Conflict");
+  const proven = ev.some((e) => e.type === "SatelliteProven");
+  const last = findings.length ? findings[findings.length - 1]! : null;
+  const satZig = rec.status === "ZIGZAG";
+  const base = {
+    satelliteProven: proven,
+    lastFinding: last ? Number(last.detail.finding) : null,
+    inspector: confirmed.length ? String(confirmed[confirmed.length - 1]!.detail.inspector ?? "") : null,
+  };
+  if (conflict || fcbkFound || (rec.status === "FCBK" && confirmed.length > 0)) {
+    return { state: "contradicted", missing: [], ...base };
+  }
+  const missing: Certificate["missing"] = [];
+  if (!satZig) missing.push("sat");
+  else if (!proven) missing.push("proof");
+  if (!confirmed.length) missing.push("inspector");
+  return { state: missing.length ? "pending" : "certified", missing, ...base };
+}
+
+export function explorerTx(explorer: string, tx: string) {
+  return `${explorer.replace(/\/$/, "")}/tx/${tx}`;
+}
+export function explorerAddress(explorer: string, a: string) {
+  return `${explorer.replace(/\/$/, "")}/address/${a}`;
+}
+
+export function sortEvents(ev: ChainEvent[]): ChainEvent[] {
+  return ev.slice().sort((a, b) => a.block - b.block);
+}
+
+export function prefersReducedMotion(): boolean {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
