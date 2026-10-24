@@ -1,33 +1,44 @@
 /**
- * Puts real events on the live ledger for the demo, using the published season file:
- *   - proves satellite records for a few kilns (permissionless)
- *   - the demo inspector signs EIP-712 findings OFFLINE; the deployer relays them (the inspector
- *     key never holds gas)
- *   - produces a certificate, a Conflict in each direction, a revision, and a dispute
+ * Puts real events on the live ledger for the demo, using the published season file. Inspector A
+ * and inspector B sign EIP-712 findings OFFLINE; the deployer relays them (inspector keys never
+ * hold gas). Written for the real model output, where satellite sets are {FCBK} or {FCBK, Zigzag},
+ * so satellite statuses are FCBK, UNDETERMINED or NOT_DETECTED:
+ *   1. Two-inspector certificate: an UNDETERMINED kiln, both inspectors sign ZIGZAG_CONFIRMED.
+ *   2. Conflict, satellite first: satellite FCBK proven, then inspector A signs ZIGZAG_CONFIRMED.
+ *   3. The public veto: inspector A certifies an unproven kiln, then anyone proves its satellite
+ *      FCBK leaf -> Conflict + CertificateWithdrawn.
+ *   4. A revision that keeps history (FCBK_FOUND -> NOT_OPERATING).
+ *   5. A relayed dispute on the satellite-first conflict.
  * Safe to re-run: steps already on chain are skipped. Findings carry demo evidence hashes
  * (sha256 of a short text marked DEMO), never real field evidence.
  */
 import * as fs from "fs";
 import * as path from "path";
+import { createHash } from "crypto";
 import { ethers, network } from "hardhat";
-import { deployerWallet, inspectorWallet, ledgerAt, saveDeployment, txLink } from "./lib/chain";
+import type { Wallet } from "ethers";
+import { deployerWallet, inspector2Wallet, inspectorWallet, ledgerAt, saveDeployment, txLink } from "./lib/chain";
 import { DATA_DIR, EIP712_NAME, EIP712_VERSION, FINDING, FINDING_TYPES, REVISION_TYPES, STATUS } from "./lib/encoding";
 
 const FINDING_NAME = ["", "ZIGZAG_CONFIRMED", "FCBK_FOUND", "NOT_OPERATING", "DEMOLISHED"];
+const demoHash = (text: string) => "0x" + createHash("sha256").update(`DEMO ${text}`).digest("hex");
 
 async function main() {
   const relayer = await deployerWallet();
-  const inspector = inspectorWallet();
+  const A = inspectorWallet();
+  const B = inspector2Wallet();
   const { d, ledger } = await ledgerAt(relayer);
   const { chainId } = await ethers.provider.getNetwork();
   const domain = { name: EIP712_NAME, version: EIP712_VERSION, chainId, verifyingContract: d.address };
 
   const role = await ledger.INSPECTOR_ROLE();
-  if (!(await ledger.hasRole(role, inspector.address))) {
-    const tx = await ledger.grantRole(role, inspector.address);
-    await tx.wait();
-    d.inspectors = { ...(d.inspectors || {}), [inspector.address]: tx.hash };
-    console.log(`granted INSPECTOR_ROLE to demo inspector ${inspector.address}`);
+  for (const w of [A, B]) {
+    if (!(await ledger.hasRole(role, w.address))) {
+      const tx = await ledger.grantRole(role, w.address);
+      await tx.wait();
+      d.inspectors = { ...(d.inspectors || {}), [w.address]: tx.hash };
+      console.log(`granted INSPECTOR_ROLE to ${w.address}`);
+    }
   }
 
   const season = Number(process.env.SEASON || Object.keys(d.season_txs || {}).sort().pop());
@@ -35,10 +46,9 @@ async function main() {
   const m = JSON.parse(fs.readFileSync(path.join(DATA_DIR, "merkle", `season-${season}.json`), "utf8"));
   const ids = Object.keys(m.leaves).sort();
   const byStatus = (s: number) => ids.filter((id) => m.leaves[id].status_code === s);
-  const zig = byStatus(STATUS.ZIGZAG);
   const fcbk = byStatus(STATUS.FCBK);
   const und = byStatus(STATUS.UNDETERMINED);
-  if (zig.length < 2 || fcbk.length < 1) throw new Error("need at least 2 ZIGZAG and 1 FCBK kilns in the season");
+  if (fcbk.length < 2 || und.length < 2) throw new Error("need at least 2 FCBK and 2 UNDETERMINED kilns in the season");
 
   const log: any[] = d.activity || [];
   const record = async (label: string, txp: Promise<any>) => {
@@ -67,69 +77,67 @@ async function main() {
     );
   };
 
-  const sign = async (id: string, finding: number, note: string, revision = false) => {
-    const L = m.leaves[id];
+  const sign = async (w: Wallet, id: string, finding: number, note: string, revision = false) => {
     const value = {
-      kilnId: L.kiln_id_bytes32,
+      kilnId: m.leaves[id].kiln_id_bytes32,
       season,
       finding,
-      evidenceHash: "0x" + require("crypto").createHash("sha256").update(`DEMO field note: ${note}`).digest("hex"),
-      nonce: await ledger.nonces(inspector.address),
+      evidenceHash: demoHash(`field note: ${note}`),
+      nonce: await ledger.nonces(w.address),
       deadline: BigInt(Math.floor(Date.now() / 1000) + 3600),
     };
-    const sig = await inspector.signTypedData(domain, revision ? REVISION_TYPES : FINDING_TYPES, value);
-    return [value.kilnId, value.season, value.finding, value.evidenceHash, inspector.address, value.nonce, value.deadline, sig] as const;
+    const sig = await w.signTypedData(domain, revision ? REVISION_TYPES : FINDING_TYPES, value);
+    return [value.kilnId, value.season, value.finding, value.evidenceHash, w.address, value.nonce, value.deadline, sig] as const;
   };
 
-  const attest = async (id: string, finding: number, note: string) => {
-    const L = m.leaves[id];
-    const h = await ledger.findingHistory(L.kiln_id_bytes32, season, inspector.address);
-    if (h.length) return console.log(`skip: ${id} already has a finding from the demo inspector`);
-    await record(`attest ${id} ${FINDING_NAME[finding]} (signed offline by ${inspector.address}, relayed)`, ledger.attest(...(await sign(id, finding, note))));
-  };
-
-  const revise = async (id: string, finding: number, note: string) => {
-    const L = m.leaves[id];
-    const h = await ledger.findingHistory(L.kiln_id_bytes32, season, inspector.address);
-    if (h.length !== 1) return console.log(`skip: revise ${id} (history length ${h.length})`);
-    await record(`revise ${id} -> ${FINDING_NAME[finding]}`, ledger.revise(...(await sign(id, finding, note, true))));
-  };
-
-  // 1. Agreement and a certificate: satellite ZIGZAG, inspector confirms.
-  await prove(zig[0]);
-  await attest(zig[0], FINDING.ZIGZAG_CONFIRMED, `${zig[0]} zigzag air path and blower seen on site`);
-
-  // 2. Conflict, satellite first: satellite FCBK, inspector signs ZIGZAG_CONFIRMED.
-  await prove(fcbk[0]);
-  await attest(fcbk[0], FINDING.ZIGZAG_CONFIRMED, `${fcbk[0]} inspector reports zigzag setting`);
-
-  // 3. Conflict, inspector first: FCBK_FOUND signed, then the satellite ZIGZAG record is proven.
-  await attest(zig[1], FINDING.FCBK_FOUND, `${zig[1]} straight-line firing seen on site`);
-  await prove(zig[1]);
-
-  // 4. A revision that keeps history: the inspector revisits and corrects the finding.
-  await revise(zig[1], FINDING.NOT_OPERATING, `${zig[1]} revisit: kiln cold, not firing this week`);
-
-  // 5. An undetermined kiln gets a field answer (no conflict: the satellite could not tell).
-  if (und.length) {
-    await prove(und[0]);
-    await attest(und[0], FINDING.FCBK_FOUND, `${und[0]} field visit resolves what 10 m imagery could not`);
-  }
-
-  // 6. A dispute by the kiln side on the satellite-first conflict, relayed.
-  const L = m.leaves[fcbk[0]];
-  const st = await ledger.kilnState(L.kiln_id_bytes32, season);
-  if (st.disputeCount === 0n) {
-    const evh = "0x" + require("crypto").createHash("sha256").update(`DEMO dispute evidence for ${fcbk[0]}`).digest("hex");
+  const attest = async (w: Wallet, tag: string, id: string, finding: number, note: string) => {
+    const h = await ledger.findingHistory(m.leaves[id].kiln_id_bytes32, season, w.address);
+    if (h.length) return console.log(`skip: ${id} already has a finding from inspector ${tag}`);
     await record(
-      `dispute ${fcbk[0]} (relayed; submitter recorded as the relayer)`,
-      ledger.dispute(L.kiln_id_bytes32, season, evh, "DEMO: owner states the kiln was rebuilt to zigzag in September; photos hashed."),
+      `attest ${id} ${FINDING_NAME[finding]} by inspector ${tag} ${w.address} (signed offline, relayed)`,
+      ledger.attest(...(await sign(w, id, finding, note))),
+    );
+  };
+
+  const revise = async (w: Wallet, tag: string, id: string, finding: number, note: string) => {
+    const h = await ledger.findingHistory(m.leaves[id].kiln_id_bytes32, season, w.address);
+    if (h.length !== 1) return console.log(`skip: revise ${id} (history length ${h.length})`);
+    await record(`revise ${id} -> ${FINDING_NAME[finding]} by inspector ${tag}`, ledger.revise(...(await sign(w, id, finding, note, true))));
+  };
+
+  // 1. Two-inspector certificate on a kiln the satellite could not decide.
+  const [u0, u1] = und;
+  await prove(u0);
+  await attest(A, "A", u0, FINDING.ZIGZAG_CONFIRMED, `${u0} zigzag air path and blower seen on site`);
+  await attest(B, "B", u0, FINDING.ZIGZAG_CONFIRMED, `${u0} second visit confirms zigzag setting`);
+
+  // 2. Conflict, satellite first.
+  const [f0, f1] = fcbk;
+  await prove(f0);
+  await attest(A, "A", f0, FINDING.ZIGZAG_CONFIRMED, `${f0} inspector reports zigzag setting`);
+
+  // 3. The public veto: certified by one inspector, then the satellite FCBK leaf is proven.
+  await attest(A, "A", f1, FINDING.ZIGZAG_CONFIRMED, `${f1} inspector reports zigzag setting`);
+  await prove(f1);
+
+  // 4. A revision that keeps history.
+  await attest(B, "B", u1, FINDING.FCBK_FOUND, `${u1} straight-line firing seen on site`);
+  await revise(B, "B", u1, FINDING.NOT_OPERATING, `${u1} revisit: kiln cold, not firing this week`);
+
+  // 5. A dispute by the kiln side on the satellite-first conflict, relayed.
+  const L = m.leaves[f0];
+  if ((await ledger.kilnState(L.kiln_id_bytes32, season)).disputeCount === 0n) {
+    await record(
+      `dispute ${f0} (relayed; submitter recorded as the relayer)`,
+      ledger.dispute(L.kiln_id_bytes32, season, demoHash(`dispute evidence for ${f0}`), "DEMO: owner states the kiln was rebuilt to zigzag in September; photos hashed."),
     );
   }
 
-  for (const id of [zig[0], fcbk[0], zig[1]]) {
+  for (const id of [u0, f0, f1, u1]) {
     const s = await ledger.kilnState(m.leaves[id].kiln_id_bytes32, season);
-    console.log(`${id}: certified=${s.certified} conflicts=${s.conflictCount} disputes=${s.disputeCount} cert=${s.certificateHash}`);
+    console.log(
+      `${id}: certified=${s.certified} zigzagConfirmed=${s.activeZigzagConfirmed} conflicts=${s.conflictCount} disputes=${s.disputeCount} cert=${s.certificateHash}`,
+    );
   }
   d.activity = log;
   await saveDeployment(d);

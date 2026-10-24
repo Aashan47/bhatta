@@ -16,8 +16,11 @@ What it stores:
 - **Conflicts.** The contract emits one whenever a proven satellite status and an inspector's
   finding disagree, in whichever order they arrive. Conflicts cannot be removed.
 - **Disputes.** Anyone can file one with an evidence hash and a note of at most 280 bytes.
-- **Certificates.** `certified(kilnId, season)` is true only when both sources agree, and
-  `certificateHash` returns a value an owner can print as a QR code.
+- **Certificates.** `certified(kilnId, season)` is true when at least `inspectorThreshold`
+  distinct active inspectors confirm Zigzag, no active inspector reports FCBK, and the satellite
+  record proven against the current root is not FCBK. The satellite is a veto, not a co-signer:
+  the classifier never asserts Zigzag at 90% (Learn-then-Test found no valid floor, so its sets are
+  {FCBK} or {FCBK, Zigzag}). `certificateHash` returns a value an owner can print as a QR code.
 
 ## Why a blockchain
 
@@ -32,7 +35,7 @@ that either side, or a journalist, can check without trusting the other, and wit
 
 | Actor | Can | Cannot |
 |---|---|---|
-| **Steward** (`DEFAULT_ADMIN_ROLE`) | Grant and revoke `ORACLE_ROLE` and `INSPECTOR_ROLE`; set the committee threshold k for future versions. | Edit, delete or reorder any root, satellite record, finding, conflict or dispute. Change k for a version already proposed (k is snapshotted per version). |
+| **Steward** (`DEFAULT_ADMIN_ROLE`) | Grant and revoke `ORACLE_ROLE` and `INSPECTOR_ROLE`; set the oracle committee threshold k for future versions; set `inspectorThreshold` (1 to the inspector count). | Edit, delete or reorder any root, satellite record, finding, conflict or dispute. Change k for a version already proposed (k is snapshotted per version). |
 | **Oracle key** (`ORACLE_ROLE`) | Propose a season root once; propose corrections; confirm other oracles' proposals. | Overwrite a root, hide a version, backdate one, or touch inspector findings. Activate a root alone when k > 1. |
 | **Inspector key** (`INSPECTOR_ROLE`) | Sign findings under its own address, for any kiln and season; revise its own findings. | Sign for another inspector; replay a signature (per-inspector nonce); reuse it on another chain or contract (EIP-712 domain); reuse a Finding as a Revision or the other way round (distinct type names); act after its deadline; delete its history. |
 | **Relayer** (the API, or anyone) | Submit any valid signature and pay its gas; it is recorded as `relayer` / `submitter`. | Alter a signed field (any change breaks the signature). It can refuse to relay, but the signature stays valid for anyone else to submit until its deadline. |
@@ -49,8 +52,12 @@ that either side, or a journalist, can check without trusting the other, and wit
   data is public evidence against whoever published it.
 - **It cannot edit or erase a root afterwards.** A correction appends a new version with a reason
   string. Satellite records proven against the old version become stale (`satelliteCurrent =
-  false`), so certificates resting on them lapse until the record is re-proven. Every one of these
-  steps is a visible event.
+  false`) and stop vetoing until a leaf of the new root is proven. Every certificate hash includes
+  the current root, so a correction re-issues every certificate under a new hash and printed QR
+  codes stop matching. Every one of these steps is a visible event.
+- **It can veto a certificate, but only in public.** Marking a kiln FCBK in a root means anyone can
+  prove that leaf, which withdraws the kiln's certificate and emits a `Conflict` against each
+  inspector who confirmed Zigzag. It cannot create a certificate: no satellite status does that.
 - **It cannot give one kiln two answers.** If a root holds two different leaves for the same kiln,
   the first proof wins and the second emits `Conflict(..., ROOT_EQUIVOCATION = 3)`.
   `verify-season.ts` also rejects duplicate ids off chain.
@@ -65,12 +72,22 @@ that either side, or a journalist, can check without trusting the other, and wit
 
 - **It can sign false findings under its own name.** For example, it can sign `FCBK_FOUND` to
   block a certificate, or `ZIGZAG_CONFIRMED` to support one.
-- **It cannot create a certificate alone.** A certificate also needs a satellite ZIGZAG record
-  proven against the current root. One false `ZIGZAG_CONFIRMED` against a satellite FCBK record
-  produces a permanent `Conflict` instead.
+- **At `inspectorThreshold = 1`, one corrupt inspector can certify a kiln on their own**, as long
+  as the satellite has not proven FCBK for it and no other active inspector reports FCBK. This is
+  the honest consequence of a classifier that cannot assert Zigzag from 10 m imagery: field
+  inspection is the only positive evidence. At threshold 2, a certificate needs two distinct keys
+  to collude. One inspector cannot count twice, because a revision replaces their finding rather
+  than adding to it.
+- **It cannot override the satellite veto silently.** A `ZIGZAG_CONFIRMED` on a kiln whose current
+  satellite record is FCBK produces no certificate and a permanent `Conflict` naming the
+  inspector. If the confirmation came first, proving the FCBK leaf later withdraws the certificate
+  and emits the same `Conflict`. Anyone can prove the leaf; the veto needs no oracle cooperation
+  after the root is published.
 - **Revocation discounts its findings without rewriting history.** Once the steward revokes the
   key, `certified()` stops counting that key's findings. The findings, their conflicts and their
-  history all remain readable. A signature the key made before revocation can no longer be
+  history all remain readable. A revocation touches no single kiln, so anyone can call
+  `refreshCertificate(kilnId, season)` to emit the resulting `CertificateWithdrawn` (or `Certified`)
+  event; `certified()` and `certificateHash()` are correct without it. A signature the key made before revocation can no longer be
   relayed, because the role is checked at submission time.
 - **It cannot sign for anyone else or replay anything** (see the table).
 
@@ -90,7 +107,7 @@ that either side, or a journalist, can check without trusting the other, and wit
 - **Data availability.** Only the root is on chain. If the oracle withholds `kilns.json`, nobody
   can verify the root. That inability is visible, but the contract cannot enforce publication.
 - **Steward compromise is the largest single risk.** A stolen steward key can grant itself k oracle
-  roles and an inspector role and then manufacture a certificate. Every step emits an event
+  roles and `inspectorThreshold` inspector roles and then manufacture a certificate. Every step emits an event
   (`RoleGranted`, `SeasonPublished` / `CorrectionPublished`, `FindingAttested`), so monitoring
   catches it, but `certified()` would read true until roles are cleaned up. In production the
   steward should be a multisig held by the same independent parties as the committee, or it should
@@ -148,10 +165,15 @@ independently in Python (`json`, `hashlib`, `eth_abi`) on 24 Oct 2026.
 - Conflict reason codes: 1 = satellite ZIGZAG vs FCBK_FOUND, 2 = satellite FCBK vs
   ZIGZAG_CONFIRMED, 3 = two leaves for one kiln in one root.
 - `certificateHash(kilnId, season)`, zero unless certified:
-  `keccak256(abi.encode(keccak256("Bhatta.KilnCertificate.v1"), chainId, contract, kilnId, season, currentRoot, satelliteEvidenceHash))`.
+  `keccak256(abi.encode(keccak256("Bhatta.KilnCertificate.v1"), chainId, contract, kilnId, season, currentRoot))`.
   The QR code links to the kiln page with `?season=<season>&cert=<hash>`. The page re-reads
   `certificateHash` from the chain and shows "valid" only if the two match. A printed code goes
-  stale on its own if the certificate lapses or the season root is corrected.
+  stale on its own if the certificate lapses, and a season correction re-issues it under a new
+  hash. Proving a non-FCBK satellite leaf or adding another confirmation leaves the hash unchanged.
+- `certified(kilnId, season)`: the season has an active root; at least `inspectorThreshold`
+  distinct keys holding `INSPECTOR_ROLE` have `ZIGZAG_CONFIRMED` as their current finding; no key
+  holding `INSPECTOR_ROLE` has `FCBK_FOUND` as its current finding; and the satellite record proven
+  against the current root version, if there is one, is not FCBK.
 
 ## Files written
 
@@ -168,14 +190,14 @@ independently in Python (`json`, `hashlib`, `eth_abi`) on 24 Oct 2026.
 ```sh
 cd contracts
 npm install
-npm test                                     # 46 tests
+npm test                                     # 52 tests
 npm run gas                                  # same, with the gas table in gas-report.txt
 npm run merkle                               # build data/merkle/* from data/kilns.json (or a fixture)
 
 npx hardhat node                             # terminal 1
 npx hardhat run scripts/deploy.ts          --network localhost
 npx hardhat run scripts/publish-season.ts  --network localhost   # SEASON=202610 optional
-npx hardhat run scripts/grant-inspector.ts --network localhost   # INSPECTOR_ADDRESS optional
+npx hardhat run scripts/grant-inspector.ts --network localhost   # both demo inspectors; INSPECTOR_ADDRESS optional
 npx hardhat run scripts/demo-activity.ts   --network localhost
 npx hardhat run scripts/verify-season.ts   --network localhost   # PASS/FAIL, exit 1 on FAIL
 ```
@@ -186,8 +208,8 @@ run scripts/publish-season.ts --network <net>`. Committee deploy: `ORACLE_ADDRES
 ORACLE_THRESHOLD=2`.
 
 Keys live in `contracts/.env` (gitignored; template in `.env.example`). The deployer acts as
-steward, oracle and relayer in the demo. The demo inspector only signs typed data and never holds
-gas.
+steward, oracle and relayer in the demo. The two demo inspectors (A and B, so that a two-inspector
+certificate can be shown) only sign typed data and never hold gas.
 
 ### Toolchain notes
 
@@ -206,6 +228,13 @@ gas.
   needs its own manifest to be reproducible.
 - `attest` and `revise` take an explicit `inspector` address, matching the API relay body. Revisions
   use a separate EIP-712 type, `Revision`, with the same fields as `Finding`.
-- `certified()` counts only findings from keys that still hold `INSPECTOR_ROLE`, and only a
-  satellite record proven against the current root version.
+- **The certificate rule changed after the ML result (24 Oct 2026).** PRODUCT.md required a
+  satellite ZIGZAG proof AND an inspector confirmation. The calibrated classifier never outputs
+  {Zigzag} alone, so that rule could never be met. `certified()` now requires `inspectorThreshold`
+  (default 1) distinct active inspectors confirming Zigzag, no active FCBK_FOUND, and no FCBK
+  satellite record on the current root. The satellite acts as a public veto. Findings from revoked
+  keys and satellite records proven against older root versions do not count. A season root must
+  be active, so that the veto is always possible.
+- Added `setInspectorThreshold`, `refreshCertificate`, the `InspectorThresholdSet` event, and an
+  `inspectorThreshold` field at the end of `kilnState`.
 - An inspector finding costs 145k to 214k gas, above the 60k to 120k estimate (see `GAS.md`).

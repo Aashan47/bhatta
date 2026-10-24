@@ -105,7 +105,7 @@ contract KilnLedger is AccessControlEnumerable, EIP712, Nonces {
         address[] inspectors; // every inspector who ever filed here, in first-filing order
         uint32 disputeCount;
         uint32 conflictCount;
-        bool certFlag; // last certified() value seen by a per-kiln action, drives Certified events
+        bytes32 certHash; // last certificateHash() emitted; drives Certified / CertificateWithdrawn
     }
 
     /// @notice Everything the UI needs about one kiln in one season, in one call.
@@ -128,10 +128,14 @@ contract KilnLedger is AccessControlEnumerable, EIP712, Nonces {
         uint32 conflictCount;
         bool certified;
         bytes32 certificateHash;
+        uint8 inspectorThreshold;
     }
 
     /// @notice Committee threshold k: confirmations a new root version needs before it is current.
     uint8 public oracleThreshold;
+
+    /// @notice Distinct active inspectors whose current finding must be ZIGZAG_CONFIRMED to certify.
+    uint8 public inspectorThreshold;
 
     mapping(uint32 season => RootVersion[]) private _versions;
     mapping(uint32 season => uint32) private _activePlusOne; // 0 = no active version
@@ -146,6 +150,7 @@ contract KilnLedger is AccessControlEnumerable, EIP712, Nonces {
     // ---------------------------------------------------------------------------------------------
 
     event OracleThresholdSet(uint8 previous, uint8 current);
+    event InspectorThresholdSet(uint8 previous, uint8 current);
     event SeasonPublished(
         uint32 indexed season,
         uint32 indexed version,
@@ -212,6 +217,7 @@ contract KilnLedger is AccessControlEnumerable, EIP712, Nonces {
     error ZeroRoot();
     error InvalidAlpha(uint16 alphaBp);
     error InvalidThreshold(uint8 k, uint256 oracleCount);
+    error InvalidInspectorThreshold(uint8 k, uint256 inspectorCount);
     error TextTooLong(uint256 length, uint256 max);
     error EmptyReason();
     error SeasonAlreadyPublished(uint32 season);
@@ -249,6 +255,19 @@ contract KilnLedger is AccessControlEnumerable, EIP712, Nonces {
             _grantRole(ORACLE_ROLE, oracles[i]);
         }
         _setThreshold(threshold);
+        inspectorThreshold = 1;
+        emit InspectorThresholdSet(0, 1);
+    }
+
+    /// @notice Sets how many distinct active inspectors must confirm Zigzag before a kiln is
+    ///         certified. Takes effect in certified() immediately; call refreshCertificate to emit
+    ///         the resulting Certified / CertificateWithdrawn events for a kiln.
+    /// @dev 1 <= k <= current INSPECTOR_ROLE member count.
+    function setInspectorThreshold(uint8 k) external onlyRole(DEFAULT_ADMIN_ROLE) {
+        uint256 n = getRoleMemberCount(INSPECTOR_ROLE);
+        if (k == 0 || k > n) revert InvalidInspectorThreshold(k, n);
+        emit InspectorThresholdSet(inspectorThreshold, k);
+        inspectorThreshold = k;
     }
 
     /// @notice Sets the committee threshold k for root versions proposed from now on.
@@ -557,43 +576,45 @@ contract KilnLedger is AccessControlEnumerable, EIP712, Nonces {
     // Certificates
     // ---------------------------------------------------------------------------------------------
 
-    /// @notice True iff the satellite record proven against the CURRENT root is ZIGZAG, at least one
-    ///         current inspector key's latest finding is ZIGZAG_CONFIRMED, and no current inspector
-    ///         key's latest finding is FCBK_FOUND. Findings by revoked keys stay in history and in
-    ///         Conflict events but stop counting here.
+    /// @notice True iff all of:
+    ///         (a) at least `inspectorThreshold` distinct keys that currently hold INSPECTOR_ROLE have
+    ///             ZIGZAG_CONFIRMED as their current finding for this kiln and season;
+    ///         (b) no key that currently holds INSPECTOR_ROLE has FCBK_FOUND as its current finding;
+    ///         (c) the season has an active root, and the satellite record proven against that
+    ///             CURRENT root version, if any, is not FCBK. UNDETERMINED, NOT_DETECTED, ZIGZAG or
+    ///             not yet proven do not block. The satellite is a veto, and exercising it is public:
+    ///             anyone can prove an FCBK leaf, which withdraws the certificate and emits a Conflict.
+    ///         Findings by revoked keys stay in history and in Conflict events but stop counting.
     function certified(bytes32 kilnId, uint32 season) public view returns (bool) {
+        if (_activePlusOne[season] == 0) return false;
         KilnSeason storage ks = _kilns[kilnId][season];
-        if (!ks.sat.proven || ks.sat.status != STATUS_ZIGZAG || !_isCurrent(season, ks.sat.rootVersion)) {
-            return false;
-        }
+        if (ks.sat.proven && ks.sat.status == STATUS_FCBK && _isCurrent(season, ks.sat.rootVersion)) return false;
         (uint32 z, uint32 f,) = _tally(kilnId, season, ks);
-        return z > 0 && f == 0;
+        return z >= inspectorThreshold && f == 0;
     }
 
     /// @notice A hash a kiln owner can print as a QR code. It is bound to this chain, this contract,
-    ///         the kiln, the season, the current root and the satellite evidence hash. Returns zero
-    ///         when the kiln is not certified, so a printed code stops verifying as soon as the
-    ///         certificate lapses or the season root is corrected.
+    ///         the kiln, the season and the season's current root. Returns zero when the kiln is not
+    ///         certified, so a printed code stops verifying as soon as the certificate lapses, and a
+    ///         season correction re-issues it under a new hash.
     function certificateHash(bytes32 kilnId, uint32 season) public view returns (bytes32) {
         if (!certified(kilnId, season)) return bytes32(0);
-        return keccak256(
-            abi.encode(
-                CERTIFICATE_TAG,
-                block.chainid,
-                address(this),
-                kilnId,
-                season,
-                currentRoot(season),
-                _kilns[kilnId][season].sat.evidenceHash
-            )
-        );
+        return keccak256(abi.encode(CERTIFICATE_TAG, block.chainid, address(this), kilnId, season, currentRoot(season)));
+    }
+
+    /// @notice Anyone can call this to bring a kiln's certificate events up to date after a change
+    ///         that touches no single kiln: an inspector revoked, the threshold changed, or the season
+    ///         root corrected. Emits Certified (with the new hash) or CertificateWithdrawn if the
+    ///         certificate changed; does nothing otherwise.
+    function refreshCertificate(bytes32 kilnId, uint32 season) external {
+        _syncCertificate(kilnId, season, _kilns[kilnId][season]);
     }
 
     function _syncCertificate(bytes32 kilnId, uint32 season, KilnSeason storage ks) private {
-        bool now_ = certified(kilnId, season);
-        if (now_ == ks.certFlag) return;
-        ks.certFlag = now_;
-        if (now_) emit Certified(kilnId, season, certificateHash(kilnId, season));
+        bytes32 h = certificateHash(kilnId, season);
+        if (h == ks.certHash) return;
+        ks.certHash = h;
+        if (h != bytes32(0)) emit Certified(kilnId, season, h);
         else emit CertificateWithdrawn(kilnId, season);
     }
 
@@ -684,5 +705,6 @@ contract KilnLedger is AccessControlEnumerable, EIP712, Nonces {
         s.conflictCount = ks.conflictCount;
         s.certified = certified(kilnId, season);
         s.certificateHash = certificateHash(kilnId, season);
+        s.inspectorThreshold = inspectorThreshold;
     }
 }

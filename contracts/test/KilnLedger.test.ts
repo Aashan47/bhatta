@@ -566,102 +566,204 @@ describe("KilnLedger", function () {
 
   // -----------------------------------------------------------------------------------------------
   describe("certified() truth table and certificate hash", function () {
+    // Kilns in TREE: PK-zig (ZIGZAG), PK-fcbk (FCBK), PK-und (UNDETERMINED), PK-none (NOT_DETECTED).
     const Z = kid("PK-zig");
+    const FC = kid("PK-fcbk");
+    const U = kid("PK-und");
+    const N = kid("PK-none");
 
-    it("no satellite record + ZIGZAG_CONFIRMED -> false", async function () {
-      const { ledger, inspA, relayer } = await loadFixture(publishedFixture);
-      await attestAs(ledger, relayer, inspA);
-      expect(await ledger.certified(Z, SEASON)).to.equal(false);
-    });
-
-    it("satellite ZIGZAG + no finding -> false", async function () {
-      const { ledger } = await loadFixture(publishedFixture);
-      await prove(ledger, LEAVES[0]);
-      expect(await ledger.certified(Z, SEASON)).to.equal(false);
-      expect(await ledger.certificateHash(Z, SEASON)).to.equal(ZERO);
-    });
-
-    it("satellite ZIGZAG + ZIGZAG_CONFIRMED -> true, Certified event, hash bound to chain/contract/root/evidence", async function () {
-      const { ledger, inspA, relayer } = await loadFixture(publishedFixture);
-      await prove(ledger, LEAVES[0]);
-      const tx = attestAs(ledger, relayer, inspA);
+    async function certHashOf(ledger: any, k: string, root: string) {
       const { chainId } = await ethers.provider.getNetwork();
-      const expected = ethers.keccak256(
+      return ethers.keccak256(
         ethers.AbiCoder.defaultAbiCoder().encode(
-          ["bytes32", "uint256", "address", "bytes32", "uint32", "bytes32", "bytes32"],
-          [ethers.id("Bhatta.KilnCertificate.v1"), chainId, await ledger.getAddress(), Z, SEASON, TREE.root, LEAVES[0][4]],
+          ["bytes32", "uint256", "address", "bytes32", "uint32", "bytes32"],
+          [ethers.id("Bhatta.KilnCertificate.v1"), chainId, await ledger.getAddress(), k, SEASON, root],
         ),
       );
-      await expect(tx).to.emit(ledger, "Certified").withArgs(Z, SEASON, expected);
-      expect(await ledger.certified(Z, SEASON)).to.equal(true);
-      expect(await ledger.certificateHash(Z, SEASON)).to.equal(expected);
-      const s = await ledger.kilnState(Z, SEASON);
-      expect(s.certified).to.equal(true);
-      expect(s.certificateHash).to.equal(expected);
+    }
+
+    describe("threshold 1", function () {
+      it("no season root published -> false even with ZIGZAG_CONFIRMED (the veto must be possible)", async function () {
+        const { ledger, inspA, relayer } = await loadFixture(deployFixture);
+        await attestAs(ledger, relayer, inspA);
+        expect(await ledger.certified(Z, SEASON)).to.equal(false);
+      });
+
+      it("satellite unproven + ZIGZAG_CONFIRMED -> true, Certified event, hash bound to chain/contract/kiln/season/root", async function () {
+        const { ledger, inspA, relayer } = await loadFixture(publishedFixture);
+        const expected = await certHashOf(ledger, U, TREE.root);
+        await expect(attestAs(ledger, relayer, inspA, { kilnId: U })).to.emit(ledger, "Certified").withArgs(U, SEASON, expected);
+        expect(await ledger.certified(U, SEASON)).to.equal(true);
+        expect(await ledger.certificateHash(U, SEASON)).to.equal(expected);
+        const s = await ledger.kilnState(U, SEASON);
+        expect(s.certified).to.equal(true);
+        expect(s.certificateHash).to.equal(expected);
+        expect(s.inspectorThreshold).to.equal(1);
+      });
+
+      it("satellite UNDETERMINED, NOT_DETECTED or ZIGZAG + ZIGZAG_CONFIRMED -> true", async function () {
+        const { ledger, inspA, relayer } = await loadFixture(publishedFixture);
+        for (const l of [LEAVES[2], LEAVES[3], LEAVES[0]]) {
+          await prove(ledger, l);
+          await attestAs(ledger, relayer, inspA, { kilnId: l[0] });
+          expect(await ledger.certified(l[0], SEASON)).to.equal(true);
+        }
+      });
+
+      it("satellite FCBK proven first + ZIGZAG_CONFIRMED -> false, and a Conflict", async function () {
+        const { ledger, inspA, relayer } = await loadFixture(publishedFixture);
+        await prove(ledger, LEAVES[1]);
+        await expect(attestAs(ledger, relayer, inspA, { kilnId: FC }))
+          .to.emit(ledger, "Conflict")
+          .withArgs(FC, SEASON, 2, inspA.address)
+          .and.not.to.emit(ledger, "Certified");
+        expect(await ledger.certified(FC, SEASON)).to.equal(false);
+        expect(await ledger.certificateHash(FC, SEASON)).to.equal(ZERO);
+      });
+
+      it("ZIGZAG_CONFIRMED first, satellite FCBK proven later -> withdrawn, with a Conflict (the public veto)", async function () {
+        const { ledger, inspA, relayer, citizen } = await loadFixture(publishedFixture);
+        await expect(attestAs(ledger, relayer, inspA, { kilnId: FC })).to.emit(ledger, "Certified");
+        await expect(prove(ledger, LEAVES[1], TREE, citizen))
+          .to.emit(ledger, "Conflict")
+          .withArgs(FC, SEASON, 2, inspA.address)
+          .and.to.emit(ledger, "CertificateWithdrawn")
+          .withArgs(FC, SEASON);
+        expect(await ledger.certified(FC, SEASON)).to.equal(false);
+      });
+
+      it("no findings, or only NOT_OPERATING / DEMOLISHED -> false", async function () {
+        const { ledger, inspA, inspB, relayer } = await loadFixture(publishedFixture);
+        await prove(ledger, LEAVES[0]);
+        expect(await ledger.certified(Z, SEASON)).to.equal(false);
+        await attestAs(ledger, relayer, inspA, { finding: FINDING.NOT_OPERATING });
+        await attestAs(ledger, relayer, inspB, { finding: FINDING.DEMOLISHED });
+        expect(await ledger.certified(Z, SEASON)).to.equal(false);
+      });
+
+      it("ZIGZAG_CONFIRMED + another inspector's FCBK_FOUND -> withdrawn; revising it to ZIGZAG_CONFIRMED -> true again", async function () {
+        const { ledger, inspA, inspB, relayer } = await loadFixture(publishedFixture);
+        await attestAs(ledger, relayer, inspA, { kilnId: U });
+        await expect(attestAs(ledger, relayer, inspB, { kilnId: U, finding: FINDING.FCBK_FOUND }))
+          .to.emit(ledger, "CertificateWithdrawn")
+          .withArgs(U, SEASON);
+        expect(await ledger.certified(U, SEASON)).to.equal(false);
+        await expect(reviseAs(ledger, relayer, inspB, { kilnId: U, finding: FINDING.ZIGZAG_CONFIRMED })).to.emit(
+          ledger,
+          "Certified",
+        );
+        expect(await ledger.certified(U, SEASON)).to.equal(true);
+      });
+
+      it("revoking keys: a revoked FCBK_FOUND stops blocking, a revoked ZIGZAG_CONFIRMED stops counting; history stays; refresh emits", async function () {
+        const { ledger, steward, inspA, inspB, relayer, citizen, INSPECTOR } = await loadFixture(publishedFixture);
+        await attestAs(ledger, relayer, inspA, { kilnId: U });
+        await attestAs(ledger, relayer, inspB, { kilnId: U, finding: FINDING.FCBK_FOUND });
+        expect(await ledger.certified(U, SEASON)).to.equal(false);
+        await ledger.connect(steward).revokeRole(INSPECTOR, inspB.address);
+        expect(await ledger.certified(U, SEASON)).to.equal(true);
+        await expect(ledger.connect(citizen).refreshCertificate(U, SEASON)).to.emit(ledger, "Certified");
+        expect((await ledger.findingHistory(U, SEASON, inspB.address)).length).to.equal(1);
+        await ledger.connect(steward).revokeRole(INSPECTOR, inspA.address);
+        expect(await ledger.certified(U, SEASON)).to.equal(false);
+        await expect(ledger.connect(citizen).refreshCertificate(U, SEASON))
+          .to.emit(ledger, "CertificateWithdrawn")
+          .withArgs(U, SEASON);
+        await expect(ledger.refreshCertificate(U, SEASON)).not.to.emit(ledger, "CertificateWithdrawn");
+      });
+
+      it("a correction re-issues the hash; a stale FCBK record stops vetoing; a newly proven FCBK vetoes", async function () {
+        const { ledger, oracleA, inspA, relayer } = await loadFixture(publishedFixture);
+        await attestAs(ledger, relayer, inspA, { kilnId: U });
+        const h0 = await ledger.certificateHash(U, SEASON);
+        await prove(ledger, LEAVES[1]); // PK-fcbk satellite FCBK at version 0
+        await attestAs(ledger, relayer, inspA, { kilnId: FC });
+        expect(await ledger.certified(FC, SEASON)).to.equal(false);
+
+        // Version 1: PK-fcbk relabelled UNDETERMINED, PK-und relabelled FCBK.
+        const v1 = [
+          LEAVES[0],
+          leaf("PK-fcbk", STATUS.UNDETERMINED, 4800),
+          leaf("PK-und", STATUS.FCBK, 700),
+          LEAVES[3],
+          LEAVES[4],
+        ];
+        const t1 = StandardMerkleTree.of(v1, LEAF_TYPES as unknown as string[]);
+        await ledger.connect(oracleA).publishCorrection(SEASON, t1.root, MODEL, MANIFEST, ALPHA, URI, "relabel");
+
+        const h1 = await ledger.certificateHash(U, SEASON);
+        expect(h1).to.equal(await certHashOf(ledger, U, t1.root));
+        expect(h1).to.not.equal(h0);
+        await expect(ledger.refreshCertificate(U, SEASON)).to.emit(ledger, "Certified").withArgs(U, SEASON, h1);
+        expect(await ledger.certified(FC, SEASON)).to.equal(true); // the v0 FCBK record is stale
+
+        await expect(prove(ledger, v1[2], t1)).to.emit(ledger, "CertificateWithdrawn").withArgs(U, SEASON);
+        expect(await ledger.certified(U, SEASON)).to.equal(false);
+      });
     });
 
-    it("satellite ZIGZAG + ZIGZAG_CONFIRMED + another inspector FCBK_FOUND -> false (withdrawn)", async function () {
-      const { ledger, inspA, inspB, relayer } = await loadFixture(publishedFixture);
-      await prove(ledger, LEAVES[0]);
-      await attestAs(ledger, relayer, inspA);
-      await expect(attestAs(ledger, relayer, inspB, { finding: FINDING.FCBK_FOUND }))
-        .to.emit(ledger, "CertificateWithdrawn")
-        .withArgs(Z, SEASON);
-      expect(await ledger.certified(Z, SEASON)).to.equal(false);
+    describe("threshold 2", function () {
+      it("one ZIGZAG_CONFIRMED -> false; a second distinct inspector -> true", async function () {
+        const { ledger, steward, inspA, inspB, relayer } = await loadFixture(publishedFixture);
+        await expect(ledger.connect(steward).setInspectorThreshold(2)).to.emit(ledger, "InspectorThresholdSet").withArgs(1, 2);
+        await expect(attestAs(ledger, relayer, inspA, { kilnId: U })).not.to.emit(ledger, "Certified");
+        expect(await ledger.certified(U, SEASON)).to.equal(false);
+        await expect(attestAs(ledger, relayer, inspB, { kilnId: U })).to.emit(ledger, "Certified");
+        expect(await ledger.certified(U, SEASON)).to.equal(true);
+        expect((await ledger.kilnState(U, SEASON)).inspectorThreshold).to.equal(2);
+      });
+
+      it("one inspector cannot count twice (a revision replaces, it does not add)", async function () {
+        const { ledger, steward, inspA, relayer } = await loadFixture(publishedFixture);
+        await ledger.connect(steward).setInspectorThreshold(2);
+        await attestAs(ledger, relayer, inspA, { kilnId: U });
+        await reviseAs(ledger, relayer, inspA, { kilnId: U, finding: FINDING.ZIGZAG_CONFIRMED, evidence: ev("again") });
+        expect(await ledger.certified(U, SEASON)).to.equal(false);
+        expect((await ledger.kilnState(U, SEASON)).activeZigzagConfirmed).to.equal(1);
+      });
+
+      it("revoking one of two confirming inspectors drops below threshold -> withdrawn on refresh", async function () {
+        const { ledger, steward, inspA, inspB, relayer, INSPECTOR } = await loadFixture(publishedFixture);
+        await ledger.connect(steward).setInspectorThreshold(2);
+        await attestAs(ledger, relayer, inspA, { kilnId: U });
+        await attestAs(ledger, relayer, inspB, { kilnId: U });
+        await ledger.connect(steward).revokeRole(INSPECTOR, inspB.address);
+        expect(await ledger.certified(U, SEASON)).to.equal(false);
+        await expect(ledger.refreshCertificate(U, SEASON)).to.emit(ledger, "CertificateWithdrawn");
+      });
+
+      it("two confirmations still lose to a proven satellite FCBK", async function () {
+        const { ledger, steward, inspA, inspB, relayer } = await loadFixture(publishedFixture);
+        await ledger.connect(steward).setInspectorThreshold(2);
+        await attestAs(ledger, relayer, inspA, { kilnId: FC });
+        await attestAs(ledger, relayer, inspB, { kilnId: FC });
+        expect(await ledger.certified(FC, SEASON)).to.equal(true);
+        await expect(prove(ledger, LEAVES[1])).to.emit(ledger, "CertificateWithdrawn");
+        expect((await ledger.kilnState(FC, SEASON)).conflictCount).to.equal(2);
+      });
     });
 
-    it("the FCBK_FOUND revised to ZIGZAG_CONFIRMED -> true again", async function () {
-      const { ledger, inspA, inspB, relayer } = await loadFixture(publishedFixture);
-      await prove(ledger, LEAVES[0]);
-      await attestAs(ledger, relayer, inspA);
-      await attestAs(ledger, relayer, inspB, { finding: FINDING.FCBK_FOUND });
-      await expect(reviseAs(ledger, relayer, inspB, { finding: FINDING.ZIGZAG_CONFIRMED })).to.emit(ledger, "Certified");
-      expect(await ledger.certified(Z, SEASON)).to.equal(true);
+    it("inspector threshold: 1..inspector count, steward only; default 1 at deploy", async function () {
+      const { ledger, steward, outsider } = await loadFixture(deployFixture);
+      expect(await ledger.inspectorThreshold()).to.equal(1);
+      await expect(ledger.connect(steward).setInspectorThreshold(0)).to.be.revertedWithCustomError(
+        ledger,
+        "InvalidInspectorThreshold",
+      );
+      await expect(ledger.connect(steward).setInspectorThreshold(3))
+        .to.be.revertedWithCustomError(ledger, "InvalidInspectorThreshold")
+        .withArgs(3, 2);
+      await expect(ledger.connect(outsider).setInspectorThreshold(2)).to.be.revertedWithCustomError(
+        ledger,
+        "AccessControlUnauthorizedAccount",
+      );
     });
 
-    it("satellite FCBK or UNDETERMINED or NOT_DETECTED + ZIGZAG_CONFIRMED -> false", async function () {
+    it("kiln N (NOT_DETECTED) can be certified only by inspectors; the satellite cannot see it", async function () {
       const { ledger, inspA, relayer } = await loadFixture(publishedFixture);
-      for (const l of [LEAVES[1], LEAVES[2], LEAVES[3]]) {
-        await prove(ledger, l);
-        await attestAs(ledger, relayer, inspA, { kilnId: l[0] });
-        expect(await ledger.certified(l[0], SEASON)).to.equal(false);
-      }
-    });
-
-    it("satellite ZIGZAG + only NOT_OPERATING -> false", async function () {
-      const { ledger, inspA, relayer } = await loadFixture(publishedFixture);
-      await prove(ledger, LEAVES[0]);
-      await attestAs(ledger, relayer, inspA, { finding: FINDING.NOT_OPERATING });
-      expect(await ledger.certified(Z, SEASON)).to.equal(false);
-    });
-
-    it("revoking an inspector key stops its findings counting, but history stays", async function () {
-      const { ledger, steward, inspA, inspB, relayer, INSPECTOR } = await loadFixture(publishedFixture);
-      await prove(ledger, LEAVES[0]);
-      await attestAs(ledger, relayer, inspA);
-      await attestAs(ledger, relayer, inspB, { finding: FINDING.FCBK_FOUND });
-      expect(await ledger.certified(Z, SEASON)).to.equal(false);
-      await ledger.connect(steward).revokeRole(INSPECTOR, inspB.address); // compromised FCBK key
-      expect(await ledger.certified(Z, SEASON)).to.equal(true);
-      expect((await ledger.findingHistory(Z, SEASON, inspB.address)).length).to.equal(1);
-      await ledger.connect(steward).revokeRole(INSPECTOR, inspA.address);
-      expect(await ledger.certified(Z, SEASON)).to.equal(false);
-    });
-
-    it("a season correction invalidates the certificate until the record is re-proven; the hash changes", async function () {
-      const { ledger, oracleA, inspA, relayer } = await loadFixture(publishedFixture);
-      await prove(ledger, LEAVES[0]);
-      await attestAs(ledger, relayer, inspA);
-      const h0 = await ledger.certificateHash(Z, SEASON);
-      const t2 = StandardMerkleTree.of([...LEAVES, leaf("PK-new", STATUS.FCBK, 300)], LEAF_TYPES as unknown as string[]);
-      await ledger.connect(oracleA).publishCorrection(SEASON, t2.root, MODEL, MANIFEST, ALPHA, URI, "added a kiln");
-      expect(await ledger.certified(Z, SEASON)).to.equal(false);
-      expect(await ledger.certificateHash(Z, SEASON)).to.equal(ZERO);
-      await prove(ledger, LEAVES[0], t2);
-      expect(await ledger.certified(Z, SEASON)).to.equal(true);
-      const h1 = await ledger.certificateHash(Z, SEASON);
-      expect(h1).to.not.equal(ZERO);
-      expect(h1).to.not.equal(h0);
+      await prove(ledger, LEAVES[3]);
+      await attestAs(ledger, relayer, inspA, { kilnId: N });
+      expect(await ledger.certified(N, SEASON)).to.equal(true);
     });
   });
 

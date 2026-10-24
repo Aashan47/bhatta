@@ -92,9 +92,13 @@ export async function deployerWallet() {
   return w;
 }
 
-/** The demo inspector key. It only signs typed data; it never needs gas. */
+/** The demo inspector keys (A and B). They only sign typed data; they never need gas. */
 export function inspectorWallet() {
   return new ethers.Wallet(key("INSPECTOR_PRIVATE_KEY"), ethers.provider);
+}
+
+export function inspector2Wallet() {
+  return new ethers.Wallet(key("INSPECTOR2_PRIVATE_KEY"), ethers.provider);
 }
 
 export async function ledgerAt(signer?: any) {
