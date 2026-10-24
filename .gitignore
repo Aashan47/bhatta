@@ -23,3 +23,11 @@ video/frames/
 *.mp4
 *.m4a
 *.mp3
+# demo video: renders, raw screencast frames, voice clips, and licensed music never go in git
+video/raw/
+video/voice/
+video/*.mp4
+video/*.m4a
+video/*.mp3
+video/*.wav
+video/*.log

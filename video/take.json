@@ -1,0 +1,439 @@
+{
+ "start": 1792855003.211603,
+ "end": 1792855273.900341,
+ "marks": [
+  {
+   "id": "b01",
+   "at": 1792855003.2116249
+  },
+  {
+   "id": "b02",
+   "at": 1792855015.761018
+  },
+  {
+   "id": "b03",
+   "at": 1792855025.6959949
+  },
+  {
+   "id": "b04",
+   "at": 1792855035.72418
+  },
+  {
+   "id": "b05",
+   "at": 1792855049.621686
+  },
+  {
+   "id": "b06",
+   "at": 1792855059.66558
+  },
+  {
+   "id": "b07",
+   "at": 1792855068.421011
+  },
+  {
+   "id": "b08",
+   "at": 1792855079.526352
+  },
+  {
+   "id": "b09",
+   "at": 1792855089.47266
+  },
+  {
+   "id": "b10",
+   "at": 1792855107.480978
+  },
+  {
+   "id": "b11",
+   "at": 1792855116.923388
+  },
+  {
+   "id": "b12",
+   "at": 1792855124.9473941
+  },
+  {
+   "id": "b13",
+   "at": 1792855136.395481
+  },
+  {
+   "id": "b14",
+   "at": 1792855148.815149
+  },
+  {
+   "id": "b15",
+   "at": 1792855169.4163148
+  },
+  {
+   "id": "b16",
+   "at": 1792855179.999712
+  },
+  {
+   "id": "b17",
+   "at": 1792855192.3022568
+  },
+  {
+   "id": "b18",
+   "at": 1792855211.335744
+  },
+  {
+   "id": "b19",
+   "at": 1792855226.333089
+  },
+  {
+   "id": "b20",
+   "at": 1792855244.510138
+  },
+  {
+   "id": "b21",
+   "at": 1792855256.7618182
+  },
+  {
+   "id": "b22",
+   "at": 1792855263.749811
+  }
+ ],
+ "cams": [
+  {
+   "t0": 1792855003.8216488,
+   "t1": 1792855007.021649,
+   "s": 1.42,
+   "cx": 676.0563380281691,
+   "cy": 380.2816901408451
+  },
+  {
+   "t0": 1792855013.232221,
+   "t1": 1792855014.132221,
+   "s": 1.0,
+   "cx": 960.0,
+   "cy": 540.0
+  },
+  {
+   "t0": 1792855015.769784,
+   "t1": 1792855017.069784,
+   "s": 1.6,
+   "cx": 639.421875,
+   "cy": 453.109375
+  },
+  {
+   "t0": 1792855023.940893,
+   "t1": 1792855024.840893,
+   "s": 1.0,
+   "cx": 960.0,
+   "cy": 540.0
+  },
+  {
+   "t0": 1792855035.72685,
+   "t1": 1792855037.1268501,
+   "s": 1.4,
+   "cx": 960.0,
+   "cy": 424.7890625
+  },
+  {
+   "t0": 1792855046.6979048,
+   "t1": 1792855047.597905,
+   "s": 1.0,
+   "cx": 960.0,
+   "cy": 540.0
+  },
+  {
+   "t0": 1792855052.282611,
+   "t1": 1792855053.5826108,
+   "s": 1.55,
+   "cx": 704.40625,
+   "cy": 731.6129032258065
+  },
+  {
+   "t0": 1792855057.8056471,
+   "t1": 1792855058.7056472,
+   "s": 1.0,
+   "cx": 960.0,
+   "cy": 540.0
+  },
+  {
+   "t0": 1792855063.838021,
+   "t1": 1792855065.138021,
+   "s": 1.4,
+   "cx": 960.0,
+   "cy": 424.7890625
+  },
+  {
+   "t0": 1792855068.4374678,
+   "t1": 1792855069.7374678,
+   "s": 1.6,
+   "cx": 704.40625,
+   "cy": 742.5
+  },
+  {
+   "t0": 1792855076.6690109,
+   "t1": 1792855077.569011,
+   "s": 1.0,
+   "cx": 960.0,
+   "cy": 540.0
+  },
+  {
+   "t0": 1792855079.587713,
+   "t1": 1792855080.987713,
+   "s": 1.45,
+   "cx": 1257.9310344827586,
+   "cy": 372.4137931034483
+  },
+  {
+   "t0": 1792855100.054482,
+   "t1": 1792855100.954482,
+   "s": 1.0,
+   "cx": 960.0,
+   "cy": 540.0
+  },
+  {
+   "t0": 1792855116.9287722,
+   "t1": 1792855118.3287723,
+   "s": 1.4,
+   "cx": 685.7142857142858,
+   "cy": 497.546875
+  },
+  {
+   "t0": 1792855124.950517,
+   "t1": 1792855126.150517,
+   "s": 1.7,
+   "cx": 646.0703125,
+   "cy": 317.6470588235294
+  },
+  {
+   "t0": 1792855133.590383,
+   "t1": 1792855134.4903831,
+   "s": 1.0,
+   "cx": 960.0,
+   "cy": 540.0
+  },
+  {
+   "t0": 1792855136.402892,
+   "t1": 1792855137.8028922,
+   "s": 1.4,
+   "cx": 685.7142857142858,
+   "cy": 523.4453125
+  },
+  {
+   "t0": 1792855144.437334,
+   "t1": 1792855145.3373342,
+   "s": 1.0,
+   "cx": 960.0,
+   "cy": 540.0
+  },
+  {
+   "t0": 1792855152.934232,
+   "t1": 1792855153.834232,
+   "s": 1.4,
+   "cx": 1234.2857142857142,
+   "cy": 694.2857142857142
+  },
+  {
+   "t0": 1792855153.885893,
+   "t1": 1792855156.2858932,
+   "s": 1.4,
+   "cx": 1234.2857142857142,
+   "cy": 385.7142857142857
+  },
+  {
+   "t0": 1792855156.969989,
+   "t1": 1792855158.269989,
+   "s": 1.4,
+   "cx": 1234.2857142857142,
+   "cy": 694.2857142857142
+  },
+  {
+   "t0": 1792855164.025038,
+   "t1": 1792855164.925038,
+   "s": 1.0,
+   "cx": 960.0,
+   "cy": 540.0
+  },
+  {
+   "t0": 1792855169.429893,
+   "t1": 1792855170.829893,
+   "s": 1.4,
+   "cx": 685.7142857142858,
+   "cy": 465.3203125
+  },
+  {
+   "t0": 1792855180.00495,
+   "t1": 1792855181.20495,
+   "s": 1.65,
+   "cx": 683.109375,
+   "cy": 523.9296875
+  },
+  {
+   "t0": 1792855186.260952,
+   "t1": 1792855187.160952,
+   "s": 1.0,
+   "cx": 960.0,
+   "cy": 540.0
+  },
+  {
+   "t0": 1792855192.30963,
+   "t1": 1792855193.6096299,
+   "s": 1.6,
+   "cx": 683.109375,
+   "cy": 442.59375
+  },
+  {
+   "t0": 1792855197.3562481,
+   "t1": 1792855198.656248,
+   "s": 1.6,
+   "cx": 683.109375,
+   "cy": 742.5
+  },
+  {
+   "t0": 1792855206.0117671,
+   "t1": 1792855206.9117672,
+   "s": 1.0,
+   "cx": 960.0,
+   "cy": 540.0
+  },
+  {
+   "t0": 1792855213.449815,
+   "t1": 1792855214.8498151,
+   "s": 1.4,
+   "cx": 960.0,
+   "cy": 694.2857142857142
+  },
+  {
+   "t0": 1792855222.671912,
+   "t1": 1792855223.571912,
+   "s": 1.0,
+   "cx": 960.0,
+   "cy": 540.0
+  },
+  {
+   "t0": 1792855226.34345,
+   "t1": 1792855227.7434502,
+   "s": 1.4,
+   "cx": 960.0,
+   "cy": 417.4140625
+  },
+  {
+   "t0": 1792855241.704735,
+   "t1": 1792855242.6047351,
+   "s": 1.0,
+   "cx": 960.0,
+   "cy": 540.0
+  },
+  {
+   "t0": 1792855244.517398,
+   "t1": 1792855245.9173982,
+   "s": 1.4,
+   "cx": 960.0,
+   "cy": 410.296875
+  },
+  {
+   "t0": 1792855252.076909,
+   "t1": 1792855252.9769092,
+   "s": 1.0,
+   "cx": 960.0,
+   "cy": 540.0
+  }
+ ],
+ "fades": [
+  {
+   "t_nav": 1792855101.024965,
+   "t": 1792855104.553511,
+   "d": 0.45,
+   "path": "/map"
+  },
+  {
+   "t_nav": 1792855115.009259,
+   "t": 1792855116.4682481,
+   "d": 0.45,
+   "path": "/kiln/PK-tt4rm4w8"
+  },
+  {
+   "t_nav": 1792855134.5422158,
+   "t": 1792855135.9373178,
+   "d": 0.45,
+   "path": "/kiln/PK-tts6wme9"
+  },
+  {
+   "t_nav": 1792855145.3901582,
+   "t": 1792855146.787442,
+   "d": 0.45,
+   "path": "/kiln/PK-tt4rm4w8"
+  },
+  {
+   "t_nav": 1792855164.976469,
+   "t": 1792855167.355937,
+   "d": 0.45,
+   "path": "/kiln/PK-tt18rk68"
+  },
+  {
+   "t_nav": 1792855187.212863,
+   "t": 1792855190.2786582,
+   "d": 0.45,
+   "path": "/kiln/PK-tt18uxyy"
+  },
+  {
+   "t_nav": 1792855206.963982,
+   "t": 1792855210.883683,
+   "d": 0.45,
+   "path": "/inspect"
+  },
+  {
+   "t_nav": 1792855223.624466,
+   "t": 1792855224.289663,
+   "d": 0.45,
+   "path": "/method"
+  },
+  {
+   "t_nav": 1792855242.6576571,
+   "t": 1792855244.057554,
+   "d": 0.45,
+   "path": "/ledger"
+  },
+  {
+   "t_nav": 1792855253.029693,
+   "t": 1792855254.45943,
+   "d": 0.45,
+   "path": "/"
+  }
+ ],
+ "facts": {
+  "b02": "\u206677%\u2069 of Punjab's kilns, if the province has about 10,394. EPA Punjab and The Urban Unit joint survey, reported by the Express Tribune, Aug 2026",
+  "b05": "Fire moves at the same speed in both. In the FCBK it loops straight round the oval. In the Zigzag the baffles make it cross the trench at every step, through the brick stacks.\n\nSmoke is illustrative; scaled to ICIMOD's measured 60% less black carbon. Towards cleaner brick production in Pakistan (ICIMOD)",
+  "b07": "This is what the satellite sees. At 10 m the oval and the rectangle blur together, so when the image cannot decide, Bhatta says so and sends an inspector. See the measured misses",
+  "b08": "8,879 kilns found in the scanned area: \u2068Kasur, Lahore, Sheikhpura, Bahawalpur, Faisalabad, Gujranwala, Gujrat, Jhang, Khanewal, Lodhran, Mandi Bahauddin, Multan, Muzaffargarh, Okara, Pakpattan, Rahim Yar Khan, Rawalpindi, Sahiwal, Sargodha, Sialkot, Toba Tek Singh, Vihari\u2069.",
+  "b09": "FCBK: old, polluting technology\n1,316\n15% | Undetermined: needs an inspector\n5,255\n59%",
+  "b11": "At 90% confidence, the image supports only: FCBK.",
+  "b12": "On held-out kilns, about 1 in 27 calls like this one was wrong (3.7%, n=573).",
+  "b13": "The image cannot separate Zigzag from FCBK at 10 m. Send an inspector.",
+  "b14": "Verified. This record is exactly the one committed on chain for this season.",
+  "b15": "Inspector finding signed\nZigzag confirmed\nDemo\n\nDemo inspector A: a test key held by the Bhatta team on a testnet. It is not an EPA Punjab inspection.\n\n24 Oct 2026, 18:03\nblock 11,983,967\nby Demo insp",
+  "b16": "Conflict: satellite and inspector disagree\nSatellite says FCBK, inspector confirmed Zigzag\nDemo\n\nDemo inspector A: a test key held by the Bhatta team on a testnet. It is not an EPA Punjab inspection.\n\n24 Oct 2026, 18:03\nblock 11,983,967\nby Demo inspector A \n0x3D6bfB\u2026aaCa\n0xb25837\u2026b10a\nView on Ethers",
+  "b17": "Certificate issued: inspector confirmed, satellite does not contradict\nDemo\n\nEvery confirmation behind this certificate comes from a demonstration key held by the Bhatta team on a testnet. It is not a | Certificate withdrawn\nDemo\n\nEvery confirmation behind this certificate comes from a demonstration key held by the Bhatta team on a testnet. It is not a certificate from EPA Punjab.\n\n24 Oct 2026, 18:04",
+  "b19": "ID\tMetric\tTarget\tResult\tVerdict\nT1\tDetector recall, IoU 0.3, conf 0.30\t>= 0.80\t0.880 (3,473 of 3,947 boxes)\nn: 3,203 test patches\n\t\nHit\nT2\tDetector precision, IoU 0.3, conf 0.30\t>= 0.75\t0.881 (3,473 TP, 469 FP)\nn: 3,942 detections\n\t\nHit\nT3\tClassifier accuracy, FCBK vs Zigzag, true kilns\t>= 0.85\t0.793 (balanced 0.657, AUC 0.759)\nn: 2,320 kilns (1,991 FCBK, 329 Zigzag)\n\t\nMiss\nT4\tConformal coverage, "
+ },
+ "only": null,
+ "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M5 Pro, Unspecified Version)",
+ "durations": {
+  "b01": 9.119958,
+  "b02": 7.279958,
+  "b03": 8.319958,
+  "b04": 10.073583,
+  "b05": 7.279958,
+  "b06": 7.839958,
+  "b07": 7.345167,
+  "b08": 8.959917,
+  "b09": 9.647917,
+  "b10": 5.999958,
+  "b11": 7.119958,
+  "b12": 7.741417,
+  "b13": 7.140125,
+  "b14": 14.307,
+  "b15": 9.679958,
+  "b16": 5.359958,
+  "b17": 12.807375,
+  "b18": 10.434208,
+  "b19": 14.470875,
+  "b20": 6.664458,
+  "b21": 3.382458,
+  "b22": 7.646583
+ },
+ "breath": 0.45,
+ "tail": 0.45
+}
