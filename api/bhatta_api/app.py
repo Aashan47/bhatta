@@ -108,6 +108,8 @@ def ledger():
         "deploy_tx": c.get("deploy_tx"),
         "rpc": chain.rpc,
         "eip712": c.get("eip712"),
+        "inspectors": chain.inspectors,
+        "inspector_note": chain.inspector_note,
         "seasons": seasons,
         "events": chain.events()[:200],
         "fixture": FIXTURE,

@@ -17,7 +17,7 @@ rsync -az --delete -e "$RSYNC_SSH" --exclude .venv --exclude __pycache__ --exclu
 rsync -az --delete -e "$RSYNC_SSH" "$ROOT/web/dist/" "$VM:bhatta/web/dist/"
 rsync -az --delete -e "$RSYNC_SSH" \
   --include 'kilns.json' --include 'summary.json' --include 'manifest.json' --include 'chain.json' \
-  --include 'eval_results.json' --include 'conformal.json' \
+  --include 'eval_results.json' --include 'conformal.json' --include 'inspectors.json' \
   --include 'abi/***' --include 'merkle/***' --include 'chips/***' --include 'audit/***' --include 'fixtures/***' \
   --exclude '*' "$ROOT/data/" "$VM:bhatta/data/"
 rsync -az -e "$RSYNC_SSH" "$ROOT/docs/RESULTS.md" "$ROOT/docs/PREREG.md" "$VM:bhatta/docs/"

@@ -43,6 +43,10 @@ class Chain:
         self._contract = None
         self._lock = threading.Lock()
         self._events_cache: tuple[float, list[dict]] = (0.0, [])
+        reg = data_dir / "inspectors.json"
+        raw = json.loads(reg.read_text(encoding="utf-8")) if reg.exists() else {}
+        self.inspectors = {k.lower(): v for k, v in (raw.get("inspectors") or {}).items()}
+        self.inspector_note = raw.get("note")
 
     @property
     def configured(self) -> bool:
@@ -112,6 +116,11 @@ class Chain:
             kid = kiln_id_from_bytes32(e.get("detail", {}).get("kilnId"))
             if kid:
                 e["kiln_id"] = kid
+            insp = str(e.get("detail", {}).get("inspector", "")).lower()
+            if insp:
+                known = self.inspectors.get(insp)
+                e["inspector_label"] = known["label"] if known else "Unregistered key"
+                e["demo"] = bool(known and known.get("demo"))
         self._block_times = cache
 
     def conflict_kilns(self) -> set[str]:

@@ -20,8 +20,96 @@
     "0x3D6bfBc04970152D462839B8766B028794e0aaCa": "0x86ee95f4e6b63e84638192d2679c8fc94ba9d84a740567fc5ed73081ccde1c93",
     "0x62a065B5E17Fe29d1D5634B3C763548c5b477dC4": "0xeeebebf547107cf65137facf0b3474f73c33dca0806a1f3ab8dccbfc71d414ac"
   },
-  "season_txs": {},
-  "activity": [],
+  "season_txs": {
+    "202610": "0x4f3bb557dc1e2e007cea00a4ac724e1f21529eb1cdb9cc394ad87667a826a104"
+  },
+  "activity": [
+    {
+      "label": "proveSatellite PK-tsczbend status 3 pZigzag 454bp",
+      "tx": "0x17708ded3b88ab6f3e55f268e0f3c8cf113f362855aff97d5034c50dc224a6ea",
+      "gas": 265058,
+      "events": [
+        "SatelliteProven"
+      ]
+    },
+    {
+      "label": "attest PK-tsczbend ZIGZAG_CONFIRMED by inspector A 0x3D6bfBc04970152D462839B8766B028794e0aaCa (signed offline, relayed)",
+      "tx": "0x627a5d0665cbf188ff57c93c212e645209eea8fa08f33b593308b22605081241",
+      "gas": 821384,
+      "events": [
+        "FindingAttested",
+        "Certified"
+      ]
+    },
+    {
+      "label": "attest PK-tsczbend ZIGZAG_CONFIRMED by inspector B 0x62a065B5E17Fe29d1D5634B3C763548c5b477dC4 (signed offline, relayed)",
+      "tx": "0x67a80a2715862f056ef357df44933a4cf088c5109d950568d952a524625b63f9",
+      "gas": 623442,
+      "events": [
+        "FindingAttested"
+      ]
+    },
+    {
+      "label": "proveSatellite PK-tt18rk68 status 1 pZigzag 30bp",
+      "tx": "0xc64d7291ee7541d1eced19e226a110505c34215943e77d9fca56c249f689b760",
+      "gas": 262385,
+      "events": [
+        "SatelliteProven"
+      ]
+    },
+    {
+      "label": "attest PK-tt18rk68 ZIGZAG_CONFIRMED by inspector A 0x3D6bfBc04970152D462839B8766B028794e0aaCa (signed offline, relayed)",
+      "tx": "0xb2583712a083f250720c2d3781a24390324e15e16d92f0f861643cb23300b10a",
+      "gas": 717438,
+      "events": [
+        "FindingAttested",
+        "Conflict"
+      ]
+    },
+    {
+      "label": "attest PK-tt18uxyy ZIGZAG_CONFIRMED by inspector A 0x3D6bfBc04970152D462839B8766B028794e0aaCa (signed offline, relayed)",
+      "tx": "0x7d4a3037cd98445dcd176bbb2c1bf0c598e195e02105dc9eb3cda088a490e4ec",
+      "gas": 722885,
+      "events": [
+        "FindingAttested",
+        "Certified"
+      ]
+    },
+    {
+      "label": "proveSatellite PK-tt18uxyy status 1 pZigzag 81bp",
+      "tx": "0x3f49e482d9330e2b9e7f01af4a739f275e95091e4910ee5290c27b3dd5c60e7f",
+      "gas": 385886,
+      "events": [
+        "SatelliteProven",
+        "Conflict",
+        "CertificateWithdrawn"
+      ]
+    },
+    {
+      "label": "attest PK-tt18meq7 FCBK_FOUND by inspector B 0x62a065B5E17Fe29d1D5634B3C763548c5b477dC4 (signed offline, relayed)",
+      "tx": "0x7aa74fce7db98754f5102e4761f313ca0e15a735be013fabed477a81e8073895",
+      "gas": 608130,
+      "events": [
+        "FindingAttested"
+      ]
+    },
+    {
+      "label": "revise PK-tt18meq7 -> NOT_OPERATING by inspector B",
+      "tx": "0xf6e75d957ae27da2ca9dc420bd735a92fb4707e6aa9391c768bbfd2b96e48f19",
+      "gas": 295656,
+      "events": [
+        "FindingRevised"
+      ]
+    },
+    {
+      "label": "dispute PK-tt18rk68 (relayed; submitter recorded as the relayer)",
+      "tx": "0x505b45b43152c4c73d2e51069cf9a3170d8a89a886d9bd23afbe1ff27eeae089",
+      "gas": 35275,
+      "events": [
+        "Disputed"
+      ]
+    }
+  ],
   "superseded": [
     {
       "address": "0x23FaFEC94D038C3A8DE12dB4CA6b38cB3DfB8c1a",

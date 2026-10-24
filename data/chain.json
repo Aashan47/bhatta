@@ -6,7 +6,9 @@
   "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
   "deploy_tx": "0xdcbfad7add4b60d586ba4d0f26125f41f508e9cad3628199c3b2c9bf360fedb6",
   "deploy_block": 11983523,
-  "season_txs": {},
+  "season_txs": {
+    "202610": "0x4f3bb557dc1e2e007cea00a4ac724e1f21529eb1cdb9cc394ad87667a826a104"
+  },
   "eip712": {
     "name": "Bhatta KilnLedger",
     "version": "1",
@@ -23,5 +25,5 @@
     }
   ],
   "abi_path": "data/abi/KilnLedger.json",
-  "updated_at": "2026-10-24T11:34:01.204Z"
+  "updated_at": "2026-10-24T13:04:49.991Z"
 }

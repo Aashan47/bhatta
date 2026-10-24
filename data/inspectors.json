@@ -1,0 +1,7 @@
+{
+  "note": "Inspector keys known to this deployment. Both are demonstration keys held by the Bhatta team on a testnet. Their findings show how the ledger works and are NOT inspections by EPA Punjab or anyone else.",
+  "inspectors": {
+    "0x3d6bfbc04970152d462839b8766b028794e0aaca": {"label": "Demo inspector A", "demo": true},
+    "0x62a065b5e17fe29d1d5634b3c763548c5b477dc4": {"label": "Demo inspector B", "demo": true}
+  }
+}

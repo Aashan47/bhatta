@@ -1,7 +1,7 @@
 {
   "description": "Bhatta cross-language vectors. A conforming implementation reproduces evidence_canonical, evidence_hash, leaf, the root of a StandardMerkleTree over exactly these three leaves, and every quantise4 row.",
-  "source": "contracts/test/fixtures/kilns.sample.json",
-  "fixture": true,
+  "source": "data/kilns.json",
+  "fixture": false,
   "encoding": {
     "leaf_types": [
       "bytes32",
@@ -90,173 +90,189 @@
   "kilns": [
     {
       "input": {
-        "id": "PK-fx000001",
-        "lat": 31.1021,
-        "lon": 74.4512,
-        "district": "Kasur",
+        "id": "PK-tsczbend",
+        "lat": 28.097945,
+        "lon": 69.992125,
+        "district": "Rahim Yar Khan",
         "baseline": {
-          "source": "SYNTHETIC fixture",
+          "source": "SentinelKilnDB hand label",
           "period": "2023-09/2024-02",
           "class": "FCBK"
         },
         "observation": {
-          "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
-          "date": "2026-10-12",
+          "scene_id": "S2B_42RWS_20261004_0_L2A",
+          "date": "2026-10-04",
           "detected": true,
-          "det_conf": 0.9,
+          "det_conf": 0.386,
           "probs": {
-            "FCBK": 0.03125,
-            "Zigzag": 0.96875
+            "FCBK": 0.9546,
+            "Zigzag": 0.0454
           },
           "set": [
+            "FCBK",
             "Zigzag"
           ],
-          "chip": "chips/PK-fx000001_202610.png",
-          "baseline_chip": null
+          "chip": "chips/PK-tsczbend_2026.png",
+          "baseline_chip": "chips/PK-tsczbend_2023.png"
         },
-        "status": "ZIGZAG"
+        "status": "UNDETERMINED"
       },
       "season": 202610,
       "evidence": {
-        "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
-        "date": "2026-10-12",
+        "scene_id": "S2B_42RWS_20261004_0_L2A",
+        "date": "2026-10-04",
         "probs": {
-          "FCBK": 0.0312,
-          "Zigzag": 0.9688
+          "FCBK": 0.9546,
+          "Zigzag": 0.0454
         },
         "set": [
+          "FCBK",
           "Zigzag"
         ],
-        "chip_sha256": "19aa34bfb80734a0863a3f517002e61ed5cd42132bbe30a209f44b9d3047fe77",
-        "model_sha256": "none"
+        "chip_sha256": "2c8e0291cedc45700984a413362cebe90278237083a759bfb78c5eeac068cb6d",
+        "model_sha256": "4d07730005a33adf76e315d3a6ffe8b8686822215d58c2dfa145f2d02cbf154a"
       },
-      "evidence_canonical": "{\"chip_sha256\":\"19aa34bfb80734a0863a3f517002e61ed5cd42132bbe30a209f44b9d3047fe77\",\"date\":\"2026-10-12\",\"model_sha256\":\"none\",\"probs\":{\"FCBK\":0.0312,\"Zigzag\":0.9688},\"scene_id\":\"FIXTURE-S2-L2A-20261012-T43RDQ\",\"set\":[\"Zigzag\"]}",
-      "evidence_hash": "0x4b48f8098179da7ccbe8648b7aeb4130b0c1ea32f2af3a765607595ebd3f760f",
-      "kiln_id_bytes32": "0x504b2d6678303030303031000000000000000000000000000000000000000000",
-      "status_code": 2,
-      "p_zigzag_bp": 9688,
+      "evidence_canonical": "{\"chip_sha256\":\"2c8e0291cedc45700984a413362cebe90278237083a759bfb78c5eeac068cb6d\",\"date\":\"2026-10-04\",\"model_sha256\":\"4d07730005a33adf76e315d3a6ffe8b8686822215d58c2dfa145f2d02cbf154a\",\"probs\":{\"FCBK\":0.9546,\"Zigzag\":0.0454},\"scene_id\":\"S2B_42RWS_20261004_0_L2A\",\"set\":[\"FCBK\",\"Zigzag\"]}",
+      "evidence_hash": "0xd2a1b564a63ee8a6927b894e5fc7bd8c0f08fe8da53a63e268d697c8fe5e68f9",
+      "kiln_id_bytes32": "0x504b2d7473637a62656e64000000000000000000000000000000000000000000",
+      "status_code": 3,
+      "p_zigzag_bp": 454,
       "leaf_values": [
-        "0x504b2d6678303030303031000000000000000000000000000000000000000000",
+        "0x504b2d7473637a62656e64000000000000000000000000000000000000000000",
         202610,
-        2,
-        9688,
-        "0x4b48f8098179da7ccbe8648b7aeb4130b0c1ea32f2af3a765607595ebd3f760f"
+        3,
+        454,
+        "0xd2a1b564a63ee8a6927b894e5fc7bd8c0f08fe8da53a63e268d697c8fe5e68f9"
       ],
-      "leaf": "0xc08587da80beaab769967f88d3a0d7c84d9640cfe5aee059c09c3c073bbec17d",
+      "leaf": "0x17b4403473131ad11c8e0a85c0f25a49e3daa7cec52fe4bcb5ed353b2bfd95d1",
       "proof": [
-        "0x9ea1c7c2de0fb56f97b00d5bc96200d8ef16dde48c2533ce1e2140be5ac5c920",
-        "0xed4950d6858837e963a19009972a43d62f46bc985581a099e28f2520549ec7cf"
+        "0x074f4fc0170b97af5669f91ee0e27e6a02ca7e7070244ec7a92c5cda06d3c399",
+        "0x86f0e8308cbd3e2cf8f480797b333d7362bd7c76547a9bde05127b15f8287761"
       ]
     },
     {
       "input": {
-        "id": "PK-fx000002",
-        "lat": 31.1188,
-        "lon": 74.473,
-        "district": "Kasur",
+        "id": "PK-tt18meq7",
+        "lat": 28.18745,
+        "lon": 69.859919,
+        "district": "Rahim Yar Khan",
         "baseline": {
-          "source": "SYNTHETIC fixture",
+          "source": "SentinelKilnDB hand label",
           "period": "2023-09/2024-02",
           "class": "FCBK"
         },
         "observation": {
-          "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
-          "date": "2026-10-12",
+          "scene_id": "S2B_42RWS_20261004_0_L2A",
+          "date": "2026-10-04",
           "detected": true,
-          "det_conf": 0.9,
+          "det_conf": 0.686,
           "probs": {
-            "FCBK": 1,
-            "Zigzag": 0
+            "FCBK": 0.9651,
+            "Zigzag": 0.0349
           },
           "set": [
-            "FCBK"
+            "FCBK",
+            "Zigzag"
           ],
-          "chip": "chips/PK-fx000002_202610.png",
-          "baseline_chip": null
+          "chip": "chips/PK-tt18meq7_2026.png",
+          "baseline_chip": "chips/PK-tt18meq7_2023.png"
         },
-        "status": "FCBK"
+        "status": "UNDETERMINED"
       },
       "season": 202610,
       "evidence": {
-        "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
-        "date": "2026-10-12",
+        "scene_id": "S2B_42RWS_20261004_0_L2A",
+        "date": "2026-10-04",
         "probs": {
-          "FCBK": 1,
-          "Zigzag": 0
+          "FCBK": 0.9651,
+          "Zigzag": 0.0349
         },
         "set": [
-          "FCBK"
+          "FCBK",
+          "Zigzag"
         ],
-        "chip_sha256": "none",
-        "model_sha256": "none"
+        "chip_sha256": "9995c94122e5b508fdfe4fbe637cf594bf2c5ea5e7c99f211a3ab7d2a10e2454",
+        "model_sha256": "4d07730005a33adf76e315d3a6ffe8b8686822215d58c2dfa145f2d02cbf154a"
       },
-      "evidence_canonical": "{\"chip_sha256\":\"none\",\"date\":\"2026-10-12\",\"model_sha256\":\"none\",\"probs\":{\"FCBK\":1,\"Zigzag\":0},\"scene_id\":\"FIXTURE-S2-L2A-20261012-T43RDQ\",\"set\":[\"FCBK\"]}",
-      "evidence_hash": "0x3d993c5be73a5aaa6cf92c0ff968f81bb3efa3798202d337d540a91e7de7c28d",
-      "kiln_id_bytes32": "0x504b2d6678303030303032000000000000000000000000000000000000000000",
-      "status_code": 1,
-      "p_zigzag_bp": 0,
+      "evidence_canonical": "{\"chip_sha256\":\"9995c94122e5b508fdfe4fbe637cf594bf2c5ea5e7c99f211a3ab7d2a10e2454\",\"date\":\"2026-10-04\",\"model_sha256\":\"4d07730005a33adf76e315d3a6ffe8b8686822215d58c2dfa145f2d02cbf154a\",\"probs\":{\"FCBK\":0.9651,\"Zigzag\":0.0349},\"scene_id\":\"S2B_42RWS_20261004_0_L2A\",\"set\":[\"FCBK\",\"Zigzag\"]}",
+      "evidence_hash": "0xf27230bafb46605d77bedc033d14813abc71757900012338ad5575193435d29c",
+      "kiln_id_bytes32": "0x504b2d747431386d657137000000000000000000000000000000000000000000",
+      "status_code": 3,
+      "p_zigzag_bp": 349,
       "leaf_values": [
-        "0x504b2d6678303030303032000000000000000000000000000000000000000000",
+        "0x504b2d747431386d657137000000000000000000000000000000000000000000",
         202610,
-        1,
-        0,
-        "0x3d993c5be73a5aaa6cf92c0ff968f81bb3efa3798202d337d540a91e7de7c28d"
+        3,
+        349,
+        "0xf27230bafb46605d77bedc033d14813abc71757900012338ad5575193435d29c"
       ],
-      "leaf": "0xed4950d6858837e963a19009972a43d62f46bc985581a099e28f2520549ec7cf",
+      "leaf": "0x074f4fc0170b97af5669f91ee0e27e6a02ca7e7070244ec7a92c5cda06d3c399",
       "proof": [
-        "0x11689c4f866d575ab832e43291b499ec1165547cc9c5d4b708bf3a769f6f7ee4"
+        "0x17b4403473131ad11c8e0a85c0f25a49e3daa7cec52fe4bcb5ed353b2bfd95d1",
+        "0x86f0e8308cbd3e2cf8f480797b333d7362bd7c76547a9bde05127b15f8287761"
       ]
     },
     {
       "input": {
-        "id": "PK-fx000006",
-        "lat": 31.4033,
-        "lon": 74.2588,
-        "district": "Lahore",
+        "id": "PK-tt18mxt9",
+        "lat": 28.210376,
+        "lon": 69.858799,
+        "district": "Rahim Yar Khan",
         "baseline": {
-          "source": "SYNTHETIC fixture",
+          "source": "SentinelKilnDB hand label",
           "period": "2023-09/2024-02",
           "class": "FCBK"
         },
         "observation": {
-          "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
-          "date": "2026-10-12",
-          "detected": false,
-          "det_conf": null,
-          "probs": null,
-          "set": null,
-          "chip": null,
-          "baseline_chip": null
+          "scene_id": "S2B_42RWS_20261004_0_L2A",
+          "date": "2026-10-04",
+          "detected": true,
+          "det_conf": 0.617,
+          "probs": {
+            "FCBK": 0.7836,
+            "Zigzag": 0.2164
+          },
+          "set": [
+            "FCBK",
+            "Zigzag"
+          ],
+          "chip": "chips/PK-tt18mxt9_2026.png",
+          "baseline_chip": "chips/PK-tt18mxt9_2023.png"
         },
-        "status": "NOT_DETECTED"
+        "status": "UNDETERMINED"
       },
       "season": 202610,
       "evidence": {
-        "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
-        "date": "2026-10-12",
-        "probs": null,
-        "set": [],
-        "chip_sha256": "none",
-        "model_sha256": "none"
+        "scene_id": "S2B_42RWS_20261004_0_L2A",
+        "date": "2026-10-04",
+        "probs": {
+          "FCBK": 0.7836,
+          "Zigzag": 0.2164
+        },
+        "set": [
+          "FCBK",
+          "Zigzag"
+        ],
+        "chip_sha256": "7766f9748800b7e6a7bcb827fd8ffa66cfceb3261d9fa87ba69ff082661c3c1b",
+        "model_sha256": "4d07730005a33adf76e315d3a6ffe8b8686822215d58c2dfa145f2d02cbf154a"
       },
-      "evidence_canonical": "{\"chip_sha256\":\"none\",\"date\":\"2026-10-12\",\"model_sha256\":\"none\",\"probs\":null,\"scene_id\":\"FIXTURE-S2-L2A-20261012-T43RDQ\",\"set\":[]}",
-      "evidence_hash": "0x30f14e8a41ff06439d419ec755bdd1749e0f701e7a69173428a95d6527cd4036",
-      "kiln_id_bytes32": "0x504b2d6678303030303036000000000000000000000000000000000000000000",
-      "status_code": 0,
-      "p_zigzag_bp": 0,
+      "evidence_canonical": "{\"chip_sha256\":\"7766f9748800b7e6a7bcb827fd8ffa66cfceb3261d9fa87ba69ff082661c3c1b\",\"date\":\"2026-10-04\",\"model_sha256\":\"4d07730005a33adf76e315d3a6ffe8b8686822215d58c2dfa145f2d02cbf154a\",\"probs\":{\"FCBK\":0.7836,\"Zigzag\":0.2164},\"scene_id\":\"S2B_42RWS_20261004_0_L2A\",\"set\":[\"FCBK\",\"Zigzag\"]}",
+      "evidence_hash": "0x7c8d0b094246785eaaba9f57b53a1507df0f56313cfbd72dc881804635f6073c",
+      "kiln_id_bytes32": "0x504b2d747431386d787439000000000000000000000000000000000000000000",
+      "status_code": 3,
+      "p_zigzag_bp": 2164,
       "leaf_values": [
-        "0x504b2d6678303030303036000000000000000000000000000000000000000000",
+        "0x504b2d747431386d787439000000000000000000000000000000000000000000",
         202610,
-        0,
-        0,
-        "0x30f14e8a41ff06439d419ec755bdd1749e0f701e7a69173428a95d6527cd4036"
+        3,
+        2164,
+        "0x7c8d0b094246785eaaba9f57b53a1507df0f56313cfbd72dc881804635f6073c"
       ],
-      "leaf": "0x9ea1c7c2de0fb56f97b00d5bc96200d8ef16dde48c2533ce1e2140be5ac5c920",
+      "leaf": "0x86f0e8308cbd3e2cf8f480797b333d7362bd7c76547a9bde05127b15f8287761",
       "proof": [
-        "0xc08587da80beaab769967f88d3a0d7c84d9640cfe5aee059c09c3c073bbec17d",
-        "0xed4950d6858837e963a19009972a43d62f46bc985581a099e28f2520549ec7cf"
+        "0x7ec983d560cc5e335591eeca94181280962ab5d9b51f6cda161706ca778d1760"
       ]
     }
   ],
-  "root": "0xeada380a498ac1141455e23923849298a32f63ff08b1b4c68627143e48cc73bb"
+  "root": "0x801f28302e72481d91d6c7dcdfd182d984682054638e8e2f550be66ba15d9dec"
 }
