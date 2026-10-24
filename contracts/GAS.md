@@ -49,3 +49,14 @@ stores nothing and only emits a Conflict. Its maximum is a proof that also emits
   entry, so it costs 100k to 136k. On a testnet the relayer pays, so all of this is free to inspectors.
 - **A dispute costs 32k to 56k gas.** It is a counter bump plus an event; the note lives in the log
   only, never in storage.
+
+## Measured on Ethereum Sepolia, 24 Oct 2026
+
+| Transaction | Gas used (receipt) | Sepolia ETH at 0.0012 gwei |
+|---|---:|---:|
+| Deploy KilnLedger, tx `0x28d68cde...6faf`, block 11983278 | 22,848,158 | 0.0000274 |
+| Grant INSPECTOR_ROLE, tx `0x569fb722...9a35`, block 11983279 | 464,396 | 0.0000006 |
+
+Sepolia charged about 6.6 times the local Hardhat figures above for both transactions. The likely cause
+is a newer fork on Sepolia that reprices state creation; this is an assumption, not verified. Cost is
+still negligible on a testnet.

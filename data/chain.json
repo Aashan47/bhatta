@@ -1,0 +1,19 @@
+{
+  "chain_id": 11155111,
+  "network": "sepolia",
+  "contract": "0x23FaFEC94D038C3A8DE12dB4CA6b38cB3DfB8c1a",
+  "explorer_base": "https://sepolia.etherscan.io",
+  "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
+  "deploy_tx": "0x28d68cde9994288bddc901e2b711eb1058eb8adfa7ea7034b9876cf6a65e6faf",
+  "deploy_block": 11983278,
+  "season_txs": {},
+  "eip712": {
+    "name": "Bhatta KilnLedger",
+    "version": "1",
+    "chainId": 11155111,
+    "verifyingContract": "0x23FaFEC94D038C3A8DE12dB4CA6b38cB3DfB8c1a"
+  },
+  "oracle_threshold": 1,
+  "abi_path": "data/abi/KilnLedger.json",
+  "updated_at": "2026-10-24T10:43:14.234Z"
+}
