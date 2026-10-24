@@ -158,6 +158,22 @@
     {
       "inputs": [
         {
+          "internalType": "uint8",
+          "name": "k",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "inspectorCount",
+          "type": "uint256"
+        }
+      ],
+      "name": "InvalidInspectorThreshold",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "uint16",
           "name": "bp",
           "type": "uint16"
@@ -659,6 +675,25 @@
         }
       ],
       "name": "FindingRevised",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "previous",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "current",
+          "type": "uint8"
+        }
+      ],
+      "name": "InspectorThresholdSet",
       "type": "event"
     },
     {
@@ -1626,6 +1661,19 @@
       "type": "function"
     },
     {
+      "inputs": [],
+      "name": "inspectorThreshold",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "inputs": [
         {
           "internalType": "bytes32",
@@ -1755,6 +1803,11 @@
               "internalType": "bytes32",
               "name": "certificateHash",
               "type": "bytes32"
+            },
+            {
+              "internalType": "uint8",
+              "name": "inspectorThreshold",
+              "type": "uint8"
             }
           ],
           "internalType": "struct KilnLedger.KilnView",
@@ -1932,6 +1985,24 @@
       "inputs": [
         {
           "internalType": "bytes32",
+          "name": "kilnId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint32",
+          "name": "season",
+          "type": "uint32"
+        }
+      ],
+      "name": "refreshCertificate",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
           "name": "role",
           "type": "bytes32"
         },
@@ -2091,6 +2162,19 @@
         }
       ],
       "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "k",
+          "type": "uint8"
+        }
+      ],
+      "name": "setInspectorThreshold",
+      "outputs": [],
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {

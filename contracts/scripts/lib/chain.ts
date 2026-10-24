@@ -68,6 +68,8 @@ export async function saveDeployment(d: any): Promise<void> {
     season_txs: d.season_txs ?? {},
     eip712: { name: EIP712_NAME, version: EIP712_VERSION, chainId: d.chain_id, verifyingContract: d.address },
     oracle_threshold: d.oracle_threshold,
+    inspector_threshold: d.inspector_threshold,
+    superseded: d.superseded ?? [],
     abi_path: "data/abi/KilnLedger.json",
     updated_at: new Date().toISOString(),
   };

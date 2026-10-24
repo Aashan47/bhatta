@@ -5,8 +5,9 @@
  *   ORACLE_THRESHOLD    k (default 1)
  * Writes contracts/deployments/<network>.json, data/chain.json, data/abi/KilnLedger.json.
  */
+import * as fs from "fs";
 import { ethers, network } from "hardhat";
-import { deployerWallet, saveDeployment, txLink } from "./lib/chain";
+import { deployerWallet, deploymentPath, saveDeployment, txLink } from "./lib/chain";
 import { EIP712_NAME, EIP712_VERSION } from "./lib/encoding";
 
 async function main() {
@@ -18,6 +19,13 @@ async function main() {
   const steward = process.env.STEWARD_ADDRESS || deployer.address;
   const oracles = (process.env.ORACLE_ADDRESSES || deployer.address).split(",").map((s) => s.trim());
   const k = Number(process.env.ORACLE_THRESHOLD || 1);
+  // Earlier deployments on this network stay on record as superseded.
+  const prevPath = deploymentPath(network.name);
+  const prev = fs.existsSync(prevPath) ? JSON.parse(fs.readFileSync(prevPath, "utf8")) : undefined;
+  const superseded = [
+    ...((prev && prev.superseded) || []),
+    ...(prev ? [{ address: prev.address, deploy_tx: prev.deploy_tx, deploy_block: prev.deploy_block }] : []),
+  ];
 
   const F = await ethers.getContractFactory("KilnLedger", deployer);
   const c = await F.deploy(steward, oracles, k);
@@ -27,6 +35,7 @@ async function main() {
   const { chainId } = await ethers.provider.getNetwork();
   console.log(`KilnLedger ${address}`);
   console.log(`deploy tx ${txLink(network.name, tx.hash)} (gas ${rcpt!.gasUsed})`);
+  const inspectorThreshold = Number(await c.inspectorThreshold());
 
   await saveDeployment({
     network: network.name,
@@ -39,10 +48,12 @@ async function main() {
     steward,
     oracles,
     oracle_threshold: k,
+    inspector_threshold: inspectorThreshold,
     eip712: { name: EIP712_NAME, version: EIP712_VERSION },
     inspectors: {},
     season_txs: {},
     activity: [],
+    superseded,
   });
 }
 

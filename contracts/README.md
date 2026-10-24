@@ -29,6 +29,14 @@ for a wrong answer (the owner whose kiln is sealed) will not accept a database t
 The contract therefore holds no data that one side could edit. It holds commitments and signatures
 that either side, or a journalist, can check without trusting the other, and without trusting us.
 
+## Live deployment
+
+Ethereum Sepolia (chain 11155111): `0xD5ED8D10aD23bAc601C065D4179d488037070baC`,
+https://sepolia.etherscan.io/address/0xD5ED8D10aD23bAc601C065D4179d488037070baC. Deployed
+24 Oct 2026 with inspectorThreshold 1 and an oracle committee of 1 (k=1). Two demo inspectors are
+granted. No season had been published at the time of writing. The earlier deployment
+`0x23FaFEC94D038C3A8DE12dB4CA6b38cB3DfB8c1a` is superseded: it carried the old certificate rule.
+
 ## Threat model
 
 ### Who can do what

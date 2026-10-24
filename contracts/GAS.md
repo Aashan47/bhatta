@@ -1,62 +1,77 @@
 # KilnLedger gas
 
-Measured 24 Oct 2026. Solidity 0.8.28, optimizer on (200 runs), viaIR, EVM cancun.
-All figures are total transaction gas (receipt `gasUsed`, including the 21,000 base cost).
+Measured 24 Oct 2026, after the certificate-rule change (inspector threshold, satellite veto).
+Solidity 0.8.28, optimizer on (200 runs), viaIR, EVM cancun. All figures are total transaction gas
+(receipt `gasUsed`, including the 21,000 base cost).
 
-## From the test suite (hardhat-gas-reporter, 46 tests, `npm run gas`)
+## From the test suite (hardhat-gas-reporter, 52 tests, `npm run gas`)
 
 | Function | Min | Max | Avg | Calls |
 |---|---:|---:|---:|---:|
-| deploy KilnLedger | 3,314,890 | 3,454,909 | 3,442,180 | (5.7% of block limit) |
-| publishSeason (k=1, activates) | 263,021 | 287,341 | 279,234 | 15 |
-| publishCorrection | 270,781 | 278,145 | 275,678 | 6 |
-| confirmSeason (k=2 or 3) | 59,297 | 83,617 | 75,356 | 5 |
-| proveSatellite | 47,633 | 119,817 | 85,560 | 36 |
-| attest (EIP-712, relayed) | 145,387 | 213,979 | 185,767 | 41 |
-| revise (EIP-712, relayed) | 100,425 | 135,929 | 117,640 | 6 |
-| dispute | 32,313 | 55,869 | 41,750 | 5 |
-| grantRole (inspector) | 101,216 | 118,316 | 110,543 | 11 |
-| revokeRole | 40,641 | 40,641 | 40,641 | 2 |
-| setOracleThreshold | 33,051 | 33,051 | 33,051 | 5 |
+| deploy KilnLedger | 3,400,239 | 3,540,258 | 3,530,923 | (5.9% of block limit) |
+| publishSeason (k=1, activates) | 263,065 | 287,385 | 280,232 | 17 |
+| publishCorrection | 270,781 | 278,145 | 275,668 | 6 |
+| confirmSeason (k=2 or 3) | 59,319 | 83,639 | 75,378 | 5 |
+| proveSatellite | 48,042 | 132,359 | 94,325 | 39 |
+| attest (EIP-712, relayed) | 159,630 | 210,813 | 191,215 | 56 |
+| revise (EIP-712, relayed) | 102,336 | 147,393 | 125,921 | 7 |
+| refreshCertificate | 48,005 | 77,614 | 55,513 | 10 |
+| dispute | 32,371 | 55,891 | 45,192 | 5 |
+| grantRole (inspector) | 101,238 | 118,338 | 110,358 | 15 |
+| revokeRole | 40,676 | 40,676 | 40,676 | 3 |
+| setInspectorThreshold | 32,315 | 32,315 | 32,315 | 5 |
+| setOracleThreshold | 33,155 | 33,155 | 33,155 | 5 |
 
 Ranges come from the test inputs. proveSatellite's minimum is the root-equivocation path, which
-stores nothing and only emits a Conflict. Its maximum is a proof that also emits a Conflict.
+stores nothing and only emits a Conflict. Its maximum is a proof that also emits a Conflict and
+withdraws a certificate.
 
-## From the live localhost run (`scripts/demo-activity.ts`, real receipts)
+## From a localhost run (`scripts/demo-activity.ts`, real receipts, 10-kiln fixture)
 
 | Step | Gas | Events |
 |---|---:|---|
-| deploy | 3,314,866 | |
-| publishSeason 202610 (10-kiln fixture root) | 266,913 | SeasonPublished, SeasonConfirmed, SeasonActivated |
-| grantRole INSPECTOR | 118,316 | RoleGranted |
-| proveSatellite (ZIGZAG) | 85,911 | SatelliteProven |
-| attest ZIGZAG_CONFIRMED (inspector's first, nonce 0) | 214,039 | FindingAttested, Certified |
-| proveSatellite (FCBK) | 85,311 | SatelliteProven |
-| attest ZIGZAG_CONFIRMED on an FCBK kiln | 185,114 | FindingAttested, Conflict |
-| attest FCBK_FOUND | 159,941 | FindingAttested |
-| proveSatellite after FCBK_FOUND | 121,228 | SatelliteProven, Conflict |
-| revise -> NOT_OPERATING | 109,480 | FindingRevised |
-| dispute (89-byte note) | 34,053 | Disputed |
+| deploy | 3,400,215 | |
+| publishSeason 202610 | 266,957 | SeasonPublished, SeasonConfirmed, SeasonActivated |
+| grantRole inspector A / B | 118,338 / 101,238 | RoleGranted |
+| proveSatellite (UNDETERMINED) | 87,731 | SatelliteProven |
+| attest ZIGZAG_CONFIRMED, inspector A (first finding, nonce 0) | 210,832 | FindingAttested, Certified |
+| attest ZIGZAG_CONFIRMED, inspector B on the same kiln | 181,730 | FindingAttested |
+| proveSatellite (FCBK) | 85,720 | SatelliteProven |
+| attest ZIGZAG_CONFIRMED on that FCBK kiln | 187,718 | FindingAttested, Conflict |
+| attest ZIGZAG_CONFIRMED on an unproven kiln | 193,165 | FindingAttested, Certified |
+| proveSatellite FCBK on it afterwards (the veto) | 120,856 | SatelliteProven, Conflict, CertificateWithdrawn |
+| attest FCBK_FOUND | 166,430 | FindingAttested |
+| revise -> NOT_OPERATING | 110,816 | FindingRevised |
+| dispute (89-byte note) | 34,075 | Disputed |
 
 ## Reading it
 
-- **A season costs one transaction whatever the kiln count.** About 267k to 287k gas for 10 kilns or 10,000.
-  Proof length grows with log2(n), so 10,000 kilns means about 14 sibling hashes.
-- **An inspector finding costs 145k to 214k gas, more than the 60k to 120k estimate in
+- **A season costs one transaction whatever the kiln count.** About 263k to 287k gas. Proof length
+  grows with log2(n), so 2,754 kilns means 12 sibling hashes.
+- **An inspector finding costs 160k to 211k gas, more than the 60k to 120k estimate in
   `docs/PRODUCT.md`.** The cost comes from storing history rather than only emitting it: a new
-  inspector-list entry, a 2-slot finding record plus the array length, and the first nonce write
-  (zero to non-zero, 20k). The signature check itself is about 3k. A revision writes no new list
-  entry, so it costs 100k to 136k. On a testnet the relayer pays, so all of this is free to inspectors.
+  inspector-list entry, a 2-slot finding record plus the array length, the first nonce write (zero
+  to non-zero, 20k), and the certificate hash slot when a certificate is issued. The signature
+  check itself is about 3k. A revision writes no new list entry, so it costs 102k to 147k. The
+  relayer pays, so inspectors never need gas.
 - **A dispute costs 32k to 56k gas.** It is a counter bump plus an event; the note lives in the log
   only, never in storage.
 
-## Measured on Ethereum Sepolia, 24 Oct 2026
+## Measured on Ethereum Sepolia
 
-| Transaction | Gas used (receipt) | Sepolia ETH at 0.0012 gwei |
-|---|---:|---:|
-| Deploy KilnLedger, tx `0x28d68cde...6faf`, block 11983278 | 22,848,158 | 0.0000274 |
-| Grant INSPECTOR_ROLE, tx `0x569fb722...9a35`, block 11983279 | 464,396 | 0.0000006 |
+Current deployment `0xD5ED8D10aD23bAc601C065D4179d488037070baC`, deployed 24 Oct 2026 with
+inspectorThreshold 1. The effective gas price was 0.0012 gwei.
 
-Sepolia charged about 6.6 times the local Hardhat figures above for both transactions. The likely cause
-is a newer fork on Sepolia that reprices state creation; this is an assumption, not verified. Cost is
-still negligible on a testnet.
+| Transaction | Block | Gas used (receipt) | Sepolia ETH |
+|---|---:|---:|---:|
+| Deploy KilnLedger, tx `0xdcbfad7a...fedb6` | 11983523 | 23,445,629 | 0.0000281 |
+| Grant INSPECTOR_ROLE to inspector A, tx `0x86ee95f4...1c93` | 11983524 | 464,418 | 0.0000006 |
+| Grant INSPECTOR_ROLE to inspector B, tx `0xeeebebf5...14ac` | 11983525 | 366,498 | 0.0000004 |
+
+Superseded deployment, same day, under the earlier certificate rule:
+`0x23FaFEC94D038C3A8DE12dB4CA6b38cB3DfB8c1a`. It was deployed in tx `0x28d68cde...6faf` (block
+11983278, 22,848,158 gas), and INSPECTOR_ROLE was granted in tx `0x569fb722...9a35` (464,396 gas).
+
+Sepolia charged about 6.9 times the local Hardhat figure for the deploy, and 3.6 to 3.9 times for
+role grants. The likely cause is a newer fork on Sepolia that reprices state creation; this is an
+assumption, not verified. The cost is still negligible on a testnet.
