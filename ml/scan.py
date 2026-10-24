@@ -71,7 +71,7 @@ NEW_MIN_KM = 0.150  # an unmatched detection counts as a new kiln only this far 
 MATCH_KM = 0.100
 CHIP = 64
 SCENES_PER_TILE = 3
-READ_THREADS = 12
+READ_THREADS = 20
 CACHE_DIR = RAW / "mosaics"   # local cache of fetched chunks, keyed by the scene list (gitignored)
 USE_CACHE = True
 TORCH_THREADS = 4
@@ -145,16 +145,35 @@ def select_scenes(bbox):
         by_tile[it.properties.get("grid:code")].append(it)
     chosen = []
     for tile, its in sorted(by_tile.items()):
-        # an acquisition can cover only part of an MGRS tile (swath edge), so keep the newest few
-        # clear scenes per tile; pixels are filled newest first and later scenes only fill gaps
+        # cloud-free (< 1%, as the dataset) October scenes; late October is smog season, so rank
+        # them by Sen2Cor aerosol optical thickness (clearest first, newest as tie-break). An
+        # acquisition can cover only part of a tile (swath edge), so keep a few per tile; pixels
+        # are filled in priority order and later scenes only fill gaps.
         clear = [i for i in its if (i.properties.get("eo:cloud_cover") if i.properties.get("eo:cloud_cover") is not None else 100) < 1]
-        clear = sorted(clear, key=lambda i: (i.properties["datetime"], -i.properties["eo:cloud_cover"], i.id), reverse=True)
-        picks = clear[:SCENES_PER_TILE]
-        if len(picks) < SCENES_PER_TILE:
-            rest = sorted([i for i in its if i not in clear], key=lambda i: (i.properties.get("eo:cloud_cover") or 100, i.id))
-            picks += rest[:SCENES_PER_TILE - len(picks)]
-        chosen.extend(scene_record(i) for i in picks)
+        if not clear:
+            clear = sorted(its, key=lambda i: (i.properties.get("eo:cloud_cover") or 100, i.id))[:SCENES_PER_TILE]
+        recs = [scene_record(i) for i in clear]
+        from concurrent.futures import ThreadPoolExecutor
+        with ThreadPoolExecutor(8) as ex:
+            aots = list(ex.map(scene_aot, recs))
+        for r, a in zip(recs, aots):
+            r["aot_median"] = a
+        recs.sort(key=lambda r: (r["aot_median"] if r["aot_median"] is not None else 9e9, tuple(-ord(c) for c in r["datetime"]), r["id"]))
+        chosen.extend(recs[:SCENES_PER_TILE])
     return order_scenes(chosen)
+
+
+def scene_aot(rec):
+    """Median Sen2Cor AOT (scaled x1000) over the valid part of the scene, from a 128 px overview read."""
+    import rasterio
+    href = rec["assets"]["red"].rsplit("/", 1)[0] + "/AOT.tif"
+    try:
+        with rasterio.open(href) as src:
+            a = src.read(1, out_shape=(128, 128))
+        a = a[a > 0]
+        return float(np.median(a)) if a.size else None
+    except Exception:
+        return None
 
 
 def scene_record(it):
@@ -166,8 +185,9 @@ def scene_record(it):
 
 
 def order_scenes(scenes):
-    # newest first, then least cloudy, then id: a fixed priority for the per-pixel fill
-    return sorted(scenes, key=lambda s: (s["datetime"], -(s["cloud_cover"] or 0), s["id"]), reverse=True)
+    # fixed per-pixel fill priority: lowest AOT first, then newest, then id
+    return sorted(scenes, key=lambda s: (s.get("aot_median") if s.get("aot_median") is not None else 9e9,
+                                         tuple(-ord(c) for c in s["datetime"]), s["id"]))
 
 
 # ----------------------------------------------------------------------------- mosaic
