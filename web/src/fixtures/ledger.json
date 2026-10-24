@@ -1,0 +1,364 @@
+{
+ "fixture": true,
+ "mock_chain": true,
+ "chain_id": 11155111,
+ "chain_name": "Ethereum Sepolia",
+ "contract": null,
+ "explorer": "https://sepolia.etherscan.io",
+ "rpc": "https://ethereum-sepolia-rpc.publicnode.com",
+ "seasons": [
+  {
+   "season": 202610,
+   "root": "0x6c5b3cece5b534a555c7ebdc3ae5ec5fe8090268023c2898cf64cf6af7314f62",
+   "tx": "0x0b4aee3705197a6ba9a6fcfc73905a921effb6c68ba1275573656c29c41a9604",
+   "block": 9480211,
+   "time": "2026-10-21T09:14:36Z",
+   "model_hash": "0x5a5a5a5ab8868e3da9a9f08f96177bc9df00f2ca0d49b9bdeed1c040785b5908",
+   "kilns": 144
+  }
+ ],
+ "events": [
+  {
+   "type": "Finding",
+   "tx": "0x3d7c64e57a5cbbd8c7f9aec68154b39508bc598e5e93aaad9ade2e13d03844b6",
+   "block": 9490714,
+   "time": "2026-10-23T14:45:36Z",
+   "detail": {
+    "finding": 3,
+    "inspector": "0xb7e9ae049744afe31d809db54b7d6ceb8a662576",
+    "evidence_hash": "0x3b28dba75f4ffd50bf92e788a4bbf864f1d33e9d03a4cda36917685a7962d642"
+   },
+   "kiln_id": "PK-tts8n9tf",
+   "season": 202610
+  },
+  {
+   "type": "Finding",
+   "tx": "0x630fd734053b44e591e0d45afeb132c76e7ad2e883609445529e1839a24adc2b",
+   "block": 9489824,
+   "time": "2026-10-23T11:10:36Z",
+   "detail": {
+    "finding": 3,
+    "inspector": "0x0e73834c6489a1e545da2907d4162ec37d319bad",
+    "evidence_hash": "0xdf37aa21ee39d2fd424fca9f98b545fb2bc06e4c7cd58a6cedb89d6b62dc0799"
+   },
+   "kiln_id": "PK-ttkzuc4r",
+   "season": 202610
+  },
+  {
+   "type": "Disputed",
+   "tx": "0x7aec9cb66ad4130be3c14f7f77be5e7c32692608b177b5812bf00233a426d7d0",
+   "block": 9489563,
+   "time": "2026-10-23T08:29:36Z",
+   "detail": {
+    "by": "0xf32eb60ab49e1f66c3a83c2b3aca21b53ca3c9e4",
+    "evidence_hash": "0x8c3ca89e2c88c5c47b3c588f6610275d4b68b3b58856f3a46bb21c39cca15154",
+    "note": "Kiln still operating; chimney visible from road."
+   },
+   "kiln_id": "PK-ttscdjte",
+   "season": 202610
+  },
+  {
+   "type": "Disputed",
+   "tx": "0x68a700389cf3225c43f603298f90cfb5a09b6c8110d1f2e2227222d85619f8c5",
+   "block": 9489396,
+   "time": "2026-10-23T07:51:36Z",
+   "detail": {
+    "by": "0x2fe54be09fd8b7602ac6cce36619ea49cbd0cac6",
+    "evidence_hash": "0x93f5aba542056be4ddfc33c8b89edfb6053d734a88786e06a08fb9f1530096df",
+    "note": "Kiln rebuilt as zigzag in August; photos and invoice hashed."
+   },
+   "kiln_id": "PK-tts9ncux",
+   "season": 202610
+  },
+  {
+   "type": "Finding",
+   "tx": "0x951e755a15c6e7deb9b066f74d4f4f08882e6c163eec8268804f2fe60dc133d9",
+   "block": 9488610,
+   "time": "2026-10-23T05:42:36Z",
+   "detail": {
+    "finding": 2,
+    "inspector": "0x0e73834c6489a1e545da2907d4162ec37d319bad",
+    "evidence_hash": "0xfd7bdd5547fd36f4f1343b8727d20060fc850e0088aabaa0862461d77eb0eb9f"
+   },
+   "kiln_id": "PK-ttsbyyqj",
+   "season": 202610
+  },
+  {
+   "type": "Finding",
+   "tx": "0xf788f79c5e80cd2d61a3286cd986ed1bf3e2ae9c30b5a5a9d78011adbfb417fb",
+   "block": 9488181,
+   "time": "2026-10-23T02:24:36Z",
+   "detail": {
+    "finding": 2,
+    "inspector": "0x80e403ab3a8d32e453234bd866d4380391f20fa3",
+    "evidence_hash": "0xb54f9d53b565d81013f4ac702ba19fe4f0266d99c286e84141a3ea036cd418a0"
+   },
+   "kiln_id": "PK-ttscp328",
+   "season": 202610
+  },
+  {
+   "type": "Finding",
+   "tx": "0xee70b25162f505be83e2c82b08767c346e7f5dc1ed955cfdbb83b37f632c0d27",
+   "block": 9487785,
+   "time": "2026-10-22T23:21:36Z",
+   "detail": {
+    "finding": 1,
+    "inspector": "0x0e73834c6489a1e545da2907d4162ec37d319bad",
+    "evidence_hash": "0x8136a2f48a444f1d1e04c15081c3cb1cc4b1eafbbbaaf916c0043037a7bfd2cf"
+   },
+   "kiln_id": "PK-tts9k65g",
+   "season": 202610
+  },
+  {
+   "type": "Conflict",
+   "tx": "0xee70b25162f505be83e2c82b08767c346e7f5dc1ed955cfdbb83b37f632c0d27",
+   "block": 9487785,
+   "time": "2026-10-22T23:21:36Z",
+   "detail": {
+    "satellite_status": 1,
+    "finding": 1,
+    "inspector": "0x0e73834c6489a1e545da2907d4162ec37d319bad"
+   },
+   "kiln_id": "PK-tts9k65g",
+   "season": 202610
+  },
+  {
+   "type": "Finding",
+   "tx": "0xcf1787fdd5389b4bf26d8c3c4a8b0374edef33980f9c87e0206c7658fcbe4413",
+   "block": 9487400,
+   "time": "2026-10-22T21:36:36Z",
+   "detail": {
+    "finding": 1,
+    "inspector": "0x0e73834c6489a1e545da2907d4162ec37d319bad",
+    "evidence_hash": "0x84f9be689e3dc0551651450f8c4e6f4f0f3edcdedf1be8356dc90de8a43f0384"
+   },
+   "kiln_id": "PK-ttsc2c2c",
+   "season": 202610
+  },
+  {
+   "type": "Conflict",
+   "tx": "0xcf1787fdd5389b4bf26d8c3c4a8b0374edef33980f9c87e0206c7658fcbe4413",
+   "block": 9487400,
+   "time": "2026-10-22T21:36:36Z",
+   "detail": {
+    "satellite_status": 1,
+    "finding": 1,
+    "inspector": "0x0e73834c6489a1e545da2907d4162ec37d319bad"
+   },
+   "kiln_id": "PK-ttsc2c2c",
+   "season": 202610
+  },
+  {
+   "type": "Finding",
+   "tx": "0x336e248cd0c6ae17486bc7444094a619f094d57d5717c01888786bebf2da2c60",
+   "block": 9486688,
+   "time": "2026-10-22T19:37:36Z",
+   "detail": {
+    "finding": 1,
+    "inspector": "0xb7e9ae049744afe31d809db54b7d6ceb8a662576",
+    "evidence_hash": "0x66a4c9f3c308a27a27eef88e788643d7f61aeb716fd1c35abafb27af94bcf3d3"
+   },
+   "kiln_id": "PK-tts9kccq",
+   "season": 202610
+  },
+  {
+   "type": "Conflict",
+   "tx": "0x336e248cd0c6ae17486bc7444094a619f094d57d5717c01888786bebf2da2c60",
+   "block": 9486688,
+   "time": "2026-10-22T19:37:36Z",
+   "detail": {
+    "satellite_status": 1,
+    "finding": 1,
+    "inspector": "0xb7e9ae049744afe31d809db54b7d6ceb8a662576"
+   },
+   "kiln_id": "PK-tts9kccq",
+   "season": 202610
+  },
+  {
+   "type": "Finding",
+   "tx": "0x63e014f23786a8b78fa0805d3fff4ac14a49a389c1fcd8f648499b44b4f4001d",
+   "block": 9485789,
+   "time": "2026-10-22T15:54:36Z",
+   "detail": {
+    "finding": 1,
+    "inspector": "0x0e73834c6489a1e545da2907d4162ec37d319bad",
+    "evidence_hash": "0xb852c9773654dc6d2ce380dc0210889e77ac78a2af309848ccbcce728a6ad453"
+   },
+   "kiln_id": "PK-ttsb27bh",
+   "season": 202610
+  },
+  {
+   "type": "Finding",
+   "tx": "0xba8b675fce54a862574236611ea4561cc5d5052547b7627bef9a06f7bfe60f54",
+   "block": 9485572,
+   "time": "2026-10-22T12:12:36Z",
+   "detail": {
+    "finding": 1,
+    "inspector": "0x80e403ab3a8d32e453234bd866d4380391f20fa3",
+    "evidence_hash": "0xa10afa44542d2bb1f3ab52d07f432099429757a845d336cb41abb4cf234bb1ee"
+   },
+   "kiln_id": "PK-tts8uy5n",
+   "season": 202610
+  },
+  {
+   "type": "Finding",
+   "tx": "0xe957860a6ac5dbee037b0fb50906f1d06b9f381808779f077839d65f4cffe61b",
+   "block": 9485267,
+   "time": "2026-10-22T09:40:36Z",
+   "detail": {
+    "finding": 1,
+    "inspector": "0x80e403ab3a8d32e453234bd866d4380391f20fa3",
+    "evidence_hash": "0x62eafc60ea2ebc295c82e6501c87f369355e8f36e413ab4e9eef807039cf8d6d"
+   },
+   "kiln_id": "PK-ttkxy4f6",
+   "season": 202610
+  },
+  {
+   "type": "Finding",
+   "tx": "0xb34468ab2158f80f72f28c1c587f002ca318c324f61a1c8364db5375414955ec",
+   "block": 9484972,
+   "time": "2026-10-22T07:34:36Z",
+   "detail": {
+    "finding": 1,
+    "inspector": "0x0e73834c6489a1e545da2907d4162ec37d319bad",
+    "evidence_hash": "0xdada730d01204510f377ee6a02403e0445fcd0c8a94e61f63a66719f9ffd9898"
+   },
+   "kiln_id": "PK-tts9xrdu",
+   "season": 202610
+  },
+  {
+   "type": "Finding",
+   "tx": "0xd62e46d719fcc7b585bf238cc3be86407a353e6106ed637f9744057a9f252cc6",
+   "block": 9484367,
+   "time": "2026-10-22T06:13:36Z",
+   "detail": {
+    "finding": 1,
+    "inspector": "0x0e73834c6489a1e545da2907d4162ec37d319bad",
+    "evidence_hash": "0xce77751e8588b3911df667f341b5d8b2e0437cc0dd2d01d36370ec0e882586e8"
+   },
+   "kiln_id": "PK-ttsc33ts",
+   "season": 202610
+  },
+  {
+   "type": "SatelliteProven",
+   "tx": "0xa9f8df315bebaad5a70d8625f445e6970b41f8760e51b4dac26c4581eda08d8d",
+   "block": 9484064,
+   "time": "2026-10-22T05:40:36Z",
+   "detail": {
+    "status_code": 2,
+    "p_zigzag_bp": 9102
+   },
+   "kiln_id": "PK-ttscubbf",
+   "season": 202610
+  },
+  {
+   "type": "SatelliteProven",
+   "tx": "0x499440a3e9a9f35a6e3c604c37f9e26e0ab74a7b627273456e061d3d904f0fe0",
+   "block": 9483660,
+   "time": "2026-10-22T03:08:36Z",
+   "detail": {
+    "status_code": 2,
+    "p_zigzag_bp": 9758
+   },
+   "kiln_id": "PK-ttsb3xcu",
+   "season": 202610
+  },
+  {
+   "type": "SatelliteProven",
+   "tx": "0xed1b856cd68f848b8c10abcd67005620bd2eacf1f1603b4335d965510e4d437b",
+   "block": 9483439,
+   "time": "2026-10-22T01:39:36Z",
+   "detail": {
+    "status_code": 2,
+    "p_zigzag_bp": 9230
+   },
+   "kiln_id": "PK-ttscs29c",
+   "season": 202610
+  },
+  {
+   "type": "SatelliteProven",
+   "tx": "0xca6a0898b159f0aaad241adeb97867742a608c5ac4239b9fd2d2aec1a5b1a961",
+   "block": 9482888,
+   "time": "2026-10-22T00:15:36Z",
+   "detail": {
+    "status_code": 2,
+    "p_zigzag_bp": 8515
+   },
+   "kiln_id": "PK-ttkxzk2x",
+   "season": 202610
+  },
+  {
+   "type": "SatelliteProven",
+   "tx": "0xca04c91c7f10c8c96967c2623079a413f417782f35ba355d4e8070c707ce4245",
+   "block": 9482615,
+   "time": "2026-10-21T22:20:36Z",
+   "detail": {
+    "status_code": 2,
+    "p_zigzag_bp": 9366
+   },
+   "kiln_id": "PK-ttsb27bh",
+   "season": 202610
+  },
+  {
+   "type": "SatelliteProven",
+   "tx": "0x20b70f3212341d5e6f0a0c0eb209c775732b23c3cffb72270f58d1f6bdc9a8a3",
+   "block": 9482396,
+   "time": "2026-10-21T19:33:36Z",
+   "detail": {
+    "status_code": 2,
+    "p_zigzag_bp": 8626
+   },
+   "kiln_id": "PK-tts8uy5n",
+   "season": 202610
+  },
+  {
+   "type": "SatelliteProven",
+   "tx": "0x32868cfa341d6be960c78a45a46c7b36875466281009b1e792f3a9384a33f747",
+   "block": 9482044,
+   "time": "2026-10-21T18:24:36Z",
+   "detail": {
+    "status_code": 2,
+    "p_zigzag_bp": 9349
+   },
+   "kiln_id": "PK-ttkxy4f6",
+   "season": 202610
+  },
+  {
+   "type": "SatelliteProven",
+   "tx": "0x2ef0d6d1c129ea8e5c4cb3f7a8925a43f07651a28d91cae75b01720223eab685",
+   "block": 9481594,
+   "time": "2026-10-21T15:54:36Z",
+   "detail": {
+    "status_code": 2,
+    "p_zigzag_bp": 8898
+   },
+   "kiln_id": "PK-tts9xrdu",
+   "season": 202610
+  },
+  {
+   "type": "SatelliteProven",
+   "tx": "0x1f042ea2251af63ac541bf2b40789dc979cdbe8ab09d1f652356bf3258732e44",
+   "block": 9480888,
+   "time": "2026-10-21T12:38:36Z",
+   "detail": {
+    "status_code": 2,
+    "p_zigzag_bp": 9679
+   },
+   "kiln_id": "PK-ttsc33ts",
+   "season": 202610
+  },
+  {
+   "type": "SeasonPublished",
+   "kiln_id": null,
+   "season": 202610,
+   "tx": "0x0b4aee3705197a6ba9a6fcfc73905a921effb6c68ba1275573656c29c41a9604",
+   "block": 9480211,
+   "time": "2026-10-21T09:14:36Z",
+   "detail": {
+    "root": "0x6c5b3cece5b534a555c7ebdc3ae5ec5fe8090268023c2898cf64cf6af7314f62",
+    "kilns": 144,
+    "model_sha256": "0x5a5a5a5ab8868e3da9a9f08f96177bc9df00f2ca0d49b9bdeed1c040785b5908"
+   }
+  }
+ ]
+}

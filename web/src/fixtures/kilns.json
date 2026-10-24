@@ -1,0 +1,1154 @@
+[
+ {
+  "id": "PK-ttsc33ts",
+  "lat": 31.1663,
+  "lon": 74.2422,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts9kccq",
+  "lat": 31.1679,
+  "lon": 74.0388,
+  "district": "Kasur",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttkzuc4r",
+  "lat": 30.9003,
+  "lon": 74.3916,
+  "district": "Kasur",
+  "status": "UNDETERMINED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts9xrdu",
+  "lat": 31.2431,
+  "lon": 74.1506,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttscdjte",
+  "lat": 31.2319,
+  "lon": 74.2752,
+  "district": "Kasur",
+  "status": "NOT_DETECTED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttkxy4f6",
+  "lat": 30.9091,
+  "lon": 74.0952,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-tts8uy5n",
+  "lat": 31.1034,
+  "lon": 74.0412,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsc2c2c",
+  "lat": 31.1643,
+  "lon": 74.214,
+  "district": "Kasur",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsb27bh",
+  "lat": 31.0029,
+  "lon": 74.191,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttkxzk2x",
+  "lat": 30.9182,
+  "lon": 74.1475,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttkxv6tt",
+  "lat": 30.9082,
+  "lon": 74.0664,
+  "district": "Kasur",
+  "status": "NOT_DETECTED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts9k65g",
+  "lat": 31.1688,
+  "lon": 74.0203,
+  "district": "Kasur",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts8n9tf",
+  "lat": 30.9461,
+  "lon": 74.1218,
+  "district": "Kasur",
+  "status": "UNDETERMINED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttscs29c",
+  "lat": 31.2042,
+  "lon": 74.369,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttsb3xcu",
+  "lat": 31.0248,
+  "lon": 74.2482,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttscubbf",
+  "lat": 31.2497,
+  "lon": 74.3896,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsc4f6f",
+  "lat": 31.1261,
+  "lon": 74.3046,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttscp328",
+  "lat": 31.1202,
+  "lon": 74.499,
+  "district": "Kasur",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts8h4h0",
+  "lat": 30.9486,
+  "lon": 74.0094,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts8jdqf",
+  "lat": 30.9503,
+  "lon": 74.0794,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttscjzwk",
+  "lat": 31.1553,
+  "lon": 74.441,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttscx4dn",
+  "lat": 31.2161,
+  "lon": 74.4903,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsb5mv2",
+  "lat": 30.9691,
+  "lon": 74.33,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsbyyqj",
+  "lat": 31.1046,
+  "lon": 74.4849,
+  "district": "Kasur",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttscdxwz",
+  "lat": 31.2436,
+  "lon": 74.299,
+  "district": "Kasur",
+  "status": "UNDETERMINED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts8qu4s",
+  "lat": 31.0042,
+  "lon": 74.1285,
+  "district": "Kasur",
+  "status": "UNDETERMINED",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttsbw8yx",
+  "lat": 31.0308,
+  "lon": 74.4746,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttsbnwj7",
+  "lat": 30.971,
+  "lon": 74.4727,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-tts9ncux",
+  "lat": 31.1242,
+  "lon": 74.1311,
+  "district": "Kasur",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsb443v",
+  "lat": 30.9508,
+  "lon": 74.2702,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttsbh5vs",
+  "lat": 30.9588,
+  "lon": 74.3631,
+  "district": "Kasur",
+  "status": "UNDETERMINED",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-tts9kftk",
+  "lat": 31.1717,
+  "lon": 74.0442,
+  "district": "Kasur",
+  "status": "NOT_DETECTED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts9jjx1",
+  "lat": 31.1438,
+  "lon": 74.0578,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts8p85d",
+  "lat": 30.9379,
+  "lon": 74.1627,
+  "district": "Kasur",
+  "status": "UNDETERMINED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts9j8ww",
+  "lat": 31.1171,
+  "lon": 74.0789,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsbqj49",
+  "lat": 31.0091,
+  "lon": 74.447,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttsb537p",
+  "lat": 30.9456,
+  "lon": 74.3267,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttscht1w",
+  "lat": 31.1419,
+  "lon": 74.3798,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts8t081",
+  "lat": 31.0284,
+  "lon": 74.048,
+  "district": "Kasur",
+  "status": "UNDETERMINED",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-tts9tg8r",
+  "lat": 31.2216,
+  "lon": 74.0814,
+  "district": "Kasur",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsc86u0",
+  "lat": 31.2164,
+  "lon": 74.1963,
+  "district": "Kasur",
+  "status": "UNDETERMINED",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttsc8qwk",
+  "lat": 31.2377,
+  "lon": 74.1995,
+  "district": "Kasur",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsb3bm9",
+  "lat": 30.9831,
+  "lon": 74.2642,
+  "district": "Kasur",
+  "status": "NOT_DETECTED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttkzz704",
+  "lat": 30.9105,
+  "lon": 74.4986,
+  "district": "Kasur",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttscx5ph",
+  "lat": 31.2184,
+  "lon": 74.497,
+  "district": "Kasur",
+  "status": "UNDETERMINED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsbmvgg",
+  "lat": 31.0136,
+  "lon": 74.4378,
+  "district": "Kasur",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsuh4cj",
+  "lat": 31.6567,
+  "lon": 74.3569,
+  "district": "Lahore",
+  "status": "UNDETERMINED",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttsfb96h",
+  "lat": 31.4285,
+  "lon": 74.2046,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsfqdzr",
+  "lat": 31.3494,
+  "lon": 74.4753,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsfpp8b",
+  "lat": 31.3304,
+  "lon": 74.4885,
+  "district": "Lahore",
+  "status": "UNDETERMINED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsg8cpp",
+  "lat": 31.5595,
+  "lon": 74.2224,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttsu543z",
+  "lat": 31.6542,
+  "lon": 74.3141,
+  "district": "Lahore",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsdz4f2",
+  "lat": 31.4361,
+  "lon": 74.1391,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsgbpuw",
+  "lat": 31.6403,
+  "lon": 74.1861,
+  "district": "Lahore",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsgzk00",
+  "lat": 31.6188,
+  "lon": 74.4985,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttsf7bw7",
+  "lat": 31.3363,
+  "lon": 74.3532,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsspdb6",
+  "lat": 31.6561,
+  "lon": 74.1582,
+  "district": "Lahore",
+  "status": "UNDETERMINED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsf61kg",
+  "lat": 31.3405,
+  "lon": 74.2743,
+  "district": "Lahore",
+  "status": "UNDETERMINED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsg09g7",
+  "lat": 31.4751,
+  "lon": 74.2063,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsft2r9",
+  "lat": 31.3785,
+  "lon": 74.421,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttt484vb",
+  "lat": 31.3921,
+  "lon": 74.5392,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsgndy1",
+  "lat": 31.4802,
+  "lon": 74.4738,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttsdxp5z",
+  "lat": 31.4167,
+  "lon": 74.1409,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsfhrz5",
+  "lat": 31.3322,
+  "lon": 74.3764,
+  "district": "Lahore",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsfsqes",
+  "lat": 31.4134,
+  "lon": 74.3714,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttsf3ygq",
+  "lat": 31.3712,
+  "lon": 74.2613,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsgpdbw",
+  "lat": 31.481,
+  "lon": 74.5102,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttsgbdqb",
+  "lat": 31.6091,
+  "lon": 74.211,
+  "district": "Lahore",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsg8dk1",
+  "lat": 31.5654,
+  "lon": 74.2073,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsex5bu",
+  "lat": 31.5741,
+  "lon": 74.1369,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsg8tct",
+  "lat": 31.5853,
+  "lon": 74.2038,
+  "district": "Lahore",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsupghu",
+  "lat": 31.6579,
+  "lon": 74.5268,
+  "district": "Lahore",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsfdpk9",
+  "lat": 31.417,
+  "lon": 74.274,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsuhuce",
+  "lat": 31.6674,
+  "lon": 74.3907,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttsgzm3v",
+  "lat": 31.6265,
+  "lon": 74.5009,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsfrpj9",
+  "lat": 31.3718,
+  "lon": 74.495,
+  "district": "Lahore",
+  "status": "NOT_DETECTED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsgw2z8",
+  "lat": 31.557,
+  "lon": 74.4648,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsg0fef",
+  "lat": 31.479,
+  "lon": 74.2179,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttt4bkf7",
+  "lat": 31.4476,
+  "lon": 74.5455,
+  "district": "Lahore",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttsggjgh",
+  "lat": 31.6291,
+  "lon": 74.3157,
+  "district": "Lahore",
+  "status": "UNDETERMINED",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttst2bvh",
+  "lat": 31.8653,
+  "lon": 73.8682,
+  "district": "Sheikhupura",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsevrus",
+  "lat": 31.6401,
+  "lon": 74.0651,
+  "district": "Sheikhupura",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttssemvt",
+  "lat": 31.7611,
+  "lon": 73.9788,
+  "district": "Sheikhupura",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttstm93y",
+  "lat": 31.8684,
+  "lon": 74.0724,
+  "district": "Sheikhupura",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttssjwt7",
+  "lat": 31.677,
+  "lon": 74.0772,
+  "district": "Sheikhupura",
+  "status": "NOT_DETECTED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttst04ve",
+  "lat": 31.8321,
+  "lon": 73.8358,
+  "district": "Sheikhupura",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttst30zm",
+  "lat": 31.8654,
+  "lon": 73.8821,
+  "district": "Sheikhupura",
+  "status": "NOT_DETECTED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsecn4q",
+  "lat": 31.6307,
+  "lon": 73.8753,
+  "district": "Sheikhupura",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttssn83k",
+  "lat": 31.6428,
+  "lon": 74.1158,
+  "district": "Sheikhupura",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttsshzft",
+  "lat": 31.6841,
+  "lon": 74.0406,
+  "district": "Sheikhupura",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttssvg12",
+  "lat": 31.789,
+  "lon": 74.0826,
+  "district": "Sheikhupura",
+  "status": "UNDETERMINED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttss2jrs",
+  "lat": 31.7141,
+  "lon": 73.8385,
+  "district": "Sheikhupura",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttss9s5d",
+  "lat": 31.7509,
+  "lon": 73.8989,
+  "district": "Sheikhupura",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsesyg8",
+  "lat": 31.5899,
+  "lon": 74.042,
+  "district": "Sheikhupura",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttskxkws",
+  "lat": 31.754,
+  "lon": 73.8043,
+  "district": "Sheikhupura",
+  "status": "UNDETERMINED",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-tts7zed1",
+  "lat": 31.6161,
+  "lon": 73.8092,
+  "district": "Sheikhupura",
+  "status": "UNDETERMINED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsegp0f",
+  "lat": 31.6355,
+  "lon": 73.9611,
+  "district": "Sheikhupura",
+  "status": "UNDETERMINED",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttst228x",
+  "lat": 31.8643,
+  "lon": 73.84,
+  "district": "Sheikhupura",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttst1xvc",
+  "lat": 31.8593,
+  "lon": 73.9021,
+  "district": "Sheikhupura",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttskrcg9",
+  "lat": 31.6945,
+  "lon": 73.8222,
+  "district": "Sheikhupura",
+  "status": "UNDETERMINED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttseww9m",
+  "lat": 31.5894,
+  "lon": 74.1158,
+  "district": "Sheikhupura",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttst055b",
+  "lat": 31.833,
+  "lon": 73.8333,
+  "district": "Sheikhupura",
+  "status": "UNDETERMINED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttst47hs",
+  "lat": 31.8336,
+  "lon": 73.9334,
+  "district": "Sheikhupura",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttst3du2",
+  "lat": 31.8756,
+  "lon": 73.9001,
+  "district": "Sheikhupura",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttss6zge",
+  "lat": 31.7278,
+  "lon": 73.9538,
+  "district": "Sheikhupura",
+  "status": "UNDETERMINED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttss61ks",
+  "lat": 31.6922,
+  "lon": 73.9225,
+  "district": "Sheikhupura",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsecdq5",
+  "lat": 31.6097,
+  "lon": 73.9023,
+  "district": "Sheikhupura",
+  "status": "UNDETERMINED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttskzcu8",
+  "lat": 31.7821,
+  "lon": 73.8234,
+  "district": "Sheikhupura",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttst4uug",
+  "lat": 31.8431,
+  "lon": 73.9558,
+  "district": "Sheikhupura",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttssvqs0",
+  "lat": 31.8082,
+  "lon": 74.0646,
+  "district": "Sheikhupura",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttssjyp0",
+  "lat": 31.6736,
+  "lon": 74.0906,
+  "district": "Sheikhupura",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsskdjb",
+  "lat": 31.6956,
+  "lon": 74.0338,
+  "district": "Sheikhupura",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsety8v",
+  "lat": 31.5893,
+  "lon": 74.082,
+  "district": "Sheikhupura",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttssh06q",
+  "lat": 31.6431,
+  "lon": 74.0073,
+  "district": "Sheikhupura",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttst72h6",
+  "lat": 31.8608,
+  "lon": 73.9768,
+  "district": "Sheikhupura",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttssy98c",
+  "lat": 31.781,
+  "lon": 74.1148,
+  "district": "Sheikhupura",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttseyj3n",
+  "lat": 31.6266,
+  "lon": 74.0934,
+  "district": "Sheikhupura",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttss5j6b",
+  "lat": 31.6695,
+  "lon": 73.9639,
+  "district": "Sheikhupura",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts6rqyh",
+  "lat": 31.3708,
+  "lon": 73.8035,
+  "district": "Nankana Sahib",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-tts6jf3v",
+  "lat": 31.3024,
+  "lon": 73.7319,
+  "district": "Nankana Sahib",
+  "status": "UNDETERMINED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts7rqkv",
+  "lat": 31.544,
+  "lon": 73.8017,
+  "district": "Nankana Sahib",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts6nvwf",
+  "lat": 31.3197,
+  "lon": 73.7826,
+  "district": "Nankana Sahib",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttse0fqc",
+  "lat": 31.4775,
+  "lon": 73.8706,
+  "district": "Nankana Sahib",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttse1m1r",
+  "lat": 31.4936,
+  "lon": 73.885,
+  "district": "Nankana Sahib",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts6rrc8",
+  "lat": 31.3756,
+  "lon": 73.7975,
+  "district": "Nankana Sahib",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsdbh4y",
+  "lat": 31.444,
+  "lon": 73.8322,
+  "district": "Nankana Sahib",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsd0m9c",
+  "lat": 31.3196,
+  "lon": 73.8417,
+  "district": "Nankana Sahib",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttse37p2",
+  "lat": 31.5254,
+  "lon": 73.8933,
+  "district": "Nankana Sahib",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts6wjz7",
+  "lat": 31.4092,
+  "lon": 73.7504,
+  "district": "Nankana Sahib",
+  "status": "UNDETERMINED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-ttsdbkey",
+  "lat": 31.4467,
+  "lon": 73.8443,
+  "district": "Nankana Sahib",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts7mx4y",
+  "lat": 31.5484,
+  "lon": 73.7222,
+  "district": "Nankana Sahib",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts6z49n",
+  "lat": 31.4358,
+  "lon": 73.7858,
+  "district": "Nankana Sahib",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts6xqs2",
+  "lat": 31.4127,
+  "lon": 73.8012,
+  "district": "Nankana Sahib",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts75bs7",
+  "lat": 31.4682,
+  "lon": 73.6474,
+  "district": "Nankana Sahib",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts6egck",
+  "lat": 31.3983,
+  "lon": 73.6433,
+  "district": "Nankana Sahib",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-tts77h51",
+  "lat": 31.5311,
+  "lon": 73.6127,
+  "district": "Nankana Sahib",
+  "status": "ZIGZAG",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts6se7b",
+  "lat": 31.3949,
+  "lon": 73.6797,
+  "district": "Nankana Sahib",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-tts7hd4b",
+  "lat": 31.476,
+  "lon": 73.6784,
+  "district": "Nankana Sahib",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts6e1ne",
+  "lat": 31.383,
+  "lon": 73.6175,
+  "district": "Nankana Sahib",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-tts6zvj4",
+  "lat": 31.4488,
+  "lon": 73.8243,
+  "district": "Nankana Sahib",
+  "status": "NOT_DETECTED",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts6ugfz",
+  "lat": 31.4428,
+  "lon": 73.6891,
+  "district": "Nankana Sahib",
+  "status": "UNDETERMINED",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-tts77c8z",
+  "lat": 31.5183,
+  "lon": 73.6426,
+  "district": "Nankana Sahib",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ },
+ {
+  "id": "PK-ttsdcjg8",
+  "lat": 31.4525,
+  "lon": 73.8769,
+  "district": "Nankana Sahib",
+  "status": "FCBK",
+  "baseline_class": "FCBK"
+ },
+ {
+  "id": "PK-tts6ue7y",
+  "lat": 31.4399,
+  "lon": 73.6795,
+  "district": "Nankana Sahib",
+  "status": "ZIGZAG",
+  "baseline_class": "Zigzag"
+ }
+]

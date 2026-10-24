@@ -1,0 +1,106 @@
+{
+ "fixture": true,
+ "data_version": "sample-2026-10-24",
+ "season": 202610,
+ "counts": {
+  "ZIGZAG": 77,
+  "FCBK": 34,
+  "UNDETERMINED": 25,
+  "NOT_DETECTED": 8
+ },
+ "total": 144,
+ "aoi": {
+  "name": "Lahore, Kasur, Sheikhupura and Nankana Sahib (sample area)",
+  "bbox": [
+   73.55,
+   30.88,
+   74.58,
+   31.9
+  ],
+  "districts": [
+   "Kasur",
+   "Lahore",
+   "Sheikhupura",
+   "Nankana Sahib"
+  ]
+ },
+ "scenes": [
+  {
+   "id": "SAMPLE-S2-20261019-A",
+   "date": "2026-10-19",
+   "cloud_pct": 3.1
+  },
+  {
+   "id": "SAMPLE-S2-20261019-B",
+   "date": "2026-10-19",
+   "cloud_pct": 6.4
+  },
+  {
+   "id": "SAMPLE-S2-20261014-C",
+   "date": "2026-10-14",
+   "cloud_pct": 1.8
+  }
+ ],
+ "models": {
+  "detector_sha256": "0xc1646a2e77e94544641a25c6619d4a035cfa8d64f37c2f0db6ca3763efec3899",
+  "classifier_sha256": "0x5a5a5a5ab8868e3da9a9f08f96177bc9df00f2ca0d49b9bdeed1c040785b5908"
+ },
+ "model_sha256": "0x5a5a5a5ab8868e3da9a9f08f96177bc9df00f2ca0d49b9bdeed1c040785b5908",
+ "alpha": 0.1,
+ "qhat": 0.8123,
+ "claim": {
+  "quote": "around 8,000 brick kilns across Punjab had been converted to zigzag technology, with QR codes assigned to all kilns",
+  "who": "Punjab minister, as reported by ProPakistani",
+  "date": "2026-10-10",
+  "url": "https://propakistani.pk/2026/10/10/punjab-provides-10000-super-seeders-converts-8000-brick-kilns-to-zigzag-technology/",
+  "claimed_converted": 8000,
+  "province_total": 10394,
+  "province_total_source": {
+   "title": "Express Tribune, Aug 2026",
+   "url": "https://tribune.com.pk/story/2621873/brick-kiln-crackdown-raises-livelihood-concerns"
+  }
+ },
+ "impact": {
+  "sample": true,
+  "per_kiln": {
+   "coal_t_per_season": {
+    "low": 200,
+    "high": 400
+   },
+   "co2_t": {
+    "low": 500,
+    "high": 1000
+   },
+   "black_carbon_reduction_pct": {
+    "low": 40,
+    "high": 70
+   }
+  },
+  "basis": "per FCBK kiln converted to Zigzag, one firing season",
+  "sources": [
+   {
+    "title": "Sample source A (placeholder until the API supplies a verified citation)",
+    "url": ""
+   },
+   {
+    "title": "Sample source B (placeholder until the API supplies a verified citation)",
+    "url": ""
+   }
+  ],
+  "kilns": 34,
+  "total": {
+   "coal_t_per_season": {
+    "low": 6800,
+    "high": 13600
+   },
+   "co2_t": {
+    "low": 17000,
+    "high": 34000
+   },
+   "black_carbon_reduction_pct": {
+    "low": 40,
+    "high": 70
+   }
+  }
+ }
+}

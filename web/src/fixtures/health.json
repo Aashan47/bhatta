@@ -1,0 +1,9 @@
+{
+ "ok": true,
+ "fixture": true,
+ "data_version": "sample-2026-10-24",
+ "chain": {
+  "id": 11155111,
+  "contract": null
+ }
+}

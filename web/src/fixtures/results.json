@@ -1,0 +1,68 @@
+{
+ "fixture": true,
+ "prereg_url": "docs/PREREG.md",
+ "split": "Spatial blocks of 0.5 degrees; 60/20/20 train/calibration/test; seed 20261024",
+ "targets": [
+  {
+   "id": "T1",
+   "metric": "Detector recall at IoU 0.3",
+   "target": ">= 0.80",
+   "op": ">=",
+   "threshold": 0.8,
+   "value": 0.84,
+   "n": 412,
+   "hit": true
+  },
+  {
+   "id": "T2",
+   "metric": "Detector precision at IoU 0.3",
+   "target": ">= 0.75",
+   "op": ">=",
+   "threshold": 0.75,
+   "value": 0.71,
+   "n": 488,
+   "hit": false
+  },
+  {
+   "id": "T3",
+   "metric": "Classifier accuracy, FCBK vs Zigzag",
+   "target": ">= 0.85",
+   "op": ">=",
+   "threshold": 0.85,
+   "value": 0.88,
+   "n": 346,
+   "hit": true
+  },
+  {
+   "id": "T4",
+   "metric": "Conformal empirical coverage",
+   "target": "0.87 to 0.93",
+   "op": "between",
+   "low": 0.87,
+   "high": 0.93,
+   "value": 0.905,
+   "n": 346,
+   "hit": true
+  },
+  {
+   "id": "T5",
+   "metric": "Share of kilns given a single-class set",
+   "target": ">= 0.70",
+   "op": ">=",
+   "threshold": 0.7,
+   "value": 0.66,
+   "n": 346,
+   "hit": false
+  },
+  {
+   "id": "T6",
+   "metric": "Of single-set {Zigzag} kilns, share truly FCBK",
+   "target": "<= 0.05",
+   "op": "<=",
+   "threshold": 0.05,
+   "value": 0.031,
+   "n": 161,
+   "hit": true
+  }
+ ]
+}
