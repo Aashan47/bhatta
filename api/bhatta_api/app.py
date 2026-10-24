@@ -127,7 +127,7 @@ def _product_metrics() -> dict | None:
     calls = prod.get("n_set_fcbk")
     wrong = prod.get("n_set_fcbk_true_zigzag")
     det = e.get("detector_test") or {}
-    by_class = prod.get("coverage_by_class") or {}
+    by_class = e.get("coverage_by_class_product") or prod.get("coverage_by_class") or {}
     return {
         "n_test": n,
         "fcbk_calls": calls,
