@@ -54,6 +54,7 @@ os.environ.setdefault("VSI_CACHE_SIZE", str(512 * 1024 * 1024))
 os.environ.setdefault("GDAL_CACHEMAX", "2048")
 os.environ.setdefault("GDAL_HTTP_MAX_RETRY", "5")
 os.environ.setdefault("GDAL_HTTP_RETRY_DELAY", "2")
+os.environ.setdefault("CPL_VSIL_CURL_CACHE_SIZE", str(1536 * 1024 * 1024))  # shared block cache across handles
 
 STAC = "https://earth-search.aws.element84.com/v1"
 COLLECTION = "sentinel-2-l2a"
@@ -180,11 +181,18 @@ class Reader:
             self.open[href] = rasterio.open(href)
         return self.open[href]
 
-    def read_chunk(self, a, b, scenes):
-        """Return rgb uint16 (3,H,W), scene index uint8 (255 = no valid pixel)."""
+    def read_chunk(self, a, b, scenes, need=None):
+        """Return rgb uint16 (3,H,W), scene index uint8 (255 = no valid pixel). Only the local
+        pixel box need = (x0, y0, x1, y1) is filled (whole chunk if None)."""
         from affine import Affine
         from rasterio.enums import Resampling
         from rasterio.vrt import WarpedVRT
+        from rasterio.windows import Window
+        want = np.zeros((CHUNK_W, CHUNK_W), bool)
+        if need is None:
+            want[:] = True
+        else:
+            want[need[1]:need[3], need[0]:need[2]] = True
         c0, r0 = chunk_origin(a, b)
         lon0, lat0 = float(lon_of(c0)), float(lat_of(r0))
         lon1, lat1 = float(lon_of(c0 + CHUNK_W)), float(lat_of(r0 + CHUNK_W))
@@ -195,20 +203,23 @@ class Reader:
             bx = s["bbox"]
             if bx[0] > lon1 or bx[2] < lon0 or bx[1] > lat0 or bx[3] < lat1:
                 continue
-            todo = sidx == 255
+            todo = (sidx == 255) & want
             if not todo.any():
                 break
+            rows = np.flatnonzero(todo.any(1)); cols = np.flatnonzero(todo.any(0))
+            y0, y1, x0, x1 = int(rows[0]), int(rows[-1]) + 1, int(cols[0]), int(cols[-1]) + 1
+            win = Window(x0, y0, x1 - x0, y1 - y0)
             bands = []
             for key in ("red", "green", "blue", "scl"):
                 src = self.ds(s["assets"][key])
                 with WarpedVRT(src, crs="EPSG:4326", transform=tr, width=CHUNK_W, height=CHUNK_W,
                                resampling=Resampling.nearest, nodata=0) as vrt:
-                    bands.append(vrt.read(1))
+                    bands.append(vrt.read(1, window=win))
             r, g, bl, scl = bands
-            ok = ((r > 0) | (g > 0) | (bl > 0)) & ~np.isin(scl, list(BAD_SCL)) & todo
+            ok = ((r > 0) | (g > 0) | (bl > 0)) & ~np.isin(scl, list(BAD_SCL)) & todo[y0:y1, x0:x1]
             for ch, arr in enumerate((r, g, bl)):
-                rgb[ch][ok] = arr[ok]
-            sidx[ok] = si
+                rgb[ch, y0:y1, x0:x1][ok] = arr[ok]
+            sidx[y0:y1, x0:x1][ok] = si
         return rgb, sidx
 
 
@@ -337,18 +348,31 @@ def scan_district(dname, mode, scenes, params, districts, known, det, clf, out_d
     skey = hashlib.sha256(json.dumps([sc["id"] for sc in scenes]).encode()).hexdigest()[:16]
     cdir = CACHE_DIR / skey
 
+    def need_box(ab):
+        c0, r0 = chunk_origin(*ab)
+        xs = [i * STRIDE - c0 for i, _ in chunks[ab]]
+        ys = [j * STRIDE - r0 for _, j in chunks[ab]]
+        return (max(min(xs) - 64, 0), max(min(ys) - 64, 0), min(max(xs) + PATCH + 64, CHUNK_W), min(max(ys) + PATCH + 64, CHUNK_W))
+
     def read(ab):
         f = cdir / f"{ab[0]}_{ab[1]}.npz"
+        nb = need_box(ab)
         if USE_CACHE and f.exists():
             z = np.load(f)
-            return z["rgb"], z["sidx"]
+            cb = tuple(z["need"]) if "need" in z else (0, 0, CHUNK_W, CHUNK_W)
+            if cb[0] <= nb[0] and cb[1] <= nb[1] and cb[2] >= nb[2] and cb[3] >= nb[3]:
+                rgb, sidx = z["rgb"], z["sidx"].copy()
+                # use exactly the requested box so cached and network runs see the same pixels
+                mask = np.ones_like(sidx, bool); mask[nb[1]:nb[3], nb[0]:nb[2]] = False
+                sidx[mask] = 255
+                return rgb, sidx
         if not hasattr(tl, "reader"):
             tl.reader = Reader()
-        rgb, sidx = tl.reader.read_chunk(ab[0], ab[1], scenes)
+        rgb, sidx = tl.reader.read_chunk(ab[0], ab[1], scenes, need=nb)
         if USE_CACHE:
             cdir.mkdir(parents=True, exist_ok=True)
             tmp = cdir / f"{ab[0]}_{ab[1]}.tmp.npz"
-            np.savez_compressed(tmp, rgb=rgb, sidx=sidx)
+            np.savez_compressed(tmp, rgb=rgb, sidx=sidx, need=np.array(nb))
             tmp.rename(f)
         return rgb, sidx
 

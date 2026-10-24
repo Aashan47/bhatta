@@ -144,6 +144,7 @@ def main():
     ap.add_argument("--input", type=int, default=CROP_INPUT)
     ap.add_argument("--crop", type=int, default=CROP)
     ap.add_argument("--balanced", action="store_true", help="class-balanced sampling and colour jitter")
+    ap.add_argument("--init", default=None, help="start from these weights (fine-tuning)")
     ap.add_argument("--pk-weight", type=float, default=1.0, help="sampling weight of Pakistan crops relative to external ones")
     args = ap.parse_args()
     cfg = dict(arch=args.arch, input=args.input, crop=args.crop, jitter=bool(args.balanced))
@@ -175,7 +176,10 @@ def main():
         dl = torch.utils.data.DataLoader(ds_fit, batch_size=args.batch, shuffle=True, num_workers=0, generator=gen)
     xv = torch.stack([ds_val[i][0] for i in range(len(ds_val))])
     yv = np.array(ds_val.y)
-    model = build_model(args.arch).to(dev)
+    model = build_model(args.arch)
+    if args.init:
+        model.load_state_dict(torch.load(Path(__file__).resolve().parent / "weights" / args.init, map_location="cpu"))
+    model = model.to(dev)
     opt = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=1e-4)
     sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=args.epochs)
     lossf = nn.CrossEntropyLoss(weight=w, label_smoothing=0.0)
@@ -184,7 +188,7 @@ def main():
     out.mkdir(exist_ok=True)
     with open((out / args.out).with_suffix(".json"), "w") as fh:
         json.dump(dict(arch=args.arch, input=args.input, crop=args.crop, external=bool(args.external),
-                       balanced=bool(args.balanced), pk_weight=args.pk_weight, epochs=args.epochs, lr=args.lr), fh, indent=1)
+                       balanced=bool(args.balanced), pk_weight=args.pk_weight, init=args.init, epochs=args.epochs, lr=args.lr), fh, indent=1)
     for ep in range(args.epochs):
         model.train()
         tl = 0.0

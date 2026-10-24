@@ -1,0 +1,219 @@
+{
+ "alpha": 0.1,
+ "score": "1 - softmax(true class)",
+ "qhat": 0.6004753112792969,
+ "n_cal": 2139,
+ "mondrian_qhat": {
+  "FCBK": 0.4659137725830078,
+  "Zigzag": 0.9871214628219604
+ },
+ "cal_metrics_mondrian": {
+  "n": 2139,
+  "coverage": 0.9022907900888265,
+  "n_covered": 1930,
+  "singleton_share": 0.4361851332398317,
+  "n_singleton": 933,
+  "n_set_zigzag": 320,
+  "n_set_zigzag_true_fcbk": 184,
+  "set_zigzag_false_rate": 0.575,
+  "n_set_fcbk": 613,
+  "n_set_fcbk_true_zigzag": 25,
+  "n_set_both": 1206,
+  "n_set_empty": 0
+ },
+ "ltt": {
+  "method": "Learn-then-Test, Bonferroni over 20 p(Zigzag) floors 0.50..0.975, exact binomial p-value, max false-certificate rate 0.05, delta 0.10",
+  "zig_min": null,
+  "cal_metrics": {
+   "n": 2139,
+   "coverage": 0.9883122954651706,
+   "n_covered": 2114,
+   "singleton_share": 0.2865825151940159,
+   "n_singleton": 613,
+   "n_set_zigzag": 0,
+   "n_set_zigzag_true_fcbk": 0,
+   "set_zigzag_false_rate": null,
+   "n_set_fcbk": 613,
+   "n_set_fcbk_true_zigzag": 25,
+   "n_set_both": 1526,
+   "n_set_empty": 0
+  },
+  "trace": [
+   {
+    "t": 0.5,
+    "n_cert": 289,
+    "n_false": 162,
+    "pval": 1.0,
+    "cp_upper": 0.6359475426239964
+   },
+   {
+    "t": 0.525,
+    "n_cert": 262,
+    "n_false": 144,
+    "pval": 1.0,
+    "cp_upper": 0.6291745435233177
+   },
+   {
+    "t": 0.55,
+    "n_cert": 229,
+    "n_false": 122,
+    "pval": 1.0,
+    "cp_upper": 0.6184161202099819
+   },
+   {
+    "t": 0.575,
+    "n_cert": 202,
+    "n_false": 102,
+    "pval": 1.0,
+    "cp_upper": 0.5970118846732881
+   },
+   {
+    "t": 0.6,
+    "n_cert": 175,
+    "n_false": 84,
+    "pval": 1.0,
+    "cp_upper": 0.5795666706838595
+   },
+   {
+    "t": 0.625,
+    "n_cert": 158,
+    "n_false": 73,
+    "pval": 1.0,
+    "cp_upper": 0.5672159943843829
+   },
+   {
+    "t": 0.65,
+    "n_cert": 133,
+    "n_false": 63,
+    "pval": 1.0,
+    "cp_upper": 0.5882200232684257
+   },
+   {
+    "t": 0.675,
+    "n_cert": 105,
+    "n_false": 49,
+    "pval": 1.0,
+    "cp_upper": 0.5959360607342832
+   },
+   {
+    "t": 0.7,
+    "n_cert": 84,
+    "n_false": 39,
+    "pval": 1.0,
+    "cp_upper": 0.6090334730666607
+   },
+   {
+    "t": 0.725,
+    "n_cert": 62,
+    "n_false": 28,
+    "pval": 1.0,
+    "cp_upper": 0.6208216673671474
+   },
+   {
+    "t": 0.75,
+    "n_cert": 44,
+    "n_false": 20,
+    "pval": 0.9999999999999997,
+    "cp_upper": 0.6550504706741517
+   },
+   {
+    "t": 0.775,
+    "n_cert": 30,
+    "n_false": 13,
+    "pval": 0.9999999999586286,
+    "cp_upper": 0.6773022114787528
+   },
+   {
+    "t": 0.8,
+    "n_cert": 21,
+    "n_false": 9,
+    "pval": 0.9999999793296273,
+    "cp_upper": 0.7184670340881967
+   },
+   {
+    "t": 0.825,
+    "n_cert": 13,
+    "n_false": 6,
+    "pval": 0.9999989744550684,
+    "cp_upper": 0.8112953652644249
+   },
+   {
+    "t": 0.85,
+    "n_cert": 7,
+    "n_false": 2,
+    "pval": 0.99624295703125,
+    "cp_upper": 0.797027604296698
+   },
+   {
+    "t": 0.875,
+    "n_cert": 3,
+    "n_false": 1,
+    "pval": 0.99275,
+    "cp_upper": 0.9585998492839568
+   },
+   {
+    "t": 0.9,
+    "n_cert": 0,
+    "n_false": 0,
+    "pval": 1.0,
+    "cp_upper": 1.0
+   },
+   {
+    "t": 0.925,
+    "n_cert": 0,
+    "n_false": 0,
+    "pval": 1.0,
+    "cp_upper": 1.0
+   },
+   {
+    "t": 0.95,
+    "n_cert": 0,
+    "n_false": 0,
+    "pval": 1.0,
+    "cp_upper": 1.0
+   },
+   {
+    "t": 0.975,
+    "n_cert": 0,
+    "n_false": 0,
+    "pval": 1.0,
+    "cp_upper": 1.0
+   }
+  ]
+ },
+ "n_cal_by_class": {
+  "FCBK": 1863,
+  "Zigzag": 276
+ },
+ "cal_metrics": {
+  "n": 2139,
+  "coverage": 0.9008882655446471,
+  "n_covered": 1927,
+  "singleton_share": 0.8994857410004675,
+  "n_singleton": 1924,
+  "n_set_zigzag": 175,
+  "n_set_zigzag_true_fcbk": 84,
+  "set_zigzag_false_rate": 0.48,
+  "n_set_fcbk": 1749,
+  "n_set_fcbk_true_zigzag": 128,
+  "n_set_both": 215,
+  "n_set_empty": 0
+ },
+ "posthoc_zigzag_min_prob": 0.89,
+ "cal_metrics_with_posthoc": {
+  "n": 2139,
+  "coverage": 0.9401589527816737,
+  "n_covered": 2011,
+  "singleton_share": 0.8181393174380551,
+  "n_singleton": 1750,
+  "n_set_zigzag": 1,
+  "n_set_zigzag_true_fcbk": 0,
+  "set_zigzag_false_rate": 0.0,
+  "n_set_fcbk": 1749,
+  "n_set_fcbk_true_zigzag": 128,
+  "n_set_both": 389,
+  "n_set_empty": 0
+ },
+ "classifier_sha256": "4d07730005a33adf76e315d3a6ffe8b8686822215d58c2dfa145f2d02cbf154a",
+ "tta": "mean softmax over 8 dihedral views"
+}

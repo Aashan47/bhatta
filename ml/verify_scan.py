@@ -34,7 +34,7 @@ def main():
         print(f"{name}: {'OK' if h == man[key] else 'MISMATCH'} {h}")
         ok &= h == man[key]
     cmd = [sys.executable, str(Path(__file__).resolve().parent / "scan.py"), "--districts", args.district,
-           "--from-manifest", str(DATA / "manifest.json"), "--out-dir", str(work), "--chip-root", str(work)]
+           "--from-manifest", str(DATA / "manifest.json"), "--out-dir", str(work), "--chip-root", str(work), "--no-cache"]
     print("running:", " ".join(cmd))
     subprocess.run(cmd, check=True)
     new = json.load(open(work / "districts" / f"{args.district}.json"))["records"]
