@@ -254,6 +254,8 @@ both chips and empty `human_label` fields. ZIGZAG has no kilns, so the sample ha
 UNDETERMINED, NOT_DETECTED). Not labelled by us.
 
 **Chips.** 64 x 64 px PNG, current image and 2023-24 dataset patch, in `data/chips/` (16,840 files,
-169 MB). Baseline chips of kilns near a dataset patch edge are padded by reflection, which shows as
-a mirror pattern at one side. 2023-24 kilns that were never fully inside any dataset patch have no
+169 MB). Baseline chips are cut from the dataset patch where the kiln is most central
+(`scan.baseline_chip_central`, regenerated with `ml/regen_baseline_chips.py`: 7,961 written, 4,570
+changed); where a chip still runs past that patch the rest is flat grey (128, 128, 128). Baseline
+chips are not part of any evidence hash, so the published season root is unchanged. 2023-24 kilns that were never fully inside any dataset patch have no
 baseline chip (`baseline_chip` null).
