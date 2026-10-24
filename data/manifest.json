@@ -1,6 +1,6 @@
 {
  "purpose": "Recompute data/kilns.json: run ml/scan.py --from-manifest data/manifest.json --districts <name> for each district, then --merge.",
- "code_commit": "b33eefc9199870a57d2358fc7faa82c269f4815d",
+ "code_commit": "e21f620ddd3755e155d259586a46f21dc6df2b84",
  "stac": "https://earth-search.aws.element84.com/v1",
  "collection": "sentinel-2-l2a",
  "date_range": "2026-10-01/2026-10-31",
@@ -6735,5 +6735,6 @@
     }
    ]
   }
- }
+ },
+ "code_commit_note": "last commit touching ml/scan.py; it reproduces the scan (districts were run between c368d51 and this commit with no change to the output logic)"
 }
