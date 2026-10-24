@@ -9,6 +9,8 @@ import { usePrefs } from "../i18n";
 import { dateLabel, seasonLabel, useAsync } from "../lib/util";
 import { STATUS_ORDER } from "../types";
 
+const pctOf = (x: number) => `\u2066${Math.round(x * 100)}%\u2069`;
+
 export function Overview() {
   const { t, lang } = usePrefs();
   const nav = useNavigate();
@@ -20,8 +22,8 @@ export function Overview() {
   const shares = useMemo(() => {
     if (!s) return null;
     const claimed = s.claim.province_total && s.claim.claimed_converted ? s.claim.claimed_converted / s.claim.province_total : null;
-    const seen = s.total ? s.counts.ZIGZAG / s.total : 0;
-    return { claimed, seen };
+    const pct = (n: number) => (s.total ? Math.round((n / s.total) * 100) : 0);
+    return { claimed, fcbk: pct(s.counts.FCBK), refused: pct(s.counts.UNDETERMINED) };
   }, [s]);
 
   if (summary.error) return <ErrorBox error={summary.error} onRetry={summary.reload} />;
@@ -66,7 +68,10 @@ export function Overview() {
               <li key={st} className={`tally-row ${statusClass(st)}`}>
                 <Link to={`/map?status=${st}`} className="tally-link">
                   <StatusIcon status={st} size={20} />
-                  <span className="tally-word">{t.statusLong[st]}</span>
+                  <span className="tally-word">
+                    {t.statusLong[st]}
+                    {st === "ZIGZAG" && <span className="tally-sub">{t.overview.zigzagNever}</span>}
+                  </span>
                   <span className="tally-n" dir="ltr">
                     {s.counts[st].toLocaleString("en")}
                   </span>
@@ -81,33 +86,41 @@ export function Overview() {
       </section>
 
       <div className="overview-pair">
-      {shares?.claimed != null && (
-        <section className="compare panel" aria-labelledby="cmp-h">
-          <h2 id="cmp-h" className="panel-title">
-            {t.overview.compareTitle}
-          </h2>
+      <section className="compare panel" aria-labelledby="cmp-h">
+        <h2 id="cmp-h" className="panel-title">
+          {t.overview.compareTitle}
+        </h2>
+        {shares?.claimed != null && (
           <div className="cmp-row">
-            <span className="cmp-label">{t.overview.compareClaim}</span>
+            <span className="cmp-label">{t.overview.cmpClaim}</span>
             <span className="cmp-bar" aria-hidden="true">
               <span className="cmp-fill cmp-claim" style={{ inlineSize: `${shares.claimed * 100}%` }} />
             </span>
-            <span className="cmp-val" dir="ltr">
-              {Math.round(shares.claimed * 100)}%
-            </span>
+            <span className="cmp-val">{t.overview.cmpClaimVal(pctOf(shares.claimed))}</span>
           </div>
-          <div className="cmp-row">
-            <span className="cmp-label">
-              {t.overview.compareSeen} <SampleTag />
-            </span>
-            <span className="cmp-bar" aria-hidden="true">
-              <span className="cmp-fill cmp-seen" style={{ inlineSize: `${shares.seen * 100}%` }} />
-            </span>
-            <span className="cmp-val" dir="ltr">
-              {Math.round(shares.seen * 100)}%
-            </span>
-          </div>
+        )}
+        <div className="cmp-row">
+          <span className="cmp-label">
+            {t.overview.cmpFcbk} <SampleTag />
+          </span>
+          <span className="cmp-bar" aria-hidden="true">
+            <span className="cmp-fill cmp-fcbk" style={{ inlineSize: `${shares?.fcbk ?? 0}%` }} />
+          </span>
+          <span className="cmp-val">{t.overview.cmpFcbkVal(`\u2066${shares?.fcbk ?? 0}%\u2069`)}</span>
+        </div>
+        <div className="cmp-row">
+          <span className="cmp-label">
+            {t.overview.cmpRefused} <SampleTag />
+          </span>
+          <span className="cmp-bar" aria-hidden="true">
+            <span className="cmp-fill cmp-refused" style={{ inlineSize: `${shares?.refused ?? 0}%` }} />
+          </span>
+          <span className="cmp-val">{t.overview.cmpRefusedVal(`\u2066${shares?.refused ?? 0}%\u2069`)}</span>
+        </div>
+        <p className="limit-sentence">{t.overview.limitSentence}</p>
+        {shares?.claimed != null && (
           <p className="fine">
-            {t.overview.claimShare(`${Math.round(shares.claimed * 100)}%`)}{" "}
+            {t.overview.claimShare(pctOf(shares.claimed))}{" "}
             {s.claim.province_total_source && (
               <a href={s.claim.province_total_source.url} target="_blank" rel="noreferrer">
                 {s.claim.province_total_source.title}
@@ -115,9 +128,9 @@ export function Overview() {
               </a>
             )}
           </p>
-          <p className="fine">{t.overview.compareNote}</p>
-        </section>
-      )}
+        )}
+        <p className="fine">{t.overview.compareNote}</p>
+      </section>
 
       <div className="cannot-see">
         <p>{t.overview.cannotSee}</p>

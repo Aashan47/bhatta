@@ -80,12 +80,11 @@ export interface Certificate {
   inspector: string | null;
 }
 
-/** Certificate rule from PRODUCT.md: satellite set {Zigzag} proven against the root AND an inspector's
- *  Zigzag confirmed, with no FCBK found finding outstanding. Computed from the record's events; the
- *  contract's own certified() is read separately where a contract exists. */
+/** Certificate rule (product decision, 24 Oct 2026): a kiln is certified only by an inspector's signed
+ *  "Zigzag confirmed" with no satellite contradiction (no satellite FCBK call, no Conflict) and no
+ *  "FCBK found" finding outstanding. The satellite alone never certifies; it can only contradict. */
 export function certificateFor(rec: KilnRecord): Certificate {
   const ev = sortEvents(rec.events);
-  // latest finding per inspector (a revision replaces that inspector's earlier finding)
   const latest = new Map<string, number>();
   let lastFinding: number | null = null;
   for (const e of ev) {
@@ -99,20 +98,15 @@ export function certificateFor(rec: KilnRecord): Certificate {
   const confirmed = findings.filter(([, f]) => f === 1);
   const fcbkFound = findings.some(([, f]) => f === 2);
   const conflict = ev.some((e) => e.type === "Conflict");
-  const lastCert = ev.filter((e) => e.type === "Certified" || e.type === "CertificateWithdrawn").pop();
   const proven = ev.some((e) => e.type === "SatelliteProven");
   const base = {
     satelliteProven: proven,
     lastFinding,
     inspector: confirmed.length ? confirmed[confirmed.length - 1]![0] : null,
   };
-  if (lastCert?.type === "Certified" && !fcbkFound) return { state: "certified", missing: [], ...base };
-  if (conflict || fcbkFound || (rec.status === "FCBK" && confirmed.length > 0)) return { state: "contradicted", missing: [], ...base };
-  const missing: Certificate["missing"] = [];
-  if (rec.status !== "ZIGZAG") missing.push("sat");
-  else if (!proven) missing.push("proof");
-  if (!confirmed.length) missing.push("inspector");
-  return { state: missing.length ? "pending" : "certified", missing, ...base };
+  if (conflict || fcbkFound || rec.status === "FCBK") return { state: "contradicted", missing: [], ...base };
+  if (!confirmed.length) return { state: "pending", missing: ["inspector"], ...base };
+  return { state: "certified", missing: [], ...base };
 }
 
 export function explorerTx(explorer: string, tx: string) {

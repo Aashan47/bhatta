@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router";
-import { ApiError, chipUrl, FIXTURE, getKiln, getLedger, getSummary } from "../api";
+import { ApiError, chipUrl, FIXTURE, getKiln, getLedger, getResults, getSummary } from "../api";
 import { DisputeForm, SignFinding } from "../components/Actions";
 import { ImpactPanel } from "../components/Impact";
 import { CertificatePanel, Timeline } from "../components/Record";
@@ -8,7 +8,8 @@ import { ArrowGlyph, ErrorBox, Loading, Mono, SampleTag, StatusBadge, ZigzagRule
 import { VerifyPanel } from "../components/Verify";
 import { usePrefs } from "../i18n";
 import { dateLabel, setInWords, useAsync } from "../lib/util";
-import type { KilnClass, KilnRecord } from "../types";
+import type { KilnClass, KilnRecord, ProductMetrics } from "../types";
+import type { Strings } from "../i18n/en";
 
 function seasonOf(rec: KilnRecord, fallback: number | null | undefined): number {
   if (rec.chain) return rec.chain.season;
@@ -24,6 +25,7 @@ export function Kiln() {
   const rec = useAsync(() => getKiln(id), [id]);
   const summary = useAsync(getSummary, []);
   const ledger = useAsync(getLedger, []);
+  const results = useAsync(getResults, []);
 
   if (rec.error) {
     if (rec.error instanceof ApiError && rec.error.status === 404)
@@ -69,6 +71,7 @@ export function Kiln() {
         </div>
         <StatusBadge status={r.status} long size="l" />
         <p className="set-words set-words-l">{setInWords(t, r.status, r.observation.set, alpha)}</p>
+        <ErrorRate rec={r} product={results.data?.product} loading={results.loading} t={t} />
       </header>
 
       <ZigzagRule />
@@ -93,6 +96,22 @@ export function Kiln() {
       </div>
     </article>
   );
+}
+
+/** The measured error of this kind of answer, from /api/results `product`. Never hardcoded. */
+function ErrorRate({ rec, product, loading, t }: { rec: KilnRecord; product?: ProductMetrics | null; loading: boolean; t: Strings }) {
+  const isFcbk = rec.status === "FCBK";
+  const isRefused = rec.status === "UNDETERMINED" && rec.observation.set.length === 2;
+  if (!isFcbk && !isRefused) return null;
+  if (loading) return null;
+  let text = t.kiln.errNA;
+  if (isFcbk && product?.fcbk_wrong_share != null && product.fcbk_calls != null && product.fcbk_wrong_share > 0) {
+    const oneIn = Math.round(1 / product.fcbk_wrong_share);
+    text = t.kiln.errFcbk(oneIn, `${(product.fcbk_wrong_share * 100).toFixed(1)}%`, product.fcbk_calls.toLocaleString("en"));
+  } else if (isRefused && product?.refused_share != null) {
+    text = t.kiln.errRefused(`${Math.round(product.refused_share * 100)}%`);
+  }
+  return <p className={`error-rate ${isFcbk ? "st-fcbk" : "st-undetermined"}`}>{text}</p>;
 }
 
 function ChipFigure({ src, alt, caption, empty }: { src: string | null; alt: string; caption: React.ReactNode; empty: string }) {
@@ -148,6 +167,7 @@ function Chips({ rec }: { rec: KilnRecord }) {
 
 function Model({ rec, qhat }: { rec: KilnRecord; qhat?: number }) {
   const { t } = usePrefs();
+  void qhat;
   const o = rec.observation;
   const classes: KilnClass[] = ["FCBK", "Zigzag"];
   return (
@@ -186,7 +206,7 @@ function Model({ rec, qhat }: { rec: KilnRecord; qhat?: number }) {
               );
             })}
           </ul>
-          {qhat !== undefined && <p className="fine">{t.kiln.setExplain(qhat)}</p>}
+          <p className="fine">{t.kiln.setExplain}</p>
         </>
       )}
     </section>

@@ -3,10 +3,10 @@
  "data_version": "sample-2026-10-24",
  "season": 202610,
  "counts": {
-  "ZIGZAG": 77,
-  "FCBK": 34,
-  "UNDETERMINED": 25,
-  "NOT_DETECTED": 8
+  "ZIGZAG": 0,
+  "FCBK": 28,
+  "UNDETERMINED": 105,
+  "NOT_DETECTED": 11
  },
  "total": 144,
  "aoi": {

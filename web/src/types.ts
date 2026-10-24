@@ -178,21 +178,38 @@ export interface Ledger {
   events: ChainEvent[];
 }
 
+export interface ProductMetrics {
+  n_test?: number | null;
+  fcbk_calls?: number | null;
+  fcbk_calls_wrong?: number | null;
+  fcbk_wrong_share?: number | null;
+  refused_share?: number | null;
+  zigzag_certified?: number | null;
+  coverage?: number | null;
+  coverage_fcbk?: number | null;
+  coverage_zigzag?: number | null;
+  detector_recall?: number | null;
+  detector_precision?: number | null;
+}
+
 export interface ResultRow {
   id: string;
   metric: string;
   target: string;
   value: string | number | null;
-  n?: number;
+  n?: string | number;
   hit: boolean | null;
   note?: string;
 }
 
 export interface Results {
   fixture: boolean;
+  /** True when the rows are copied from measured results even in sample mode. */
+  measured?: boolean;
   split?: string;
   targets: ResultRow[];
   limits?: string[];
+  product: ProductMetrics | null;
 }
 
 export interface AuditRow {

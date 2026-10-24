@@ -15,8 +15,9 @@ const BASE = process.env.BASE ?? "http://127.0.0.1:4173";
 const ledger = JSON.parse(readFileSync(join(here, "..", "src", "fixtures", "ledger.json"), "utf8"));
 const conflictKiln = ledger.events.find((e) => e.type === "Conflict")?.kiln_id;
 const certKiln = (() => {
-  const proven = new Set(ledger.events.filter((e) => e.type === "SatelliteProven").map((e) => e.kiln_id));
-  return ledger.events.find((e) => e.type === "FindingAttested" && e.detail.finding === 1 && proven.has(e.kiln_id))?.kiln_id;
+  // certified by the product rule: an inspector's Zigzag confirmed with no satellite contradiction
+  const conflicted = new Set(ledger.events.filter((e) => e.type === "Conflict").map((e) => e.kiln_id));
+  return ledger.events.find((e) => e.type === "FindingAttested" && e.detail.finding === 1 && !conflicted.has(e.kiln_id))?.kiln_id;
 })();
 const records = JSON.parse(readFileSync(join(here, "..", "src", "fixtures", "records.json"), "utf8"));
 const notSeen = Object.values(records).find((r) => r.status === "NOT_DETECTED")?.id;

@@ -1,68 +1,69 @@
 {
  "fixture": true,
- "prereg_url": "docs/PREREG.md",
+ "measured": true,
  "split": "Spatial blocks of 0.5 degrees; 60/20/20 train/calibration/test; seed 20261024",
  "targets": [
   {
    "id": "T1",
-   "metric": "Detector recall at IoU 0.3",
+   "metric": "Detector recall, IoU 0.3, conf 0.30",
    "target": ">= 0.80",
-   "op": ">=",
-   "threshold": 0.8,
-   "value": 0.84,
-   "n": 412,
+   "value": "**0.880** (3,473 of 3,947 boxes)",
+   "n": "3,203 test patches",
    "hit": true
   },
   {
    "id": "T2",
-   "metric": "Detector precision at IoU 0.3",
+   "metric": "Detector precision, IoU 0.3, conf 0.30",
    "target": ">= 0.75",
-   "op": ">=",
-   "threshold": 0.75,
-   "value": 0.71,
-   "n": 488,
-   "hit": false
+   "value": "**0.881** (3,473 TP, 469 FP)",
+   "n": "3,942 detections",
+   "hit": true
   },
   {
    "id": "T3",
-   "metric": "Classifier accuracy, FCBK vs Zigzag",
+   "metric": "Classifier accuracy, FCBK vs Zigzag, true kilns",
    "target": ">= 0.85",
-   "op": ">=",
-   "threshold": 0.85,
-   "value": 0.88,
-   "n": 346,
-   "hit": true
-  },
-  {
-   "id": "T4",
-   "metric": "Conformal empirical coverage",
-   "target": "0.87 to 0.93",
-   "op": "between",
-   "low": 0.87,
-   "high": 0.93,
-   "value": 0.905,
-   "n": 346,
-   "hit": true
-  },
-  {
-   "id": "T5",
-   "metric": "Share of kilns given a single-class set",
-   "target": ">= 0.70",
-   "op": ">=",
-   "threshold": 0.7,
-   "value": 0.66,
-   "n": 346,
+   "value": "**0.793** (balanced 0.657, AUC 0.759)",
+   "n": "2,320 kilns (1,991 FCBK, 329 Zigzag)",
    "hit": false
   },
   {
-   "id": "T6",
-   "metric": "Of single-set {Zigzag} kilns, share truly FCBK",
-   "target": "<= 0.05",
-   "op": "<=",
-   "threshold": 0.05,
-   "value": 0.031,
-   "n": 161,
+   "id": "T4",
+   "metric": "Conformal coverage, pre-registered marginal rule",
+   "target": "0.87 to 0.93",
+   "value": "**0.863** (2,002 of 2,320)",
+   "n": "2,320",
+   "hit": false
+  },
+  {
+   "id": "T5",
+   "metric": "Share given a single-class set",
+   "target": ">= 0.70",
+   "value": "**0.856** (1,985 of 2,320)",
+   "n": "2,320",
    "hit": true
+  },
+  {
+   "id": "T6",
+   "metric": "Of {Zigzag} sets, share truly FCBK",
+   "target": "<= 0.05",
+   "value": "**0.619** (174 of 281)",
+   "n": "281",
+   "hit": false
   }
- ]
+ ],
+ "product": {
+  "n_test": 2320,
+  "fcbk_calls": 573,
+  "fcbk_calls_wrong": 21,
+  "fcbk_wrong_share": 0.03664921465968586,
+  "refused_share": 0.7530172413793104,
+  "zigzag_certified": 0,
+  "coverage": 0.990948275862069,
+  "coverage_fcbk": 1,
+  "coverage_zigzag": 0.9361702127659575,
+  "detector_recall": 0.8799087914872055,
+  "detector_precision": 0.8810248604769153,
+  "ltt_zigzag_floor": null
+ }
 }

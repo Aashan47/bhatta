@@ -11,7 +11,7 @@ import { StandardMerkleTree } from "@openzeppelin/merkle-tree";
 import { encodeAbiParameters, keccak256, stringToHex } from "viem";
 import { evidenceHashOf, pZigzagBp, sha256HexBare } from "../src/lib/encoding.ts";
 import { deflateSync, crc32 } from "node:zlib";
-import { mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -145,7 +145,7 @@ const DISTRICTS = [
   { name: "Nankana Sahib", s: 31.3, n: 31.55, w: 73.58, e: 73.9, n_k: 26 },
 ];
 const SEASON = 202610;
-const QHAT = 0.8123; // include class c in the set when 1 - p_c <= qhat
+const QHAT = 0.8123; // marginal qhat, shown for reference only; the product rule is Mondrian
 const ALPHA = 0.1;
 const MODEL_SHA = "5a".repeat(4) + hex32().slice(10); // bare lowercase hex, as summary.models.classifier_sha256
 const DETECTOR_SHA = hex32();
@@ -155,6 +155,7 @@ const SCENES = [
   { id: "SAMPLE-S2-20261014-C", date: "2026-10-14", cloud_pct: 1.8 },
 ];
 const CODE = { NOT_DETECTED: 0, FCBK: 1, ZIGZAG: 2, UNDETERMINED: 3 };
+const baselineIsZig = (k) => k.baselineClass === "Zigzag";
 
 const kilns = [];
 for (const d of DISTRICTS) {
@@ -165,10 +166,12 @@ for (const d of DISTRICTS) {
     } while (d.name === "Lahore" && Math.hypot(lat - 31.52, lon - 74.34) < 0.11);
     lat = r4(lat); lon = r4(lon);
     const baselineClass = rnd() < 0.72 ? "FCBK" : "Zigzag";
+    // Distribution of the product rule on held-out test blocks (docs/RESULTS.md): about 25% {FCBK},
+    // 75% refused (both classes), never {Zigzag}; a few 2023-24 kilns not seen.
     const u = rnd();
     let status;
-    if (baselineClass === "Zigzag") status = u < 0.85 ? "ZIGZAG" : u < 0.95 ? "UNDETERMINED" : "NOT_DETECTED";
-    else status = u < 0.38 ? "ZIGZAG" : u < 0.66 ? "FCBK" : u < 0.9 ? "UNDETERMINED" : "NOT_DETECTED";
+    if (u < 0.06) status = "NOT_DETECTED";
+    else status = rnd() < (baselineClass === "FCBK" ? 0.3 : 0.04) ? "FCBK" : "UNDETERMINED";
     kilns.push({ id: "PK-" + geohash(lat, lon, 8), lat, lon, district: d.name, baselineClass, status });
   }
 }
@@ -178,9 +181,8 @@ const records = [];
 for (const k of kilns) {
   const scene = pick(SCENES);
   let pZ = null, detected = true, detConf = null;
-  if (k.status === "ZIGZAG") pZ = between(0.83, 0.99);
-  else if (k.status === "FCBK") pZ = between(0.01, 0.17);
-  else if (k.status === "UNDETERMINED") pZ = between(0.24, 0.76);
+  if (k.status === "FCBK") pZ = between(0.01, 0.12);
+  else if (k.status === "UNDETERMINED") pZ = baselineIsZig(k) ? between(0.35, 0.97) : between(0.14, 0.8);
   else detected = false;
   let probs = null, set = [];
   if (detected) {
@@ -188,8 +190,9 @@ for (const k of kilns) {
     if (Number.isInteger(pZ)) pZ = 0.9999;
     const pF = r4(1 - pZ);
     probs = { FCBK: pF, Zigzag: pZ };
-    if (1 - pF <= QHAT) set.push("FCBK");
-    if (1 - pZ <= QHAT) set.push("Zigzag");
+    // Product rule: FCBK alone when the FCBK class is the only one kept; Zigzag is never stated alone
+    // (no Learn-then-Test floor passed), so everything else keeps both classes.
+    set = k.status === "FCBK" ? ["FCBK"] : ["FCBK", "Zigzag"];
     detConf = r4(between(0.62, 0.97));
   }
   const variant = rnd();
@@ -257,30 +260,36 @@ for (const [i, v] of tree.entries()) {
 // a handful of on-chain stories, so every event type appears
 const byStatus = (s) => records.filter((r) => r.status === s);
 const push = (rec, ev) => { rec.events.push(ev); ledgerEvents.push({ ...ev, kiln_id: rec.id, season: SEASON }); };
-for (const rec of byStatus("ZIGZAG").slice(0, 9)) {
+const proven = (rec) => {
   const a = later();
-  push(rec, { type: "SatelliteProven", tx: hex32(), ...a, detail: { kilnId: stringToHex(rec.id, { size: 32 }), status: 2, pZigzagBp: rec.chain.p_zigzag_bp, evidenceHash: rec.chain.evidence_hash, rootVersion: 1 } });
-}
-for (const rec of byStatus("ZIGZAG").slice(0, 5)) {
+  push(rec, { type: "SatelliteProven", tx: hex32(), ...a, detail: { kilnId: stringToHex(rec.id, { size: 32 }), status: rec.chain.status_code, pZigzagBp: rec.chain.p_zigzag_bp, evidenceHash: rec.chain.evidence_hash, rootVersion: 1 } });
+};
+const und = byStatus("UNDETERMINED").sort((x, y) => y.chain.p_zigzag_bp - x.chain.p_zigzag_bp);
+const fcbk = byStatus("FCBK");
+// Inspectors confirmed Zigzag where the image could not decide: certified by the product rule.
+for (const rec of und.slice(0, 5)) {
+  proven(rec);
   const a = later();
   push(rec, { type: "FindingAttested", tx: hex32(), ...a, detail: { finding: 1, inspector: pick(INSPECTORS), evidenceHash: hex32() } });
 }
-for (const rec of byStatus("FCBK").slice(0, 3)) {
+// Inspector says Zigzag but the image says FCBK: a permanent public conflict.
+for (const rec of fcbk.slice(0, 3)) {
+  proven(rec);
   const a = later();
   const tx = hex32();
   const insp = pick(INSPECTORS);
   push(rec, { type: "FindingAttested", tx, ...a, detail: { finding: 1, inspector: insp, evidenceHash: hex32() } });
   push(rec, { type: "Conflict", tx, ...a, detail: { reasonCode: 2, inspector: insp } });
 }
-for (const rec of byStatus("FCBK").slice(3, 5)) {
+for (const rec of fcbk.slice(3, 6)) {
   const a = later();
   push(rec, { type: "FindingAttested", tx: hex32(), ...a, detail: { finding: 2, inspector: pick(INSPECTORS), evidenceHash: hex32() } });
 }
-for (const rec of [...byStatus("FCBK").slice(5, 6), ...byStatus("NOT_DETECTED").slice(0, 1)]) {
+for (const rec of [...fcbk.slice(6, 7), ...byStatus("NOT_DETECTED").slice(0, 1)]) {
   const a = later();
   push(rec, { type: "Disputed", tx: hex32(), ...a, detail: { submitter: hex20(), evidenceHash: hex32(), note: rec.status === "FCBK" ? "Kiln rebuilt as zigzag in August; photos and invoice hashed." : "Kiln still operating; chimney visible from road." } });
 }
-for (const rec of byStatus("UNDETERMINED").slice(0, 2)) {
+for (const rec of und.slice(-2)) {
   const a = later();
   push(rec, { type: "FindingAttested", tx: hex32(), ...a, detail: { finding: 3, inspector: pick(INSPECTORS), evidenceHash: hex32() } });
 }
@@ -296,6 +305,7 @@ const queue = [];
 const fc = byStatus("FCBK").sort((a, b) => (conflictIds.has(b.id) - conflictIds.has(a.id)) || a.chain.p_zigzag_bp - b.chain.p_zigzag_bp);
 for (const r of fc) queue.push({ r, code: conflictIds.has(r.id) ? "CONFLICT" : "SAT_FCBK" });
 for (const r of byStatus("UNDETERMINED").sort((a, b) => a.chain.p_zigzag_bp - b.chain.p_zigzag_bp)) queue.push({ r, code: "UNDETERMINED" });
+// (no ZIGZAG kilns: the image alone never states Zigzag)
 for (const r of byStatus("NOT_DETECTED")) queue.push({ r, code: "NOT_SEEN" });
 const REASON = {
   CONFLICT: (r) => `Satellite says FCBK (P(Zigzag) ${(r.chain.p_zigzag_bp / 100).toFixed(1)}%) but an inspector signed Zigzag confirmed. Public conflict on the ledger.`,
@@ -358,18 +368,46 @@ const ledger = {
   events: ledgerEvents.slice().sort((a, b) => b.block - a.block),
 };
 
+// Results: the T1 to T6 rows of docs/RESULTS.md and the product metrics from data/eval_results.json,
+// computed the way the API's _product_metrics() does, so sample mode shows the measured numbers.
+function readResults() {
+  const md = join(here, "..", "..", "docs", "RESULTS.md");
+  const rows = [];
+  if (existsSync(md)) {
+    for (const line of readFileSync(md, "utf8").split("\n")) {
+      const m = /^\|\s*(T[1-6])\s*\|(.+)\|\s*$/.exec(line.trim());
+      if (!m) continue;
+      const c = line.trim().replace(/^\||\|$/g, "").split("|").map((x) => x.trim());
+      if (c.length < 6) continue;
+      const v = c[5].toUpperCase();
+      rows.push({ id: c[0], metric: c[1], target: c[2], value: c[3], n: c[4], hit: v.includes("HIT") ? true : v.includes("MISS") ? false : null });
+    }
+  }
+  return rows;
+}
+function readProduct() {
+  const f = join(here, "..", "..", "data", "eval_results.json");
+  if (!existsSync(f)) return null;
+  const e = JSON.parse(readFileSync(f, "utf8"));
+  const prod = e.conformal_test_product ?? {};
+  const n = prod.n ?? 0;
+  const calls = prod.n_set_fcbk;
+  const wrong = prod.n_set_fcbk_true_zigzag;
+  const byClass = prod.coverage_by_class ?? e.coverage_by_class_product ?? {};
+  return {
+    n_test: n, fcbk_calls: calls, fcbk_calls_wrong: wrong, fcbk_wrong_share: calls ? wrong / calls : null,
+    refused_share: n ? (prod.n_set_both ?? 0) / n : null, zigzag_certified: prod.n_set_zigzag,
+    coverage: prod.coverage, coverage_fcbk: byClass.FCBK, coverage_zigzag: byClass.Zigzag,
+    detector_recall: e.detector_test?.recall, detector_precision: e.detector_test?.precision, ltt_zigzag_floor: e.ltt_zig_min,
+  };
+}
 const results = {
   fixture: true,
-  prereg_url: "docs/PREREG.md",
+  // The rows and product metrics are copied from the repository's measured results, not invented.
+  measured: readResults().length > 0,
   split: "Spatial blocks of 0.5 degrees; 60/20/20 train/calibration/test; seed 20261024",
-  targets: [
-    { id: "T1", metric: "Detector recall at IoU 0.3", target: ">= 0.80", op: ">=", threshold: 0.8, value: 0.84, n: 412, hit: true },
-    { id: "T2", metric: "Detector precision at IoU 0.3", target: ">= 0.75", op: ">=", threshold: 0.75, value: 0.71, n: 488, hit: false },
-    { id: "T3", metric: "Classifier accuracy, FCBK vs Zigzag", target: ">= 0.85", op: ">=", threshold: 0.85, value: 0.88, n: 346, hit: true },
-    { id: "T4", metric: "Conformal empirical coverage", target: "0.87 to 0.93", op: "between", low: 0.87, high: 0.93, value: 0.905, n: 346, hit: true },
-    { id: "T5", metric: "Share of kilns given a single-class set", target: ">= 0.70", op: ">=", threshold: 0.7, value: 0.66, n: 346, hit: false },
-    { id: "T6", metric: "Of single-set {Zigzag} kilns, share truly FCBK", target: "<= 0.05", op: "<=", threshold: 0.05, value: 0.031, n: 161, hit: true },
-  ],
+  targets: readResults(),
+  product: readProduct(),
 };
 
 const audit = { fixture: true, n: 0, agreed: 0, disagreed: 0, unsure: 0, rows: [], status: "Not yet run" };

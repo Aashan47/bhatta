@@ -149,8 +149,7 @@ export function useCertText(rec: KilnRecord) {
   const { t } = usePrefs();
   const c = useMemo(() => certificateFor(rec), [rec]);
   const word = c.state === "certified" ? t.cert.certified : c.state === "contradicted" ? t.cert.contradicted : t.cert.pending;
-  const missingWords = c.missing.map((m) => (m === "sat" ? t.cert.missingSat : m === "proof" ? t.cert.missingProof : t.cert.missingInspector));
-  const line = c.state === "certified" ? t.cert.certifiedLine : c.state === "contradicted" ? t.cert.contradictedLine : t.cert.pendingLine(missingWords);
+  const line = c.state === "certified" ? t.cert.certifiedLine : c.state === "contradicted" ? t.cert.contradictedLine : t.cert.pendingLine;
   return { c, word, line };
 }
 
@@ -184,9 +183,11 @@ export function CertificatePanel({ rec, printedHash }: { rec: KilnRecord; printe
   const { t } = usePrefs();
   const { c, line } = useCertText(rec);
   const onchain = useOnchainCertificate(rec);
-  const state: CertState = onchain.cert ? (onchain.cert.certified ? "certified" : c.state === "contradicted" ? "contradicted" : "pending") : c.state;
+  // The product rule decides the state. The contract's own flag is shown beside it, with a note when
+  // the deployed contract is stricter (it also wants a satellite Zigzag record, which never exists).
+  const state: CertState = c.state;
   const words: Record<CertState, string> = { certified: t.cert.certified, pending: t.cert.pending, contradicted: t.cert.contradicted };
-  const shownLine = state === c.state ? line : state === "certified" ? t.cert.certifiedLine : t.cert.pendingLine([t.cert.missingProof]);
+  const shownLine = line;
   return (
     <section className={`panel cert-panel cert-${state}`} aria-labelledby="cert-h">
       <h2 id="cert-h" className="panel-title">
@@ -200,6 +201,7 @@ export function CertificatePanel({ rec, printedHash }: { rec: KilnRecord; printe
       <div aria-live="polite">
         {onchain.loading && onchain.ledger?.contract && !FIXTURE && <p className="fine">{t.cert.onchainChecking}</p>}
         {onchain.cert && <p className="fine">{onchain.cert.certified ? t.cert.onchainYes : t.cert.onchainNo}</p>}
+        {onchain.cert && !onchain.cert.certified && state === "certified" && <p className="fine">{t.cert.contractNote}</p>}
         {printedHash && onchain.cert && (
           <p className={`verdict ${onchain.cert.hash.toLowerCase() === printedHash.toLowerCase() && onchain.cert.hash !== ZERO_HASH ? "verdict-pass" : "verdict-fail"}`}>
             {onchain.cert.hash.toLowerCase() === printedHash.toLowerCase() && onchain.cert.hash !== ZERO_HASH ? t.cert.printedValid : t.cert.printedStale}

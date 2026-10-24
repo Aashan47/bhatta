@@ -9,8 +9,8 @@
  "seasons": [
   {
    "season": 202610,
-   "root": "0x7d30727e770a6837a07d336db3e9b2c1cf06ca6641379c751a96cc6d17d2672e",
-   "tx": "0x0b4aee3705197a6ba9a6fcfc73905a921effb6c68ba1275573656c29c41a9604",
+   "root": "0x22b0e239ee1ad98fcb0ca84eb49414473a2bb2633cfdaacf5c6cdd69e2755612",
+   "tx": "0xe403ab3a8d32e453234bd866d4380391f20fa372e6e76fa237aa5f697d6673bd",
    "block": 9480211,
    "time": "2026-10-21T09:14:36Z",
    "model_hash": "5a5a5a5ab8868e3da9a9f08f96177bc9df00f2ca0d49b9bdeed1c040785b5908",
@@ -20,366 +20,364 @@
  "events": [
   {
    "type": "FindingAttested",
-   "tx": "0x3d7c64e57a5cbbd8c7f9aec68154b39508bc598e5e93aaad9ade2e13d03844b6",
-   "block": 9490714,
-   "time": "2026-10-23T14:45:36Z",
+   "tx": "0x577bfdbabdb4a556cbbfb3f8a1bde2baee252088981a59764eba437080d5ab10",
+   "block": 9491312,
+   "time": "2026-10-23T08:36:36Z",
    "detail": {
     "finding": 3,
-    "inspector": "0xb7e9ae049744afe31d809db54b7d6ceb8a662576",
-    "evidenceHash": "0x3b28dba75f4ffd50bf92e788a4bbf864f1d33e9d03a4cda36917685a7962d642"
+    "inspector": "0x1f042ea2251af63ac541bf2b40789dc979cdbe8a",
+    "evidenceHash": "0xaffa6334253008f044a53a27dc8135009d1d8c0ae2b6d3a1533d4c5bf340b6f1"
    },
-   "kiln_id": "PK-tts8n9tf",
+   "kiln_id": "PK-ttsc33ts",
    "season": 202610
   },
   {
    "type": "FindingAttested",
-   "tx": "0x630fd734053b44e591e0d45afeb132c76e7ad2e883609445529e1839a24adc2b",
-   "block": 9489824,
-   "time": "2026-10-23T11:10:36Z",
+   "tx": "0x2816f4bee3037165ea2dc68cc4fd05ff7fa3a82ce49fd3f7ee0abd1277a60c1a",
+   "block": 9490869,
+   "time": "2026-10-23T05:18:36Z",
    "detail": {
     "finding": 3,
-    "inspector": "0x0e73834c6489a1e545da2907d4162ec37d319bad",
-    "evidenceHash": "0xdf37aa21ee39d2fd424fca9f98b545fb2bc06e4c7cd58a6cedb89d6b62dc0799"
+    "inspector": "0x1f042ea2251af63ac541bf2b40789dc979cdbe8a",
+    "evidenceHash": "0x1bb081f04562aa03856f542ccdbdb549f9290c4ef1c392f2d3b8682c4d5b3a07"
    },
-   "kiln_id": "PK-ttkzuc4r",
+   "kiln_id": "PK-tts7nbg8",
    "season": 202610
   },
   {
    "type": "Disputed",
-   "tx": "0x7aec9cb66ad4130be3c14f7f77be5e7c32692608b177b5812bf00233a426d7d0",
-   "block": 9489563,
-   "time": "2026-10-23T08:29:36Z",
+   "tx": "0xdf37aa21ee39d2fd424fca9f98b545fb2bc06e4c7cd58a6cedb89d6b62dc0799",
+   "block": 9490496,
+   "time": "2026-10-23T03:53:36Z",
    "detail": {
-    "submitter": "0xf32eb60ab49e1f66c3a83c2b3aca21b53ca3c9e4",
-    "evidenceHash": "0x8c3ca89e2c88c5c47b3c588f6610275d4b68b3b58856f3a46bb21c39cca15154",
+    "submitter": "0xfe3d7c64e57a5cbbd8c7f9aec68154b39508bc59",
+    "evidenceHash": "0xb673b28dba75f4ffd50bf92e788a4bbf864f1d33e9d03a4cda36917685a7962d",
     "note": "Kiln still operating; chimney visible from road."
    },
-   "kiln_id": "PK-ttscdjte",
+   "kiln_id": "PK-ttkzfz8z",
    "season": 202610
   },
   {
    "type": "Disputed",
-   "tx": "0x68a700389cf3225c43f603298f90cfb5a09b6c8110d1f2e2227222d85619f8c5",
-   "block": 9489396,
-   "time": "2026-10-23T07:51:36Z",
+   "tx": "0x32eb60ab49e1f66c3a83c2b3aca21b53ca3c9e4ef2dc94b60c941669c5310d98",
+   "block": 9489830,
+   "time": "2026-10-23T02:41:36Z",
    "detail": {
-    "submitter": "0x2fe54be09fd8b7602ac6cce36619ea49cbd0cac6",
-    "evidenceHash": "0x93f5aba542056be4ddfc33c8b89edfb6053d734a88786e06a08fb9f1530096df",
+    "submitter": "0xc3ca89e2c88c5c47b3c588f6610275d4b68b3b58",
+    "evidenceHash": "0xa630fd734053b44e591e0d45afeb132c76e7ad2e883609445529e1839a24adc2",
     "note": "Kiln rebuilt as zigzag in August; photos and invoice hashed."
    },
-   "kiln_id": "PK-tts9ncux",
+   "kiln_id": "PK-ttsc8qwk",
    "season": 202610
   },
   {
    "type": "FindingAttested",
-   "tx": "0x951e755a15c6e7deb9b066f74d4f4f08882e6c163eec8268804f2fe60dc133d9",
-   "block": 9488610,
-   "time": "2026-10-23T05:42:36Z",
+   "tx": "0x93f5aba542056be4ddfc33c8b89edfb6053d734a88786e06a08fb9f1530096df",
+   "block": 9489765,
+   "time": "2026-10-22T22:48:36Z",
    "detail": {
     "finding": 2,
-    "inspector": "0x0e73834c6489a1e545da2907d4162ec37d319bad",
-    "evidenceHash": "0xfd7bdd5547fd36f4f1343b8727d20060fc850e0088aabaa0862461d77eb0eb9f"
+    "inspector": "0x1f042ea2251af63ac541bf2b40789dc979cdbe8a",
+    "evidenceHash": "0x17aec9cb66ad4130be3c14f7f77be5e7c32692608b177b5812bf00233a426d7d"
    },
-   "kiln_id": "PK-ttsbyyqj",
+   "kiln_id": "PK-tts8hym2",
    "season": 202610
   },
   {
    "type": "FindingAttested",
-   "tx": "0xf788f79c5e80cd2d61a3286cd986ed1bf3e2ae9c30b5a5a9d78011adbfb417fb",
-   "block": 9488181,
-   "time": "2026-10-23T02:24:36Z",
+   "tx": "0xfd768a700389cf3225c43f603298f90cfb5a09b6c8110d1f2e2227222d85619f",
+   "block": 9489059,
+   "time": "2026-10-22T19:22:36Z",
    "detail": {
     "finding": 2,
-    "inspector": "0x80e403ab3a8d32e453234bd866d4380391f20fa3",
-    "evidenceHash": "0xb54f9d53b565d81013f4ac702ba19fe4f0266d99c286e84141a3ea036cd418a0"
+    "inspector": "0xcc2ef0d6d1c129ea8e5c4cb3f7a8925a43f07651",
+    "evidenceHash": "0xc52fe54be09fd8b7602ac6cce36619ea49cbd0cac61a2b4fb42b85af603ab877"
    },
-   "kiln_id": "PK-ttscp328",
+   "kiln_id": "PK-tts8t7b6",
    "season": 202610
   },
   {
    "type": "FindingAttested",
-   "tx": "0xee70b25162f505be83e2c82b08767c346e7f5dc1ed955cfdbb83b37f632c0d27",
-   "block": 9487785,
-   "time": "2026-10-22T23:21:36Z",
+   "tx": "0x07d951e755a15c6e7deb9b066f74d4f4f08882e6c163eec8268804f2fe60dc13",
+   "block": 9488425,
+   "time": "2026-10-22T16:51:36Z",
    "detail": {
-    "finding": 1,
-    "inspector": "0x0e73834c6489a1e545da2907d4162ec37d319bad",
-    "evidenceHash": "0x8136a2f48a444f1d1e04c15081c3cb1cc4b1eafbbbaaf916c0043037a7bfd2cf"
+    "finding": 2,
+    "inspector": "0x1f042ea2251af63ac541bf2b40789dc979cdbe8a",
+    "evidenceHash": "0xd93fd7bdd5547fd36f4f1343b8727d20060fc850e0088aabaa0862461d77eb0e"
    },
-   "kiln_id": "PK-tts9k65g",
-   "season": 202610
-  },
-  {
-   "type": "Conflict",
-   "tx": "0xee70b25162f505be83e2c82b08767c346e7f5dc1ed955cfdbb83b37f632c0d27",
-   "block": 9487785,
-   "time": "2026-10-22T23:21:36Z",
-   "detail": {
-    "reasonCode": 2,
-    "inspector": "0x0e73834c6489a1e545da2907d4162ec37d319bad"
-   },
-   "kiln_id": "PK-tts9k65g",
+   "kiln_id": "PK-ttscnszm",
    "season": 202610
   },
   {
    "type": "FindingAttested",
-   "tx": "0xcf1787fdd5389b4bf26d8c3c4a8b0374edef33980f9c87e0206c7658fcbe4413",
-   "block": 9487400,
-   "time": "2026-10-22T21:36:36Z",
+   "tx": "0xf6bf788f79c5e80cd2d61a3286cd986ed1bf3e2ae9c30b5a5a9d78011adbfb41",
+   "block": 9487940,
+   "time": "2026-10-22T14:04:36Z",
    "detail": {
     "finding": 1,
-    "inspector": "0x0e73834c6489a1e545da2907d4162ec37d319bad",
-    "evidenceHash": "0x84f9be689e3dc0551651450f8c4e6f4f0f3edcdedf1be8356dc90de8a43f0384"
+    "inspector": "0xcc2ef0d6d1c129ea8e5c4cb3f7a8925a43f07651",
+    "evidenceHash": "0xfbdb54f9d53b565d81013f4ac702ba19fe4f0266d99c286e84141a3ea036cd41"
    },
    "kiln_id": "PK-ttsc2c2c",
    "season": 202610
   },
   {
    "type": "Conflict",
-   "tx": "0xcf1787fdd5389b4bf26d8c3c4a8b0374edef33980f9c87e0206c7658fcbe4413",
-   "block": 9487400,
-   "time": "2026-10-22T21:36:36Z",
+   "tx": "0xf6bf788f79c5e80cd2d61a3286cd986ed1bf3e2ae9c30b5a5a9d78011adbfb41",
+   "block": 9487940,
+   "time": "2026-10-22T14:04:36Z",
    "detail": {
     "reasonCode": 2,
-    "inspector": "0x0e73834c6489a1e545da2907d4162ec37d319bad"
+    "inspector": "0xcc2ef0d6d1c129ea8e5c4cb3f7a8925a43f07651"
+   },
+   "kiln_id": "PK-ttsc2c2c",
+   "season": 202610
+  },
+  {
+   "type": "SatelliteProven",
+   "tx": "0x2718136a2f48a444f1d1e04c15081c3cb1cc4b1eafbbbaaf916c0043037a7bfd",
+   "block": 9487792,
+   "time": "2026-10-22T10:58:36Z",
+   "detail": {
+    "kilnId": "0x504b2d7474736332633263000000000000000000000000000000000000000000",
+    "status": 1,
+    "pZigzagBp": 1114,
+    "evidenceHash": "0x0500baa37f35b2f30b08ec15ed7888c9da379892375a4d980252a5878affffce",
+    "rootVersion": 1
    },
    "kiln_id": "PK-ttsc2c2c",
    "season": 202610
   },
   {
    "type": "FindingAttested",
-   "tx": "0x336e248cd0c6ae17486bc7444094a619f094d57d5717c01888786bebf2da2c60",
-   "block": 9486688,
-   "time": "2026-10-22T19:37:36Z",
+   "tx": "0x13384f9be689e3dc0551651450f8c4e6f4f0f3edcdedf1be8356dc90de8a43f0",
+   "block": 9487745,
+   "time": "2026-10-22T07:28:36Z",
    "detail": {
     "finding": 1,
-    "inspector": "0xb7e9ae049744afe31d809db54b7d6ceb8a662576",
-    "evidenceHash": "0x66a4c9f3c308a27a27eef88e788643d7f61aeb716fd1c35abafb27af94bcf3d3"
+    "inspector": "0x1f042ea2251af63ac541bf2b40789dc979cdbe8a",
+    "evidenceHash": "0x8466ee70b25162f505be83e2c82b08767c346e7f5dc1ed955cfdbb83b37f632c"
    },
-   "kiln_id": "PK-tts9kccq",
+   "kiln_id": "PK-tts9ez3m",
    "season": 202610
   },
   {
    "type": "Conflict",
-   "tx": "0x336e248cd0c6ae17486bc7444094a619f094d57d5717c01888786bebf2da2c60",
-   "block": 9486688,
-   "time": "2026-10-22T19:37:36Z",
+   "tx": "0x13384f9be689e3dc0551651450f8c4e6f4f0f3edcdedf1be8356dc90de8a43f0",
+   "block": 9487745,
+   "time": "2026-10-22T07:28:36Z",
    "detail": {
     "reasonCode": 2,
-    "inspector": "0xb7e9ae049744afe31d809db54b7d6ceb8a662576"
+    "inspector": "0x1f042ea2251af63ac541bf2b40789dc979cdbe8a"
    },
-   "kiln_id": "PK-tts9kccq",
+   "kiln_id": "PK-tts9ez3m",
+   "season": 202610
+  },
+  {
+   "type": "SatelliteProven",
+   "tx": "0xd3c7cf1787fdd5389b4bf26d8c3c4a8b0374edef33980f9c87e0206c7658fcbe",
+   "block": 9487486,
+   "time": "2026-10-22T06:11:36Z",
+   "detail": {
+    "kilnId": "0x504b2d74747339657a336d000000000000000000000000000000000000000000",
+    "status": 1,
+    "pZigzagBp": 698,
+    "evidenceHash": "0x055625cd16871feef0c01f4e80759005ebc99d961614fd4759a18d1e56dd7366",
+    "rootVersion": 1
+   },
+   "kiln_id": "PK-tts9ez3m",
    "season": 202610
   },
   {
    "type": "FindingAttested",
-   "tx": "0x63e014f23786a8b78fa0805d3fff4ac14a49a389c1fcd8f648499b44b4f4001d",
-   "block": 9485789,
-   "time": "2026-10-22T15:54:36Z",
+   "tx": "0x53fe336e248cd0c6ae17486bc7444094a619f094d57d5717c01888786bebf2da",
+   "block": 9486588,
+   "time": "2026-10-22T05:02:36Z",
    "detail": {
     "finding": 1,
-    "inspector": "0x0e73834c6489a1e545da2907d4162ec37d319bad",
-    "evidenceHash": "0xb852c9773654dc6d2ce380dc0210889e77ac78a2af309848ccbcce728a6ad453"
+    "inspector": "0x1f042ea2251af63ac541bf2b40789dc979cdbe8a",
+    "evidenceHash": "0xc60866a4c9f3c308a27a27eef88e788643d7f61aeb716fd1c35abafb27af94bc"
    },
-   "kiln_id": "PK-ttsb27bh",
+   "kiln_id": "PK-tts9mtfh",
+   "season": 202610
+  },
+  {
+   "type": "Conflict",
+   "tx": "0x53fe336e248cd0c6ae17486bc7444094a619f094d57d5717c01888786bebf2da",
+   "block": 9486588,
+   "time": "2026-10-22T05:02:36Z",
+   "detail": {
+    "reasonCode": 2,
+    "inspector": "0x1f042ea2251af63ac541bf2b40789dc979cdbe8a"
+   },
+   "kiln_id": "PK-tts9mtfh",
+   "season": 202610
+  },
+  {
+   "type": "SatelliteProven",
+   "tx": "0x01d0b852c9773654dc6d2ce380dc0210889e77ac78a2af309848ccbcce728a6a",
+   "block": 9485842,
+   "time": "2026-10-22T03:34:36Z",
+   "detail": {
+    "kilnId": "0x504b2d747473396d746668000000000000000000000000000000000000000000",
+    "status": 1,
+    "pZigzagBp": 819,
+    "evidenceHash": "0xf3611c8f6deca1a1cc6ec6174a9558dd39c21c1d3d4ad6088cbe2e568280cdd6",
+    "rootVersion": 1
+   },
+   "kiln_id": "PK-tts9mtfh",
    "season": 202610
   },
   {
    "type": "FindingAttested",
-   "tx": "0xba8b675fce54a862574236611ea4561cc5d5052547b7627bef9a06f7bfe60f54",
-   "block": 9485572,
-   "time": "2026-10-22T12:12:36Z",
+   "tx": "0xf54fa10afa44542d2bb1f3ab52d07f432099429757a845d336cb41abb4cf234b",
+   "block": 9485562,
+   "time": "2026-10-22T03:12:36Z",
    "detail": {
     "finding": 1,
-    "inspector": "0x80e403ab3a8d32e453234bd866d4380391f20fa3",
-    "evidenceHash": "0xa10afa44542d2bb1f3ab52d07f432099429757a845d336cb41abb4cf234bb1ee"
+    "inspector": "0x857932868cfa341d6be960c78a45a46c7b368754",
+    "evidenceHash": "0x1ee3e63e014f23786a8b78fa0805d3fff4ac14a49a389c1fcd8f648499b44b4f"
    },
-   "kiln_id": "PK-tts8uy5n",
+   "kiln_id": "PK-ttsswhxd",
+   "season": 202610
+  },
+  {
+   "type": "SatelliteProven",
+   "tx": "0xd6d49ba8b675fce54a862574236611ea4561cc5d5052547b7627bef9a06f7bfe",
+   "block": 9485169,
+   "time": "2026-10-22T02:52:36Z",
+   "detail": {
+    "kilnId": "0x504b2d7474737377687864000000000000000000000000000000000000000000",
+    "status": 3,
+    "pZigzagBp": 8906,
+    "evidenceHash": "0x93aac4b2c16fc3803f6864fee5187cc759858fd273578e7e516b9622cf993a35",
+    "rootVersion": 1
+   },
+   "kiln_id": "PK-ttsswhxd",
    "season": 202610
   },
   {
    "type": "FindingAttested",
-   "tx": "0xe957860a6ac5dbee037b0fb50906f1d06b9f381808779f077839d65f4cffe61b",
-   "block": 9485267,
-   "time": "2026-10-22T09:40:36Z",
+   "tx": "0x89847e957860a6ac5dbee037b0fb50906f1d06b9f381808779f077839d65f4cf",
+   "block": 9484321,
+   "time": "2026-10-22T00:37:36Z",
    "detail": {
     "finding": 1,
-    "inspector": "0x80e403ab3a8d32e453234bd866d4380391f20fa3",
-    "evidenceHash": "0x62eafc60ea2ebc295c82e6501c87f369355e8f36e413ab4e9eef807039cf8d6d"
+    "inspector": "0x857932868cfa341d6be960c78a45a46c7b368754",
+    "evidenceHash": "0xe61bb62eafc60ea2ebc295c82e6501c87f369355e8f36e413ab4e9eef807039c"
    },
-   "kiln_id": "PK-ttkxy4f6",
+   "kiln_id": "PK-ttsshyhe",
+   "season": 202610
+  },
+  {
+   "type": "SatelliteProven",
+   "tx": "0x55ec1dada730d01204510f377ee6a02403e0445fcd0c8a94e61f63a66719f9ff",
+   "block": 9483572,
+   "time": "2026-10-21T22:12:36Z",
+   "detail": {
+    "kilnId": "0x504b2d7474737368796865000000000000000000000000000000000000000000",
+    "status": 3,
+    "pZigzagBp": 9077,
+    "evidenceHash": "0x8b80414d30bf6afb97213f5e588f8aa07f534f67bfe2cac97e9489b1df25671c",
+    "rootVersion": 1
+   },
+   "kiln_id": "PK-ttsshyhe",
    "season": 202610
   },
   {
    "type": "FindingAttested",
-   "tx": "0xb34468ab2158f80f72f28c1c587f002ca318c324f61a1c8364db5375414955ec",
-   "block": 9484972,
-   "time": "2026-10-22T07:34:36Z",
+   "tx": "0x2cc60ce77751e8588b3911df667f341b5d8b2e0437cc0dd2d01d36370ec0e882",
+   "block": 9483301,
+   "time": "2026-10-21T19:40:36Z",
    "detail": {
     "finding": 1,
-    "inspector": "0x0e73834c6489a1e545da2907d4162ec37d319bad",
-    "evidenceHash": "0xdada730d01204510f377ee6a02403e0445fcd0c8a94e61f63a66719f9ffd9898"
+    "inspector": "0xcc2ef0d6d1c129ea8e5c4cb3f7a8925a43f07651",
+    "evidenceHash": "0x86e8a4b34468ab2158f80f72f28c1c587f002ca318c324f61a1c8364db537541"
    },
-   "kiln_id": "PK-tts9xrdu",
+   "kiln_id": "PK-tts6w7fn",
+   "season": 202610
+  },
+  {
+   "type": "SatelliteProven",
+   "tx": "0x8d8d41d62e46d719fcc7b585bf238cc3be86407a353e6106ed637f9744057a9f",
+   "block": 9483146,
+   "time": "2026-10-21T18:05:36Z",
+   "detail": {
+    "kilnId": "0x504b2d747473367737666e000000000000000000000000000000000000000000",
+    "status": 3,
+    "pZigzagBp": 9171,
+    "evidenceHash": "0xfdc35090e68a1fd89a208968fda86a5ec85a9cff59c2804a1906f8aeb60627e2",
+    "rootVersion": 1
+   },
+   "kiln_id": "PK-tts6w7fn",
    "season": 202610
   },
   {
    "type": "FindingAttested",
-   "tx": "0xd62e46d719fcc7b585bf238cc3be86407a353e6106ed637f9744057a9f252cc6",
-   "block": 9484367,
-   "time": "2026-10-22T06:13:36Z",
+   "tx": "0x37b35499440a3e9a9f35a6e3c604c37f9e26e0ab74a7b627273456e061d3d904",
+   "block": 9482528,
+   "time": "2026-10-21T17:37:36Z",
    "detail": {
     "finding": 1,
-    "inspector": "0x0e73834c6489a1e545da2907d4162ec37d319bad",
-    "evidenceHash": "0xce77751e8588b3911df667f341b5d8b2e0437cc0dd2d01d36370ec0e882586e8"
+    "inspector": "0x857932868cfa341d6be960c78a45a46c7b368754",
+    "evidenceHash": "0x0fe069a9f8df315bebaad5a70d8625f445e6970b41f8760e51b4dac26c4581ed"
    },
-   "kiln_id": "PK-ttsc33ts",
+   "kiln_id": "PK-tts6v9d8",
    "season": 202610
   },
   {
    "type": "SatelliteProven",
-   "tx": "0xa9f8df315bebaad5a70d8625f445e6970b41f8760e51b4dac26c4581eda08d8d",
-   "block": 9484064,
-   "time": "2026-10-22T05:40:36Z",
+   "tx": "0x96194ed1b856cd68f848b8c10abcd67005620bd2eacf1f1603b4335d965510e4",
+   "block": 9481784,
+   "time": "2026-10-21T16:14:36Z",
    "detail": {
-    "kilnId": "0x504b2d7474736375626266000000000000000000000000000000000000000000",
-    "status": 2,
-    "pZigzagBp": 9102,
-    "evidenceHash": "0xdff90bff34ed7f57e0c598d4918fee8d9a38377f1880bf9d3bed1ef4aded38bc",
+    "kilnId": "0x504b2d7474733676396438000000000000000000000000000000000000000000",
+    "status": 3,
+    "pZigzagBp": 9502,
+    "evidenceHash": "0x50248ba40bb07792987eaa8b15e4127b446b69fb2c8b984492d731e5ef102072",
     "rootVersion": 1
    },
-   "kiln_id": "PK-ttscubbf",
+   "kiln_id": "PK-tts6v9d8",
+   "season": 202610
+  },
+  {
+   "type": "FindingAttested",
+   "tx": "0xa33aca04c91c7f10c8c96967c2623079a413f417782f35ba355d4e8070c707ce",
+   "block": 9481657,
+   "time": "2026-10-21T13:34:36Z",
+   "detail": {
+    "finding": 1,
+    "inspector": "0x1f042ea2251af63ac541bf2b40789dc979cdbe8a",
+    "evidenceHash": "0x24546ca6a0898b159f0aaad241adeb97867742a608c5ac4239b9fd2d2aec1a5b"
+   },
+   "kiln_id": "PK-ttss26mv",
    "season": 202610
   },
   {
    "type": "SatelliteProven",
-   "tx": "0x499440a3e9a9f35a6e3c604c37f9e26e0ab74a7b627273456e061d3d904f0fe0",
-   "block": 9483660,
-   "time": "2026-10-22T03:08:36Z",
+   "tx": "0x475320b70f3212341d5e6f0a0c0eb209c775732b23c3cffb72270f58d1f6bdc9",
+   "block": 9481069,
+   "time": "2026-10-21T11:15:36Z",
    "detail": {
-    "kilnId": "0x504b2d7474736233786375000000000000000000000000000000000000000000",
-    "status": 2,
-    "pZigzagBp": 9758,
-    "evidenceHash": "0x53f88a81be564ea0ea8128bf7476a51de69e86175d465357869d2bf20c20d72f",
+    "kilnId": "0x504b2d7474737332366d76000000000000000000000000000000000000000000",
+    "status": 3,
+    "pZigzagBp": 9577,
+    "evidenceHash": "0xddda33a199f0094ffb7055bf50263b3e4ea3dbf214a3bdcc23ac4cfa4b106815",
     "rootVersion": 1
    },
-   "kiln_id": "PK-ttsb3xcu",
-   "season": 202610
-  },
-  {
-   "type": "SatelliteProven",
-   "tx": "0xed1b856cd68f848b8c10abcd67005620bd2eacf1f1603b4335d965510e4d437b",
-   "block": 9483439,
-   "time": "2026-10-22T01:39:36Z",
-   "detail": {
-    "kilnId": "0x504b2d7474736373323963000000000000000000000000000000000000000000",
-    "status": 2,
-    "pZigzagBp": 9230,
-    "evidenceHash": "0x987709650bbe16ef0993dbc4c0bd6f8eaa3618322c67e1960aca3e65363b2fbd",
-    "rootVersion": 1
-   },
-   "kiln_id": "PK-ttscs29c",
-   "season": 202610
-  },
-  {
-   "type": "SatelliteProven",
-   "tx": "0xca6a0898b159f0aaad241adeb97867742a608c5ac4239b9fd2d2aec1a5b1a961",
-   "block": 9482888,
-   "time": "2026-10-22T00:15:36Z",
-   "detail": {
-    "kilnId": "0x504b2d74746b787a6b3278000000000000000000000000000000000000000000",
-    "status": 2,
-    "pZigzagBp": 8515,
-    "evidenceHash": "0x537335c65c26040916a63d2697024b6a6462a979ffa71a1562b7a66debef533e",
-    "rootVersion": 1
-   },
-   "kiln_id": "PK-ttkxzk2x",
-   "season": 202610
-  },
-  {
-   "type": "SatelliteProven",
-   "tx": "0xca04c91c7f10c8c96967c2623079a413f417782f35ba355d4e8070c707ce4245",
-   "block": 9482615,
-   "time": "2026-10-21T22:20:36Z",
-   "detail": {
-    "kilnId": "0x504b2d7474736232376268000000000000000000000000000000000000000000",
-    "status": 2,
-    "pZigzagBp": 9366,
-    "evidenceHash": "0xeae42daa1071aae7ba54df6e1d5bf3adffd23db865b6c83854556ff05dc85eba",
-    "rootVersion": 1
-   },
-   "kiln_id": "PK-ttsb27bh",
-   "season": 202610
-  },
-  {
-   "type": "SatelliteProven",
-   "tx": "0x20b70f3212341d5e6f0a0c0eb209c775732b23c3cffb72270f58d1f6bdc9a8a3",
-   "block": 9482396,
-   "time": "2026-10-21T19:33:36Z",
-   "detail": {
-    "kilnId": "0x504b2d747473387579356e000000000000000000000000000000000000000000",
-    "status": 2,
-    "pZigzagBp": 8626,
-    "evidenceHash": "0xf2d8b4f128e2f44215621b88b8711a5127bc7910adc4d25b059166c596cb1f7a",
-    "rootVersion": 1
-   },
-   "kiln_id": "PK-tts8uy5n",
-   "season": 202610
-  },
-  {
-   "type": "SatelliteProven",
-   "tx": "0x32868cfa341d6be960c78a45a46c7b36875466281009b1e792f3a9384a33f747",
-   "block": 9482044,
-   "time": "2026-10-21T18:24:36Z",
-   "detail": {
-    "kilnId": "0x504b2d74746b7879346636000000000000000000000000000000000000000000",
-    "status": 2,
-    "pZigzagBp": 9349,
-    "evidenceHash": "0x0feed3b5fe82218a505ad93f6afff85f14b8fa13335a38a3fda3839359e69ad8",
-    "rootVersion": 1
-   },
-   "kiln_id": "PK-ttkxy4f6",
-   "season": 202610
-  },
-  {
-   "type": "SatelliteProven",
-   "tx": "0x2ef0d6d1c129ea8e5c4cb3f7a8925a43f07651a28d91cae75b01720223eab685",
-   "block": 9481594,
-   "time": "2026-10-21T15:54:36Z",
-   "detail": {
-    "kilnId": "0x504b2d7474733978726475000000000000000000000000000000000000000000",
-    "status": 2,
-    "pZigzagBp": 8898,
-    "evidenceHash": "0x1e90c92b6ab2385bd780a316f994f5bc92794832d875afb0b901a9437519c7e9",
-    "rootVersion": 1
-   },
-   "kiln_id": "PK-tts9xrdu",
-   "season": 202610
-  },
-  {
-   "type": "SatelliteProven",
-   "tx": "0x1f042ea2251af63ac541bf2b40789dc979cdbe8ab09d1f652356bf3258732e44",
-   "block": 9480888,
-   "time": "2026-10-21T12:38:36Z",
-   "detail": {
-    "kilnId": "0x504b2d7474736333337473000000000000000000000000000000000000000000",
-    "status": 2,
-    "pZigzagBp": 9679,
-    "evidenceHash": "0x3c9a112acd4dad83893779d9619f50d9ecdcc7fa1f160778a91a703113542343",
-    "rootVersion": 1
-   },
-   "kiln_id": "PK-ttsc33ts",
+   "kiln_id": "PK-ttss26mv",
    "season": 202610
   },
   {
    "type": "SeasonPublished",
    "kiln_id": null,
    "season": 202610,
-   "tx": "0x0b4aee3705197a6ba9a6fcfc73905a921effb6c68ba1275573656c29c41a9604",
+   "tx": "0xe403ab3a8d32e453234bd866d4380391f20fa372e6e76fa237aa5f697d6673bd",
    "block": 9480211,
    "time": "2026-10-21T09:14:36Z",
    "detail": {
-    "root": "0x7d30727e770a6837a07d336db3e9b2c1cf06ca6641379c751a96cc6d17d2672e",
+    "root": "0x22b0e239ee1ad98fcb0ca84eb49414473a2bb2633cfdaacf5c6cdd69e2755612",
     "kilns": 144,
     "model_sha256": "5a5a5a5ab8868e3da9a9f08f96177bc9df00f2ca0d49b9bdeed1c040785b5908"
    }

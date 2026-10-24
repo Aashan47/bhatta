@@ -290,6 +290,12 @@ const PREREG: Record<string, { metric: string; target: string }> = {
   T6: { metric: "Of kilns given the single set {Zigzag}, share truly FCBK", target: "<= 0.05" },
 };
 
+/** Strip markdown emphasis that the results table carries (e.g. "**0.880** (3,473 of 3,947)"). */
+function clean(v: Raw): string | number | null {
+  if (v === null || v === undefined) return null;
+  return typeof v === "string" ? v.replace(/\*\*/g, "").trim() : v;
+}
+
 function normResults(raw: Raw): Results {
   const rows: Raw[] = Array.isArray(raw) ? raw : (raw.targets ?? []);
   const byId = new Map<string, ResultRow>();
@@ -300,8 +306,8 @@ function normResults(raw: Raw): Results {
       id: r.id,
       metric: r.metric ?? r.description ?? r.what ?? cells[0] ?? pre?.metric ?? "",
       target: r.target ?? r.threshold ?? cells[1] ?? pre?.target ?? "",
-      value: r.value ?? r.result ?? r.measured ?? r.observed ?? cells[2] ?? null,
-      n: r.n !== undefined && !Number.isNaN(Number(r.n)) ? Number(r.n) : undefined,
+      value: clean(r.value ?? r.result ?? r.measured ?? r.observed ?? cells[2] ?? null),
+      n: r.n === undefined || r.n === null || r.n === "" ? undefined : (clean(r.n) ?? undefined),
       hit: r.hit === true ? true : r.hit === false ? false : null,
       note: r.note ?? r.notes,
     });
@@ -309,7 +315,7 @@ function normResults(raw: Raw): Results {
   const targets = Object.keys(PREREG).map(
     (id) => byId.get(id) ?? { id, metric: PREREG[id]!.metric, target: PREREG[id]!.target, value: null, hit: null },
   );
-  return { fixture: Boolean(raw.fixture) || FIXTURE, split: raw.split, targets, limits: raw.limits };
+  return { fixture: Boolean(raw.fixture) || FIXTURE, measured: Boolean(raw.measured), split: raw.split, targets, limits: raw.limits, product: raw.product ?? null };
 }
 
 // ------------------------------------------------------------------ calls

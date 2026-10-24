@@ -3,6 +3,7 @@ import { Architecture } from "../components/Architecture";
 import { CheckGlyph, CrossGlyph, ErrorBox, Loading, PageHeader, SampleTag, ZigzagRule } from "../components/ui";
 import { usePrefs } from "../i18n";
 import { useAsync } from "../lib/util";
+import type { ProductMetrics } from "../types";
 
 export function Method() {
   const { t, lang } = usePrefs();
@@ -10,7 +11,6 @@ export function Method() {
   const audit = useAsync(getAudit, []);
   const summary = useAsync(getSummary, []);
   const alpha = summary.data?.alpha ?? 0.1;
-  const qhat = summary.data?.qhat;
 
   return (
     <div className="method prose-page">
@@ -38,7 +38,7 @@ export function Method() {
       <section aria-labelledby="m-rule" className="rule-box">
         <h2 id="m-rule">{t.method.ruleTitle}</h2>
         <p>
-          {t.method.rule(`${Math.round((1 - alpha) * 100)}%`, qhat !== undefined ? qhat.toFixed(4) : "q")} {qhat !== undefined && <SampleTag />}
+          {t.method.rule(`${Math.round((1 - alpha) * 100)}%`)}
         </p>
         <p className="fine">{t.method.ruleExample}</p>
       </section>
@@ -52,7 +52,7 @@ export function Method() {
 
       <section aria-labelledby="m-res" className="wide">
         <h2 id="m-res">
-          {t.method.resultsTitle} {results.data?.fixture && <SampleTag />}
+          {t.method.resultsTitle} {results.data?.fixture && !results.data.measured && <SampleTag />}
         </h2>
         <p>{t.method.resultsLead}</p>
         {results.error ? (
@@ -61,7 +61,7 @@ export function Method() {
           <Loading />
         ) : (
           <>
-            {results.data.fixture && <p className="sample-inline block">{t.sample.banner}</p>}
+            {results.data.fixture && (results.data.measured ? <p className="fine">{t.method.measuredNote}</p> : <p className="sample-inline block">{t.sample.banner}</p>)}
             <div className="table-wrap" tabIndex={0} role="region" aria-labelledby="m-res">
               <table className="table results">
                 <thead>
@@ -87,7 +87,7 @@ export function Method() {
                       </td>
                       <td dir="ltr" className="num">
                         {r.value === null || r.value === "" ? "" : String(r.value)}
-                        {r.n !== undefined && <span className="cell-sub">{t.method.n(r.n)}</span>}
+                        {r.n !== undefined && <span className="cell-sub">{typeof r.n === "number" ? t.method.n(r.n) : `n: ${r.n}`}</span>}
                       </td>
                       <td>
                         {r.hit === true ? (
@@ -114,6 +114,8 @@ export function Method() {
           </>
         )}
       </section>
+
+      <Misses product={results.data?.product ?? null} loaded={!!results.data} />
 
       <section aria-labelledby="m-audit">
         <h2 id="m-audit">{t.method.auditTitle}</h2>
@@ -164,5 +166,37 @@ export function Method() {
         </ul>
       </section>
     </div>
+  );
+}
+
+function fmtPct(x: number | null | undefined, digits = 1) {
+  return x == null ? "n/a" : `\u2066${(x * 100).toFixed(digits)}%\u2069`;
+}
+function fmtNum(x: number | null | undefined, digits?: number) {
+  if (x == null) return "n/a";
+  return digits === undefined ? x.toLocaleString("en") : x.toFixed(digits);
+}
+
+/** "What the misses mean", built only from the measured product metrics in /api/results. */
+function Misses({ product, loaded }: { product: ProductMetrics | null; loaded: boolean }) {
+  const { t } = usePrefs();
+  if (!loaded) return null;
+  const p = product;
+  return (
+    <section aria-labelledby="m-misses" className="misses">
+      <h2 id="m-misses">{t.method.missesTitle}</h2>
+      <p>{t.method.missesIntro}</p>
+      {!p ? (
+        <p className="muted">{t.method.missesNA}</p>
+      ) : (
+        <ul className="plain-list">
+          <li>{t.method.missesRule(fmtNum(p.n_test), fmtNum(p.zigzag_certified))}</li>
+          <li>{t.method.missesFcbk(fmtNum(p.fcbk_calls), fmtNum(p.n_test), fmtNum(p.fcbk_calls_wrong), fmtPct(p.fcbk_wrong_share))}</li>
+          <li>{t.method.missesRefused(fmtPct(p.refused_share))}</li>
+          {(p.coverage_fcbk != null || p.coverage_zigzag != null) && <li>{t.method.missesCoverage(fmtNum(p.coverage_fcbk, 3), fmtNum(p.coverage_zigzag, 3))}</li>}
+          <li>{t.method.missesDetector(fmtNum(p.detector_recall, 2), fmtNum(p.detector_precision, 2))}</li>
+        </ul>
+      )}
+    </section>
   );
 }
