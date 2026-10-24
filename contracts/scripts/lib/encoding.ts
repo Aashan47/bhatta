@@ -203,7 +203,7 @@ export function resolveKilnSource(): KilnSource {
   const explicit = process.env.KILNS_JSON;
   if (explicit) {
     const p = path.resolve(explicit);
-    return { kilnsPath: p, chipRoot: DATA_DIR, baseDir: path.dirname(p), isFixture: /fixture/i.test(p) };
+    return { kilnsPath: p, chipRoot: path.dirname(p), baseDir: path.dirname(p), isFixture: /fixture/i.test(p) };
   }
   const candidates: KilnSource[] = [
     { kilnsPath: path.join(DATA_DIR, "kilns.json"), chipRoot: DATA_DIR, baseDir: DATA_DIR, isFixture: false },
@@ -252,7 +252,8 @@ export function manifestHash(src: KilnSource): { path?: string; hash: string } {
 
 function findModelSha(obj: any): string | undefined {
   if (!obj) return undefined;
-  const direct = obj.model_sha256 ?? obj.classifier_sha256 ?? obj.models?.classifier?.sha256 ?? obj.models?.classifier_sha256;
+  // ml/scan.py writes summary.models.classifier_sha256 and manifest.classifier_sha256.
+  const direct = obj.model_sha256 ?? obj.models?.classifier_sha256 ?? obj.classifier_sha256 ?? obj.models?.classifier?.sha256;
   return typeof direct === "string" && /^[0-9a-fA-F]{64}$/.test(direct) ? direct.toLowerCase() : undefined;
 }
 
@@ -260,19 +261,22 @@ export function modelSha256(src: KilnSource): string {
   return findModelSha(readJsonIf(summaryPath(src))) ?? findModelSha(readJsonIf(manifestPath(src))) ?? "none";
 }
 
-export interface KilnRecord {
-  id: string;
-  status: string | number;
+/** Per-kiln observation as written by ml/scan.py (also accepted flat on the record itself). */
+export interface Observation {
   scene_id?: string | null;
   date?: string | null;
-  season?: number;
   probs?: Record<string, number> | null;
-  set?: string[];
-  chip?: string;
-  chip_path?: string;
-  chips?: Record<string, string>;
-  model_sha256?: string;
+  set?: string[] | null;
+  chip?: string | null;
   [k: string]: unknown;
+}
+
+export interface KilnRecord extends Observation {
+  id: string;
+  status: string | number;
+  season?: number;
+  observation?: Observation;
+  model_sha256?: string;
 }
 
 export function readKilns(src: KilnSource): KilnRecord[] {
@@ -282,15 +286,40 @@ export function readKilns(src: KilnSource): KilnRecord[] {
   return list as KilnRecord[];
 }
 
-function chipRel(k: KilnRecord): string | undefined {
-  return k.chip_path ?? k.chip ?? k.chips?.current ?? k.chips?.season ?? k.chips?.["2026"];
+function obsOf(k: KilnRecord): Observation {
+  return k.observation ?? k;
 }
 
 export function chipSha256(k: KilnRecord, src: KilnSource): string {
-  const rel = chipRel(k);
+  const rel = obsOf(k).chip;
   if (!rel) return "none";
   const p = path.isAbsolute(rel) ? rel : path.join(src.chipRoot, rel);
   return fs.existsSync(p) ? sha256Hex(fs.readFileSync(p)) : "none";
+}
+
+/** Season of a record: explicit `season`, else yyyymm of the observation date, else the fallback. */
+export function seasonOf(k: KilnRecord, fallback?: number): number {
+  if (Number.isInteger(k.season)) return k.season as number;
+  const d = obsOf(k).date;
+  if (d) return seasonFromDate(d);
+  if (fallback !== undefined) return fallback;
+  throw new Error(`kiln ${k.id}: no season and no observation date`);
+}
+
+/**
+ * Season for records without a date (no usable scene): SEASON env var, else the most common
+ * season among dated records.
+ */
+export function defaultSeason(kilns: KilnRecord[]): number | undefined {
+  if (process.env.SEASON) return Number(process.env.SEASON);
+  const counts = new Map<number, number>();
+  for (const k of kilns) {
+    const d = obsOf(k).date;
+    if (d) counts.set(seasonFromDate(d), (counts.get(seasonFromDate(d)) ?? 0) + 1);
+  }
+  let best: number | undefined;
+  for (const [s, c] of counts) if (best === undefined || c > counts.get(best)! || (c === counts.get(best)! && s < best)) best = s;
+  return best;
 }
 
 export interface BuiltLeaf {
@@ -305,14 +334,14 @@ export interface BuiltLeaf {
   tuple: LeafTuple;
 }
 
-export function buildLeaf(k: KilnRecord, src: KilnSource, modelSha: string): BuiltLeaf {
-  const season = k.season ?? (k.date ? seasonFromDate(k.date) : NaN);
-  if (!Number.isInteger(season)) throw new Error(`kiln ${k.id}: no season or date`);
+export function buildLeaf(k: KilnRecord, src: KilnSource, modelSha: string, fallbackSeason?: number): BuiltLeaf {
+  const o = obsOf(k);
+  const season = seasonOf(k, fallbackSeason);
   const evidence = evidenceObject({
-    scene_id: k.scene_id ?? null,
-    date: k.date ?? null,
-    probs: k.probs ?? null,
-    set: k.set ?? [],
+    scene_id: o.scene_id ?? null,
+    date: o.date ?? null,
+    probs: o.probs ?? null,
+    set: o.set ?? [],
     chip_sha256: chipSha256(k, src),
     model_sha256: (typeof k.model_sha256 === "string" && k.model_sha256) || modelSha,
   });
@@ -320,7 +349,7 @@ export function buildLeaf(k: KilnRecord, src: KilnSource, modelSha: string): Bui
   const eh = "0x" + sha256Hex(Buffer.from(canonical, "utf8"));
   const idb = kilnIdBytes32(k.id);
   const status = statusCode(k.status);
-  const bp = pZigzagBp(k.probs ?? null);
+  const bp = pZigzagBp(o.probs ?? null);
   return {
     id: k.id,
     season,
@@ -343,9 +372,10 @@ export interface SeasonTree {
 /** Groups built leaves by season and builds one StandardMerkleTree per season. */
 export function buildSeasonTrees(kilns: KilnRecord[], src: KilnSource): SeasonTree[] {
   const modelSha = modelSha256(src);
+  const fallback = defaultSeason(kilns);
   const bySeason = new Map<number, BuiltLeaf[]>();
   for (const k of kilns) {
-    const b = buildLeaf(k, src, modelSha);
+    const b = buildLeaf(k, src, modelSha, fallback);
     if (!bySeason.has(b.season)) bySeason.set(b.season, []);
     bySeason.get(b.season)!.push(b);
   }

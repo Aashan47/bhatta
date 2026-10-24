@@ -1,10 +1,9 @@
 {
-  "_note": "SYNTHETIC fixture manifest, stands in for data/manifest.json",
-  "scene_ids": [
-    "FIXTURE-S2-L2A-20261012-T43RDQ"
-  ],
-  "code_commit": "fixture",
-  "model_sha256": "none",
-  "alpha": 0.1,
-  "qhat": null
+ "_note": "SYNTHETIC fixture manifest, stands in for data/manifest.json",
+ "code_commit": "fixture",
+ "classifier_sha256": null,
+ "detector_sha256": null,
+ "alpha": 0.1,
+ "qhat": null,
+ "districts": {}
 }

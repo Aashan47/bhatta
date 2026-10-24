@@ -1,175 +1,269 @@
-{
-  "_note": "SYNTHETIC test fixture written by the contracts agent on 2026-10-24. Not real kilns, not real scenes. Replaced by data/kilns.json from the ML pipeline.",
-  "season": 202610,
-  "kilns": [
-    {
-      "id": "PK-fx000001",
-      "lat": 31.1021,
-      "lon": 74.4512,
-      "district": "Kasur",
-      "baseline_class": "fcbk",
-      "status": "zigzag",
-      "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
-      "date": "2026-10-12",
-      "probs": {
-        "fcbk": 0.03125,
-        "zigzag": 0.96875
-      },
-      "set": [
-        "zigzag"
-      ],
-      "chip": "chips/PK-fx000001_202610.png"
-    },
-    {
-      "id": "PK-fx000002",
-      "lat": 31.1188,
-      "lon": 74.473,
-      "district": "Kasur",
-      "baseline_class": "fcbk",
-      "status": "fcbk",
-      "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
-      "date": "2026-10-12",
-      "probs": {
-        "fcbk": 1,
-        "zigzag": 0
-      },
-      "set": [
-        "fcbk"
-      ],
-      "chip": "chips/PK-fx000002_202610.png"
-    },
-    {
-      "id": "PK-fx000003",
-      "lat": 31.1302,
-      "lon": 74.4011,
-      "district": "Kasur",
-      "baseline_class": "fcbk",
-      "status": "undetermined",
-      "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
-      "date": "2026-10-12",
-      "probs": {
-        "fcbk": 0.4821,
-        "zigzag": 0.5179
-      },
-      "set": [
-        "zigzag",
-        "fcbk"
-      ]
-    },
-    {
-      "id": "PK-fx000004",
-      "lat": 31.381,
-      "lon": 74.2203,
-      "district": "Lahore",
-      "baseline_class": "zigzag",
-      "status": "zigzag",
-      "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
-      "date": "2026-10-12",
-      "probs": {
-        "fcbk": 0.08123456,
-        "zigzag": 0.91876544
-      },
-      "set": [
-        "zigzag"
-      ]
-    },
-    {
-      "id": "PK-fx000005",
-      "lat": 31.3922,
-      "lon": 74.241,
-      "district": "Lahore",
-      "baseline_class": "fcbk",
-      "status": "fcbk",
-      "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
-      "date": "2026-10-12",
-      "probs": {
-        "fcbk": 0.9312,
-        "zigzag": 0.0688
-      },
-      "set": [
-        "fcbk"
-      ]
-    },
-    {
-      "id": "PK-fx000006",
-      "lat": 31.4033,
-      "lon": 74.2588,
-      "district": "Lahore",
-      "baseline_class": "fcbk",
-      "status": "not_detected",
-      "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
-      "date": "2026-10-12",
-      "probs": null,
-      "set": []
-    },
-    {
-      "id": "PK-fx000007",
-      "lat": 31.6811,
-      "lon": 74.012,
-      "district": "Sheikhupura",
-      "baseline_class": "zigzag",
-      "status": "zigzag",
-      "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
-      "date": "2026-10-12",
-      "probs": {
-        "fcbk": 0.1,
-        "zigzag": 0.9
-      },
-      "set": [
-        "zigzag"
-      ]
-    },
-    {
-      "id": "PK-fx000008",
-      "lat": 31.695,
-      "lon": 74.0302,
-      "district": "Sheikhupura",
-      "baseline_class": "fcbk",
-      "status": "fcbk",
-      "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
-      "date": "2026-10-12",
-      "probs": {
-        "fcbk": 0.87005,
-        "zigzag": 0.12995
-      },
-      "set": [
-        "fcbk"
-      ]
-    },
-    {
-      "id": "PK-fx000009",
-      "lat": 31.7044,
-      "lon": 74.0511,
-      "district": "Sheikhupura",
-      "baseline_class": "fcbk",
-      "status": "undetermined",
-      "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
-      "date": "2026-10-12",
-      "probs": {
-        "fcbk": 0.6,
-        "zigzag": 0.4
-      },
-      "set": [
-        "fcbk",
-        "zigzag"
-      ]
-    },
-    {
-      "id": "PK-fx000010",
-      "lat": 31.1405,
-      "lon": 74.4888,
-      "district": "Kasur",
-      "baseline_class": "zigzag",
-      "status": "zigzag",
-      "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
-      "date": "2026-10-12",
-      "probs": {
-        "fcbk": 0.0001,
-        "zigzag": 0.9999
-      },
-      "set": [
-        "zigzag"
-      ]
-    }
-  ]
-}
+[
+ {
+  "id": "PK-fx000001",
+  "lat": 31.1021,
+  "lon": 74.4512,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SYNTHETIC fixture",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
+   "date": "2026-10-12",
+   "detected": true,
+   "det_conf": 0.9,
+   "probs": {
+    "FCBK": 0.03125,
+    "Zigzag": 0.96875
+   },
+   "set": [
+    "Zigzag"
+   ],
+   "chip": "chips/PK-fx000001_202610.png",
+   "baseline_chip": null
+  },
+  "status": "ZIGZAG"
+ },
+ {
+  "id": "PK-fx000002",
+  "lat": 31.1188,
+  "lon": 74.473,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SYNTHETIC fixture",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
+   "date": "2026-10-12",
+   "detected": true,
+   "det_conf": 0.9,
+   "probs": {
+    "FCBK": 1,
+    "Zigzag": 0
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": "chips/PK-fx000002_202610.png",
+   "baseline_chip": null
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-fx000003",
+  "lat": 31.1302,
+  "lon": 74.4011,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SYNTHETIC fixture",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
+   "date": "2026-10-12",
+   "detected": true,
+   "det_conf": 0.9,
+   "probs": {
+    "FCBK": 0.4821,
+    "Zigzag": 0.5179
+   },
+   "set": [
+    "Zigzag",
+    "FCBK"
+   ],
+   "chip": null,
+   "baseline_chip": null
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-fx000004",
+  "lat": 31.381,
+  "lon": 74.2203,
+  "district": "Lahore",
+  "baseline": {
+   "source": "SYNTHETIC fixture",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
+   "date": "2026-10-12",
+   "detected": true,
+   "det_conf": 0.9,
+   "probs": {
+    "FCBK": 0.08123456,
+    "Zigzag": 0.91876544
+   },
+   "set": [
+    "Zigzag"
+   ],
+   "chip": null,
+   "baseline_chip": null
+  },
+  "status": "ZIGZAG"
+ },
+ {
+  "id": "PK-fx000005",
+  "lat": 31.3922,
+  "lon": 74.241,
+  "district": "Lahore",
+  "baseline": {
+   "source": "SYNTHETIC fixture",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
+   "date": "2026-10-12",
+   "detected": true,
+   "det_conf": 0.9,
+   "probs": {
+    "FCBK": 0.9312,
+    "Zigzag": 0.0688
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": null,
+   "baseline_chip": null
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-fx000006",
+  "lat": 31.4033,
+  "lon": 74.2588,
+  "district": "Lahore",
+  "baseline": {
+   "source": "SYNTHETIC fixture",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
+   "date": "2026-10-12",
+   "detected": false,
+   "det_conf": null,
+   "probs": null,
+   "set": null,
+   "chip": null,
+   "baseline_chip": null
+  },
+  "status": "NOT_DETECTED"
+ },
+ {
+  "id": "PK-fx000007",
+  "lat": 31.6811,
+  "lon": 74.012,
+  "district": "Sheikhupura",
+  "baseline": {
+   "source": "SYNTHETIC fixture",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
+   "date": "2026-10-12",
+   "detected": true,
+   "det_conf": 0.9,
+   "probs": {
+    "FCBK": 0.1,
+    "Zigzag": 0.9
+   },
+   "set": [
+    "Zigzag"
+   ],
+   "chip": null,
+   "baseline_chip": null
+  },
+  "status": "ZIGZAG"
+ },
+ {
+  "id": "PK-fx000008",
+  "lat": 31.695,
+  "lon": 74.0302,
+  "district": "Sheikhupura",
+  "baseline": {
+   "source": "SYNTHETIC fixture",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
+   "date": "2026-10-12",
+   "detected": true,
+   "det_conf": 0.9,
+   "probs": {
+    "FCBK": 0.87005,
+    "Zigzag": 0.12995
+   },
+   "set": [
+    "FCBK"
+   ],
+   "chip": null,
+   "baseline_chip": null
+  },
+  "status": "FCBK"
+ },
+ {
+  "id": "PK-fx000009",
+  "lat": 31.7044,
+  "lon": 74.0511,
+  "district": "Sheikhupura",
+  "baseline": {
+   "source": "SYNTHETIC fixture",
+   "period": "2023-09/2024-02",
+   "class": "FCBK"
+  },
+  "observation": {
+   "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
+   "date": "2026-10-12",
+   "detected": true,
+   "det_conf": 0.9,
+   "probs": {
+    "FCBK": 0.6,
+    "Zigzag": 0.4
+   },
+   "set": [
+    "FCBK",
+    "Zigzag"
+   ],
+   "chip": null,
+   "baseline_chip": null
+  },
+  "status": "UNDETERMINED"
+ },
+ {
+  "id": "PK-fx000010",
+  "lat": 31.1405,
+  "lon": 74.4888,
+  "district": "Kasur",
+  "baseline": {
+   "source": "SYNTHETIC fixture",
+   "period": "2023-09/2024-02",
+   "class": "Zigzag"
+  },
+  "observation": {
+   "scene_id": "FIXTURE-S2-L2A-20261012-T43RDQ",
+   "date": "2026-10-12",
+   "detected": true,
+   "det_conf": 0.9,
+   "probs": {
+    "FCBK": 0.0001,
+    "Zigzag": 0.9999
+   },
+   "set": [
+    "Zigzag"
+   ],
+   "chip": null,
+   "baseline_chip": null
+  },
+  "status": "ZIGZAG"
+ }
+]

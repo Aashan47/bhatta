@@ -1,4 +1,7 @@
 {
-  "_note": "SYNTHETIC fixture summary",
-  "model_sha256": "none"
+ "_note": "SYNTHETIC fixture summary, same shape as data/summary.json from ml/scan.py",
+ "models": {
+  "classifier_sha256": null,
+  "detector_sha256": null
+ }
 }
