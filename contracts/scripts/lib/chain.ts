@@ -32,12 +32,24 @@ export function txLink(net: string, hash: string): string {
   return base ? `${base}/tx/${hash}` : hash;
 }
 
-/** Writes contracts/deployments/<net>.json, data/chain.json and data/abi/KilnLedger.json. */
+/** The network whose deployment the app serves. Only it may write data/chain.json and data/abi. */
+export const PUBLIC_NETWORK = "sepolia";
+
+/**
+ * Always writes contracts/deployments/<net>.json. Writes data/chain.json and data/abi/KilnLedger.json
+ * only for the public network (sepolia), or when CHAIN_JSON=1 is set explicitly, so a localhost run
+ * never overwrites what the API and web app read.
+ */
 export async function saveDeployment(d: any): Promise<void> {
   const art = await artifacts.readArtifact("KilnLedger");
   d.abi = art.abi;
   fs.mkdirSync(path.dirname(deploymentPath(d.network)), { recursive: true });
   fs.writeFileSync(deploymentPath(d.network), JSON.stringify(d, null, 2) + "\n");
+
+  if (d.network !== PUBLIC_NETWORK && process.env.CHAIN_JSON !== "1") {
+    console.log(`(${d.network}: data/chain.json and data/abi left untouched; set CHAIN_JSON=1 to override)`);
+    return;
+  }
 
   fs.mkdirSync(path.join(DATA_DIR, "abi"), { recursive: true });
   fs.writeFileSync(

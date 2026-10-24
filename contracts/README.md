@@ -160,8 +160,8 @@ independently in Python (`json`, `hashlib`, `eth_abi`) on 24 Oct 2026.
 | `data/merkle/season-<season>.json` | build-merkle | `{season, root, count, source, fixture, manifest_sha256, model_sha256, encoding, leaves:{<id>:{leaf, proof, status_code, p_zigzag_bp, evidence_hash, kiln_id_bytes32, evidence_canonical}}}` |
 | `data/merkle/test-vectors.json` | build-merkle | 3 kilns: input record, evidence object, canonical string, evidence hash, leaf, proof, root; plus a quantisation table |
 | `contracts/deployments/<network>.json` | deploy and later scripts | address, ABI, deploy tx and block, roles, season txs, demo activity with gas |
-| `data/chain.json` | deploy and later scripts | `{chain_id, network, contract, explorer_base, rpc, deploy_tx, deploy_block, season_txs, eip712, oracle_threshold, abi_path}` |
-| `data/abi/KilnLedger.json` | deploy | `{contractName, abi}` |
+| `data/chain.json` | deploy and later scripts, **sepolia only** (or `CHAIN_JSON=1`) | `{chain_id, network, contract, explorer_base, rpc, deploy_tx, deploy_block, season_txs, eip712, oracle_threshold, abi_path}` |
+| `data/abi/KilnLedger.json` | deploy, **sepolia only** (or `CHAIN_JSON=1`) | `{contractName, abi}` |
 
 ## Commands
 
