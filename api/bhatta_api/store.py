@@ -143,6 +143,7 @@ class Store:
             "district": k.get("district"),
             "status": k["status"],
             "baseline_class": (k.get("baseline") or {}).get("class"),
+            "p_fcbk": ((k.get("observation") or {}).get("probs") or {}).get("FCBK"),
         }
 
     def filtered(self, status: str | None, district: str | None) -> list[dict]:
