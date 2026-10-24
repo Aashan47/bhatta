@@ -4,7 +4,8 @@
 
 import type { Strings } from "./en";
 
-const pct = (x: number) => `${Math.round(x * 100)}%`;
+// LRI ... PDI keeps "92%" from being reordered to "%92" inside right-to-left text.
+const pct = (x: number) => `\u2066${Math.round(x * 100)}%\u2069`;
 const n = (x: number) => x.toLocaleString("en");
 
 const ur: Strings = {

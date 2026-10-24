@@ -115,7 +115,7 @@ export function Inspect() {
               </h2>
               <ol className="q-list">
                 {g.items.map((q) => {
-                  const p = q.p_zigzag === null ? "n/a" : `${(q.p_zigzag * 100).toFixed(1)}%`;
+                  const p = q.p_zigzag === null ? "n/a" : `\u2066${(q.p_zigzag * 100).toFixed(1)}%\u2069`;
                   return (
                     <li key={q.id} className="q-item">
                       <span className="q-rank" aria-label={`${t.inspect.rank} ${q.rank}`}>

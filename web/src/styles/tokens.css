@@ -39,7 +39,7 @@
 
   --font-sans: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
-  --font-urdu: "Noto Nastaliq Urdu", "Public Sans", serif;
+  --font-urdu: "Public Sans", "Noto Nastaliq Urdu", serif;
 
   --step--1: 0.8125rem;
   --step-0: 1rem;

@@ -2460,3 +2460,60 @@ html[lang="ur"] .sheet-word {
 .footer-inner {
   max-inline-size: calc(1280px - 2 * var(--gutter));
 }
+
+.kl-item {
+  grid-template-columns: auto 1fr auto;
+}
+html[lang="ur"] .kl-item {
+  grid-template-columns: auto 1fr auto;
+}
+.kl-item .mono {
+  overflow-wrap: normal;
+  white-space: nowrap;
+}
+.drawer:focus,
+.drawer:focus-visible {
+  outline: none;
+}
+.kl-item,
+html[lang="ur"] .kl-item {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+}
+.kl-item .mono {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (min-width: 900px) {
+  .kiln-list {
+    padding-inline: var(--space-4);
+  }
+  .drawer {
+    inset-block-end: 40px;
+  }
+}
+.kl-item,
+html[lang="ur"] .kl-item {
+  grid-template-columns: 8.6em minmax(0, 1fr) auto;
+}
+.kl-item > .badge {
+  justify-self: start;
+}
+.drawer-body .kv {
+  justify-self: stretch;
+  margin-block: var(--space-1) var(--space-2);
+}
+.drawer .set-words {
+  margin-block-end: 0;
+}
+.hash .mono,
+.txlink .mono {
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+.table td,
+.table th {
+  white-space: nowrap;
+}
+.table .metric-cell {
+  white-space: normal;
+}

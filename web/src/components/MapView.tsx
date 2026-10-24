@@ -211,10 +211,13 @@ export function MapView({ kilns, selectedId, onSelect, bbox, satellite = false, 
     map.on("mouseenter", "kilns", () => (map.getCanvas().style.cursor = "pointer"));
     map.on("mouseleave", "kilns", () => (map.getCanvas().style.cursor = ""));
     map.on("error", () => undefined);
+    const ro = new ResizeObserver(() => map.resize());
+    ro.observe(el.current);
     const canvas = map.getCanvas();
     canvas.setAttribute("aria-label", label);
     canvas.setAttribute("role", "region");
     return () => {
+      ro.disconnect();
       map.remove();
       mapRef.current = null;
     };

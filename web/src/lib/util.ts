@@ -43,7 +43,7 @@ export function dateLabel(iso: string, lang: string, withTime = false): string {
     day: "numeric",
     month: "short",
     year: "numeric",
-    ...(withTime ? { hour: "2-digit", minute: "2-digit", timeZone: "Asia/Karachi" } : { timeZone: "UTC" }),
+    ...(withTime ? { hour: "2-digit", minute: "2-digit", hourCycle: "h23", timeZone: "Asia/Karachi" } : { timeZone: "UTC" }),
     numberingSystem: "latn",
   });
 }

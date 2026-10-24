@@ -41,7 +41,7 @@ export function Overview() {
             </q>
           </h1>
           <p className="claim-who">
-            {s.claim.date ? t.overview.claimWho(s.claim.who, dateLabel(s.claim.date, lang)) : s.claim.who}.{" "}
+            {s.claim.date ? t.overview.claimWho("\u2068" + s.claim.who + "\u2069", dateLabel(s.claim.date, lang)) : s.claim.who}.{" "}
             <a href={s.claim.url} target="_blank" rel="noreferrer">
               {t.overview.readSource}
               <ExternalGlyph />
@@ -53,7 +53,7 @@ export function Overview() {
           <h2 className="seen-title">
             {t.overview.seenTitle(season)} <SampleTag />
           </h2>
-          <p className="seen-lead">{t.overview.seenLead(s.total, s.aoi.name)}</p>
+          <p className="seen-lead">{t.overview.seenLead(s.total, "\u2068" + s.aoi.name + "\u2069")}</p>
           <figure className="wall-fig">
             <BrickWall counts={s.counts} cols={s.total > 400 ? 40 : 18} />
             <figcaption className="fine">{t.overview.wallCaption}</figcaption>

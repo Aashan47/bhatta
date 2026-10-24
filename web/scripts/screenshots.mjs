@@ -52,7 +52,7 @@ const browser = await chromium.launch({
 const problems = [];
 for (const [vname, vp] of VIEWPORTS) {
   for (const [variant, q] of VARIANTS) {
-    const ctx = await browser.newContext({ viewport: vp, deviceScaleFactor: vname === "390" ? 2 : 1, serviceWorkers: "block" });
+    const ctx = await browser.newContext({ viewport: vp, deviceScaleFactor: vname === "390" ? 1.5 : 1, serviceWorkers: "block" });
     for (const [name, path] of ROUTES) {
       if (only && !only.includes(name)) continue;
       const page = await ctx.newPage();
@@ -72,7 +72,12 @@ for (const [vname, vp] of VIEWPORTS) {
       }
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
       const file = join(OUT, `${name}-${vname}-${variant}.png`);
-      await page.screenshot({ path: file, fullPage: true });
+      // Very tall pages (the full inspection queue on a phone) exceed the headless GPU texture limit,
+      // so they are captured as the top 7600 device pixels.
+      const height = await page.evaluate(() => document.documentElement.scrollHeight);
+      const maxCss = Math.floor(7600 / (vname === "390" ? 1.5 : 1));
+      const shot = height > maxCss ? { clip: { x: 0, y: 0, width: vp.width, height: maxCss }, fullPage: true } : { fullPage: true };
+      await page.screenshot({ path: file, ...shot, animations: "disabled", timeout: 120000 }).catch((e) => problems.push({ name, vname, variant, errors: [String(e).slice(0, 120)] }));
       const real = errors.filter((e) => !/tiles\.openfreemap|tiles\.maps\.eox|Failed to load resource/.test(e));
       if (overflow > 0 || real.length) problems.push({ name, vname, variant, overflow, errors: real });
       await page.close();

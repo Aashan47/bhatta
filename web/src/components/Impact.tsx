@@ -26,7 +26,7 @@ export function ImpactPanel({ impact, title, lead }: { impact: ImpactSummary | u
                   </span>
                   <span className="impact-words">
                     <span className="impact-what">{words.replace(`${it.reduction_pct}%`, "").trim()}</span>
-                    <span className="impact-src">
+                    <span className="impact-src" dir="auto">
                       {it.source.url ? (
                         <a href={it.source.url} target="_blank" rel="noreferrer" title={it.source.quote || undefined}>
                           {it.source.title}
@@ -43,7 +43,11 @@ export function ImpactPanel({ impact, title, lead }: { impact: ImpactSummary | u
               );
             })}
           </ul>
-          {impact.note && <p className="fine">{impact.note}</p>}
+          {impact.note && (
+            <p className="fine" dir="auto">
+              {impact.note}
+            </p>
+          )}
         </>
       )}
     </section>
