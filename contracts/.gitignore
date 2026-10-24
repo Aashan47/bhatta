@@ -6,3 +6,4 @@ typechain-types/
 coverage/
 coverage.json
 gas-report.txt
+deployments/localhost.json
