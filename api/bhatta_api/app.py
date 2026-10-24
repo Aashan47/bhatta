@@ -114,9 +114,39 @@ def ledger():
     }
 
 
+def _product_metrics() -> dict | None:
+    """The product rule's measured behaviour on held-out test blocks, from the ML evaluation file."""
+    import json
+
+    p = DATA_DIR / "eval_results.json"
+    if not p.exists():
+        return None
+    e = json.loads(p.read_text(encoding="utf-8"))
+    prod = e.get("conformal_test_product") or {}
+    n = prod.get("n") or 0
+    calls = prod.get("n_set_fcbk")
+    wrong = prod.get("n_set_fcbk_true_zigzag")
+    det = e.get("detector_test") or {}
+    by_class = prod.get("coverage_by_class") or {}
+    return {
+        "n_test": n,
+        "fcbk_calls": calls,
+        "fcbk_calls_wrong": wrong,
+        "fcbk_wrong_share": (wrong / calls) if calls else None,
+        "refused_share": (prod.get("n_set_both", 0) / n) if n else None,
+        "zigzag_certified": prod.get("n_set_zigzag"),
+        "coverage": prod.get("coverage"),
+        "coverage_fcbk": by_class.get("FCBK"),
+        "coverage_zigzag": by_class.get("Zigzag"),
+        "detector_recall": det.get("recall"),
+        "detector_precision": det.get("precision"),
+        "ltt_zigzag_floor": e.get("ltt_zig_min"),
+    }
+
+
 @app.get("/api/results")
 def results():
-    return {"targets": store.results, "source": "docs/RESULTS.md", "prereg": "docs/PREREG.md"}
+    return {"targets": store.results, "product": _product_metrics(), "source": "docs/RESULTS.md", "prereg": "docs/PREREG.md"}
 
 
 _FINDING_FIELDS = ("kiln_id", "season", "finding", "evidence_hash", "inspector", "nonce", "deadline", "signature")
