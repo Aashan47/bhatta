@@ -1,5 +1,5 @@
-// Types for the API contract in docs/PRODUCT.md. Fields marked optional are ones the frontend can
-// live without; it degrades and says what is missing.
+// Internal types for the web app. src/api.ts normalises what the API returns (api/bhatta_api) into
+// these shapes, so pages never deal with optional spellings.
 
 export type Status = "ZIGZAG" | "FCBK" | "UNDETERMINED" | "NOT_DETECTED";
 export type KilnClass = "FCBK" | "Zigzag";
@@ -21,20 +21,18 @@ export interface Source {
   url: string;
 }
 
-export interface Impact {
-  coal_t_per_season: Range;
-  co2_t: Range;
-  black_carbon_reduction_pct: Range;
-  sources: Source[];
-  sample?: boolean;
+export type ImpactKey = "coal" | "co2" | "pm" | "black_carbon";
+
+export interface ImpactItem {
+  key: ImpactKey;
+  reduction_pct: number;
+  source: { title: string; url: string; quote?: string };
 }
 
+/** summary.impact: measured reductions per kiln converted from FCBK to Zigzag. Never tonnes. */
 export interface ImpactSummary {
-  per_kiln: Omit<Impact, "sources" | "sample">;
-  total?: Omit<Impact, "sources" | "sample">;
-  kilns?: number;
-  basis?: string;
-  sources: Source[];
+  per_conversion: ImpactItem[];
+  note?: string;
   sample?: boolean;
 }
 
@@ -42,7 +40,7 @@ export interface Health {
   ok: boolean;
   fixture: boolean;
   data_version: string;
-  chain: { id: number; contract: Hex | null };
+  chain: { id: number | null; contract: Hex | null; configured?: boolean };
 }
 
 export interface Scene {
@@ -52,26 +50,27 @@ export interface Scene {
 }
 
 export interface Summary {
-  fixture?: boolean;
+  fixture: boolean;
   data_version?: string;
-  season: number;
+  season: number | null;
   counts: Record<Status, number>;
   total: number;
-  aoi: { name: string; bbox: [number, number, number, number]; districts: string[] };
+  aoi: { name: string; bbox?: [number, number, number, number]; districts: string[] };
   scenes: Scene[];
-  models: { detector_sha256?: string; classifier_sha256?: string };
-  model_sha256?: Hex;
+  models: { detector_sha256?: string; classifier_sha256?: string; detector?: string; classifier?: string };
+  model_sha256?: string;
   alpha: number;
-  qhat: number;
+  qhat?: number;
   claim: {
     quote: string;
     who: string;
-    date: string;
+    date?: string;
     url: string;
     claimed_converted?: number;
     province_total?: number;
     province_total_source?: Source;
   };
+  caveats: string[];
   impact?: ImpactSummary;
 }
 
@@ -81,16 +80,28 @@ export interface KilnListItem {
   lon: number;
   district: string;
   status: Status;
-  baseline_class: KilnClass;
+  baseline_class: KilnClass | null;
 }
 
-export type EventType = "SeasonPublished" | "SatelliteProven" | "Finding" | "Conflict" | "Disputed";
+export type EventType =
+  | "SeasonPublished"
+  | "SeasonConfirmed"
+  | "SeasonActivated"
+  | "CorrectionPublished"
+  | "SatelliteProven"
+  | "Finding"
+  | "FindingRevised"
+  | "Conflict"
+  | "Disputed"
+  | "Certified"
+  | "CertificateWithdrawn"
+  | "RpcError";
 
 export interface ChainEvent {
   type: EventType;
-  tx: Hex;
+  tx: Hex | null;
   block: number;
-  time: string;
+  time?: string;
   kiln_id?: string | null;
   season?: number;
   detail: Record<string, unknown>;
@@ -101,33 +112,32 @@ export interface KilnRecord {
   lat: number;
   lon: number;
   district: string;
-  baseline: { source: string; period: string; class: KilnClass };
+  baseline: { source: string; period: string; class: KilnClass } | null;
   observation: {
-    scene_id: string;
-    date: string;
+    scene_id: string | null;
+    date: string | null;
     detected: boolean;
     det_conf: number | null;
     probs: { FCBK: number; Zigzag: number } | null;
     set: KilnClass[];
-    chip: string;
-    baseline_chip: string;
-    chip_sha256?: Hex;
-    model_sha256?: Hex;
+    chip: string | null;
+    baseline_chip: string | null;
+    model_sha256?: string;
   };
   status: Status;
   chain: {
     season: number;
+    root?: Hex;
     leaf: Hex;
     proof: Hex[];
     evidence_hash: Hex;
     status_code: number;
     p_zigzag_bp: number;
-  };
+  } | null;
   events: ChainEvent[];
-  impact?: Impact | null;
 }
 
-export type ReasonCode = "CONFLICT" | "SAT_FCBK" | "UNDETERMINED" | "NOT_SEEN";
+export type ReasonCode = "CONFLICT" | "SAT_FCBK" | "UNDETERMINED" | "NOT_SEEN" | "SAT_ZIGZAG";
 
 export interface QueueItem {
   rank: number;
@@ -136,30 +146,32 @@ export interface QueueItem {
   lat: number;
   lon: number;
   status: Status;
-  baseline_class: KilnClass;
+  baseline_class: KilnClass | null;
   p_zigzag: number | null;
-  reason_code?: ReasonCode;
+  reason_code: ReasonCode;
   reason: string;
 }
 
 export interface SeasonRoot {
   season: number;
   root: Hex;
-  tx: Hex;
-  model_hash: string;
+  tx: Hex | null;
+  model_hash: string | null;
   block?: number;
   time?: string;
   kilns?: number;
 }
 
 export interface Ledger {
-  fixture?: boolean;
-  mock_chain?: boolean;
+  fixture: boolean;
+  /** True when there is no contract and the roots come from the sample data. */
+  mock_chain: boolean;
   chain_id: number;
-  chain_name?: string;
+  chain_name: string;
   contract: Hex | null;
+  /** Explorer base URL, or "" when there is none (local node). */
   explorer: string;
-  rpc?: string;
+  rpc: string;
   abi?: unknown[];
   eip712?: { name: string; version: string };
   seasons: SeasonRoot[];
@@ -170,14 +182,14 @@ export interface ResultRow {
   id: string;
   metric: string;
   target: string;
-  value: number | null;
+  value: string | number | null;
   n?: number;
   hit: boolean | null;
   note?: string;
 }
 
 export interface Results {
-  fixture?: boolean;
+  fixture: boolean;
   split?: string;
   targets: ResultRow[];
   limits?: string[];
@@ -198,6 +210,7 @@ export interface Audit {
   disagreed: number;
   unsure: number;
   rows: AuditRow[];
+  status?: string;
 }
 
 export interface AttestBody {
@@ -209,6 +222,7 @@ export interface AttestBody {
   nonce: string;
   deadline: string;
   signature: Hex;
+  revise?: boolean;
 }
 
 export interface DisputeBody {
@@ -220,6 +234,7 @@ export interface DisputeBody {
 
 export interface RelayResult {
   tx?: Hex;
+  explorer?: string | null;
   error?: string;
   mock?: boolean;
 }

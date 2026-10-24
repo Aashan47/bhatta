@@ -10,6 +10,7 @@ function reasonCode(q: QueueItem): ReasonCode {
   if (q.reason_code) return q.reason_code;
   if (q.status === "FCBK") return "SAT_FCBK";
   if (q.status === "UNDETERMINED") return "UNDETERMINED";
+  if (q.status === "ZIGZAG") return "SAT_ZIGZAG";
   return "NOT_SEEN";
 }
 
@@ -53,7 +54,7 @@ export function Inspect() {
   const districts = useMemo(() => [...new Set((kilns.data ?? []).map((k) => k.district))].sort(), [kilns.data]);
 
   const groups = useMemo(() => {
-    const order: ReasonCode[] = ["CONFLICT", "SAT_FCBK", "UNDETERMINED", "NOT_SEEN"];
+    const order: ReasonCode[] = ["CONFLICT", "SAT_FCBK", "UNDETERMINED", "NOT_SEEN", "SAT_ZIGZAG"];
     const by = new Map<ReasonCode, QueueItem[]>();
     for (const q of queue.data ?? []) {
       const c = reasonCode(q);

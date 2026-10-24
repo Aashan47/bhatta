@@ -1,18 +1,9 @@
 import { Link } from "react-router";
 import { FIXTURE, getLedger } from "../api";
-import { eventSummary } from "../components/Record";
+import { eventSummary, EV_CLASS } from "../components/Record";
 import { ErrorBox, ExternalGlyph, Hash, Loading, Mono, PageHeader, SampleTag, TxLink } from "../components/ui";
 import { usePrefs } from "../i18n";
 import { dateLabel, explorerAddress, seasonLabel, useAsync } from "../lib/util";
-import type { EventType } from "../types";
-
-const EV_CLASS: Record<EventType, string> = {
-  SeasonPublished: "ev-season",
-  SatelliteProven: "ev-proven",
-  Finding: "ev-finding",
-  Conflict: "ev-conflict",
-  Disputed: "ev-dispute",
-};
 
 export function Ledger() {
   const { t, lang } = usePrefs();
@@ -82,9 +73,7 @@ export function Ledger() {
                         <Hash value={s.root} />
                       </td>
                       <td dir="ltr">{s.kilns?.toLocaleString("en") ?? ""}</td>
-                      <td>
-                        <Hash value={s.model_hash} copy={false} />
-                      </td>
+                      <td>{s.model_hash ? <Hash value={s.model_hash} copy={false} /> : ""}</td>
                       <td>
                         <TxLink tx={s.tx} explorer={l.explorer} sample={sample} />
                       </td>
@@ -103,7 +92,7 @@ export function Ledger() {
               <p className="muted">{t.ledger.noEvents}</p>
             ) : (
               <ol className="ev-list">
-                {l.events.map((e, i) => {
+                {l.events.filter((e) => e.type !== "RpcError").map((e, i) => {
                   const sum = eventSummary(e, t);
                   return (
                     <li key={i} className={`ev-row ${EV_CLASS[e.type]}`}>
@@ -119,9 +108,9 @@ export function Ledger() {
                       ) : (
                         <span className="ev-kiln muted">{e.season ? seasonLabel(e.season, lang) : ""}</span>
                       )}
-                      <time className="ev-time" dateTime={e.time}>
-                        {dateLabel(e.time, lang, true)}
-                      </time>
+                      <span className="ev-time">
+                        {e.time ? <time dateTime={e.time}>{dateLabel(e.time, lang, true)}</time> : <span dir="ltr">{t.events.block(e.block)}</span>}
+                      </span>
                       <span className="ev-tx">
                         <TxLink tx={e.tx} explorer={l.explorer} sample={sample} />
                       </span>

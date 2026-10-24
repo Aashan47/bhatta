@@ -2,14 +2,7 @@ import { useState, type ReactNode } from "react";
 import type { Abi } from "viem";
 import { chipUrl, FIXTURE, getLedger } from "../api";
 import { usePrefs } from "../i18n";
-import {
-  computeLeaf,
-  DEFAULT_RPC,
-  evidenceHash,
-  processProof,
-  readCurrentRoot,
-  sha256Bytes,
-} from "../lib/chain";
+import { computeLeaf, DEFAULT_RPC, processProof, pZigzagBp, readCurrentRoot, recomputeEvidence } from "../lib/chain";
 import { prefersReducedMotion } from "../lib/util";
 import { STATUS_CODE, type Hex, type KilnRecord, type Ledger } from "../types";
 import { CheckGlyph, CrossGlyph, Hash, TxLink } from "./ui";
@@ -44,7 +37,7 @@ function Compare({ a, b, la, lb }: { a: string; b: string; la: string; lb: strin
   );
 }
 
-export function VerifyPanel({ rec, modelSha }: { rec: KilnRecord; modelSha?: Hex }) {
+export function VerifyPanel({ rec, modelSha }: { rec: KilnRecord; modelSha?: string }) {
   const { t } = usePrefs();
   const [steps, setSteps] = useState<Step[]>(KEYS.map((key) => ({ key, state: "idle" })));
   const [running, setRunning] = useState(false);
@@ -64,52 +57,61 @@ export function VerifyPanel({ rec, modelSha }: { rec: KilnRecord; modelSha?: Hex
       set(k, "fail", d);
     };
 
-    // 1. Evidence hash from the chip bytes and the model output.
+    const chain = rec.chain;
+    if (!chain) {
+      setSteps(KEYS.map((key) => ({ key, state: "skip" })));
+      set("evidence", "skip", t.verify.notInRoot);
+      setDone("fail");
+      setRunning(false);
+      return;
+    }
+
+    // 1. Evidence hash from the chip bytes and the model output, by the shared encoding rules.
     set("evidence", "run");
     await sleep(250);
-    const model = rec.observation.model_sha256 ?? modelSha;
-    if (!model) {
-      set("evidence", "skip", t.verify.evidenceMissingModel);
-    } else {
-      try {
+    try {
+      let bytes: Uint8Array | null = null;
+      if (rec.observation.chip) {
         const res = await fetch(chipUrl(rec.observation.chip));
-        if (!res.ok) throw new Error(`${res.status} for chip`);
-        const bytes = new Uint8Array(await res.arrayBuffer());
-        const chipSha = sha256Bytes(bytes);
-        const ev = evidenceHash(rec, chipSha, model);
-        const detail = (
-          <>
-            <p>{t.verify.evidenceDetail(bytes.length)}</p>
-            <Compare a={ev} b={rec.chain.evidence_hash} la={t.verify.computed} lb={t.verify.expected} />
-          </>
-        );
-        if (ev.toLowerCase() === rec.chain.evidence_hash.toLowerCase()) set("evidence", "pass", detail);
-        else
-          fail(
-            "evidence",
-            <>
-              <p>{t.verify.evidenceMismatch}</p>
-              {detail}
-            </>,
-          );
-      } catch (e) {
-        fail("evidence", (e as Error).message);
+        if (res.ok && (res.headers.get("content-type") ?? "").includes("image")) bytes = new Uint8Array(await res.arrayBuffer());
       }
+      const ev = recomputeEvidence(rec, bytes, rec.observation.model_sha256 ?? modelSha);
+      const detail = (
+        <>
+          <p>{bytes ? t.verify.evidenceDetail(bytes.length) : t.verify.chipMissing}</p>
+          <p className="mono-line" dir="ltr">
+            {ev.canonical}
+          </p>
+          <Compare a={ev.hash} b={chain.evidence_hash} la={t.verify.computed} lb={t.verify.expected} />
+        </>
+      );
+      if (ev.hash.toLowerCase() === chain.evidence_hash.toLowerCase()) set("evidence", "pass", detail);
+      else
+        fail(
+          "evidence",
+          <>
+            <p>{t.verify.evidenceMismatch}</p>
+            {!(rec.observation.model_sha256 ?? modelSha) && <p>{t.verify.evidenceMissingModel}</p>}
+            {detail}
+          </>,
+        );
+    } catch (e) {
+      fail("evidence", (e as Error).message);
     }
 
     // 2. Leaf from the record.
     set("leaf", "run");
     await sleep(250);
-    const bp = rec.observation.probs ? Math.round(rec.observation.probs.Zigzag * 10000) : 0;
-    const leaf = computeLeaf(rec.id, rec.chain.season, rec.chain.status_code, rec.chain.p_zigzag_bp, rec.chain.evidence_hash);
-    if (rec.chain.status_code !== STATUS_CODE[rec.status] || rec.chain.p_zigzag_bp !== bp) {
+    const bp = pZigzagBp(rec.observation.probs);
+    const leaf = computeLeaf(rec.id, chain.season, chain.status_code, chain.p_zigzag_bp, chain.evidence_hash);
+    if (chain.status_code !== STATUS_CODE[rec.status] || chain.p_zigzag_bp !== bp) {
       fail("leaf", t.verify.statusMismatch);
-    } else if (leaf.toLowerCase() !== rec.chain.leaf.toLowerCase()) {
+    } else if (leaf.toLowerCase() !== chain.leaf.toLowerCase()) {
       fail(
         "leaf",
         <>
           <p>{t.verify.leafMismatch}</p>
-          <Compare a={leaf} b={rec.chain.leaf} la={t.verify.computed} lb={t.verify.expected} />
+          <Compare a={leaf} b={chain.leaf} la={t.verify.computed} lb={t.verify.expected} />
         </>,
       );
     } else {
@@ -118,9 +120,9 @@ export function VerifyPanel({ rec, modelSha }: { rec: KilnRecord; modelSha?: Hex
         "pass",
         <>
           <p className="mono-line" dir="ltr">
-            keccak256(keccak256(abi.encode(kilnId, {rec.chain.season}, {rec.chain.status_code}, {rec.chain.p_zigzag_bp}, evidenceHash)))
+            keccak256(keccak256(abi.encode(kilnId, {chain.season}, {chain.status_code}, {chain.p_zigzag_bp}, evidenceHash)))
           </p>
-          <Compare a={leaf} b={rec.chain.leaf} la={t.verify.computed} lb={t.verify.expected} />
+          <Compare a={leaf} b={chain.leaf} la={t.verify.computed} lb={t.verify.expected} />
         </>,
       );
     }
@@ -133,7 +135,7 @@ export function VerifyPanel({ rec, modelSha }: { rec: KilnRecord; modelSha?: Hex
       lg = await getLedger();
       setLedger(lg);
       if (lg.mock_chain || FIXTURE) {
-        root = lg.seasons.find((x) => x.season === rec.chain.season)?.root ?? null;
+        root = lg.seasons.find((x) => x.season === chain.season)?.root ?? null;
         if (root)
           set(
             "root",
@@ -148,7 +150,7 @@ export function VerifyPanel({ rec, modelSha }: { rec: KilnRecord; modelSha?: Hex
         fail("root", t.verify.rootNoContract);
       } else {
         const rpc = lg.rpc ?? DEFAULT_RPC;
-        root = await readCurrentRoot({ contract: lg.contract, season: rec.chain.season, rpc, abi: lg.abi as Abi | undefined });
+        root = await readCurrentRoot({ contract: lg.contract, season: chain.season, rpc, abi: lg.abi as Abi | undefined });
         set(
           "root",
           "pass",
@@ -168,10 +170,10 @@ export function VerifyPanel({ rec, modelSha }: { rec: KilnRecord; modelSha?: Hex
     if (!root) {
       set("proof", "skip");
     } else {
-      const { root: folded } = processProof(leaf, rec.chain.proof);
+      const folded = processProof(leaf, chain.proof);
       const d = (
         <>
-          <p>{t.verify.proofLevels(rec.chain.proof.length)}</p>
+          <p>{t.verify.proofLevels(chain.proof.length)}</p>
           <Compare a={folded} b={root} la={t.verify.computed} lb={t.verify.onChain} />
         </>
       );
@@ -189,8 +191,8 @@ export function VerifyPanel({ rec, modelSha }: { rec: KilnRecord; modelSha?: Hex
     // 5. Transaction link.
     set("tx", "run");
     await sleep(150);
-    const season = lg?.seasons.find((x) => x.season === rec.chain.season);
-    if (season && lg) set("tx", "pass", <TxLink tx={season.tx} explorer={lg.explorer} sample={lg.mock_chain} />);
+    const season = lg?.seasons.find((x) => x.season === chain.season);
+    if (season?.tx && lg) set("tx", "pass", <TxLink tx={season.tx} explorer={lg.explorer} sample={lg.mock_chain} />);
     else set("tx", "skip");
 
     setDone(ok ? "pass" : "fail");

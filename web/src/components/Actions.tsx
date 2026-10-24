@@ -1,10 +1,9 @@
 import { useId, useState } from "react";
-import { createWalletClient, custom, type Abi, type EIP1193Provider } from "viem";
+import { createWalletClient, custom, defineChain, type Abi, type EIP1193Provider } from "viem";
 import { generatePrivateKey, privateKeyToAccount } from "viem/accounts";
-import { sepolia } from "viem/chains";
 import { getLedger, relayAttest, relayDispute } from "../api";
 import { usePrefs } from "../i18n";
-import { FINDING_TYPES, findingDomain, kilnIdBytes32, readNonce, sha256Bytes } from "../lib/chain";
+import { CHAIN_NAMES, FINDING_TYPES, findingDomain, kilnIdBytes32, readEip712Domain, readNonce, sha256Bytes } from "../lib/chain";
 import type { FindingCode, Hex, KilnRecord, Ledger } from "../types";
 import { Hash, TxLink } from "./ui";
 
@@ -27,7 +26,9 @@ type Phase =
   | { k: "rejected"; signature?: Hex; signer?: Hex; message: string }
   | { k: "error"; message: string };
 
-export function SignFinding({ rec }: { rec: KilnRecord }) {
+const REVISION_TYPES = { Revision: FINDING_TYPES.Finding } as const;
+
+export function SignFinding({ rec, season }: { rec: KilnRecord; season: number }) {
   const { t } = usePrefs();
   const fid = useId();
   const [finding, setFinding] = useState<FindingCode>(1);
@@ -35,6 +36,7 @@ export function SignFinding({ rec }: { rec: KilnRecord }) {
   const [evHash, setEvHash] = useState<Hex | null>(null);
   const [phase, setPhase] = useState<Phase>({ k: "idle" });
   const [demoAddr, setDemoAddr] = useState<Hex | null>(null);
+  const [revise, setRevise] = useState(false);
   const hasWallet = typeof window !== "undefined" && !!window.ethereum;
 
   async function sign(mode: "wallet" | "demo") {
@@ -43,24 +45,33 @@ export function SignFinding({ rec }: { rec: KilnRecord }) {
       const ledger = await getLedger();
       const evidence = evHash ?? (await hashFile(file));
       setEvHash(evidence);
-      const domain = findingDomain(ledger.chain_id, ledger.contract, ledger.eip712);
+      const eip712 = ledger.eip712 ?? (ledger.contract && !ledger.mock_chain ? await readEip712Domain({ contract: ledger.contract, rpc: ledger.rpc }) : null);
+      const domain = findingDomain(ledger.chain_id, ledger.contract, eip712);
       const deadline = BigInt(Math.floor(Date.now() / 1000) + 24 * 3600);
       let signer: Hex;
       let signature: Hex;
       let nonce = 0n;
 
-      const messageFor = (inspector: Hex, nonce: bigint) => ({
+      // The signed struct carries no inspector field: the contract recovers the signer and checks it
+      // against the inspector address passed to attest().
+      const messageFor = (nonce: bigint) => ({
         kilnId: kilnIdBytes32(rec.id),
-        season: rec.chain.season,
+        season,
         finding,
         evidenceHash: evidence,
-        inspector,
         nonce,
         deadline,
       });
 
+
       if (mode === "wallet" && window.ethereum) {
-        const wallet = createWalletClient({ chain: sepolia, transport: custom(window.ethereum) });
+        const chain = defineChain({
+          id: ledger.chain_id,
+          name: ledger.chain_name || CHAIN_NAMES[ledger.chain_id] || "chain",
+          nativeCurrency: { name: "Ether", symbol: "ETH", decimals: 18 },
+          rpcUrls: { default: { http: [ledger.rpc] } },
+        });
+        const wallet = createWalletClient({ chain, transport: custom(window.ethereum) });
         const [account] = await wallet.requestAddresses();
         if (!account) throw new Error(t.sign.walletNone);
         const chainId = await wallet.getChainId();
@@ -74,24 +85,30 @@ export function SignFinding({ rec }: { rec: KilnRecord }) {
         }
         nonce = ledger.contract ? ((await readNonce({ contract: ledger.contract, inspector: account, rpc: ledger.rpc, abi: ledger.abi as Abi | undefined })) ?? 0n) : 0n;
         signer = account;
-        signature = await wallet.signTypedData({ account, domain, types: FINDING_TYPES, primaryType: "Finding", message: messageFor(account, nonce) });
+        signature = revise
+          ? await wallet.signTypedData({ account, domain, types: REVISION_TYPES, primaryType: "Revision", message: messageFor(nonce) })
+          : await wallet.signTypedData({ account, domain, types: FINDING_TYPES, primaryType: "Finding", message: messageFor(nonce) });
       } else {
         const acct = privateKeyToAccount(generatePrivateKey());
         setDemoAddr(acct.address);
         signer = acct.address;
-        signature = await acct.signTypedData({ domain, types: FINDING_TYPES, primaryType: "Finding", message: messageFor(acct.address, 0n) });
+        if (ledger.contract && !ledger.mock_chain) nonce = (await readNonce({ contract: ledger.contract, inspector: acct.address, rpc: ledger.rpc })) ?? 0n;
+        signature = revise
+          ? await acct.signTypedData({ domain, types: REVISION_TYPES, primaryType: "Revision", message: messageFor(nonce) })
+          : await acct.signTypedData({ domain, types: FINDING_TYPES, primaryType: "Finding", message: messageFor(nonce) });
       }
 
       setPhase({ k: "relaying", signature, signer });
       const res = await relayAttest({
         kiln_id: rec.id,
-        season: rec.chain.season,
+        season,
         finding,
         evidence_hash: evidence,
         inspector: signer,
         nonce: nonce.toString(),
         deadline: deadline.toString(),
         signature,
+        revise,
       }).catch((e: Error) => ({ error: e.message, tx: undefined }));
       if (res.tx) setPhase({ k: "relayed", signature, signer, tx: res.tx, ledger });
       else setPhase({ k: "rejected", signature, signer, message: res.error ?? t.sign.rejected });
@@ -131,6 +148,10 @@ export function SignFinding({ rec }: { rec: KilnRecord }) {
           {t.sign.hash}: {evHash ? <Hash value={evHash} /> : t.sign.evidenceNone}
         </p>
       </div>
+      <label className="check">
+        <input type="checkbox" checked={revise} onChange={(e) => setRevise(e.target.checked)} />
+        <span>{t.sign.revise}</span>
+      </label>
       <p className={`wallet-state ${hasWallet ? "ok" : ""}`}>{hasWallet ? t.sign.walletFound : t.sign.walletNone}</p>
       <div className="btn-row">
         {hasWallet && (
@@ -172,14 +193,14 @@ export function SignFinding({ rec }: { rec: KilnRecord }) {
   );
 }
 
-export function DisputeForm({ rec }: { rec: KilnRecord }) {
+export function DisputeForm({ rec, season }: { rec: KilnRecord; season: number }) {
   const { t } = usePrefs();
   const fid = useId();
   const [note, setNote] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
-  const [result, setResult] = useState<{ tx?: Hex; error?: string; explorer?: string } | null>(null);
+  const [result, setResult] = useState<{ tx?: Hex; error?: string; explorer?: string | null } | null>(null);
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -192,8 +213,8 @@ export function DisputeForm({ rec }: { rec: KilnRecord }) {
     try {
       const evidence = file ? await hashFile(file) : sha256Bytes(new TextEncoder().encode(note.trim()));
       const ledger = await getLedger().catch(() => null);
-      const res = await relayDispute({ kiln_id: rec.id, season: rec.chain.season, evidence_hash: evidence, note: note.trim() });
-      setResult({ ...res, explorer: ledger?.explorer });
+      const res = await relayDispute({ kiln_id: rec.id, season, evidence_hash: evidence, note: note.trim() });
+      setResult({ ...res, explorer: res.explorer ?? ledger?.explorer ?? "" });
     } catch (e2) {
       setResult({ error: (e2 as Error).message });
     } finally {
@@ -236,7 +257,7 @@ export function DisputeForm({ rec }: { rec: KilnRecord }) {
       <div aria-live="polite" className="phase">
         {result?.tx && (
           <p className="verdict verdict-pass">
-            {t.disputeForm.filed("")} <TxLink tx={result.tx} explorer={result.explorer ?? "https://sepolia.etherscan.io"} />
+            {t.disputeForm.filed("")} <TxLink tx={result.tx} explorer={result.explorer ?? ""} />
           </p>
         )}
         {result?.error && <p className="verdict verdict-fail">{result.error}</p>}

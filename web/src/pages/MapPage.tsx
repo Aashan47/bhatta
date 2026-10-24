@@ -177,7 +177,7 @@ function Drawer({ id, alpha, onClose }: { id: string; alpha: number; onClose: ()
             </div>
             <div>
               <dt>{t.map.baseline}</dt>
-              <dd>{t.className[r.baseline.class]}</dd>
+              <dd>{r.baseline ? t.className[r.baseline.class] : t.kiln.newDetection}</dd>
             </div>
             {r.observation.probs && (
               <div>

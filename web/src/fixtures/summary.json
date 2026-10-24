@@ -43,9 +43,9 @@
  ],
  "models": {
   "detector_sha256": "0xc1646a2e77e94544641a25c6619d4a035cfa8d64f37c2f0db6ca3763efec3899",
-  "classifier_sha256": "0x5a5a5a5ab8868e3da9a9f08f96177bc9df00f2ca0d49b9bdeed1c040785b5908"
+  "classifier_sha256": "5a5a5a5ab8868e3da9a9f08f96177bc9df00f2ca0d49b9bdeed1c040785b5908"
  },
- "model_sha256": "0x5a5a5a5ab8868e3da9a9f08f96177bc9df00f2ca0d49b9bdeed1c040785b5908",
+ "model_sha256": "5a5a5a5ab8868e3da9a9f08f96177bc9df00f2ca0d49b9bdeed1c040785b5908",
  "alpha": 0.1,
  "qhat": 0.8123,
  "claim": {
@@ -62,45 +62,44 @@
  },
  "impact": {
   "sample": true,
-  "per_kiln": {
-   "coal_t_per_season": {
-    "low": 200,
-    "high": 400
-   },
-   "co2_t": {
-    "low": 500,
-    "high": 1000
-   },
-   "black_carbon_reduction_pct": {
-    "low": 40,
-    "high": 70
-   }
-  },
-  "basis": "per FCBK kiln converted to Zigzag, one firing season",
-  "sources": [
+  "per_conversion": [
    {
-    "title": "Sample source A (placeholder until the API supplies a verified citation)",
-    "url": ""
+    "key": "coal",
+    "reduction_pct": 20,
+    "source": {
+     "title": "Sample source (the API supplies the verified citation)",
+     "url": "",
+     "quote": ""
+    }
    },
    {
-    "title": "Sample source B (placeholder until the API supplies a verified citation)",
-    "url": ""
+    "key": "co2",
+    "reduction_pct": 15,
+    "source": {
+     "title": "Sample source (the API supplies the verified citation)",
+     "url": "",
+     "quote": ""
+    }
+   },
+   {
+    "key": "pm",
+    "reduction_pct": 40,
+    "source": {
+     "title": "Sample source (the API supplies the verified citation)",
+     "url": "",
+     "quote": ""
+    }
+   },
+   {
+    "key": "black_carbon",
+    "reduction_pct": 60,
+    "source": {
+     "title": "Sample source (the API supplies the verified citation)",
+     "url": "",
+     "quote": ""
+    }
    }
   ],
-  "kilns": 34,
-  "total": {
-   "coal_t_per_season": {
-    "low": 6800,
-    "high": 13600
-   },
-   "co2_t": {
-    "low": 17000,
-    "high": 34000
-   },
-   "black_carbon_reduction_pct": {
-    "low": 40,
-    "high": 70
-   }
-  }
+  "note": "Sample note: reductions are per kiln converted from FCBK to Zigzag, as measured in field studies; the API supplies the real note."
  }
 }

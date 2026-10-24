@@ -1,74 +1,49 @@
 import { useT } from "../i18n";
-import { rangeStr } from "../lib/util";
-import type { Range, Source } from "../types";
+import type { ImpactSummary } from "../types";
 import { ExternalGlyph, SampleTag } from "./ui";
 
-interface Figures {
-  coal_t_per_season: Range;
-  co2_t: Range;
-  black_carbon_reduction_pct: Range;
-}
-
-export function ImpactPanel({
-  figures,
-  sources,
-  lead,
-  title,
-  sample,
-}: {
-  figures: Figures | null | undefined;
-  sources: Source[];
-  lead: string;
-  title: string;
-  sample?: boolean;
-}) {
+/** Measured reductions per FCBK kiln converted to Zigzag. Percentages only, each with its source;
+ *  never multiplied into tonnes, because no verified per-kiln coal figure exists. */
+export function ImpactPanel({ impact, title, lead }: { impact: ImpactSummary | undefined; title: string; lead: string }) {
   const t = useT();
   return (
     <section className="panel impact" aria-labelledby="impact-h">
       <h2 id="impact-h" className="panel-title">
-        {title} {sample && <SampleTag />}
+        {title} {impact?.sample && <SampleTag />}
       </h2>
-      {!figures ? (
+      {!impact || impact.per_conversion.length === 0 ? (
         <p className="muted">{t.impact.none}</p>
       ) : (
         <>
           <p className="impact-lead">{lead}</p>
-          <dl className="impact-grid">
-            <div>
-              <dt>{t.impact.coal}</dt>
-              <dd dir="ltr">{t.impact.tonnes(rangeStr(figures.coal_t_per_season))}</dd>
-            </div>
-            <div>
-              <dt>{t.impact.co2}</dt>
-              <dd dir="ltr">{t.impact.tonnes(rangeStr(figures.co2_t))}</dd>
-            </div>
-            <div>
-              <dt>{t.impact.bc}</dt>
-              <dd dir="ltr">{t.impact.percent(rangeStr(figures.black_carbon_reduction_pct))}</dd>
-            </div>
-          </dl>
-          <p className="fine">{t.impact.rangeNote}</p>
-          {sources.length > 0 && (
-            <div className="sources">
-              <h3>{t.impact.sources}</h3>
-              <ol>
-                {sources.map((s, i) => (
-                  <li key={i}>
-                    {s.url ? (
-                      <a href={s.url} target="_blank" rel="noreferrer">
-                        {s.title}
-                        <ExternalGlyph />
-                      </a>
-                    ) : (
-                      <span>
-                        {s.title} <span className="muted">({t.impact.placeholderSource})</span>
-                      </span>
-                    )}
-                  </li>
-                ))}
-              </ol>
-            </div>
-          )}
+          <ul className="impact-list">
+            {impact.per_conversion.map((it) => {
+              const words = (t.impact.less[it.key] ?? ((p: string) => `${p} ${it.key}`))(`${it.reduction_pct}%`);
+              return (
+                <li key={it.key} className={`impact-item ik-${it.key}`}>
+                  <span className="impact-pct" dir="ltr">
+                    {it.reduction_pct}%
+                  </span>
+                  <span className="impact-words">
+                    <span className="impact-what">{words.replace(`${it.reduction_pct}%`, "").trim()}</span>
+                    <span className="impact-src">
+                      {it.source.url ? (
+                        <a href={it.source.url} target="_blank" rel="noreferrer" title={it.source.quote || undefined}>
+                          {it.source.title}
+                          <ExternalGlyph />
+                        </a>
+                      ) : (
+                        <>
+                          {it.source.title} <span className="muted">({t.impact.noLink})</span>
+                        </>
+                      )}
+                    </span>
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
+          {impact.note && <p className="fine">{impact.note}</p>}
         </>
       )}
     </section>

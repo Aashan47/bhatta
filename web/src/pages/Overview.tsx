@@ -26,7 +26,7 @@ export function Overview() {
   if (summary.error) return <ErrorBox error={summary.error} onRetry={summary.reload} />;
   if (!s) return <Loading />;
 
-  const season = seasonLabel(s.season, lang);
+  const season = s.season ? seasonLabel(s.season, lang) : "";
   const toVisit = s.counts.FCBK + s.counts.UNDETERMINED + s.counts.NOT_DETECTED;
   const sceneDates = [...new Set(s.scenes.map((x) => dateLabel(x.date, lang)))].join(", ");
 
@@ -41,7 +41,7 @@ export function Overview() {
             </q>
           </h1>
           <p className="claim-who">
-            {t.overview.claimWho(s.claim.who, dateLabel(s.claim.date, lang))}.{" "}
+            {s.claim.date ? t.overview.claimWho(s.claim.who, dateLabel(s.claim.date, lang)) : s.claim.who}.{" "}
             <a href={s.claim.url} target="_blank" rel="noreferrer">
               {t.overview.readSource}
               <ExternalGlyph />
@@ -77,6 +77,7 @@ export function Overview() {
         </div>
       </section>
 
+      <div className="overview-pair">
       {shares?.claimed != null && (
         <section className="compare panel" aria-labelledby="cmp-h">
           <h2 id="cmp-h" className="panel-title">
@@ -115,7 +116,17 @@ export function Overview() {
         </section>
       )}
 
-      <p className="cannot-see">{t.overview.cannotSee}</p>
+      <div className="cannot-see">
+        <p>{t.overview.cannotSee}</p>
+        {s.caveats.length > 0 && (
+          <ul className="caveats" lang="en" dir="ltr">
+            {s.caveats.map((c, i) => (
+              <li key={i}>{c}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+      </div>
 
       <section className="queue-cta" aria-labelledby="q-h">
         <div>
@@ -148,15 +159,7 @@ export function Overview() {
           />
         </section>
 
-        {s.impact && (
-          <ImpactPanel
-            title={t.impact.title}
-            lead={t.impact.totalLead(s.impact.kilns ?? s.counts.FCBK)}
-            figures={s.impact.total ?? null}
-            sources={s.impact.sources}
-            sample={s.impact.sample}
-          />
-        )}
+        <ImpactPanel title={t.impact.title} lead={t.impact.leadAll} impact={s.impact} />
       </div>
 
       <section className="provenance" aria-label={t.overview.modelsLine}>

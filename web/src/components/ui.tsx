@@ -134,13 +134,21 @@ export function Hash({ value, head = 6, tail = 4, copy = true }: { value: string
   );
 }
 
-export function TxLink({ tx, explorer, sample }: { tx: string; explorer: string; sample?: boolean }) {
+export function TxLink({ tx, explorer, sample }: { tx: string | null | undefined; explorer: string; sample?: boolean }) {
   const t = useT();
+  if (!tx) return null;
   if (FIXTURE || sample) {
     return (
       <span className="txlink is-sample" title={t.sample.txNote}>
         <Mono>{shortHex(tx)}</Mono>
         <span className="sample-tag">{t.sample.short}</span>
+      </span>
+    );
+  }
+  if (!explorer) {
+    return (
+      <span className="txlink" title={tx}>
+        <Mono>{shortHex(tx)}</Mono>
       </span>
     );
   }

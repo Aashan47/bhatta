@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useParams } from "react-router";
+import { Link, useParams, useSearchParams } from "react-router";
 import { ApiError, chipUrl, FIXTURE, getKiln, getLedger, getSummary } from "../api";
 import { DisputeForm, SignFinding } from "../components/Actions";
 import { ImpactPanel } from "../components/Impact";
@@ -10,8 +10,16 @@ import { usePrefs } from "../i18n";
 import { dateLabel, setInWords, useAsync } from "../lib/util";
 import type { KilnClass, KilnRecord } from "../types";
 
+function seasonOf(rec: KilnRecord, fallback: number | null | undefined): number {
+  if (rec.chain) return rec.chain.season;
+  const m = rec.observation.date ? /^(\d{4})-(\d{2})/.exec(rec.observation.date) : null;
+  if (m) return Number(m[1]) * 100 + Number(m[2]);
+  return fallback ?? 202610;
+}
+
 export function Kiln() {
   const { id = "" } = useParams();
+  const [params] = useSearchParams();
   const { t } = usePrefs();
   const rec = useAsync(() => getKiln(id), [id]);
   const summary = useAsync(getSummary, []);
@@ -34,6 +42,10 @@ export function Kiln() {
   if (!r) return <Loading />;
   const alpha = summary.data?.alpha ?? 0.1;
   const qhat = summary.data?.qhat;
+  const season = seasonOf(r, summary.data?.season);
+  const modelSha = summary.data?.model_sha256;
+  const impactLead = r.status === "ZIGZAG" ? t.impact.leadZigzag : t.impact.leadKiln;
+  const showImpact = r.status !== "NOT_DETECTED";
 
   return (
     <article className="kiln">
@@ -53,6 +65,7 @@ export function Kiln() {
           <p className="muted">
             {t.kiln.location(r.district, r.lat, r.lon)} <SampleTag />
           </p>
+          {!r.baseline && <p className="new-det">{t.kiln.newDetection}</p>}
         </div>
         <StatusBadge status={r.status} long size="l" />
         <p className="set-words set-words-l">{setInWords(t, r.status, r.observation.set, alpha)}</p>
@@ -68,25 +81,35 @@ export function Kiln() {
             <h2 id="tl-h" className="panel-title">
               {t.kiln.timelineTitle}
             </h2>
-            <Timeline events={r.events} explorer={ledger.data?.explorer ?? "https://sepolia.etherscan.io"} sample={FIXTURE || ledger.data?.mock_chain} />
+            <Timeline events={r.events} explorer={ledger.data?.explorer ?? ""} sample={FIXTURE || ledger.data?.mock_chain} />
           </section>
         </div>
         <aside className="kiln-side">
-          <CertificatePanel rec={r} />
-          <VerifyPanel rec={r} modelSha={summary.data?.model_sha256} />
-          <ActionPanels rec={r} />
-          {r.impact && (
-            <ImpactPanel
-              title={t.impact.perKilnTitle}
-              lead={t.impact.perKilnLead}
-              figures={r.impact}
-              sources={r.impact.sources}
-              sample={r.impact.sample}
-            />
-          )}
+          <CertificatePanel rec={r} printedHash={params.get("cert")} />
+          <VerifyPanel rec={r} modelSha={modelSha} />
+          <ActionPanels rec={r} season={season} />
+          {showImpact && <ImpactPanel title={t.impact.perKilnTitle} lead={impactLead} impact={summary.data?.impact} />}
         </aside>
       </div>
     </article>
+  );
+}
+
+function ChipFigure({ src, alt, caption, empty }: { src: string | null; alt: string; caption: React.ReactNode; empty: string }) {
+  const t = usePrefs().t;
+  const [broken, setBroken] = useState(false);
+  return (
+    <figure className="chip">
+      <div className="chip-frame">
+        {src && !broken ? (
+          <img src={chipUrl(src)} alt={alt} width={256} height={256} loading="lazy" onError={() => setBroken(true)} />
+        ) : (
+          <p className="chip-empty">{empty}</p>
+        )}
+        {FIXTURE && src && <span className="chip-sample">{t.sample.badge}</span>}
+      </div>
+      <figcaption>{caption}</figcaption>
+    </figure>
   );
 }
 
@@ -94,28 +117,29 @@ function Chips({ rec }: { rec: KilnRecord }) {
   const { t, lang } = usePrefs();
   const o = rec.observation;
   const sampleAlt = FIXTURE ? ` ${t.kiln.chipSampleAlt}` : "";
+  const cls = rec.baseline ? t.className[rec.baseline.class] : "";
   return (
     <section className="panel" aria-labelledby="chips-h">
       <h2 id="chips-h" className="panel-title">
         {t.kiln.imagesTitle}
       </h2>
       <div className="chips">
-        <figure className="chip">
-          <div className="chip-frame">
-            <img src={chipUrl(o.baseline_chip)} alt={t.kiln.chipAltBase(rec.id, rec.baseline.class) + sampleAlt} width={256} height={256} loading="lazy" />
-            {FIXTURE && <span className="chip-sample">{t.sample.badge}</span>}
-          </div>
-          <figcaption>{t.kiln.baselineChip(rec.baseline.period, t.className[rec.baseline.class])}</figcaption>
-        </figure>
-        <figure className="chip">
-          <div className="chip-frame">
-            <img src={chipUrl(o.chip)} alt={t.kiln.chipAltNow(rec.id, o.date, t.status[rec.status]) + sampleAlt} width={256} height={256} loading="lazy" />
-            {FIXTURE && <span className="chip-sample">{t.sample.badge}</span>}
-          </div>
-          <figcaption>
-            {t.kiln.nowChip(dateLabel(o.date, lang))} <Mono>{o.scene_id}</Mono>
-          </figcaption>
-        </figure>
+        <ChipFigure
+          src={o.baseline_chip}
+          alt={t.kiln.chipAltBase(rec.id, cls) + sampleAlt}
+          empty={t.kiln.noBaselineChip}
+          caption={rec.baseline ? t.kiln.baselineChip(rec.baseline.period, cls) : t.kiln.newDetection}
+        />
+        <ChipFigure
+          src={o.chip}
+          alt={t.kiln.chipAltNow(rec.id, o.date ?? "", t.status[rec.status]) + sampleAlt}
+          empty={t.kiln.noChip}
+          caption={
+            <>
+              {o.date ? t.kiln.nowChip(dateLabel(o.date, lang)) : null} {o.scene_id && <Mono>{o.scene_id}</Mono>}
+            </>
+          }
+        />
       </div>
       <p className="fine">{t.kiln.chipNote}</p>
     </section>
@@ -131,8 +155,8 @@ function Model({ rec, qhat }: { rec: KilnRecord; qhat?: number }) {
       <h2 id="model-h" className="panel-title">
         {t.kiln.modelTitle} <SampleTag />
       </h2>
-      {!o.detected || !o.probs ? (
-        <p>{t.kiln.notDetected}</p>
+      {!o.probs ? (
+        <p>{rec.status === "NOT_DETECTED" ? t.kiln.notDetected : t.set.noImage}</p>
       ) : (
         <>
           {o.det_conf != null && <p className="muted">{t.kiln.detConf(o.det_conf)}</p>}
@@ -157,7 +181,7 @@ function Model({ rec, qhat }: { rec: KilnRecord; qhat?: number }) {
                 <li key={c} className={`setpill ${kept ? "kept" : "dropped"} ${c === "FCBK" ? "st-fcbk" : "st-zigzag"}`}>
                   <span aria-hidden="true">{kept ? "✓" : "✗"}</span>
                   <span>{t.className[c]}</span>
-                  <span className="sr-only">{kept ? "kept" : "excluded"}</span>
+                  <span className="sr-only">{kept ? t.kiln.kept : t.kiln.excluded}</span>
                 </li>
               );
             })}
@@ -169,7 +193,7 @@ function Model({ rec, qhat }: { rec: KilnRecord; qhat?: number }) {
   );
 }
 
-function ActionPanels({ rec }: { rec: KilnRecord }) {
+function ActionPanels({ rec, season }: { rec: KilnRecord; season: number }) {
   const { t } = usePrefs();
   const [open, setOpen] = useState<"sign" | "dispute" | null>(null);
   return (
@@ -183,7 +207,7 @@ function ActionPanels({ rec }: { rec: KilnRecord }) {
           <span className="disc-caret" aria-hidden="true" />
         </button>
         <div id="act-sign" hidden={open !== "sign"}>
-          {open === "sign" && <SignFinding rec={rec} />}
+          {open === "sign" && <SignFinding rec={rec} season={season} />}
         </div>
       </div>
       <div className="disclosure">
@@ -192,7 +216,7 @@ function ActionPanels({ rec }: { rec: KilnRecord }) {
           <span className="disc-caret" aria-hidden="true" />
         </button>
         <div id="act-dispute" hidden={open !== "dispute"}>
-          {open === "dispute" && <DisputeForm rec={rec} />}
+          {open === "dispute" && <DisputeForm rec={rec} season={season} />}
         </div>
       </div>
     </section>

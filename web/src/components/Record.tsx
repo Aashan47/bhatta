@@ -1,50 +1,64 @@
 import { Link } from "react-router";
 import qrcode from "qrcode-generator";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { FIXTURE, getLedger } from "../api";
 import { usePrefs } from "../i18n";
+import { readCertificate, ZERO_HASH, type OnchainCertificate } from "../lib/chain";
 import { certificateFor, dateLabel, sortEvents, type CertState } from "../lib/util";
-import type { ChainEvent, EventType, KilnRecord } from "../types";
+import type { ChainEvent, EventType, KilnRecord, Ledger } from "../types";
 import { ArrowGlyph, Hash, TxLink } from "./ui";
 
-const EV_CLASS: Record<EventType, string> = {
+export const EV_CLASS: Record<EventType, string> = {
   SeasonPublished: "ev-season",
+  SeasonConfirmed: "ev-season",
+  SeasonActivated: "ev-season",
+  CorrectionPublished: "ev-dispute",
   SatelliteProven: "ev-proven",
   Finding: "ev-finding",
+  FindingRevised: "ev-finding",
   Conflict: "ev-conflict",
   Disputed: "ev-dispute",
+  Certified: "ev-proven",
+  CertificateWithdrawn: "ev-conflict",
+  RpcError: "ev-conflict",
 };
 
 function EventGlyph({ type }: { type: EventType }) {
   const p = { width: 16, height: 16, viewBox: "0 0 16 16", "aria-hidden": true, focusable: false, fill: "none", stroke: "currentColor", strokeWidth: 1.7, strokeLinecap: "round", strokeLinejoin: "round" } as const;
   switch (type) {
     case "SeasonPublished":
+    case "SeasonConfirmed":
+    case "SeasonActivated":
       return (
         <svg {...p}>
           <path d="M8 2v4M4 6h8M5 6l-2 8h10l-2-8" />
         </svg>
       );
     case "SatelliteProven":
+    case "Certified":
       return (
         <svg {...p}>
           <path d="M3 8.5l3 3L13 4.5" />
         </svg>
       );
     case "Finding":
+    case "FindingRevised":
       return (
         <svg {...p}>
           <path d="M3 13c2-1 3-4 5-4s2 3 5 2M10.5 2.5l3 3-6 6H4.5v-3z" />
         </svg>
       );
-    case "Conflict":
-      return (
-        <svg {...p}>
-          <path d="M8 2l6.5 11.5h-13zM8 6.5v3.2M8 11.8v.1" />
-        </svg>
-      );
     case "Disputed":
+    case "CorrectionPublished":
       return (
         <svg {...p}>
           <path d="M2.5 3.5h11v7h-6l-3 2.5v-2.5h-2z" />
+        </svg>
+      );
+    default:
+      return (
+        <svg {...p}>
+          <path d="M8 2l6.5 11.5h-13zM8 6.5v3.2M8 11.8v.1" />
         </svg>
       );
   }
@@ -52,15 +66,20 @@ function EventGlyph({ type }: { type: EventType }) {
 
 export function eventSummary(e: ChainEvent, t: ReturnType<typeof usePrefs>["t"]): string | null {
   const d = e.detail;
-  if (e.type === "Finding" && d.finding !== undefined) return t.events.finding[Number(d.finding)] ?? null;
-  if (e.type === "Conflict" && d.finding !== undefined) return `${t.status.FCBK} / ${t.events.finding[Number(d.finding)] ?? ""}`;
+  if ((e.type === "Finding" || e.type === "FindingRevised") && d.finding !== undefined) return t.events.finding[Number(d.finding)] ?? null;
+  if (e.type === "Conflict" && d.reasonCode !== undefined) return t.events.conflict[Number(d.reasonCode)] ?? null;
+  if (e.type === "SatelliteProven" && d.status !== undefined) {
+    const s = ["NOT_DETECTED", "FCBK", "ZIGZAG", "UNDETERMINED"][Number(d.status)] as keyof typeof t.status | undefined;
+    return s ? t.status[s] : null;
+  }
   if (e.type === "SeasonPublished" && typeof d.kilns === "number") return t.events.kilnCount(d.kilns);
+  if (e.type === "CorrectionPublished" && typeof d.reason === "string") return d.reason;
   return null;
 }
 
 export function Timeline({ events, explorer, sample }: { events: ChainEvent[]; explorer: string; sample?: boolean }) {
   const { t, lang } = usePrefs();
-  const ev = sortEvents(events);
+  const ev = sortEvents(events.filter((e) => e.type !== "RpcError"));
   if (!ev.length) return <p className="muted">{t.kiln.timelineEmpty}</p>;
   return (
     <ol className="timeline">
@@ -77,15 +96,15 @@ export function Timeline({ events, explorer, sample }: { events: ChainEvent[]; e
                 {t.events[e.type]}
                 {sum && <span className="tl-sum">{sum}</span>}
               </p>
-              {typeof e.detail.note === "string" && (
+              {typeof e.detail.note === "string" && e.detail.note && (
                 <p className="tl-note">
                   <span className="muted">{t.events.noteLabel}: </span>
                   {e.detail.note}
                 </p>
               )}
               <p className="tl-meta">
-                <time dateTime={e.time}>{dateLabel(e.time, lang, true)}</time>
-                <span dir="ltr">{t.events.block(e.block)}</span>
+                {e.time && <time dateTime={e.time}>{dateLabel(e.time, lang, true)}</time>}
+                {e.block > 0 && <span dir="ltr">{t.events.block(e.block)}</span>}
                 {who && (
                   <span>
                     {t.events.by("")}
@@ -135,19 +154,58 @@ export function useCertText(rec: KilnRecord) {
   return { c, word, line };
 }
 
-export function CertificatePanel({ rec }: { rec: KilnRecord }) {
+/** Reads certified() and certificateHash() from the contract when one is deployed. */
+export function useOnchainCertificate(rec: KilnRecord): { ledger?: Ledger; cert?: OnchainCertificate; loading: boolean } {
+  const [state, setState] = useState<{ ledger?: Ledger; cert?: OnchainCertificate; loading: boolean }>({ loading: true });
+  useEffect(() => {
+    let live = true;
+    (async () => {
+      try {
+        const ledger = await getLedger();
+        if (!live) return;
+        if (FIXTURE || ledger.mock_chain || !ledger.contract || !rec.chain) {
+          setState({ ledger, loading: false });
+          return;
+        }
+        const cert = await readCertificate({ contract: ledger.contract, id: rec.id, season: rec.chain.season, rpc: ledger.rpc });
+        if (live) setState({ ledger, cert, loading: false });
+      } catch {
+        if (live) setState((s) => ({ ...s, loading: false }));
+      }
+    })();
+    return () => {
+      live = false;
+    };
+  }, [rec.id, rec.chain]);
+  return state;
+}
+
+export function CertificatePanel({ rec, printedHash }: { rec: KilnRecord; printedHash?: string | null }) {
   const { t } = usePrefs();
-  const { c, word, line } = useCertText(rec);
+  const { c, line } = useCertText(rec);
+  const onchain = useOnchainCertificate(rec);
+  const state: CertState = onchain.cert ? (onchain.cert.certified ? "certified" : c.state === "contradicted" ? "contradicted" : "pending") : c.state;
+  const words: Record<CertState, string> = { certified: t.cert.certified, pending: t.cert.pending, contradicted: t.cert.contradicted };
+  const shownLine = state === c.state ? line : state === "certified" ? t.cert.certifiedLine : t.cert.pendingLine([t.cert.missingProof]);
   return (
-    <section className={`panel cert-panel cert-${c.state}`} aria-labelledby="cert-h">
+    <section className={`panel cert-panel cert-${state}`} aria-labelledby="cert-h">
       <h2 id="cert-h" className="panel-title">
         {t.cert.title}
       </h2>
       <p className="cert-state">
-        <CertIcon state={c.state} />
-        <span>{word}</span>
+        <CertIcon state={state} />
+        <span>{words[state]}</span>
       </p>
-      <p>{line}</p>
+      <p>{shownLine}</p>
+      <div aria-live="polite">
+        {onchain.loading && onchain.ledger?.contract && !FIXTURE && <p className="fine">{t.cert.onchainChecking}</p>}
+        {onchain.cert && <p className="fine">{onchain.cert.certified ? t.cert.onchainYes : t.cert.onchainNo}</p>}
+        {printedHash && onchain.cert && (
+          <p className={`verdict ${onchain.cert.hash.toLowerCase() === printedHash.toLowerCase() && onchain.cert.hash !== ZERO_HASH ? "verdict-pass" : "verdict-fail"}`}>
+            {onchain.cert.hash.toLowerCase() === printedHash.toLowerCase() && onchain.cert.hash !== ZERO_HASH ? t.cert.printedValid : t.cert.printedStale}
+          </p>
+        )}
+      </div>
       <Link to={`/kiln/${rec.id}/certificate`} className="link-arrow">
         {t.cert.open}
         <ArrowGlyph />
@@ -175,4 +233,3 @@ export function QR({ text, size = 140, label }: { text: string; size?: number; l
     </svg>
   );
 }
-

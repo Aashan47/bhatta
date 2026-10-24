@@ -5,7 +5,7 @@ import { usePrefs } from "../i18n";
 import { useAsync } from "../lib/util";
 
 export function Method() {
-  const { t } = usePrefs();
+  const { t, lang } = usePrefs();
   const results = useAsync(getResults, []);
   const audit = useAsync(getAudit, []);
   const summary = useAsync(getSummary, []);
@@ -86,7 +86,7 @@ export function Method() {
                         {r.target}
                       </td>
                       <td dir="ltr" className="num">
-                        {r.value === null ? "" : r.value}
+                        {r.value === null || r.value === "" ? "" : String(r.value)}
                         {r.n !== undefined && <span className="cell-sub">{t.method.n(r.n)}</span>}
                       </td>
                       <td>
@@ -123,7 +123,7 @@ export function Method() {
         ) : !audit.data ? (
           <Loading />
         ) : audit.data.n === 0 ? (
-          <p className="audit-empty">{t.method.auditNotRun}</p>
+          <p className="audit-empty">{audit.data.status && lang === "en" ? audit.data.status : t.method.auditNotRun}</p>
         ) : (
           <>
             <p>{t.method.auditCounts(audit.data.n, audit.data.agreed, audit.data.disagreed, audit.data.unsure)}</p>

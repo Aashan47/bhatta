@@ -4,5 +4,6 @@
  "agreed": 0,
  "disagreed": 0,
  "unsure": 0,
- "rows": []
+ "rows": [],
+ "status": "Not yet run"
 }

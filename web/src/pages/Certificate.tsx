@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { Link, useParams } from "react-router";
 import { FIXTURE, getKiln, getLedger } from "../api";
-import { CertIcon, QR, useCertText } from "../components/Record";
+import { CertIcon, QR, useCertText, useOnchainCertificate } from "../components/Record";
+import { ZERO_HASH } from "../lib/chain";
 import { ArrowGlyph, ErrorBox, Hash, Loading, Logo, Mono, StatusBadge } from "../components/ui";
 import { usePrefs } from "../i18n";
 import { dateLabel, seasonLabel, useAsync } from "../lib/util";
@@ -19,7 +20,11 @@ export function Certificate() {
 function CertificateSheet({ rec, ledger }: { rec: KilnRecord; ledger?: Ledger }) {
   const { t, lang } = usePrefs();
   const { c, word, line } = useCertText(rec);
-  const live = `${window.location.origin}/kiln/${rec.id}`;
+  const onchain = useOnchainCertificate(rec);
+  const certHash = onchain.cert && onchain.cert.hash !== ZERO_HASH ? onchain.cert.hash : null;
+  // A certified kiln's QR carries the certificate hash; the kiln page re-reads it from the contract
+  // and says whether this paper is still valid (contracts/README.md, certificateHash).
+  const live = `${window.location.origin}/kiln/${rec.id}${certHash && rec.chain ? `?season=${rec.chain.season}&cert=${certHash}` : ""}`;
   useEffect(() => {
     const prev = document.title;
     document.title = `${t.cert.pageTitle}: ${rec.id}`;
@@ -76,7 +81,7 @@ function CertificateSheet({ rec, ledger }: { rec: KilnRecord; ledger?: Ledger })
             </div>
             <div>
               <dt>{t.cert.season}</dt>
-              <dd>{seasonLabel(rec.chain.season, lang)}</dd>
+              <dd>{rec.chain ? seasonLabel(rec.chain.season, lang) : t.common.notAvailable}</dd>
             </div>
             <div>
               <dt>{t.cert.satellite}</dt>
@@ -99,7 +104,7 @@ function CertificateSheet({ rec, ledger }: { rec: KilnRecord; ledger?: Ledger })
             <div>
               <dt>{t.cert.leaf}</dt>
               <dd>
-                <Hash value={rec.chain.leaf} head={10} tail={8} copy={false} />
+                {rec.chain ? <Hash value={rec.chain.leaf} head={10} tail={8} copy={false} /> : t.verify.notInRoot}
               </dd>
             </div>
             <div>

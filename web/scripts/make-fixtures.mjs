@@ -8,7 +8,8 @@
 // Run: node scripts/make-fixtures.mjs
 
 import { StandardMerkleTree } from "@openzeppelin/merkle-tree";
-import { encodeAbiParameters, keccak256, sha256, stringToHex, toHex, bytesToHex } from "viem";
+import { encodeAbiParameters, keccak256, stringToHex } from "viem";
+import { evidenceHashOf, pZigzagBp, sha256HexBare } from "../src/lib/encoding.ts";
 import { deflateSync, crc32 } from "node:zlib";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -136,13 +137,6 @@ function chip(kind, variant) {
   return png(W, H, buf);
 }
 
-// ---------- canonical JSON (sorted keys, no spaces), as the API computes it ----------
-function canon(v) {
-  if (v === null || typeof v !== "object") return JSON.stringify(v);
-  if (Array.isArray(v)) return "[" + v.map(canon).join(",") + "]";
-  return "{" + Object.keys(v).sort().map((k) => JSON.stringify(k) + ":" + canon(v[k])).join(",") + "}";
-}
-
 // ---------- kilns ----------
 const DISTRICTS = [
   { name: "Kasur", s: 30.9, n: 31.25, w: 73.98, e: 74.55, n_k: 46 },
@@ -153,7 +147,7 @@ const DISTRICTS = [
 const SEASON = 202610;
 const QHAT = 0.8123; // include class c in the set when 1 - p_c <= qhat
 const ALPHA = 0.1;
-const MODEL_SHA = "0x" + "5a".repeat(4) + hex32().slice(10);
+const MODEL_SHA = "5a".repeat(4) + hex32().slice(10); // bare lowercase hex, as summary.models.classifier_sha256
 const DETECTOR_SHA = hex32();
 const SCENES = [
   { id: "SAMPLE-S2-20261019-A", date: "2026-10-19", cloud_pct: 3.1 },
@@ -207,11 +201,10 @@ for (const k of kilns) {
   const nowBytes = chip(nowKind, variant);
   writeFileSync(join(CHIPS, baseChipName), baseBytes);
   writeFileSync(join(CHIPS, nowChipName), nowBytes);
-  const chipSha = sha256(bytesToHex(nowBytes));
-  const pre = { scene_id: scene.id, date: scene.date, probs, set, chip_sha256: chipSha, model_sha256: MODEL_SHA };
-  const evidenceHash = sha256(stringToHex(canon(pre)));
+  const chipSha = sha256HexBare(nowBytes);
+  const evidenceHash = evidenceHashOf({ scene_id: scene.id, date: scene.date, probs, set, chip_sha256: chipSha, model_sha256: MODEL_SHA });
   const kilnId = stringToHex(k.id, { size: 32 });
-  const pBp = pZ === null ? 0 : Math.round(pZ * 10000);
+  const pBp = pZigzagBp(probs);
   const v = [kilnId, SEASON, CODE[k.status], pBp, evidenceHash];
   values.push(v);
   records.push({
@@ -220,7 +213,6 @@ for (const k of kilns) {
     observation: {
       scene_id: scene.id, date: scene.date, detected, det_conf: detConf, probs, set,
       chip: `chips/${nowChipName}`, baseline_chip: `chips/${baseChipName}`,
-      chip_sha256: chipSha, model_sha256: MODEL_SHA,
     },
     status: k.status,
     chain: { season: SEASON, leaf: "", proof: [], evidence_hash: evidenceHash, status_code: CODE[k.status], p_zigzag_bp: pBp },
@@ -259,7 +251,7 @@ for (const [i, v] of tree.entries()) {
   const rec = records[i];
   rec.chain.leaf = tree.leafHash(v);
   rec.chain.proof = tree.getProof(i);
-  rec.events.push({ type: "SeasonPublished", tx: seasonTx, block: seasonBlock, time: seasonTime, detail: { root } });
+  rec.events.push({ type: "SeasonPublished", tx: seasonTx, block: seasonBlock, time: seasonTime, detail: { season: SEASON, version: 1, root } });
 }
 
 // a handful of on-chain stories, so every event type appears
@@ -267,30 +259,30 @@ const byStatus = (s) => records.filter((r) => r.status === s);
 const push = (rec, ev) => { rec.events.push(ev); ledgerEvents.push({ ...ev, kiln_id: rec.id, season: SEASON }); };
 for (const rec of byStatus("ZIGZAG").slice(0, 9)) {
   const a = later();
-  push(rec, { type: "SatelliteProven", tx: hex32(), ...a, detail: { status_code: 2, p_zigzag_bp: rec.chain.p_zigzag_bp } });
+  push(rec, { type: "SatelliteProven", tx: hex32(), ...a, detail: { kilnId: stringToHex(rec.id, { size: 32 }), status: 2, pZigzagBp: rec.chain.p_zigzag_bp, evidenceHash: rec.chain.evidence_hash, rootVersion: 1 } });
 }
 for (const rec of byStatus("ZIGZAG").slice(0, 5)) {
   const a = later();
-  push(rec, { type: "Finding", tx: hex32(), ...a, detail: { finding: 1, inspector: pick(INSPECTORS), evidence_hash: hex32() } });
+  push(rec, { type: "FindingAttested", tx: hex32(), ...a, detail: { finding: 1, inspector: pick(INSPECTORS), evidenceHash: hex32() } });
 }
 for (const rec of byStatus("FCBK").slice(0, 3)) {
   const a = later();
   const tx = hex32();
   const insp = pick(INSPECTORS);
-  push(rec, { type: "Finding", tx, ...a, detail: { finding: 1, inspector: insp, evidence_hash: hex32() } });
-  push(rec, { type: "Conflict", tx, ...a, detail: { satellite_status: 1, finding: 1, inspector: insp } });
+  push(rec, { type: "FindingAttested", tx, ...a, detail: { finding: 1, inspector: insp, evidenceHash: hex32() } });
+  push(rec, { type: "Conflict", tx, ...a, detail: { reasonCode: 2, inspector: insp } });
 }
 for (const rec of byStatus("FCBK").slice(3, 5)) {
   const a = later();
-  push(rec, { type: "Finding", tx: hex32(), ...a, detail: { finding: 2, inspector: pick(INSPECTORS), evidence_hash: hex32() } });
+  push(rec, { type: "FindingAttested", tx: hex32(), ...a, detail: { finding: 2, inspector: pick(INSPECTORS), evidenceHash: hex32() } });
 }
 for (const rec of [...byStatus("FCBK").slice(5, 6), ...byStatus("NOT_DETECTED").slice(0, 1)]) {
   const a = later();
-  push(rec, { type: "Disputed", tx: hex32(), ...a, detail: { by: hex20(), evidence_hash: hex32(), note: rec.status === "FCBK" ? "Kiln rebuilt as zigzag in August; photos and invoice hashed." : "Kiln still operating; chimney visible from road." } });
+  push(rec, { type: "Disputed", tx: hex32(), ...a, detail: { submitter: hex20(), evidenceHash: hex32(), note: rec.status === "FCBK" ? "Kiln rebuilt as zigzag in August; photos and invoice hashed." : "Kiln still operating; chimney visible from road." } });
 }
 for (const rec of byStatus("UNDETERMINED").slice(0, 2)) {
   const a = later();
-  push(rec, { type: "Finding", tx: hex32(), ...a, detail: { finding: 3, inspector: pick(INSPECTORS), evidence_hash: hex32() } });
+  push(rec, { type: "FindingAttested", tx: hex32(), ...a, detail: { finding: 3, inspector: pick(INSPECTORS), evidenceHash: hex32() } });
 }
 
 // ---------- derived views ----------
@@ -317,33 +309,18 @@ const inspectQueue = queue.map(({ r, code }, i) => ({
   reason_code: code, reason: REASON[code](r),
 }));
 
-const impactPerKiln = { coal_t_per_season: { low: 0, high: 0 }, co2_t: { low: 0, high: 0 }, black_carbon_reduction_pct: { low: 0, high: 0 } };
+// Same shape as the real API's summary.impact. The percentages here are placeholders for layout and
+// are marked as sample data in the UI; the real API supplies verified figures and sources.
 const IMPACT = {
   sample: true,
-  per_kiln: { coal_t_per_season: { low: 200, high: 400 }, co2_t: { low: 500, high: 1000 }, black_carbon_reduction_pct: { low: 40, high: 70 } },
-  basis: "per FCBK kiln converted to Zigzag, one firing season",
-  sources: [
-    { title: "Sample source A (placeholder until the API supplies a verified citation)", url: "" },
-    { title: "Sample source B (placeholder until the API supplies a verified citation)", url: "" },
+  per_conversion: [
+    { key: "coal", reduction_pct: 20, source: { title: "Sample source (the API supplies the verified citation)", url: "", quote: "" } },
+    { key: "co2", reduction_pct: 15, source: { title: "Sample source (the API supplies the verified citation)", url: "", quote: "" } },
+    { key: "pm", reduction_pct: 40, source: { title: "Sample source (the API supplies the verified citation)", url: "", quote: "" } },
+    { key: "black_carbon", reduction_pct: 60, source: { title: "Sample source (the API supplies the verified citation)", url: "", quote: "" } },
   ],
+  note: "Sample note: reductions are per kiln converted from FCBK to Zigzag, as measured in field studies; the API supplies the real note.",
 };
-void impactPerKiln;
-const unconverted = counts.FCBK;
-const scale = (r) => ({ low: r.low * unconverted, high: r.high * unconverted });
-const impactTotal = {
-  ...IMPACT,
-  kilns: unconverted,
-  total: {
-    coal_t_per_season: scale(IMPACT.per_kiln.coal_t_per_season),
-    co2_t: scale(IMPACT.per_kiln.co2_t),
-    black_carbon_reduction_pct: IMPACT.per_kiln.black_carbon_reduction_pct,
-  },
-};
-for (const r of records) {
-  r.impact = r.status === "FCBK" || r.status === "UNDETERMINED"
-    ? { ...IMPACT.per_kiln, sources: IMPACT.sources, sample: true }
-    : null;
-}
 
 const summary = {
   fixture: true,
@@ -366,7 +343,7 @@ const summary = {
     province_total: 10394,
     province_total_source: { title: "Express Tribune, Aug 2026", url: "https://tribune.com.pk/story/2621873/brick-kiln-crackdown-raises-livelihood-concerns" },
   },
-  impact: impactTotal,
+  impact: IMPACT,
 };
 
 const ledger = {
@@ -395,7 +372,7 @@ const results = {
   ],
 };
 
-const audit = { fixture: true, n: 0, agreed: 0, disagreed: 0, unsure: 0, rows: [] };
+const audit = { fixture: true, n: 0, agreed: 0, disagreed: 0, unsure: 0, rows: [], status: "Not yet run" };
 
 const health = { ok: true, fixture: true, data_version: summary.data_version, chain: { id: 11155111, contract: null } };
 
@@ -409,4 +386,3 @@ w("ledger.json", ledger);
 w("results.json", results);
 w("audit.json", audit);
 console.log(`wrote ${records.length} sample kilns, root ${root}`, counts);
-void toHex;

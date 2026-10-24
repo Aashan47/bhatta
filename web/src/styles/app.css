@@ -2354,3 +2354,109 @@ html[lang="ur"] .sheet-word {
     animation: none;
   }
 }
+
+/* ---------- additions ---------- */
+
+.impact-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-3) 0;
+  display: grid;
+  gap: var(--space-2);
+}
+.impact-item {
+  display: grid;
+  grid-template-columns: 4.2rem 1fr;
+  gap: var(--space-3);
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  background: var(--surface);
+  border-radius: var(--radius-s);
+}
+.impact-pct {
+  font-weight: 800;
+  font-size: var(--step-2);
+  font-variant-numeric: tabular-nums;
+  color: var(--zigzag-ink);
+  line-height: 1;
+  text-align: end;
+}
+.impact-words {
+  display: grid;
+  min-inline-size: 0;
+}
+.impact-what {
+  font-weight: 650;
+}
+.impact-src {
+  font-size: var(--step--1);
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.check {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  margin-block: var(--space-2);
+  font-size: var(--step--1);
+}
+.check input {
+  inline-size: 20px;
+  block-size: 20px;
+  margin-block-start: 2px;
+  accent-color: var(--primary);
+  flex: none;
+}
+.new-det {
+  margin: var(--space-1) 0 0;
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--primary);
+}
+.chip-empty {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--space-3);
+  margin: 0;
+  text-align: center;
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+.caveats {
+  margin: var(--space-2) 0 0;
+  padding-inline-start: 1.1em;
+  font-size: var(--step--1);
+  color: var(--muted);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+}
+.cannot-see p {
+  margin: 0;
+}
+.q-SAT_ZIGZAG {
+  --qc: var(--zigzag);
+}
+
+.overview-pair {
+  display: grid;
+  gap: var(--space-4);
+  align-items: start;
+}
+.overview-pair .compare {
+  margin-block: 0;
+}
+@media (min-width: 900px) {
+  .overview-pair {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: var(--space-6);
+    margin-block: var(--space-5);
+  }
+  .overview-pair .cannot-see {
+    margin-block-start: var(--space-4);
+  }
+}
+.footer-inner {
+  max-inline-size: calc(1280px - 2 * var(--gutter));
+}

@@ -61,6 +61,7 @@ export function rangeStr(r: Range, digits = 0): string {
 /** The conformal set, explained in words. */
 export function setInWords(t: Strings, status: Status, set: KilnClass[], alpha: number): string {
   if (status === "NOT_DETECTED") return t.set.notSeen;
+  if (status === "UNDETERMINED" && set.length === 0) return t.set.noImage;
   if (set.length === 1) {
     const only = set[0]!;
     return t.set.only(1 - alpha, only === "Zigzag" ? t.status.ZIGZAG : t.status.FCBK);
@@ -80,26 +81,35 @@ export interface Certificate {
 }
 
 /** Certificate rule from PRODUCT.md: satellite set {Zigzag} proven against the root AND an inspector's
- *  Zigzag confirmed, with no FCBK found finding outstanding. Computed from the record's events. */
+ *  Zigzag confirmed, with no FCBK found finding outstanding. Computed from the record's events; the
+ *  contract's own certified() is read separately where a contract exists. */
 export function certificateFor(rec: KilnRecord): Certificate {
-  const ev = rec.events;
-  const findings = ev.filter((e) => e.type === "Finding");
-  const fcbkFound = findings.some((e) => Number(e.detail.finding) === 2);
-  const confirmed = findings.filter((e) => Number(e.detail.finding) === 1);
+  const ev = sortEvents(rec.events);
+  // latest finding per inspector (a revision replaces that inspector's earlier finding)
+  const latest = new Map<string, number>();
+  let lastFinding: number | null = null;
+  for (const e of ev) {
+    if (e.type === "Finding" || e.type === "FindingRevised") {
+      const f = Number(e.detail.finding);
+      latest.set(String(e.detail.inspector ?? "?").toLowerCase(), f);
+      lastFinding = f;
+    }
+  }
+  const findings = [...latest.entries()];
+  const confirmed = findings.filter(([, f]) => f === 1);
+  const fcbkFound = findings.some(([, f]) => f === 2);
   const conflict = ev.some((e) => e.type === "Conflict");
+  const lastCert = ev.filter((e) => e.type === "Certified" || e.type === "CertificateWithdrawn").pop();
   const proven = ev.some((e) => e.type === "SatelliteProven");
-  const last = findings.length ? findings[findings.length - 1]! : null;
-  const satZig = rec.status === "ZIGZAG";
   const base = {
     satelliteProven: proven,
-    lastFinding: last ? Number(last.detail.finding) : null,
-    inspector: confirmed.length ? String(confirmed[confirmed.length - 1]!.detail.inspector ?? "") : null,
+    lastFinding,
+    inspector: confirmed.length ? confirmed[confirmed.length - 1]![0] : null,
   };
-  if (conflict || fcbkFound || (rec.status === "FCBK" && confirmed.length > 0)) {
-    return { state: "contradicted", missing: [], ...base };
-  }
+  if (lastCert?.type === "Certified" && !fcbkFound) return { state: "certified", missing: [], ...base };
+  if (conflict || fcbkFound || (rec.status === "FCBK" && confirmed.length > 0)) return { state: "contradicted", missing: [], ...base };
   const missing: Certificate["missing"] = [];
-  if (!satZig) missing.push("sat");
+  if (rec.status !== "ZIGZAG") missing.push("sat");
   else if (!proven) missing.push("proof");
   if (!confirmed.length) missing.push("inspector");
   return { state: missing.length ? "pending" : "certified", missing, ...base };
