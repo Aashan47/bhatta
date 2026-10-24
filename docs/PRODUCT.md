@@ -68,6 +68,18 @@ Grounded in the subject: fired brick, clay, soot, ash, and the zigzag of the kil
 - Basemap: OpenFreeMap vector tiles (no key, OSM attribution) with a Sentinel-2 cloudless (EOX,
   attribution shown) satellite toggle.
 
+## Interactive centrepiece and WOW moment (added 24 Oct, his request; build standard part 5)
+
+- **3D kiln explainer** on `/` and `/method`: rotatable procedural FCBK (oval, central chimney) and Zigzag
+  (rectangle, end chimney) kilns; "Fire" animates the straight vs zigzag air path and chimney smoke,
+  density labelled "illustrative; scaled to ICIMOD's measured 60% less black carbon".
+- **WOW moment: "See it at 10 m" slider.** The camera goes top-down and the render pixelates to the true
+  Sentinel-2 grid; the two kilns blur into the same few pixels. It shows why the model refuses
+  (T3 and T6 missed) in two seconds. First 90 seconds of the video.
+- **3D map mode** with extruded kiln columns by status and a guided fly-through of the districts.
+- **Animated Merkle proof** on Verify on chain: the path folds level by level to the Sepolia root.
+- Reduced motion gets stills, no WebGL gets pre-rendered images, the 3D chunk is lazy-loaded.
+
 ## Screens and routes
 
 1. `/` **Overview.** The claim ("8,000 converted", quoted and linked) next to what the satellite sees
