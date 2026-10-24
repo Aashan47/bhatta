@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router";
 import { getKilns, getLedger, getSummary } from "../api";
 import { BrickWall, brickScale } from "../components/BrickWall";
 import { ImpactPanel } from "../components/Impact";
+import { KilnExplainer } from "../components/KilnExplainer";
 import { MapView } from "../components/MapView";
 import { ArrowGlyph, ErrorBox, ExternalGlyph, Hash, Loading, SampleTag, StatusIcon, ZigzagRule, statusClass } from "../components/ui";
 import { usePrefs } from "../i18n";
@@ -88,6 +89,8 @@ export function Overview() {
           </ul>
         </div>
       </section>
+
+      <KilnExplainer impact={s.impact} />
 
       <div className="overview-pair">
       <section className="compare panel" aria-labelledby="cmp-h">

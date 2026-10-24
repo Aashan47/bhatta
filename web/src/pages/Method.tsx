@@ -1,5 +1,6 @@
 import { getAudit, getResults, getSummary } from "../api";
 import { Architecture } from "../components/Architecture";
+import { KilnExplainer } from "../components/KilnExplainer";
 import { CheckGlyph, CrossGlyph, ErrorBox, Loading, PageHeader, SampleTag, ZigzagRule } from "../components/ui";
 import { usePrefs } from "../i18n";
 import { useAsync } from "../lib/util";
@@ -42,6 +43,10 @@ export function Method() {
         </p>
         <p className="fine">{t.method.ruleExample}</p>
       </section>
+
+      <div className="wide-block">
+        <KilnExplainer impact={summary.data?.impact} id="kilns-3d-method" />
+      </div>
 
       <section aria-labelledby="m-arch" className="wide">
         <h2 id="m-arch">{t.method.archTitle}</h2>
