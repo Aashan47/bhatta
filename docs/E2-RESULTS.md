@@ -109,3 +109,72 @@ AUC of p(Zigzag); CNN arms with 8-view TTA and the mean of 3 seeds. Every arm th
 sha256 in `data/e2/e2_results.json`). Note that on val the pk arm also looked fine (0.856) and then
 reached 0.759 on test; val here is 15 train blocks next to the fit blocks, so a val gain this small
 (0.874 against 0.856) says little about test.
+
+## Calibration (cal blocks, n = 2,139: 1,863 FCBK, 276 Zigzag; `ml/e2/evaluate.py`)
+
+Early arm on calibration: AUC of p(Zigzag) 0.755 (pk arm: 0.772). Mondrian qhat (alpha 0.10):
+FCBK 0.6153, Zigzag 0.8078. Learn-then-Test Zigzag floor (Bonferroni over 20 floors 0.50 to
+0.975, exact binomial p-value for a false-certificate rate above 0.05, delta 0.10): **no floor is
+valid**. From 0.50 to 0.875 the false share among {Zigzag} sets on calibration was 0.25 to 0.61
+(0.50: 184 of 301; 0.80: 28 of 66; 0.85: 9 of 24; 0.875: 2 of 8, p = 0.994); at 0.90 one kiln
+qualifies and it is FCBK; above that none. The best raw precision for Zigzag on calibration is
+again about 0.58 (p(Zigzag) >= 0.8: 66 kilns, 57.6% Zigzag), the same ceiling as the RGB model.
+
+## E2a to E2d on test blocks (run once, 19:23 PKT, `data/e2/e2_results.json`)
+
+| ID | Metric | Target | Result | n | Verdict |
+|---|---|---|---|---|---|
+| E2a | AUC of p(Zigzag), FCBK vs Zigzag | >= 0.85 | **0.736** (pk arm on the same 2,320 kilns: 0.759) | 2,320 (1,991 FCBK, 329 Zigzag) | **MISS** |
+| E2b | A valid Learn-then-Test Zigzag floor on calibration | yes | **none** | 2,139 cal kilns | **MISS** |
+| E2c | Share of true Zigzag test kilns certified at that floor | >= 0.15 | **0.000** (0 of 329; no floor, so no certificate) | 329 | **MISS** |
+| E2d | Share of {Zigzag} test sets that are truly FCBK | <= 0.05 | **no {Zigzag} set issued** (0 of 0); vacuous, counted as a miss because it rests on E2b | 0 | **MISS** |
+
+The product switches to E2 only if E2a to E2d all hold. **None holds. The product does not switch.**
+
+## The product rule on test with E2 (Mondrian sets, no {Zigzag} certificate since no floor is valid)
+
+| Measure | E2 early arm | pk arm (product, `docs/RESULTS.md`) | n |
+|---|---|---|---|
+| Coverage, all | 0.990 (2,296 of 2,320) | 0.991 | 2,320 |
+| Coverage, true FCBK / true Zigzag | 1.000 / 0.927 | 1.000 / 0.936 | 1,991 / 329 |
+| Certified Zigzag ({Zigzag}) | 0 | 0 | 2,320 |
+| Called FCBK ({FCBK}) | 758 (32.7%); 24 of them truly Zigzag (3.2% of the FCBK calls; 7.3% of all Zigzag kilns) | 573 (24.7%); 21 truly Zigzag (3.7%; 6.4% of Zigzag kilns) | 2,320 |
+| Refused ({FCBK, Zigzag}) | 1,562 (67.3%) | 1,747 (75.3%) | 2,320 |
+
+Mondrian sets without a floor, for reference: 393 {Zigzag} sets on test, 272 of them truly FCBK
+(0.692).
+
+**Post hoc, not used for any decision** (computed after the test look, to report every arm run):
+AUC of p(Zigzag) on cal / test: early 0.755 / 0.736, shared 0.735 / 0.738, hgb 0.719 / 0.694,
+ens 0.757 / 0.736. No arm reaches the pk arm's 0.759 on test; the arm choice did not cost E2a.
+
+## Plain reading
+
+E2 fails all four targets. Ten Sentinel-2 bands from two clear winter dates did not separate
+Zigzag from FCBK kilns any better than the RGB median composite: test AUC 0.736 against 0.759, and
+on calibration 25% to 61% of the {Zigzag} calls are FCBK at every floor that issues any
+certificate, so no Zigzag certificate is possible. The one honest gain is small and on the FCBK side: the E2
+sets call 758 test kilns FCBK instead of 573 (3.2% of those calls wrong instead of 3.7%), and
+refuse 67% instead of 75%. That is not what E2 was registered to test, it was not a target, and
+it does not justify replacing a model the rest of the product (scan, API, web) is built around.
+**Decision: do not switch. The product rule stays as it is: never certify Zigzag from imagery,
+call FCBK only under the Mondrian set, send the rest to an inspector.**
+
+Limits of this test, stated so nobody over-reads the miss: two dates rather than the registered
+up-to-four (E2-D3), most of them November and December; Planetary Computer rather than Earth
+Search pixels (E2-D1, same product); a small CNN at 10 m. What it does show is that the spectral
+bands and a second date are not the missing signal at 10 m: val looked better (0.874 against
+0.856), and calibration and test did not follow, the same val-to-test drop the RGB model had. Our
+reading (not tested here) is that the limit is spatial resolution, not the band set.
+
+## Files
+
+- Code: `ml/e2/fetch.py`, `ml/e2/align_check.py`, `ml/e2/train.py`, `ml/e2/evaluate.py`
+- Per-kiln metadata and scene ids: `data/e2/chips_meta.csv`; alignment: `data/e2/alignment_check.json`
+- Val arms: `data/e2/val_arms.json`, `data/e2/train.log`; results: `data/e2/e2_results.json`
+- Chips (gitignored): `data/e2/raw/X.npy` (11,246 x 4 x 10 x 24 x 24 uint16; dates 3 and 4 are zero),
+  per-tile `data/e2/raw/tiles/*.npz` (with the SCL windows), STAC item lists `data/e2/raw/items*.json`
+- Weights (gitignored), sha256: `e2_early_s0.pt` 90b4f11f6ab9b5372ac1a3bb891e2f6c02b69c20433c966582c1e0a13755d810,
+  `e2_early_s1.pt` b13bb6f90eb1cd9cb2afd82ac603c7573592d6c7508fc9464bb9a0e8d9bd88c6,
+  `e2_early_s2.pt` c23a1281bdffc79ecd45bffb1c0e4292c40e812efb88f1c29bebc816e193ac66;
+  the other arms' hashes are in `data/e2/e2_results.json`.
